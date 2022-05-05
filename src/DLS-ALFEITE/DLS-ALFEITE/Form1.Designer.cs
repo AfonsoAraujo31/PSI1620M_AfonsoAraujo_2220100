@@ -43,6 +43,7 @@ namespace DLS_ALFEITE
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -92,7 +93,7 @@ namespace DLS_ALFEITE
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(441, 223);
+            this.pictureBox2.Location = new System.Drawing.Point(441, 210);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -102,7 +103,7 @@ namespace DLS_ALFEITE
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(441, 277);
+            this.pictureBox3.Location = new System.Drawing.Point(441, 264);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -112,7 +113,7 @@ namespace DLS_ALFEITE
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(441, 258);
+            this.panel1.Location = new System.Drawing.Point(441, 245);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(267, 3);
             this.panel1.TabIndex = 6;
@@ -120,7 +121,7 @@ namespace DLS_ALFEITE
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(441, 309);
+            this.panel2.Location = new System.Drawing.Point(441, 296);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 3);
             this.panel2.TabIndex = 7;
@@ -129,7 +130,7 @@ namespace DLS_ALFEITE
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9F);
-            this.label3.Location = new System.Drawing.Point(497, 237);
+            this.label3.Location = new System.Drawing.Point(497, 224);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 21);
             this.label3.TabIndex = 8;
@@ -139,7 +140,7 @@ namespace DLS_ALFEITE
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9F);
-            this.label4.Location = new System.Drawing.Point(497, 286);
+            this.label4.Location = new System.Drawing.Point(497, 273);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 21);
             this.label4.TabIndex = 9;
@@ -148,7 +149,7 @@ namespace DLS_ALFEITE
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(659, 276);
+            this.pictureBox4.Location = new System.Drawing.Point(659, 263);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(49, 33);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -158,7 +159,7 @@ namespace DLS_ALFEITE
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(659, 276);
+            this.pictureBox5.Location = new System.Drawing.Point(659, 263);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(49, 33);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,12 +169,22 @@ namespace DLS_ALFEITE
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(516, 309);
+            this.pictureBox6.Location = new System.Drawing.Point(516, 296);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(137, 76);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox6.TabIndex = 12;
             this.pictureBox6.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(704, 394);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(125, 20);
+            this.linkLabel1.TabIndex = 13;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Reset Password";
             // 
             // Frm_login
             // 
@@ -183,6 +194,7 @@ namespace DLS_ALFEITE
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(828, 416);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label4);
@@ -227,6 +239,7 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
