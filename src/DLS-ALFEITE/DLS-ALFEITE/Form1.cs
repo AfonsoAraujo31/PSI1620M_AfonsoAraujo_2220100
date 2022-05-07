@@ -14,35 +14,49 @@ namespace DLS_ALFEITE
 {
     public partial class Frm_login : Form
     {
-        private string ContionString;
         public Frm_login()
         {
             InitializeComponent();
         }
+        private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         private void btn_login_Click(object sender, EventArgs e)
         {
             if (textBox_username.Text == "" || textBox_password.Text == "")
             {
                 MessageBox.Show("Insira o username ou password");
-                return;
             }
-            try
+            else
             {
-                SqlConnection sqlConn = new SqlConnection(ContionString);
-                SqlCommand cmd = sqlConn.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT username,password FROM login_utilizadores WHERE username='" + textBox_username.Text + "' AND password='" + textBox_password.Text + "'";
-                sqlConn.Open();
-                var dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                try
                 {
-                    MessageBox.Show("asas");
+                    SqlConnection sql = new SqlConnection(connection);
+                    SqlCommand cmd = sql.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = $"select username,password from login_utilizadores where username=@Username and password=@Userpass";
+                    cmd.Parameters.AddWithValue("@Username", textBox_username.Text);
+                    cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);
+
+                    sql.Open();
+                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    adpt.Fill(ds);
+                    sql.Close();
+
+                    int count = ds.Tables[0].Rows.Count;
+
+                    if (count == 1)
+                    {
+                        MessageBox.Show("Bem Boneco");
+                    }
+                    else
+                    {
+                        MessageBox.Show("És mesmo da  Digital");
+                    }
                 }
-                sqlConn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro:{0}",ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro:{0}", ex.Message);
+                }
             }
         }
 
