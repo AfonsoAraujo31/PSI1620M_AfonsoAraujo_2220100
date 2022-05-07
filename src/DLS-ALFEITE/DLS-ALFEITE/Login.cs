@@ -9,15 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Runtime.InteropServices;
 
 
 namespace DLS_ALFEITE
 {
     public partial class Frm_login : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+             int nleftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nwidthEllipse,
+             int nHeightEllipse
+        );
         public Frm_login()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         private void btn_login_Click(object sender, EventArgs e)
@@ -106,8 +118,13 @@ namespace DLS_ALFEITE
 
         private void textBox_username_Leave(object sender, EventArgs e)
         {
-
+            if (textBox_username.Text == "")
+            {
+                textBox_username.Text = "Username";
+            }
         }
+
+        
     }
 }
 
