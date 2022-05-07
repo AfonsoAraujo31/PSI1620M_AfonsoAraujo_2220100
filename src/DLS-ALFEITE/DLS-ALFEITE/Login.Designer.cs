@@ -44,6 +44,7 @@ namespace DLS_ALFEITE
             this.panel3 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btn_login = new System.Windows.Forms.PictureBox();
+            this.textBox_codigounico = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -128,7 +129,7 @@ namespace DLS_ALFEITE
             this.textBox_username.BackColor = System.Drawing.Color.Azure;
             this.textBox_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_username.Location = new System.Drawing.Point(339, 145);
+            this.textBox_username.Location = new System.Drawing.Point(339, 144);
             this.textBox_username.Name = "textBox_username";
             this.textBox_username.Size = new System.Drawing.Size(100, 15);
             this.textBox_username.TabIndex = 14;
@@ -208,6 +209,19 @@ namespace DLS_ALFEITE
             this.btn_login.TabStop = false;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
+            // textBox_codigounico
+            // 
+            this.textBox_codigounico.BackColor = System.Drawing.Color.Azure;
+            this.textBox_codigounico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_codigounico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_codigounico.Location = new System.Drawing.Point(339, 177);
+            this.textBox_codigounico.Name = "textBox_codigounico";
+            this.textBox_codigounico.Size = new System.Drawing.Size(100, 15);
+            this.textBox_codigounico.TabIndex = 19;
+            this.textBox_codigounico.Text = "Código Único";
+            this.textBox_codigounico.Enter += new System.EventHandler(this.textBox_codigounico_Enter);
+            this.textBox_codigounico.Leave += new System.EventHandler(this.textBox_codigounico_Leave);
+            // 
             // Frm_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,6 +244,7 @@ namespace DLS_ALFEITE
             this.Controls.Add(this.textBox_username);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox_password);
+            this.Controls.Add(this.textBox_codigounico);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -260,6 +275,7 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.PictureBox btn_login;
+        private System.Windows.Forms.TextBox textBox_codigounico;
     }
 }
 
