@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
+using System.Configuration;
+
 
 namespace DLS_ALFEITE
 {
@@ -21,42 +22,39 @@ namespace DLS_ALFEITE
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (textBox_username.Text == "" || textBox_password.Text == "")
+            try
             {
-                MessageBox.Show("Insira o username ou password");
-            }
-            else
-            {
-                try
+                if (textBox_username.Text == "" && textBox_password.Text == "")
                 {
-                    SqlConnection sql = new SqlConnection(connection);
-                    SqlCommand cmd = sql.CreateCommand();
+                    MessageBox.Show("Preencha os campos");
+                }
+                else
+                {
+                    SqlConnection sqlcon = new SqlConnection(connection);
+                    SqlCommand cmd = sqlcon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"select username,password from login_utilizadores where username=@Username and password=@Userpass";
+                    cmd.CommandText = $"SELECT username,password FROM login_utilizadores WHERE username=@Username AND password=@Userpass";
                     cmd.Parameters.AddWithValue("@Username", textBox_username.Text);
                     cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);
-
-                    sql.Open();
-                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                    sqlcon.Open();
+                    SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
-                    adpt.Fill(ds);
-                    sql.Close();
-
+                    sqladp.Fill(ds);
+                    sqlcon.Close();
                     int count = ds.Tables[0].Rows.Count;
-
                     if (count == 1)
                     {
-                        MessageBox.Show("Bem Boneco");
+                        MessageBox.Show("AASASASAS");
                     }
                     else
                     {
-                        MessageBox.Show("És mesmo da  Digital");
+                        MessageBox.Show("aaaaaaa");
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro:{0}", ex.Message);
-                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
