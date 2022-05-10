@@ -51,7 +51,7 @@ namespace DLS_ALFEITE
                 textBox_codigo_unico.PasswordChar = '\0';
             }
         }
-
+        
         private void btn_login_codigounico_Click(object sender, EventArgs e)
         {
             SqlConnection sqlcon = new SqlConnection(connection);
@@ -70,6 +70,24 @@ namespace DLS_ALFEITE
             else
             {
                 MessageBox.Show("prima");
+            }
+        }
+
+        private void button1_cu_Click(object sender, EventArgs e)
+        {
+            if (textBox_codigo_unico.PasswordChar == '●')
+            {
+                button2_cu.BringToFront();
+                textBox_codigo_unico.PasswordChar = '\0';
+            }
+        }
+
+        private void button2_cu_Click(object sender, EventArgs e)
+        {
+            if (textBox_codigo_unico.PasswordChar == '\0')
+            {
+                button1_cu.BringToFront();
+                textBox_codigo_unico.PasswordChar = '●';
             }
         }
     }

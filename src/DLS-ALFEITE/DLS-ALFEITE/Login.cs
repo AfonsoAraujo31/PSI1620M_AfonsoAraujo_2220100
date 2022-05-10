@@ -87,7 +87,6 @@ namespace DLS_ALFEITE
                 textBox_password.PasswordChar = '\0';
             }
         }
-        
 
         private void button2_Click_1(object sender, EventArgs e)
         {

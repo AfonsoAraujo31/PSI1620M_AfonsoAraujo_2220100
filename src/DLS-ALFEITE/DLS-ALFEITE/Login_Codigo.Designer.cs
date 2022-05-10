@@ -31,7 +31,7 @@ namespace DLS_ALFEITE
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Codigo));
             this.textBox_codigo_unico = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button1_cu = new System.Windows.Forms.Button();
             this.textBox_username_confirmação = new System.Windows.Forms.TextBox();
             this.btn_login_codigounico = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@ namespace DLS_ALFEITE
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2_cu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_codigounico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -58,19 +59,20 @@ namespace DLS_ALFEITE
             this.textBox_codigo_unico.Enter += new System.EventHandler(this.textBox_codigo_unico_Enter);
             this.textBox_codigo_unico.Leave += new System.EventHandler(this.textBox_codigo_unico_Leave);
             // 
-            // button1
+            // button1_cu
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Azure;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(335, 120);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 35);
-            this.button1.TabIndex = 29;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1_cu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1_cu.FlatAppearance.BorderSize = 0;
+            this.button1_cu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1_cu.ForeColor = System.Drawing.Color.Azure;
+            this.button1_cu.Image = ((System.Drawing.Image)(resources.GetObject("button1_cu.Image")));
+            this.button1_cu.Location = new System.Drawing.Point(336, 119);
+            this.button1_cu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1_cu.Name = "button1_cu";
+            this.button1_cu.Size = new System.Drawing.Size(50, 35);
+            this.button1_cu.TabIndex = 29;
+            this.button1_cu.UseVisualStyleBackColor = true;
+            this.button1_cu.Click += new System.EventHandler(this.button1_cu_Click);
             // 
             // textBox_username_confirmação
             // 
@@ -141,12 +143,28 @@ namespace DLS_ALFEITE
             this.panel2.Size = new System.Drawing.Size(267, 3);
             this.panel2.TabIndex = 25;
             // 
+            // button2_cu
+            // 
+            this.button2_cu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2_cu.FlatAppearance.BorderSize = 0;
+            this.button2_cu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2_cu.ForeColor = System.Drawing.Color.Azure;
+            this.button2_cu.Image = ((System.Drawing.Image)(resources.GetObject("button2_cu.Image")));
+            this.button2_cu.Location = new System.Drawing.Point(336, 118);
+            this.button2_cu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2_cu.Name = "button2_cu";
+            this.button2_cu.Size = new System.Drawing.Size(50, 35);
+            this.button2_cu.TabIndex = 30;
+            this.button2_cu.UseVisualStyleBackColor = true;
+            this.button2_cu.Click += new System.EventHandler(this.button2_cu_Click);
+            // 
             // Login_Codigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(500, 250);
+            this.Controls.Add(this.button1_cu);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
@@ -154,8 +172,8 @@ namespace DLS_ALFEITE
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_login_codigounico);
             this.Controls.Add(this.textBox_username_confirmação);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox_codigo_unico);
+            this.Controls.Add(this.button2_cu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login_Codigo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -170,7 +188,7 @@ namespace DLS_ALFEITE
 
         #endregion
         private System.Windows.Forms.TextBox textBox_codigo_unico;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button1_cu;
         private System.Windows.Forms.TextBox textBox_username_confirmação;
         private System.Windows.Forms.PictureBox btn_login_codigounico;
         private System.Windows.Forms.Label label2;
@@ -178,5 +196,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button2_cu;
     }
 }
