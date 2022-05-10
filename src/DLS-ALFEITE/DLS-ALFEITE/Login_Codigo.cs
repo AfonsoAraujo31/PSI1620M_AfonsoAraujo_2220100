@@ -56,12 +56,14 @@ namespace DLS_ALFEITE
         {
             SqlConnection sqlcon = new SqlConnection(connection);
             SqlCommand cmd = sqlcon.CreateCommand();
-            cmd.CommandText = $"SELECT username,codigo_utilizador FROM login_utilizadores WHERE username=@User AND codigo_utilizador=@Codigo_utilizador";
-            cmd.Parameters.AddWithValue("@User", value);
+            cmd.Parameters.AddWithValue("@username", value);
+            cmd.CommandText = $"SELECT username,codigo_utilizador FROM login_utilizadores WHERE username=@username AND codigo_utilizador=@Codigo_utilizador";
             cmd.Parameters.AddWithValue("@codigo_utilizador", textBox_codigo_unico.Text);
-            
+            sqlcon.Open();
             SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
+            sqladp.Fill(ds);
+            sqlcon.Close();
             int count1 = ds.Tables[0].Rows.Count;
             if (count1 == 1)
             {
