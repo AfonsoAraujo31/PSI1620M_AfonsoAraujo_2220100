@@ -165,6 +165,12 @@
     <Compile Include="Medicamentos.Designer.cs">
       <DependentUpon>Medicamentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Página_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Página_Principal.Designer.cs">
+      <DependentUpon>Página_Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login.resx">
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Medicamentos.resx">
       <DependentUpon>Medicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Página_Principal.resx">
+      <DependentUpon>Página_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

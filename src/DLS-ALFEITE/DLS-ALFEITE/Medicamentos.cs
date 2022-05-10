@@ -12,10 +12,9 @@ namespace DLS_ALFEITE
 {
     public partial class Medicamentos : Form
     {
-        public Medicamentos(string value)
+        public Medicamentos()
         {
             InitializeComponent();
-            
         }
     }
 }

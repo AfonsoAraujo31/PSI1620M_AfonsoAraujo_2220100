@@ -66,7 +66,7 @@ namespace DLS_ALFEITE
             int count1 = ds.Tables[0].Rows.Count;
             if (count1 == 1)
             {
-                Medicamentos frm_medicamentos = new Medicamentos(textBox_username_confirmação.Text);
+                Página_Principal frm_medicamentos = new Página_Principal(textBox_username_confirmação.Text);
                 frm_medicamentos.Show();
             }
             else
