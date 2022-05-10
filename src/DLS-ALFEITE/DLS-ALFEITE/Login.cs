@@ -56,22 +56,8 @@ namespace DLS_ALFEITE
                     int count = ds.Tables[0].Rows.Count;
                     if (count == 1)
                     {
-                        textBox_password.SendToBack();
-                        textBox_codigounico.BringToFront();
-                        textBox_username.Enabled = false;
-                        cmd.CommandText = $"SELECT username,código_utilizador FROM login_utilizadores WHERE username=@User AND codigo_utilizador=@Codigo_utilizador";
-                        cmd.Parameters.AddWithValue("@User", textBox_username.Text);
-                        cmd.Parameters.AddWithValue("@codigo_utilizador", textBox_codigounico.Text);
-                        sqladp.Fill(ds);
-                        int count1 = ds.Tables[0].Rows.Count;
-                        if (count1 == 1)
-                        {
-                            MessageBox.Show("primo");
-                        }
-                        else
-                        {
-                            MessageBox.Show("prima");
-                        }
+                        Login_Codigo frm_logincodigo = new Login_Codigo(textBox_username.Text);
+                        frm_logincodigo.ShowDialog();
                     }
                     else
                     {
@@ -134,24 +120,6 @@ namespace DLS_ALFEITE
             if (textBox_username.Text == "")
             {
                 textBox_username.Text = "Username";
-            }
-        }
-
-        private void textBox_codigounico_Enter(object sender, EventArgs e)
-        {
-            if (textBox_codigounico.Text == "Código Único")
-            {
-                textBox_codigounico.Text = "";
-                textBox_codigounico.PasswordChar = '●';
-            }
-        }
-
-        private void textBox_codigounico_Leave(object sender, EventArgs e)
-        {
-            if (textBox_codigounico.Text == "")
-            {
-                textBox_codigounico.Text = "Código Único";
-                textBox_codigounico.PasswordChar = '\0';
             }
         }
     }
