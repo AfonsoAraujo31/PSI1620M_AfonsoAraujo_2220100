@@ -56,8 +56,7 @@ namespace DLS_ALFEITE
         {
             SqlConnection sqlcon = new SqlConnection(connection);
             SqlCommand cmd = sqlcon.CreateCommand();
-            cmd.Parameters.AddWithValue("@username", value);
-            cmd.CommandText = $"SELECT username,codigo_utilizador FROM login_utilizadores WHERE username=@username AND codigo_utilizador=@Codigo_utilizador";
+            cmd.CommandText = $"SELECT codigo_utilizador FROM login_utilizadores WHERE codigo_utilizador=@Codigo_utilizador";
             cmd.Parameters.AddWithValue("@codigo_utilizador", textBox_codigo_unico.Text);
             sqlcon.Open();
             SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
@@ -67,11 +66,12 @@ namespace DLS_ALFEITE
             int count1 = ds.Tables[0].Rows.Count;
             if (count1 == 1)
             {
-                MessageBox.Show("primo");
+                Medicamentos frm_medicamentos = new Medicamentos(textBox_username_confirmação.Text);
+                frm_medicamentos.Show();
             }
             else
             {
-                MessageBox.Show("prima");
+                MessageBox.Show("ERRO");
             }
         }
 
