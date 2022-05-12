@@ -147,6 +147,7 @@ namespace DLS_ALFEITE
             this.btn_medicamento.TabIndex = 6;
             this.btn_medicamento.Text = " MEDICAMENTOS";
             this.btn_medicamento.UseVisualStyleBackColor = true;
+            this.btn_medicamento.Click += new System.EventHandler(this.btn_medicamento_Click);
             // 
             // label_username
             // 

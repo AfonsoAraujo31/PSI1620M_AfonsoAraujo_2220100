@@ -20,6 +20,7 @@ namespace DLS_ALFEITE
             label_data.Text = today.ToString("dd/MM/yyyy");
 
         }
+        Medicamentos frm_med;
         private void btnclose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -28,5 +29,28 @@ namespace DLS_ALFEITE
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        private void btn_medicamento_Click(object sender, EventArgs e)
+        {
+            if (frm_med == null)
+            {
+                frm_med = new Medicamentos();
+                frm_med.MdiParent = this;
+                frm_med.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                frm_med.Show();
+            }
+            else
+            {
+                frm_med = new Medicamentos();
+                frm_med.Focus();
+            }
+        }
+        void frm_medFormClosed(object sender, FormClosedEventArgs e)
+        {
+            frm_med = null;
+            //throw new NotImplementedException();
+        }
+
+
     }
 }
+
