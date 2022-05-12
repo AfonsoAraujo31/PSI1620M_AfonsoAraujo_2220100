@@ -15,52 +15,18 @@ namespace DLS_ALFEITE
         public Página_Principal(string value)
         {
             InitializeComponent();
-            
-        }
-        private void btn_medicamentos_Enter(object sender, EventArgs e)
-        {
-            btn_medicamentos.BackColor = Color.FromArgb(0, 127, 255);
-        }
+            label_username.Text = value;
+            DateTime today = DateTime.Today;
+            label_data.Text = today.ToString("dd/MM/yyyy");
 
-        private void btn_medicamentos_Leave(object sender, EventArgs e)
-        {
-            btn_medicamentos.BackColor = Color.FromArgb(0, 0, 64);
         }
-
-        private void btn_equipamentos_Enter(object sender, EventArgs e)
+        private void btnclose_Click(object sender, EventArgs e)
         {
-            btn_equipamentos.BackColor = Color.FromArgb(0, 127, 255);
+            Application.Exit();
         }
-
-        private void btn_equipamentos_Leave(object sender, EventArgs e)
+        private void btn_min_Click(object sender, EventArgs e)
         {
-            btn_equipamentos.BackColor = Color.FromArgb(0, 0, 64);
-        }
-
-        private void btn_inflamáveis_Enter(object sender, EventArgs e)
-        {
-            btn_inflamáveis.BackColor = Color.FromArgb(0, 127, 255);
-        }
-
-        private void btn_inflamáveis_Leave(object sender, EventArgs e)
-        {
-            btn_inflamáveis.BackColor = Color.FromArgb(0, 0, 64);
-        }
-
-        private void btn_main_Enter(object sender, EventArgs e)
-        {
-            btn_main.BackColor = Color.FromArgb(0, 127, 255);
-        }
-
-        private void btn_main_Leave(object sender, EventArgs e)
-        {
-            btn_main.BackColor = Color.FromArgb(0, 0, 64);
-        }
-
-        private void btn_medicamentos_Click(object sender, EventArgs e)
-        {
-            Medicamentos frm_medicamentos = new Medicamentos();
-            frm_medicamentos.ShowDialog();
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

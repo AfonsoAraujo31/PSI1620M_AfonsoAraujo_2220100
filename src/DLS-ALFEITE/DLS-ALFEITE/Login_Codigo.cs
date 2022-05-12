@@ -67,6 +67,7 @@ namespace DLS_ALFEITE
             if (count1 == 1)
             {
                 Página_Principal frm_medicamentos = new Página_Principal(textBox_username_confirmação.Text);
+                
                 frm_medicamentos.Show();
             }
             else

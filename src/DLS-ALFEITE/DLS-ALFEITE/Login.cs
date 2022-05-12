@@ -56,8 +56,8 @@ namespace DLS_ALFEITE
                     int count = ds.Tables[0].Rows.Count;
                     if (count == 1)
                     {
-                        Login_Codigo frm_logincodigo = new Login_Codigo(textBox_username.Text);
-                        frm_logincodigo.ShowDialog();
+                        new Página_Principal(textBox_username.Text).Show(); 
+                        this.Hide();
                     }
                     else
                     {

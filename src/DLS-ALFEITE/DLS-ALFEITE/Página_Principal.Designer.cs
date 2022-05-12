@@ -32,193 +32,191 @@ namespace DLS_ALFEITE
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Página_Principal));
             this.btn_main = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_inflamáveis = new System.Windows.Forms.Button();
-            this.btn_equipamentos = new System.Windows.Forms.Button();
-            this.btn_medicamentos = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_data = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_inflamavel = new System.Windows.Forms.Button();
+            this.btn_equipamento = new System.Windows.Forms.Button();
+            this.btn_medicamento = new System.Windows.Forms.Button();
+            this.label_username = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_min = new System.Windows.Forms.Button();
+            this.btnclose = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_main
             // 
             this.btn_main.FlatAppearance.BorderSize = 0;
             this.btn_main.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_main.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_main.ForeColor = System.Drawing.Color.White;
             this.btn_main.Image = ((System.Drawing.Image)(resources.GetObject("btn_main.Image")));
             this.btn_main.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_main.Location = new System.Drawing.Point(-1, 131);
-            this.btn_main.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_main.Location = new System.Drawing.Point(-2, 202);
             this.btn_main.Name = "btn_main";
-            this.btn_main.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_main.Size = new System.Drawing.Size(191, 53);
+            this.btn_main.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_main.Size = new System.Drawing.Size(286, 82);
             this.btn_main.TabIndex = 0;
             this.btn_main.Text = "HOME";
             this.btn_main.UseVisualStyleBackColor = true;
-            this.btn_main.Enter += new System.EventHandler(this.btn_main_Enter);
-            this.btn_main.Leave += new System.EventHandler(this.btn_main_Leave);
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.btn_inflamáveis);
-            this.panel2.Controls.Add(this.btn_equipamentos);
-            this.panel2.Controls.Add(this.btn_medicamentos);
+            this.panel2.Controls.Add(this.label_data);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.btn_inflamavel);
+            this.panel2.Controls.Add(this.btn_equipamento);
+            this.panel2.Controls.Add(this.btn_medicamento);
             this.panel2.Controls.Add(this.btn_main);
-            this.panel2.Location = new System.Drawing.Point(0, -1);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Controls.Add(this.label_username);
+            this.panel2.Location = new System.Drawing.Point(0, -2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(190, 609);
+            this.panel2.Size = new System.Drawing.Size(285, 884);
             this.panel2.TabIndex = 2;
             // 
-            // btn_inflamáveis
+            // label_data
             // 
-            this.btn_inflamáveis.FlatAppearance.BorderSize = 0;
-            this.btn_inflamáveis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inflamáveis.ForeColor = System.Drawing.Color.White;
-            this.btn_inflamáveis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inflamáveis.Location = new System.Drawing.Point(0, 302);
-            this.btn_inflamáveis.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_inflamáveis.Name = "btn_inflamáveis";
-            this.btn_inflamáveis.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_inflamáveis.Size = new System.Drawing.Size(191, 53);
-            this.btn_inflamáveis.TabIndex = 8;
-            this.btn_inflamáveis.Text = "INFLAMÁVEIS";
-            this.btn_inflamáveis.UseVisualStyleBackColor = true;
-            this.btn_inflamáveis.Enter += new System.EventHandler(this.btn_inflamáveis_Enter);
-            this.btn_inflamáveis.Leave += new System.EventHandler(this.btn_inflamáveis_Leave);
+            this.label_data.AutoSize = true;
+            this.label_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_data.ForeColor = System.Drawing.Color.White;
+            this.label_data.Location = new System.Drawing.Point(89, 164);
+            this.label_data.Name = "label_data";
+            this.label_data.Size = new System.Drawing.Size(48, 20);
+            this.label_data.TabIndex = 9;
+            this.label_data.Text = "Data";
             // 
-            // btn_equipamentos
+            // pictureBox1
             // 
-            this.btn_equipamentos.FlatAppearance.BorderSize = 0;
-            this.btn_equipamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_equipamentos.ForeColor = System.Drawing.Color.White;
-            this.btn_equipamentos.Image = ((System.Drawing.Image)(resources.GetObject("btn_equipamentos.Image")));
-            this.btn_equipamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_equipamentos.Location = new System.Drawing.Point(-1, 245);
-            this.btn_equipamentos.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_equipamentos.Name = "btn_equipamentos";
-            this.btn_equipamentos.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_equipamentos.Size = new System.Drawing.Size(191, 53);
-            this.btn_equipamentos.TabIndex = 7;
-            this.btn_equipamentos.Text = "EQUIPAMENTOS";
-            this.btn_equipamentos.UseVisualStyleBackColor = true;
-            this.btn_equipamentos.Enter += new System.EventHandler(this.btn_equipamentos_Enter);
-            this.btn_equipamentos.Leave += new System.EventHandler(this.btn_equipamentos_Leave);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(106, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 88);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
-            // btn_medicamentos
+            // btn_inflamavel
             // 
-            this.btn_medicamentos.FlatAppearance.BorderSize = 0;
-            this.btn_medicamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_medicamentos.ForeColor = System.Drawing.Color.White;
-            this.btn_medicamentos.Image = ((System.Drawing.Image)(resources.GetObject("btn_medicamentos.Image")));
-            this.btn_medicamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_medicamentos.Location = new System.Drawing.Point(-1, 188);
-            this.btn_medicamentos.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_medicamentos.Name = "btn_medicamentos";
-            this.btn_medicamentos.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_medicamentos.Size = new System.Drawing.Size(191, 53);
-            this.btn_medicamentos.TabIndex = 6;
-            this.btn_medicamentos.Text = " MEDICAMENTOS";
-            this.btn_medicamentos.UseVisualStyleBackColor = true;
-            this.btn_medicamentos.Click += new System.EventHandler(this.btn_medicamentos_Click);
-            this.btn_medicamentos.Enter += new System.EventHandler(this.btn_medicamentos_Enter);
-            this.btn_medicamentos.Leave += new System.EventHandler(this.btn_medicamentos_Leave);
+            this.btn_inflamavel.FlatAppearance.BorderSize = 0;
+            this.btn_inflamavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_inflamavel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inflamavel.ForeColor = System.Drawing.Color.White;
+            this.btn_inflamavel.Image = ((System.Drawing.Image)(resources.GetObject("btn_inflamavel.Image")));
+            this.btn_inflamavel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inflamavel.Location = new System.Drawing.Point(0, 461);
+            this.btn_inflamavel.Name = "btn_inflamavel";
+            this.btn_inflamavel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_inflamavel.Size = new System.Drawing.Size(286, 82);
+            this.btn_inflamavel.TabIndex = 8;
+            this.btn_inflamavel.Text = "INFLAMÁVEIS";
+            this.btn_inflamavel.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // btn_equipamento
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(497, 83);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 3;
+            this.btn_equipamento.FlatAppearance.BorderSize = 0;
+            this.btn_equipamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_equipamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_equipamento.ForeColor = System.Drawing.Color.White;
+            this.btn_equipamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_equipamento.Image")));
+            this.btn_equipamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_equipamento.Location = new System.Drawing.Point(-2, 377);
+            this.btn_equipamento.Name = "btn_equipamento";
+            this.btn_equipamento.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_equipamento.Size = new System.Drawing.Size(286, 82);
+            this.btn_equipamento.TabIndex = 7;
+            this.btn_equipamento.Text = "EQUIPAMENTOS";
+            this.btn_equipamento.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // btn_medicamento
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Medicamentos";
+            this.btn_medicamento.FlatAppearance.BorderSize = 0;
+            this.btn_medicamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_medicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_medicamento.ForeColor = System.Drawing.Color.White;
+            this.btn_medicamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_medicamento.Image")));
+            this.btn_medicamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_medicamento.Location = new System.Drawing.Point(-2, 289);
+            this.btn_medicamento.Name = "btn_medicamento";
+            this.btn_medicamento.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_medicamento.Size = new System.Drawing.Size(286, 82);
+            this.btn_medicamento.TabIndex = 6;
+            this.btn_medicamento.Text = " MEDICAMENTOS";
+            this.btn_medicamento.UseVisualStyleBackColor = true;
             // 
-            // panel3
+            // label_username
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(729, 83);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 100);
-            this.panel3.TabIndex = 4;
+            this.label_username.AutoSize = true;
+            this.label_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_username.ForeColor = System.Drawing.Color.White;
+            this.label_username.Location = new System.Drawing.Point(80, 134);
+            this.label_username.Name = "label_username";
+            this.label_username.Size = new System.Drawing.Size(57, 25);
+            this.label_username.TabIndex = 6;
+            this.label_username.Text = "User";
             // 
-            // label2
+            // panel5
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 16);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Equipamentos";
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel5.Controls.Add(this.btn_min);
+            this.panel5.Controls.Add(this.btnclose);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1924, 45);
+            this.panel5.TabIndex = 5;
             // 
-            // panel4
+            // btn_min
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(960, 83);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 100);
-            this.panel4.TabIndex = 4;
+            this.btn_min.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_min.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_min.FlatAppearance.BorderSize = 0;
+            this.btn_min.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_min.Image = ((System.Drawing.Image)(resources.GetObject("btn_min.Image")));
+            this.btn_min.Location = new System.Drawing.Point(1792, -5);
+            this.btn_min.Name = "btn_min";
+            this.btn_min.Size = new System.Drawing.Size(75, 51);
+            this.btn_min.TabIndex = 8;
+            this.btn_min.UseVisualStyleBackColor = false;
+            this.btn_min.Click += new System.EventHandler(this.btn_min_Click);
             // 
-            // label3
+            // btnclose
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Inflamáveis";
+            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnclose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnclose.FlatAppearance.BorderSize = 0;
+            this.btnclose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
+            this.btnclose.Location = new System.Drawing.Point(1852, -5);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(75, 51);
+            this.btnclose.TabIndex = 6;
+            this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // Página_Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1421, 607);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1924, 881);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Página_Principal";
             this.Text = "Medicamentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -227,14 +225,14 @@ namespace DLS_ALFEITE
 
         private System.Windows.Forms.Button btn_main;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_inflamáveis;
-        private System.Windows.Forms.Button btn_equipamentos;
-        private System.Windows.Forms.Button btn_medicamentos;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_inflamavel;
+        private System.Windows.Forms.Button btn_equipamento;
+        private System.Windows.Forms.Button btn_medicamento;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btn_min;
+        private System.Windows.Forms.Button btnclose;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label_username;
+        private System.Windows.Forms.Label label_data;
     }
 }
