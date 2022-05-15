@@ -1,7 +1,6 @@
-﻿
-namespace DLS_ALFEITE
+﻿namespace DLS_ALFEITE
 {
-    partial class Medicamentos
+    partial class Home
     {
         /// <summary>
         /// Required designer variable.
@@ -31,17 +30,15 @@ namespace DLS_ALFEITE
         {
             this.SuspendLayout();
             // 
-            // Medicamentos
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Red;
-            this.ClientSize = new System.Drawing.Size(1942, 1102);
+            this.BackColor = System.Drawing.Color.Yellow;
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(190, 0);
-            this.Name = "Medicamentos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Medicamentos";
+            this.Name = "Home";
+            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
