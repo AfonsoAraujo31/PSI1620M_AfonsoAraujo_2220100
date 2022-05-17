@@ -29,28 +29,51 @@ namespace DLS_ALFEITE
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.pSI20M_AfonsoAraujo_2220100DataSet1 = new DLS_ALFEITE.PSI20M_AfonsoAraujo_2220100DataSet1();
-            this.pSI20MAfonsoAraujo2220100DataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_search = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pSI20M_AfonsoAraujo_2220100DataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pSI20MAfonsoAraujo2220100DataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textbox_searchbar
             // 
+            this.textbox_searchbar.BackColor = System.Drawing.Color.White;
+            this.textbox_searchbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_searchbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_searchbar.Location = new System.Drawing.Point(442, 23);
-            this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textbox_searchbar.Location = new System.Drawing.Point(215, 24);
+            this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_searchbar.Name = "textbox_searchbar";
-            this.textbox_searchbar.Size = new System.Drawing.Size(782, 32);
+            this.textbox_searchbar.Size = new System.Drawing.Size(479, 24);
             this.textbox_searchbar.TabIndex = 0;
+            this.textbox_searchbar.Text = "Search...";
+            this.textbox_searchbar.Enter += new System.EventHandler(this.textbox_searchbar_Enter);
+            this.textbox_searchbar.Leave += new System.EventHandler(this.textbox_searchbar_Leave);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(804, 24);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(581, 24);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Adicionar Medicamento";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btn_search
+            // 
+            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Location = new System.Drawing.Point(698, 24);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(102, 24);
+            this.btn_search.TabIndex = 4;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // dataGridView1
             // 
@@ -65,6 +88,7 @@ namespace DLS_ALFEITE
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 22;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,65 +97,32 @@ namespace DLS_ALFEITE
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(322, 63);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(215, 58);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1187, 216);
+            this.dataGridView1.Size = new System.Drawing.Size(1170, 140);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(315, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 38);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Search:";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1230, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(279, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Adicionar Medicamento";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pSI20M_AfonsoAraujo_2220100DataSet1
-            // 
-            this.pSI20M_AfonsoAraujo_2220100DataSet1.DataSetName = "PSI20M_AfonsoAraujo_2220100DataSet1";
-            this.pSI20M_AfonsoAraujo_2220100DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.ExcludeSchema;
-            // 
-            // pSI20MAfonsoAraujo2220100DataSet1BindingSource
-            // 
-            this.pSI20MAfonsoAraujo2220100DataSet1BindingSource.DataSource = this.pSI20M_AfonsoAraujo_2220100DataSet1;
-            this.pSI20MAfonsoAraujo2220100DataSet1BindingSource.Position = 0;
             // 
             // Medicamentos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1946, 1106);
+            this.ClientSize = new System.Drawing.Size(1629, 719);
+            this.Controls.Add(this.btn_search);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textbox_searchbar);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(190, 0);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Medicamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Medicamentos";
             this.Load += new System.EventHandler(this.Medicamentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pSI20M_AfonsoAraujo_2220100DataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pSI20MAfonsoAraujo2220100DataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,10 +131,8 @@ namespace DLS_ALFEITE
         #endregion
 
         private System.Windows.Forms.TextBox textbox_searchbar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private PSI20M_AfonsoAraujo_2220100DataSet1 pSI20M_AfonsoAraujo_2220100DataSet1;
-        private System.Windows.Forms.BindingSource pSI20MAfonsoAraujo2220100DataSet1BindingSource;
+        private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

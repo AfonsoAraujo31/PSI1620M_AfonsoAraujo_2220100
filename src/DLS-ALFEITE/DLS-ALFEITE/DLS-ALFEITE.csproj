@@ -254,22 +254,6 @@
     <Compile Include="Medicamentos.Designer.cs">
       <DependentUpon>Medicamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="PSI20M_AfonsoAraujo_2220100DataSet.cs">
-      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PSI20M_AfonsoAraujo_2220100DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PSI20M_AfonsoAraujo_2220100DataSet1.cs">
-      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PSI20M_AfonsoAraujo_2220100DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Página_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,28 +297,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="PSI20M_AfonsoAraujo_2220100DataSet.xsc">
-      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="PSI20M_AfonsoAraujo_2220100DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PSI20M_AfonsoAraujo_2220100DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PSI20M_AfonsoAraujo_2220100DataSet.xss">
-      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="PSI20M_AfonsoAraujo_2220100DataSet1.xsc">
-      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="PSI20M_AfonsoAraujo_2220100DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PSI20M_AfonsoAraujo_2220100DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PSI20M_AfonsoAraujo_2220100DataSet1.xss">
-      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
