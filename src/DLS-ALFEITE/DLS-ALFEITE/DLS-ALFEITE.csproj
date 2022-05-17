@@ -52,9 +52,6 @@
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Data.SqlClient, Version=4.1.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Data.SqlClient.4.1.0\lib\net461\Microsoft.Data.SqlClient.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Extensions.Configuration, Version=6.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Configuration.6.0.1\lib\net461\Microsoft.Extensions.Configuration.dll</HintPath>
       <Private>True</Private>
@@ -257,6 +254,22 @@
     <Compile Include="Medicamentos.Designer.cs">
       <DependentUpon>Medicamentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="PSI20M_AfonsoAraujo_2220100DataSet.cs">
+      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PSI20M_AfonsoAraujo_2220100DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PSI20M_AfonsoAraujo_2220100DataSet1.cs">
+      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PSI20M_AfonsoAraujo_2220100DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Página_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +313,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="PSI20M_AfonsoAraujo_2220100DataSet.xsc">
+      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PSI20M_AfonsoAraujo_2220100DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PSI20M_AfonsoAraujo_2220100DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PSI20M_AfonsoAraujo_2220100DataSet.xss">
+      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PSI20M_AfonsoAraujo_2220100DataSet1.xsc">
+      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PSI20M_AfonsoAraujo_2220100DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PSI20M_AfonsoAraujo_2220100DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PSI20M_AfonsoAraujo_2220100DataSet1.xss">
+      <DependentUpon>PSI20M_AfonsoAraujo_2220100DataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
