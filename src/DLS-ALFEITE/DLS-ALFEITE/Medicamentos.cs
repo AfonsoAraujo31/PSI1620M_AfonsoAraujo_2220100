@@ -96,9 +96,12 @@ namespace DLS_ALFEITE
         }
         public void update()
         {
+            //dataGridView1.Columns[9].HeaderCell.Size.Width = "";
+            
+
             //eliminar
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            btn.HeaderText = "Ações";
+            btn.HeaderText = "";
             btn.Name = "btn_eliminar";
             btn.Text = "🗑";
             btn.UseColumnTextForButtonValue = true;
@@ -124,6 +127,20 @@ namespace DLS_ALFEITE
             btn3.Text = "➖";
             btn3.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(btn3);
+
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].Width = 100;
+            dataGridView1.Columns[2].Width = 80;
+            dataGridView1.Columns[3].Width = 50;
+            dataGridView1.Columns[4].Width = 50;
+            dataGridView1.Columns[5].Width = 110;
+            dataGridView1.Columns[6].Width = 180;
+            dataGridView1.Columns[7].Width = 100;
+            dataGridView1.Columns[9].Width = 30;
+            dataGridView1.Columns[10].Width = 30;
+            dataGridView1.Columns[11].Width = 30;
+            dataGridView1.Columns[12].Width = 30;
         }
     }
 }
