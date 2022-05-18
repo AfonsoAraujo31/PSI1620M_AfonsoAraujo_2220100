@@ -18,6 +18,7 @@ namespace DLS_ALFEITE
         public Adicionar_medicamento()
         {
             InitializeComponent();
+          
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -52,7 +53,6 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show(ex.Message);
             }
-        this.Refresh();
         }
     }
 }

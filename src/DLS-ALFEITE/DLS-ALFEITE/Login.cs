@@ -56,7 +56,7 @@ namespace DLS_ALFEITE
                     int count = ds.Tables[0].Rows.Count;
                     if (count == 1)
                     {
-                        new Página_Principal(textBox_username.Text).Show(); 
+                        new Página_Principal(textBox_username.Text).Show();
                         this.Hide();
                     }
                     else

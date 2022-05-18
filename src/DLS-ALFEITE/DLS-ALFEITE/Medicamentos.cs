@@ -19,6 +19,7 @@ namespace DLS_ALFEITE
         {
             InitializeComponent();
             StyleDatagridview();
+            
         }
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         private void Medicamentos_Load(object sender, EventArgs e)
@@ -79,15 +80,19 @@ namespace DLS_ALFEITE
             string mainconn = ConfigurationManager.ConnectionStrings["Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;"].ConnectionString;
             try
             {
-                SqlConnection sqlcon = new SqlConnection(mainconn);
-                sqlcon.Open();
-                string sqlquery = "select * from Medicamentos where Medicamentos = '" + textbox_searchbar.Text + "'";
-                SqlDataAdapter da = new SqlDataAdapter(sqlquery,sqlcon);
-                SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                var ds = new DataSet();
-                da.Fill(ds);
-                dataGridView1.DataSource = ds.Tables[0];
-                sqlcon.Close();
+                using (SqlConnection sqlCon = new SqlConnection(connection))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = sqlCon.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = $"SELECT denominacao FROM Medicamentos where nome = '%'";
+
+                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                    DataTable dtbl = new DataTable();
+                    adpt.Fill(dtbl);
+                    //method 1 - direct method
+                    dataGridView1.DataSource = dtbl;
+                }
             }
             catch (Exception ex)
             {
@@ -144,8 +149,9 @@ namespace DLS_ALFEITE
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_eliminar")
             {
-                MessageBox.Show("EAI GALERA");
-            }else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
+                
+            }
+            else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
             {
                 MessageBox.Show("QUÉ SABE UMA COISA?");
             }
@@ -165,7 +171,14 @@ namespace DLS_ALFEITE
         {
             Adicionar_medicamento frm_adicionar_medicamento = new Adicionar_medicamento();
             frm_adicionar_medicamento.Show();
-            frm_adicionar_medicamento.Refresh();
+        }
+        public void delete()
+        {
+            string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
+            //string query = "DELETE FROM Medicamentos WHERE denominacao ='"  "')";
+            SqlConnection sqlCon = new SqlConnection(connectionString);
+            //SqlCommand cmd = new SqlCommand(query, sqlCon);
+            SqlDataReader myreader;
         }
     }
 }
