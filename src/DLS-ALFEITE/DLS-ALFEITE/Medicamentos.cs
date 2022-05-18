@@ -96,9 +96,6 @@ namespace DLS_ALFEITE
         }
         public void update()
         {
-            //dataGridView1.Columns[9].HeaderCell.Size.Width = "";
-            
-
             //eliminar
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             btn.HeaderText = "";
@@ -127,7 +124,7 @@ namespace DLS_ALFEITE
             btn3.Text = "➖";
             btn3.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(btn3);
-
+            //tamanho das colunas
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.Columns[0].Width = 100;
             dataGridView1.Columns[1].Width = 100;
@@ -141,6 +138,34 @@ namespace DLS_ALFEITE
             dataGridView1.Columns[10].Width = 30;
             dataGridView1.Columns[11].Width = 30;
             dataGridView1.Columns[12].Width = 30;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_eliminar")
+            {
+                MessageBox.Show("EAI GALERA");
+            }else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
+            {
+                MessageBox.Show("QUÉ SABE UMA COISA?");
+            }
+            else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")
+            {
+                MessageBox.Show("A INÊS É MUITO MUITO");
+            }
+            else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
+            {
+                MessageBox.Show("GORDA");
+            }
+            else {
+                //MessageBox.Show("1");
+            }
+        }
+        private void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
+        {
+            Adicionar_medicamento frm_adicionar_medicamento = new Adicionar_medicamento();
+            frm_adicionar_medicamento.Show();
+            frm_adicionar_medicamento.Refresh();
         }
     }
 }
