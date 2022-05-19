@@ -19,14 +19,16 @@ namespace DLS_ALFEITE
         {
             InitializeComponent();
             StyleDatagridview();
-            
         }
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         private void Medicamentos_Load(object sender, EventArgs e)
         {
             try
             {
-                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
+                Int32 selectedCellCount = dataGridView1.getRowCount(DataGridViewElementStates.Selected);
+                if (selectedCellCount > 0)
+                {
+                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
@@ -77,22 +79,24 @@ namespace DLS_ALFEITE
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            string mainconn = ConfigurationManager.ConnectionStrings["Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;"].ConnectionString;
+            string mainconn = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
             try
             {
+                dataGridView1.Columns.Clear();
                 using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT denominacao FROM Medicamentos where nome = '%'";
+                    cmd.CommandText = $"SELECT denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text +"%'";
 
                     SqlDataAdapter adpt = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
                     adpt.Fill(dtbl);
-                    //method 1 - direct method
                     dataGridView1.DataSource = dtbl;
                 }
+                update();
+                
             }
             catch (Exception ex)
             {
@@ -149,19 +153,19 @@ namespace DLS_ALFEITE
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_eliminar")
             {
-                
+                delete();
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
             {
-                MessageBox.Show("QUÉ SABE UMA COISA?");
+                
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")
             {
-                MessageBox.Show("A INÊS É MUITO MUITO");
+                
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
             {
-                MessageBox.Show("GORDA");
+                
             }
             else {
                 //MessageBox.Show("1");
@@ -172,13 +176,57 @@ namespace DLS_ALFEITE
             Adicionar_medicamento frm_adicionar_medicamento = new Adicionar_medicamento();
             frm_adicionar_medicamento.Show();
         }
+
         public void delete()
         {
-            string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-            //string query = "DELETE FROM Medicamentos WHERE denominacao ='"  "')";
-            SqlConnection sqlCon = new SqlConnection(connectionString);
-            //SqlCommand cmd = new SqlCommand(query, sqlCon);
-            SqlDataReader myreader;
+            SqlConnection sqlCon = new SqlConnection(ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString);
+            SqlCommand cmd;
+            try
+            {
+                using (cmd = new SqlCommand("DELETE FROM Medicamentos WHERE denominacao = @deno",sqlCon))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@deno", dataGridView1.SelectedRows[0].Cells[1].Value);
+                    sqlCon.Open();
+                    cmd.ExecuteNonQuery();
+                    sqlCon.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void textbox_searchbar_TextChanged(object sender, EventArgs e)
+        {
+            if(textbox_searchbar.Text == "")
+            {
+                string mainconn = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
+                try
+                {
+                    dataGridView1.Columns.Clear();
+                    using (SqlConnection sqlCon = new SqlConnection(connection))
+                    {
+                        sqlCon.Open();
+                        SqlCommand cmd = sqlCon.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = $"SELECT denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text + "%'";
+
+                        SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                        DataTable dtbl = new DataTable();
+                        adpt.Fill(dtbl);
+                        dataGridView1.DataSource = dtbl;
+                    }
+                    update();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
+

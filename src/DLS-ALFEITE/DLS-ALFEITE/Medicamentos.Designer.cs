@@ -43,22 +43,23 @@ namespace DLS_ALFEITE
             this.textbox_searchbar.BackColor = System.Drawing.Color.White;
             this.textbox_searchbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_searchbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_searchbar.Location = new System.Drawing.Point(287, 30);
-            this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textbox_searchbar.Location = new System.Drawing.Point(215, 24);
+            this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_searchbar.Name = "textbox_searchbar";
-            this.textbox_searchbar.Size = new System.Drawing.Size(638, 24);
+            this.textbox_searchbar.Size = new System.Drawing.Size(479, 24);
             this.textbox_searchbar.TabIndex = 0;
             this.textbox_searchbar.Text = "Search...";
+            this.textbox_searchbar.TextChanged += new System.EventHandler(this.textbox_searchbar_TextChanged);
             this.textbox_searchbar.Enter += new System.EventHandler(this.textbox_searchbar_Enter);
             this.textbox_searchbar.Leave += new System.EventHandler(this.textbox_searchbar_Leave);
             // 
             // btn_adicionar_medicamentos
             // 
             this.btn_adicionar_medicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_adicionar_medicamentos.Location = new System.Drawing.Point(1072, 30);
-            this.btn_adicionar_medicamentos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_adicionar_medicamentos.Location = new System.Drawing.Point(804, 24);
+            this.btn_adicionar_medicamentos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_adicionar_medicamentos.Name = "btn_adicionar_medicamentos";
-            this.btn_adicionar_medicamentos.Size = new System.Drawing.Size(775, 30);
+            this.btn_adicionar_medicamentos.Size = new System.Drawing.Size(581, 24);
             this.btn_adicionar_medicamentos.TabIndex = 3;
             this.btn_adicionar_medicamentos.Text = "Adicionar Medicamento";
             this.btn_adicionar_medicamentos.UseVisualStyleBackColor = true;
@@ -67,10 +68,10 @@ namespace DLS_ALFEITE
             // btn_search
             // 
             this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_search.Location = new System.Drawing.Point(931, 30);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_search.Location = new System.Drawing.Point(698, 24);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(136, 30);
+            this.btn_search.Size = new System.Drawing.Size(102, 24);
             this.btn_search.TabIndex = 4;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
@@ -98,28 +99,28 @@ namespace DLS_ALFEITE
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(287, 71);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(215, 58);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1560, 801);
+            this.dataGridView1.Size = new System.Drawing.Size(1170, 651);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Medicamentos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1977, 885);
+            this.ClientSize = new System.Drawing.Size(1300, 601);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.btn_adicionar_medicamentos);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textbox_searchbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(190, 0);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Medicamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Medicamentos";
