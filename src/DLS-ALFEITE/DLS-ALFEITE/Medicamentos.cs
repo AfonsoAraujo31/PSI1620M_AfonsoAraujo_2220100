@@ -145,11 +145,16 @@ namespace DLS_ALFEITE
             dataGridView1.Columns[11].Width = 30;
             dataGridView1.Columns[12].Width = 30;
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        string nome = null;
+        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_eliminar")
             {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                    nome = row.Cells["Denominação"].Value.ToString();
+                }   
                 delete();
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
@@ -168,10 +173,9 @@ namespace DLS_ALFEITE
                 //MessageBox.Show("1");
             }
         }
-        private void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
+        public void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
         {
-            Adicionar_medicamento frm_adicionar_medicamento = new Adicionar_medicamento();
-            frm_adicionar_medicamento.Show();
+            new Adicionar_medicamento().Show();
         }
 
         public void delete()
@@ -180,10 +184,10 @@ namespace DLS_ALFEITE
             SqlCommand cmd;
             try
             {
-                using (cmd = new SqlCommand("DELETE FROM Medicamentos WHERE denominacao = @deno",sqlCon))
+                using (cmd = new SqlCommand("DELETE FROM Medicamentos WHERE denominacao = @deno", sqlCon))
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@deno", dataGridView1.SelectedRows[0].Cells[1].Value);
+                    cmd.Parameters.AddWithValue("@deno", nome);
                     sqlCon.Open();
                     cmd.ExecuteNonQuery();
                     sqlCon.Close();

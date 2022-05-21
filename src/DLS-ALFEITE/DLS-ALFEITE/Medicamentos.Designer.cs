@@ -35,6 +35,7 @@ namespace DLS_ALFEITE
             this.btn_adicionar_medicamentos = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +109,14 @@ namespace DLS_ALFEITE
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 177);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 5;
+            // 
             // Medicamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +127,7 @@ namespace DLS_ALFEITE
             this.Controls.Add(this.btn_adicionar_medicamentos);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textbox_searchbar);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(190, 0);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -137,5 +147,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.Button btn_adicionar_medicamentos;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
     }
 }
