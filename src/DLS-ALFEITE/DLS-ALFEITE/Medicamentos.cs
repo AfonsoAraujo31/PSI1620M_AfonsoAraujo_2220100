@@ -29,7 +29,7 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon = new SqlConnection(connectionString))
                     {
                         sqlCon.Open();
-                        SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos", sqlCon);
+                        SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos", sqlCon);
                         DataTable dtbl = new DataTable();
                         sqlDa.Fill(dtbl);
                         //method 1 - direct method
@@ -85,7 +85,7 @@ namespace DLS_ALFEITE
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text +"%'";
+                    cmd.CommandText = $"SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text +"%'";
 
                     SqlDataAdapter adpt = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
@@ -132,20 +132,30 @@ namespace DLS_ALFEITE
             dataGridView1.Columns.Add(btn3);
             //tamanho das colunas
             dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[0].Width = 25;
             dataGridView1.Columns[1].Width = 100;
-            dataGridView1.Columns[2].Width = 80;
-            dataGridView1.Columns[3].Width = 50;
+            dataGridView1.Columns[2].Width = 100;
+            dataGridView1.Columns[3].Width = 80;
             dataGridView1.Columns[4].Width = 50;
-            dataGridView1.Columns[5].Width = 110;
-            dataGridView1.Columns[6].Width = 180;
-            dataGridView1.Columns[7].Width = 100;
-            dataGridView1.Columns[9].Width = 30;
+            dataGridView1.Columns[5].Width = 50;
+            dataGridView1.Columns[6].Width = 110;
+            dataGridView1.Columns[7].Width = 180;
+            dataGridView1.Columns[9].Width = 100;
             dataGridView1.Columns[10].Width = 30;
             dataGridView1.Columns[11].Width = 30;
             dataGridView1.Columns[12].Width = 30;
+            dataGridView1.Columns[13].Width = 30;
         }
-        string nome = null;
+        string id = null;
+        string denominacao = null;
+        string principio_ativo = null;
+        string validade = null;
+        string lote = null;
+        string stock = null;
+        string fabricante = null;
+        string contacto_do_fabricante = null;
+        string observacoes = null;
+        string setor = null;
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_eliminar")
@@ -153,13 +163,32 @@ namespace DLS_ALFEITE
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    nome = row.Cells["Denominação"].Value.ToString();
+                    denominacao = row.Cells["Denominação"].Value.ToString();
                 }   
                 delete();
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
             {
-                
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                    id = row.Cells["Id"].Value.ToString();
+                }
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                    id = row.Cells["Id"].Value.ToString();
+                    denominacao = row.Cells["Denominação"].Value.ToString();
+                    principio_ativo = row.Cells["Princípio/Ativo"].Value.ToString();
+                    validade = row.Cells["Validade"].Value.ToString();
+                    lote = row.Cells["Lote"].Value.ToString();
+                    stock = row.Cells["stock"].Value.ToString();
+                    fabricante = row.Cells["Fabricante"].Value.ToString();
+                    contacto_do_fabricante = row.Cells["Contacto do Fabricante"].Value.ToString();
+                    observacoes = row.Cells["Observações"].Value.ToString();
+                    setor = row.Cells["Setor"].Value.ToString();
+                }
+                new Editar_medicamento(id,denominacao, principio_ativo, validade, lote, stock, fabricante, contacto_do_fabricante, observacoes, setor).Show();
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")
             {
@@ -187,7 +216,7 @@ namespace DLS_ALFEITE
                 using (cmd = new SqlCommand("DELETE FROM Medicamentos WHERE denominacao = @deno", sqlCon))
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@deno", nome);
+                    cmd.Parameters.AddWithValue("@deno", denominacao);
                     sqlCon.Open();
                     cmd.ExecuteNonQuery();
                     sqlCon.Close();
@@ -212,7 +241,7 @@ namespace DLS_ALFEITE
                         sqlCon.Open();
                         SqlCommand cmd = sqlCon.CreateCommand();
                         cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = $"SELECT denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text + "%'";
+                        cmd.CommandText = $"SELECT id  as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text + "%'";
 
                         SqlDataAdapter adpt = new SqlDataAdapter(cmd);
                         DataTable dtbl = new DataTable();
@@ -228,6 +257,7 @@ namespace DLS_ALFEITE
                 }
             }
         }
+        
     }
 }
 

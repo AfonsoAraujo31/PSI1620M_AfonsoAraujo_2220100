@@ -20,14 +20,22 @@ namespace DLS_ALFEITE
             label_username.Text = value;
             DateTime today = DateTime.Today;
             label_data.Text = today.ToString("dd/MM/yyyy");
-        }
-        private void Página_Principal_Load(object sender, EventArgs e)
-        {
             frm_home = new Home();
             frm_home.MdiParent = this;
             frm_home.FormClosed += new FormClosedEventHandler(frm_homeFormClosed);
             frm_home.Show();
+            frm_home.Dock = DockStyle.Fill;
+            btnsetcolor(btn_main);
         }
+        private void btnsetcolor(Button btn)
+        {
+            btn_main.BackColor = Color.Transparent;
+            btn_medicamento.BackColor = Color.Transparent;
+            btn_equipamento.BackColor = Color.Transparent;
+            btn_inflamavel.BackColor = Color.Transparent;
+            btn.BackColor = Color.Yellow;
+        }
+
         private void btnclose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -38,6 +46,7 @@ namespace DLS_ALFEITE
         }
         private void btn_medicamento_Click(object sender, EventArgs e)
         {
+            btnsetcolor(btn_medicamento);
             try
             {
                 if (frm_med == null)
@@ -69,6 +78,7 @@ namespace DLS_ALFEITE
 
         private void btn_main_Click(object sender, EventArgs e)
         {
+            btnsetcolor(btn_main);
             try
             {
                 if (frm_home == null)
