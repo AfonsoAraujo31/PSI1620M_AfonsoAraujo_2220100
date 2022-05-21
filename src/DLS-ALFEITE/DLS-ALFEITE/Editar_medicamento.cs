@@ -19,12 +19,7 @@ namespace DLS_ALFEITE
         public Editar_medicamento(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9)
         {
             InitializeComponent();
-            int id1 = Int32.Parse(id);
-            if (Int32.TryParse(id, out id1))
-            {
-                // you know that the parsing attempt
-                // was successful
-            }
+            id1 = Convert.ToInt32(id);
             txb_denominacao.Text = value;
             txb_principio_ativo.Text = value2;
             txb_validade.Text = value3;
@@ -51,7 +46,7 @@ namespace DLS_ALFEITE
             try
             {
                 string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                string query = "UPDATE Medicamentos SET denominacao = '" + this.txb_denominacao.Text + "',principio_ativo = '" + this.txb_principio_ativo.Text + "',validade = '" + this.txb_validade.Text + "', lote = '" + this.txb_lote.Text + "',quantidade = '" + this.txb_quantidade.Text + "',fabricante = '" + this.txb_fabricante.Text + "',email_tel_fabricante = '" + this.txb_contacto_fabricante.Text + "',setor = '" + this.txb_observacoes.Text + "' ,observacoes = '" + this.txb_setor.Text + "' WHERE id = @id1 ";
+                string query = "UPDATE Medicamentos SET denominacao = '" + this.txb_denominacao.Text + "',principio_ativo = '" + this.txb_principio_ativo.Text + "',validade = '" + this.txb_validade.Text + "', lote = '" + this.txb_lote.Text + "',quantidade = '" + this.txb_quantidade.Text + "',fabricante = '" + this.txb_fabricante.Text + "',email_tel_fabricante = '" + this.txb_contacto_fabricante.Text + "',setor = '" + this.txb_observacoes.Text + "' ,observacoes = '" + this.txb_setor.Text + "' WHERE id = @id ";
                 SqlConnection sqlCon = new SqlConnection(connectionString);
                 SqlCommand cmd = new SqlCommand(query, sqlCon);
                 cmd.Parameters.AddWithValue("@id", id1);
