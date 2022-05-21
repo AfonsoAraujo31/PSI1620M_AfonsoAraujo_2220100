@@ -25,19 +25,16 @@ namespace DLS_ALFEITE
         {
             try
             {
-                Int32 selectedCellCount = dataGridView1.getRowCount(DataGridViewElementStates.Selected);
-                if (selectedCellCount > 0)
-                {
                     string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                {
-                    sqlCon.Open();
-                    SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos", sqlCon);
-                    DataTable dtbl = new DataTable();
-                    sqlDa.Fill(dtbl);
-                    //method 1 - direct method
-                    dataGridView1.DataSource = dtbl;
-                }
+                    using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                    {
+                        sqlCon.Open();
+                        SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos", sqlCon);
+                        DataTable dtbl = new DataTable();
+                        sqlDa.Fill(dtbl);
+                        //method 1 - direct method
+                        dataGridView1.DataSource = dtbl;
+                    }
             }
             catch (Exception ex)
             {
