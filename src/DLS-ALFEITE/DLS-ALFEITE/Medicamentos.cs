@@ -26,15 +26,22 @@ namespace DLS_ALFEITE
             try
             {
                     string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                    using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                    using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
                     {
-                        sqlCon.Open();
-                        SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos", sqlCon);
+                        sqlCon1.Open();
+                        SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos", sqlCon1);
                         DataTable dtbl = new DataTable();
                         sqlDa.Fill(dtbl);
                         //method 1 - direct method
                         dataGridView1.DataSource = dtbl;
                     }
+               
+                    SqlConnection sqlCon = new SqlConnection(connectionString);
+                    string query = "select denominacao, MIN(validade) from Medicamentos group by denominacao";
+                    SqlCommand cmd = new SqlCommand(query, sqlCon);
+                    SqlDataReader myreader;
+                     MessageBox.Show(query);
+                    
             }
             catch (Exception ex)
             {
@@ -42,6 +49,7 @@ namespace DLS_ALFEITE
             }
             update();
         }
+       
         void StyleDatagridview()
         {
             dataGridView1.BorderStyle = BorderStyle.None;
@@ -209,7 +217,20 @@ namespace DLS_ALFEITE
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
             {
-                
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                    id = row.Cells["Id"].Value.ToString();
+                }
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                    id = row.Cells["Id"].Value.ToString();
+                    denominacao = row.Cells["Denominação"].Value.ToString();
+                    principio_ativo = row.Cells["Princípio/Ativo"].Value.ToString();
+                    lote = row.Cells["Lote"].Value.ToString();
+                }
+                new Fornecimento_medicamento(id, denominacao, principio_ativo, lote).Show();
             }
             else {
                 //MessageBox.Show("1");
