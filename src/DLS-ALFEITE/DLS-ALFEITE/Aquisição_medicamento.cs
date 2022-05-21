@@ -13,11 +13,16 @@ using System.Runtime.InteropServices;
 
 namespace DLS_ALFEITE
 {
-    public partial class Adicionar_medicamento : Form
+    public partial class Aquisição_medicamento : Form
     {
-        public Adicionar_medicamento()
+        int id1 = 0;
+        public Aquisição_medicamento(string id, string value1, string value2, string value3)
         {
             InitializeComponent();
+            id1 = Convert.ToInt32(id);
+            txb_denominacao.Text = value1;
+            txb_principio_ativo.Text = value2;
+            txb_lote.Text = value3;
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -35,7 +40,7 @@ namespace DLS_ALFEITE
             try
             {
                 string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                string query = "insert into Medicamentos(denominacao,principio_ativo,validade,lote,quantidade,fabricante,email_tel_fabricante,setor,observacoes) VALUES('"+this.txb_denominacao.Text+"','"+this.txb_principio_ativo.Text+"','"+this.txb_validade.Text+ "','" + this.txb_lote.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_fabricante.Text + "','" + this.txb_contacto_fabricante.Text + "','" + this.txb_setor.Text + "','" + this.txb_observacoes.Text + "' )";
+                string query = "insert into Aquisição_medicamento(id_aquisicao,data_limite_rececao,quantidade_aquisicao,entidade,motivo) VALUES( "+ id1 +", '" + this.txb_data_rececao.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_motivo.Text + "')";
                 SqlConnection sqlCon = new SqlConnection(connectionString);
                 SqlCommand cmd = new SqlCommand(query, sqlCon);
                 SqlDataReader myreader;

@@ -64,7 +64,7 @@
             this.panel5.Controls.Add(this.btnclose);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(750, 29);
             this.panel5.TabIndex = 6;
@@ -91,7 +91,7 @@
             this.btn_min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_min.Image = ((System.Drawing.Image)(resources.GetObject("btn_min.Image")));
             this.btn_min.Location = new System.Drawing.Point(662, -3);
-            this.btn_min.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_min.Margin = new System.Windows.Forms.Padding(2);
             this.btn_min.Name = "btn_min";
             this.btn_min.Size = new System.Drawing.Size(50, 33);
             this.btn_min.TabIndex = 8;
@@ -108,7 +108,7 @@
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
             this.btnclose.Location = new System.Drawing.Point(702, -3);
-            this.btnclose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(2);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(50, 33);
             this.btnclose.TabIndex = 6;
@@ -154,7 +154,7 @@
             // txb_denominacao
             // 
             this.txb_denominacao.Location = new System.Drawing.Point(46, 82);
-            this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2);
             this.txb_denominacao.Name = "txb_denominacao";
             this.txb_denominacao.Size = new System.Drawing.Size(169, 20);
             this.txb_denominacao.TabIndex = 10;
@@ -162,7 +162,7 @@
             // txb_principio_ativo
             // 
             this.txb_principio_ativo.Location = new System.Drawing.Point(298, 82);
-            this.txb_principio_ativo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_principio_ativo.Margin = new System.Windows.Forms.Padding(2);
             this.txb_principio_ativo.Name = "txb_principio_ativo";
             this.txb_principio_ativo.Size = new System.Drawing.Size(169, 20);
             this.txb_principio_ativo.TabIndex = 11;
@@ -170,7 +170,7 @@
             // txb_validade
             // 
             this.txb_validade.Location = new System.Drawing.Point(536, 82);
-            this.txb_validade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_validade.Margin = new System.Windows.Forms.Padding(2);
             this.txb_validade.Name = "txb_validade";
             this.txb_validade.Size = new System.Drawing.Size(169, 20);
             this.txb_validade.TabIndex = 12;
@@ -178,7 +178,7 @@
             // txb_lote
             // 
             this.txb_lote.Location = new System.Drawing.Point(46, 164);
-            this.txb_lote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_lote.Margin = new System.Windows.Forms.Padding(2);
             this.txb_lote.Name = "txb_lote";
             this.txb_lote.Size = new System.Drawing.Size(169, 20);
             this.txb_lote.TabIndex = 14;
@@ -198,7 +198,7 @@
             // txb_quantidade
             // 
             this.txb_quantidade.Location = new System.Drawing.Point(298, 164);
-            this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txb_quantidade.Name = "txb_quantidade";
             this.txb_quantidade.Size = new System.Drawing.Size(169, 20);
             this.txb_quantidade.TabIndex = 16;
@@ -218,7 +218,7 @@
             // txb_setor
             // 
             this.txb_setor.Location = new System.Drawing.Point(536, 164);
-            this.txb_setor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_setor.Margin = new System.Windows.Forms.Padding(2);
             this.txb_setor.Name = "txb_setor";
             this.txb_setor.Size = new System.Drawing.Size(169, 20);
             this.txb_setor.TabIndex = 18;
@@ -238,7 +238,7 @@
             // txb_fabricante
             // 
             this.txb_fabricante.Location = new System.Drawing.Point(46, 245);
-            this.txb_fabricante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_fabricante.Margin = new System.Windows.Forms.Padding(2);
             this.txb_fabricante.Name = "txb_fabricante";
             this.txb_fabricante.Size = new System.Drawing.Size(307, 20);
             this.txb_fabricante.TabIndex = 20;
@@ -258,7 +258,7 @@
             // txb_contacto_fabricante
             // 
             this.txb_contacto_fabricante.Location = new System.Drawing.Point(398, 245);
-            this.txb_contacto_fabricante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_contacto_fabricante.Margin = new System.Windows.Forms.Padding(2);
             this.txb_contacto_fabricante.Name = "txb_contacto_fabricante";
             this.txb_contacto_fabricante.Size = new System.Drawing.Size(307, 20);
             this.txb_contacto_fabricante.TabIndex = 22;
@@ -290,7 +290,7 @@
             // txb_observacoes
             // 
             this.txb_observacoes.Location = new System.Drawing.Point(46, 327);
-            this.txb_observacoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_observacoes.Margin = new System.Windows.Forms.Padding(2);
             this.txb_observacoes.Multiline = true;
             this.txb_observacoes.Name = "txb_observacoes";
             this.txb_observacoes.Size = new System.Drawing.Size(659, 140);
@@ -298,8 +298,8 @@
             // 
             // btn_guardar
             // 
-            this.btn_guardar.Location = new System.Drawing.Point(624, 496);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_guardar.Location = new System.Drawing.Point(623, 496);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(56, 19);
             this.btn_guardar.TabIndex = 25;
@@ -309,13 +309,14 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(685, 496);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(683, 496);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 19);
+            this.button2.Size = new System.Drawing.Size(58, 19);
             this.button2.TabIndex = 26;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Adicionar_medicamento
             // 
@@ -345,7 +346,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Adicionar_medicamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar_medicamento";

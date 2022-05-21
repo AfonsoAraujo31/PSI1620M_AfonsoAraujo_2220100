@@ -236,6 +236,12 @@
     <Compile Include="Adicionar_medicamento.Designer.cs">
       <DependentUpon>Adicionar_medicamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aquisição_medicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aquisição_medicamento.Designer.cs">
+      <DependentUpon>Aquisição_medicamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editar_medicamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,11 +283,11 @@
     <EmbeddedResource Include="Adicionar_medicamento.resx">
       <DependentUpon>Adicionar_medicamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Aquisição_medicamento.resx">
+      <DependentUpon>Aquisição_medicamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editar_medicamento.resx">
       <DependentUpon>Editar_medicamento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

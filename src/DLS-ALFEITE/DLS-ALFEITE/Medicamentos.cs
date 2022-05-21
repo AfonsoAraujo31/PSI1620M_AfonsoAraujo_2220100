@@ -138,9 +138,9 @@ namespace DLS_ALFEITE
             dataGridView1.Columns[3].Width = 80;
             dataGridView1.Columns[4].Width = 50;
             dataGridView1.Columns[5].Width = 50;
-            dataGridView1.Columns[6].Width = 110;
-            dataGridView1.Columns[7].Width = 180;
-            dataGridView1.Columns[9].Width = 100;
+            dataGridView1.Columns[6].Width = 80;
+            dataGridView1.Columns[7].Width = 160;
+            dataGridView1.Columns[9].Width = 160;
             dataGridView1.Columns[10].Width = 30;
             dataGridView1.Columns[11].Width = 30;
             dataGridView1.Columns[12].Width = 30;
@@ -192,7 +192,20 @@ namespace DLS_ALFEITE
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")
             {
-                
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                    id = row.Cells["Id"].Value.ToString();
+                }
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                    id = row.Cells["Id"].Value.ToString();
+                    denominacao = row.Cells["Denominação"].Value.ToString();
+                    principio_ativo = row.Cells["Princípio/Ativo"].Value.ToString();
+                    lote = row.Cells["Lote"].Value.ToString();
+                }
+                new Aquisição_medicamento(id, denominacao, principio_ativo, lote).Show();
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
             {

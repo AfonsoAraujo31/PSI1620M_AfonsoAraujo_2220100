@@ -113,7 +113,7 @@ namespace DLS_ALFEITE
             this.btn_inflamavel.ForeColor = System.Drawing.Color.White;
             this.btn_inflamavel.Image = ((System.Drawing.Image)(resources.GetObject("btn_inflamavel.Image")));
             this.btn_inflamavel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inflamavel.Location = new System.Drawing.Point(0, 300);
+            this.btn_inflamavel.Location = new System.Drawing.Point(0, 291);
             this.btn_inflamavel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_inflamavel.Name = "btn_inflamavel";
             this.btn_inflamavel.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -130,7 +130,7 @@ namespace DLS_ALFEITE
             this.btn_equipamento.ForeColor = System.Drawing.Color.White;
             this.btn_equipamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_equipamento.Image")));
             this.btn_equipamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_equipamento.Location = new System.Drawing.Point(-1, 246);
+            this.btn_equipamento.Location = new System.Drawing.Point(-1, 237);
             this.btn_equipamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_equipamento.Name = "btn_equipamento";
             this.btn_equipamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -147,7 +147,7 @@ namespace DLS_ALFEITE
             this.btn_medicamento.ForeColor = System.Drawing.Color.White;
             this.btn_medicamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_medicamento.Image")));
             this.btn_medicamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_medicamento.Location = new System.Drawing.Point(-1, 188);
+            this.btn_medicamento.Location = new System.Drawing.Point(-1, 184);
             this.btn_medicamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_medicamento.Name = "btn_medicamento";
             this.btn_medicamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
