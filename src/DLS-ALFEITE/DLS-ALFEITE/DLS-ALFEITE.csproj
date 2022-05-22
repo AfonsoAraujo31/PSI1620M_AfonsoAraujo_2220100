@@ -248,6 +248,12 @@
     <Compile Include="Editar_medicamento.Designer.cs">
       <DependentUpon>Editar_medicamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Equipamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipamentos.Designer.cs">
+      <DependentUpon>Equipamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fornecimento_medicamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editar_medicamento.resx">
       <DependentUpon>Editar_medicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipamentos.resx">
+      <DependentUpon>Equipamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fornecimento_medicamento.resx">
       <DependentUpon>Fornecimento_medicamento.cs</DependentUpon>

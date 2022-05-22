@@ -29,19 +29,58 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
                     {
                         sqlCon1.Open();
-                        SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos", sqlCon1);
-                        DataTable dtbl = new DataTable();
-                        sqlDa.Fill(dtbl);
+                        SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos", sqlCon1);
+                        DataTable dtbl1 = new DataTable();
+                        sqlDa1.Fill(dtbl1);
                         //method 1 - direct method
-                        dataGridView1.DataSource = dtbl;
+                        dataGridView1.DataSource = dtbl1;
+                        sqlCon1.Close();
                     }
-               
+                    //listbox1
+                    string Query = "SELECT TOP 4 denominacao, validade FROM Medicamentos ORDER BY validade ASC";
                     SqlConnection sqlCon = new SqlConnection(connectionString);
-                    string query = "select denominacao, MIN(validade) from Medicamentos group by denominacao";
-                    SqlCommand cmd = new SqlCommand(query, sqlCon);
-                    SqlDataReader myreader;
-                     MessageBox.Show(query);
-                    
+                    SqlCommand cmd = new SqlCommand(Query, sqlCon);
+                    SqlDataReader myReader;
+                    try
+                    {
+                        sqlCon.Open();
+                        using (myReader = cmd.ExecuteReader())
+                        {
+                            while (myReader.Read())
+                            {
+                                
+                                listBox1.Items.Add(string.Format("{0} ➡️ {1}", myReader["denominacao"].ToString(), myReader["validade"].ToString()));
+                        }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                    }
+                    //listbox2
+                    string Query2 = "SELECT denominacao, quantidade FROM Medicamentos WHERE quantidade <= 150";
+                    SqlConnection sqlCon2 = new SqlConnection(connectionString);
+                    SqlCommand cmd2 = new SqlCommand(Query2, sqlCon2);
+                    SqlDataReader myReader2;
+                    try
+                    {
+                        sqlCon2.Open();
+                        using (myReader2 = cmd2.ExecuteReader())
+                        {
+                            while (myReader2.Read())
+                            {
+
+                                listBox2.Items.Add(string.Format("{0} ➡️ {1}", myReader2["denominacao"].ToString(), myReader2["quantidade"].ToString()));
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                    }
+                
             }
             catch (Exception ex)
             {
@@ -171,9 +210,20 @@ namespace DLS_ALFEITE
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    denominacao = row.Cells["Denominação"].Value.ToString();
+                    id = row.Cells["Id"].Value.ToString();
                 }   
                 delete();
+                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
+                using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
+                {
+                    sqlCon1.Open();
+                    SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos", sqlCon1);
+                    DataTable dtbl1 = new DataTable();
+                    sqlDa1.Fill(dtbl1);
+                    //method 1 - direct method
+                    dataGridView1.DataSource = dtbl1;
+                    sqlCon1.Close();
+                }
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
             {
@@ -239,6 +289,7 @@ namespace DLS_ALFEITE
         public void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
         {
             new Adicionar_medicamento().Show();
+            
         }
 
         public void delete()
@@ -247,10 +298,10 @@ namespace DLS_ALFEITE
             SqlCommand cmd;
             try
             {
-                using (cmd = new SqlCommand("DELETE FROM Medicamentos WHERE denominacao = @deno", sqlCon))
+                using (cmd = new SqlCommand("DELETE FROM Medicamentos WHERE id = @id", sqlCon))
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@deno", denominacao);
+                    cmd.Parameters.AddWithValue("@id", id);
                     sqlCon.Open();
                     cmd.ExecuteNonQuery();
                     sqlCon.Close();
@@ -291,7 +342,6 @@ namespace DLS_ALFEITE
                 }
             }
         }
-        
     }
 }
 

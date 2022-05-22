@@ -12,6 +12,7 @@ namespace DLS_ALFEITE
 {
     public partial class Página_Principal : Form
     {
+        Equipamentos frm_equip;
         Medicamentos frm_med;
         Home frm_home;
         public Página_Principal(string value)
@@ -108,6 +109,35 @@ namespace DLS_ALFEITE
         void frm_homeFormClosed(object sender, FormClosedEventArgs e)
         {
             frm_home = null;
+        }
+
+        private void btn_equipamento_Click(object sender, EventArgs e)
+        {
+            btnsetcolor(btn_equipamento);
+            try
+            {
+                if (frm_equip == null)
+                {
+                    frm_equip = new Equipamentos();
+                    frm_equip.MdiParent = this;
+                    frm_equip.FormClosed += new FormClosedEventHandler(frm_homeFormClosed);
+                    frm_equip.Show();
+                    frm_equip.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    frm_equip.Close();
+                    frm_equip = new Equipamentos();
+                    frm_equip.MdiParent = this;
+                    frm_equip.FormClosed += new FormClosedEventHandler(frm_homeFormClosed);
+                    frm_equip.Show();
+                    frm_equip.Dock = DockStyle.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

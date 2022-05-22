@@ -40,7 +40,7 @@ namespace DLS_ALFEITE
             try
             {
                 string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                string query = "insert into fornecimento_medicamento(id_fornecimento,data_fornecimento,data_entrega,quantidade_fornecimento,entidade,observacoes) VALUES( " + id1 + ", '" + this.txb_data_fornecimento.Text + "','" + this.txb_data_prevista_entrega.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_lote.Text + "')";
+                string query = "insert into fornecimento_medicamento(id_fornecimento,data_fornecimento,data_entrega,quantidade_fornecimento,entidade,observacoes) VALUES( " + id1 + ", '" + this.txb_data_fornecimento.Text + "','" + this.txb_data_prevista_entrega.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_observacoes.Text + "')";
                 SqlConnection sqlCon = new SqlConnection(connectionString);
                 SqlCommand cmd = new SqlCommand(query, sqlCon);
                 SqlDataReader myreader;
