@@ -31,9 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
-            this.btn_search = new System.Windows.Forms.Button();
             this.btn_adicionar_medicamentos = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_search = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,17 +48,8 @@
             this.textbox_searchbar.Size = new System.Drawing.Size(682, 24);
             this.textbox_searchbar.TabIndex = 1;
             this.textbox_searchbar.Text = "Search...";
-            // 
-            // btn_search
-            // 
-            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_search.Location = new System.Drawing.Point(975, 30);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(163, 30);
-            this.btn_search.TabIndex = 6;
-            this.btn_search.Text = "Search";
-            this.btn_search.UseVisualStyleBackColor = true;
+            this.textbox_searchbar.Enter += new System.EventHandler(this.textbox_searchbar_Enter);
+            this.textbox_searchbar.Leave += new System.EventHandler(this.textbox_searchbar_Leave);
             // 
             // btn_adicionar_medicamentos
             // 
@@ -68,8 +59,9 @@
             this.btn_adicionar_medicamentos.Name = "btn_adicionar_medicamentos";
             this.btn_adicionar_medicamentos.Size = new System.Drawing.Size(868, 30);
             this.btn_adicionar_medicamentos.TabIndex = 5;
-            this.btn_adicionar_medicamentos.Text = "Adicionar Medicamento";
+            this.btn_adicionar_medicamentos.Text = "Adicionar Equipamento";
             this.btn_adicionar_medicamentos.UseVisualStyleBackColor = true;
+            this.btn_adicionar_medicamentos.Click += new System.EventHandler(this.btn_adicionar_medicamentos_Click);
             // 
             // dataGridView1
             // 
@@ -100,6 +92,19 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1724, 1069);
             this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Location = new System.Drawing.Point(975, 30);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(163, 30);
+            this.btn_search.TabIndex = 6;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Equipamentos
             // 
@@ -114,6 +119,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Equipamentos";
             this.Text = "Equipamentos";
+            this.Load += new System.EventHandler(this.Equipamentos_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -123,8 +129,8 @@
         #endregion
 
         private System.Windows.Forms.TextBox textbox_searchbar;
-        private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Button btn_adicionar_medicamentos;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_search;
     }
 }

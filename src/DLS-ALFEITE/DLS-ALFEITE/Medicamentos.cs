@@ -120,33 +120,6 @@ namespace DLS_ALFEITE
                 textbox_searchbar.Text = "Search...";
             }
         }
-
-        private void btn_search_Click(object sender, EventArgs e)
-        {
-            string mainconn = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
-            try
-            {
-                dataGridView1.Columns.Clear();
-                using (SqlConnection sqlCon = new SqlConnection(connection))
-                {
-                    sqlCon.Open();
-                    SqlCommand cmd = sqlCon.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text +"%'";
-
-                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
-                    DataTable dtbl = new DataTable();
-                    adpt.Fill(dtbl);
-                    dataGridView1.DataSource = dtbl;
-                }
-                update();
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
         public void update()
         {
             //eliminar
@@ -289,7 +262,6 @@ namespace DLS_ALFEITE
         public void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
         {
             new Adicionar_medicamento().Show();
-            
         }
 
         public void delete()
@@ -312,34 +284,29 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void textbox_searchbar_TextChanged(object sender, EventArgs e)
+        private void btn_search_Click(object sender, EventArgs e)
         {
-            if(textbox_searchbar.Text == "")
+            string mainconn = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
+            try
             {
-                string mainconn = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
-                try
+                dataGridView1.Columns.Clear();
+                using (SqlConnection sqlCon = new SqlConnection(mainconn))
                 {
-                    dataGridView1.Columns.Clear();
-                    using (SqlConnection sqlCon = new SqlConnection(connection))
-                    {
-                        sqlCon.Open();
-                        SqlCommand cmd = sqlCon.CreateCommand();
-                        cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = $"SELECT id  as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text + "%'";
+                    sqlCon.Open();
+                    SqlCommand cmd = sqlCon.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = $"SELECT id  as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text + "%'";
 
-                        SqlDataAdapter adpt = new SqlDataAdapter(cmd);
-                        DataTable dtbl = new DataTable();
-                        adpt.Fill(dtbl);
-                        dataGridView1.DataSource = dtbl;
-                    }
-                    update();
-
+                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                    DataTable dtbl = new DataTable();
+                    adpt.Fill(dtbl);
+                    dataGridView1.DataSource = dtbl;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                update();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

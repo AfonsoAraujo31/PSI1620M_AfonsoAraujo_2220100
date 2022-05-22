@@ -230,6 +230,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adicionar_equipamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar_equipamento.Designer.cs">
+      <DependentUpon>Adicionar_equipamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adicionar_medicamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,12 @@
     </Compile>
     <Compile Include="Aquisição_medicamento.Designer.cs">
       <DependentUpon>Aquisição_medicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar_equipamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar_equipamento.Designer.cs">
+      <DependentUpon>Editar_equipamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Editar_medicamento.cs">
       <SubType>Form</SubType>
@@ -292,11 +304,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Adicionar_equipamento.resx">
+      <DependentUpon>Adicionar_equipamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Adicionar_medicamento.resx">
       <DependentUpon>Adicionar_medicamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Aquisição_medicamento.resx">
       <DependentUpon>Aquisição_medicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar_equipamento.resx">
+      <DependentUpon>Editar_equipamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editar_medicamento.resx">
       <DependentUpon>Editar_medicamento.cs</DependentUpon>
