@@ -242,6 +242,12 @@
     <Compile Include="Adicionar_medicamento.Designer.cs">
       <DependentUpon>Adicionar_medicamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aquisição_equipamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aquisição_equipamento.Designer.cs">
+      <DependentUpon>Aquisição_equipamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Aquisição_medicamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +271,12 @@
     </Compile>
     <Compile Include="Equipamentos.Designer.cs">
       <DependentUpon>Equipamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecimento_equipamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecimento_equipamento.Designer.cs">
+      <DependentUpon>Fornecimento_equipamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Fornecimento_medicamento.cs">
       <SubType>Form</SubType>
@@ -310,6 +322,9 @@
     <EmbeddedResource Include="Adicionar_medicamento.resx">
       <DependentUpon>Adicionar_medicamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Aquisição_equipamento.resx">
+      <DependentUpon>Aquisição_equipamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Aquisição_medicamento.resx">
       <DependentUpon>Aquisição_medicamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Equipamentos.resx">
       <DependentUpon>Equipamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecimento_equipamento.resx">
+      <DependentUpon>Fornecimento_equipamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fornecimento_medicamento.resx">
       <DependentUpon>Fornecimento_medicamento.cs</DependentUpon>
