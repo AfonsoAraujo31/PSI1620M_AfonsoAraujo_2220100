@@ -19,6 +19,7 @@ namespace DLS_ALFEITE
         {
             InitializeComponent();
             StyleDatagridview();
+            this.ActiveControl = label1;
         }
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         private void Medicamentos_Load(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
                     {
                         sqlCon1.Open();
-                        SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos", sqlCon1);
+                        SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos", sqlCon1);
                         DataTable dtbl1 = new DataTable();
                         sqlDa1.Fill(dtbl1);
                         //method 1 - direct method
@@ -118,6 +119,23 @@ namespace DLS_ALFEITE
             if (textbox_searchbar.Text == "")
             {
                 textbox_searchbar.Text = "Search...";
+                try
+                {
+                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
+                    using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
+                    {
+                        sqlCon1.Open();
+                        SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos", sqlCon1);
+                        DataTable dtbl1 = new DataTable();
+                        sqlDa1.Fill(dtbl1);
+                        //method 1 - direct method
+                        dataGridView1.DataSource = dtbl1;
+                        sqlCon1.Close();
+                    }
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                } 
             }
         }
         public void update()
@@ -159,7 +177,8 @@ namespace DLS_ALFEITE
             dataGridView1.Columns[4].Width = 50;
             dataGridView1.Columns[5].Width = 50;
             dataGridView1.Columns[6].Width = 80;
-            dataGridView1.Columns[7].Width = 160;
+            dataGridView1.Columns[7].Width = 130;
+            dataGridView1.Columns[8].Width = 40;
             dataGridView1.Columns[9].Width = 160;
             dataGridView1.Columns[10].Width = 30;
             dataGridView1.Columns[11].Width = 30;
@@ -190,7 +209,7 @@ namespace DLS_ALFEITE
                 using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
                 {
                     sqlCon1.Open();
-                    SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos", sqlCon1);
+                    SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos", sqlCon1);
                     DataTable dtbl1 = new DataTable();
                     sqlDa1.Fill(dtbl1);
                     //method 1 - direct method
@@ -266,17 +285,17 @@ namespace DLS_ALFEITE
 
         public void delete()
         {
-            SqlConnection sqlCon = new SqlConnection(ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString);
-            SqlCommand cmd;
+            SqlConnection sqlCon1 = new SqlConnection(ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString);
+            SqlCommand cmd1;
             try
             {
-                using (cmd = new SqlCommand("DELETE FROM Medicamentos WHERE id = @id", sqlCon))
+                using (cmd1 = new SqlCommand("DELETE FROM Medicamentos WHERE id = @id", sqlCon1))
                 {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@id", id);
-                    sqlCon.Open();
-                    cmd.ExecuteNonQuery();
-                    sqlCon.Close();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.Parameters.AddWithValue("@id", id);
+                    sqlCon1.Open();
+                    cmd1.ExecuteNonQuery();
+                    sqlCon1.Close();
                 }
             }
             catch (Exception ex)
@@ -284,7 +303,7 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
         }
-        private void btn_search_Click(object sender, EventArgs e)
+        private void textbox_searchbar_TextChanged(object sender, EventArgs e)
         {
             string mainconn = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
             try
@@ -295,7 +314,7 @@ namespace DLS_ALFEITE
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id  as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text + "%'";
+                    cmd.CommandText = $"SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text + "%'";
 
                     SqlDataAdapter adpt = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();

@@ -19,6 +19,7 @@ namespace DLS_ALFEITE
         {
             InitializeComponent();
             StyleDatagridview();
+            this.ActiveControl = label2;
         }
         private void Equipamentos_Load_1(object sender, EventArgs e)
         {
@@ -35,8 +36,8 @@ namespace DLS_ALFEITE
                     dataGridView1.DataSource = dtbl1;
                     sqlCon1.Close();
                 }
-                /* //listbox1
-                string Query = "SELECT TOP 4 denominacao, validade FROM Medicamentos ORDER BY validade ASC";
+                //listbox1
+                string Query = "SELECT TOP 4 denominacao, quantidade FROM Equipamentos WHERE quantidade <= 20 ORDER BY quantidade ASC";
                 SqlConnection sqlCon = new SqlConnection(connectionString);
                 SqlCommand cmd = new SqlCommand(Query, sqlCon);
                 SqlDataReader myReader;
@@ -47,8 +48,7 @@ namespace DLS_ALFEITE
                     {
                         while (myReader.Read())
                         {
-
-                            listBox1.Items.Add(string.Format("{0} ➡️ {1}", myReader["denominacao"].ToString(), myReader["validade"].ToString()));
+                            listBox1.Items.Add(string.Format("{0} ➡️ {1}", myReader["denominacao"].ToString(), myReader["quantidade"].ToString()));
                         }
                     }
                 }
@@ -58,7 +58,7 @@ namespace DLS_ALFEITE
                     MessageBox.Show(ex.Message);
                 }
                 //listbox2
-                string Query2 = "SELECT denominacao, quantidade FROM Medicamentos WHERE quantidade <= 150";
+                /*string Query2 = "SELECT denominacao, quantidade FROM Medicamentos WHERE quantidade <= 150";
                 SqlConnection sqlCon2 = new SqlConnection(connectionString);
                 SqlCommand cmd2 = new SqlCommand(Query2, sqlCon2);
                 SqlDataReader myReader2;
@@ -79,7 +79,27 @@ namespace DLS_ALFEITE
 
                     MessageBox.Show(ex.Message);
                 }*/
+                //listbox3
+                string Query3 = "SELECT TOP 3 denominacao FROM Equipamentos ORDER BY id DESC";
+                SqlConnection sqlCon3 = new SqlConnection(connectionString);
+                SqlCommand cmd3 = new SqlCommand(Query3, sqlCon3);
+                SqlDataReader myReader3;
+                try
+                {
+                    sqlCon3.Open();
+                    using (myReader3 = cmd3.ExecuteReader())
+                    {
+                        while (myReader3.Read())
+                        {
+                            listBox2.Items.Add(string.Format("Denominação: {0}", myReader3["denominacao"].ToString()));
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
 
+                    MessageBox.Show(ex.Message);
+                }
             }
             catch (Exception ex)
             {
@@ -161,6 +181,24 @@ namespace DLS_ALFEITE
             if (textbox_searchbar.Text == "")
             {
                 textbox_searchbar.Text = "Search...";
+                try
+                {
+                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
+                    using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
+                    {
+                        sqlCon1.Open();
+                        SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon1);
+                        DataTable dtbl1 = new DataTable();
+                        sqlDa1.Fill(dtbl1);
+                        //method 1 - direct method
+                        dataGridView1.DataSource = dtbl1;
+                        sqlCon1.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         
@@ -178,32 +216,6 @@ namespace DLS_ALFEITE
                     cmd.ExecuteNonQuery();
                     sqlCon.Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btn_search_Click(object sender, EventArgs e)
-        {
-            string mainconn = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
-            try
-            {
-                dataGridView1.Columns.Clear();
-                using (SqlConnection sqlCon = new SqlConnection(mainconn))
-                {
-                    sqlCon.Open();
-                    SqlCommand cmd = sqlCon.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos where denominacao like '" + textbox_searchbar.Text + "%'";
-
-                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
-                    DataTable dtbl = new DataTable();
-                    adpt.Fill(dtbl);
-                    dataGridView1.DataSource = dtbl;
-                }
-                update();
             }
             catch (Exception ex)
             {
@@ -306,6 +318,32 @@ namespace DLS_ALFEITE
         private void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
         {
             new Adicionar_equipamento().Show();
+        }
+
+        private void textbox_searchbar_TextChanged(object sender, EventArgs e)
+        {
+            string mainconn = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
+            try
+            {
+                dataGridView1.Columns.Clear();
+                using (SqlConnection sqlCon = new SqlConnection(mainconn))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = sqlCon.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = $"SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos where denominacao like '" + textbox_searchbar.Text + "%'";
+
+                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                    DataTable dtbl = new DataTable();
+                    adpt.Fill(dtbl);
+                    dataGridView1.DataSource = dtbl;
+                }
+                update();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
