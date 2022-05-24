@@ -43,26 +43,35 @@ namespace DLS_ALFEITE
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            try
+            verificacao();
+            if(asa == true)
             {
-                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                string query = "UPDATE Medicamentos SET denominacao = '" + this.txb_denominacao.Text + "',principio_ativo = '" + this.txb_principio_ativo.Text + "',validade = '" + this.txb_validade.Text + "', lote = '" + this.txb_lote.Text + "',quantidade = '" + this.txb_quantidade.Text + "',fabricante = '" + this.txb_fabricante.Text + "',email_tel_fabricante = '" + this.txb_contacto_fabricante.Text + "',setor = '" + this.txb_setor.Text + "' ,observacoes = '" + this.txb_observacoes.Text + "' WHERE id = @id ";
-                SqlConnection sqlCon = new SqlConnection(connectionString);
-                SqlCommand cmd = new SqlCommand(query, sqlCon);
-                cmd.Parameters.AddWithValue("@id", id1);
-                SqlDataReader myreader; 
-                sqlCon.Open();
-                myreader = cmd.ExecuteReader();
-                MessageBox.Show("Saved");
-                while (myreader.Read())
-                {
-
-                }
-                this.Close();
+                MessageBox.Show("Valores dos campos incorretos");
+                txb_denominacao.Focus();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
+                    string query = "UPDATE Medicamentos SET denominacao = '" + this.txb_denominacao.Text + "',principio_ativo = '" + this.txb_principio_ativo.Text + "',validade = '" + this.txb_validade.Text + "', lote = '" + this.txb_lote.Text + "',quantidade = '" + this.txb_quantidade.Text + "',fabricante = '" + this.txb_fabricante.Text + "',email_tel_fabricante = '" + this.txb_contacto_fabricante.Text + "',setor = '" + this.txb_setor.Text + "' ,observacoes = '" + this.txb_observacoes.Text + "' WHERE id = @id ";
+                    SqlConnection sqlCon = new SqlConnection(connectionString);
+                    SqlCommand cmd = new SqlCommand(query, sqlCon);
+                    cmd.Parameters.AddWithValue("@id", id1);
+                    SqlDataReader myreader;
+                    sqlCon.Open();
+                    myreader = cmd.ExecuteReader();
+                    MessageBox.Show("Saved");
+                    while (myreader.Read())
+                    {
+
+                    }
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -70,5 +79,49 @@ namespace DLS_ALFEITE
         {
             this.Close();
         }
+        bool asa = false;
+        public void verificacao()
+        {
+            try
+            {
+                if (txb_denominacao.Text == "")
+                {
+                    asa = true;
+                }
+                if (txb_principio_ativo.Text == "")
+                {
+                    asa = true;
+                }
+                if (txb_validade.Text == "")
+                {
+                    asa = true;
+                }
+                if (txb_lote.Text == "")
+                {
+                    asa = true;
+                }
+                if (txb_quantidade.Text == "")
+                {
+                    asa = true; 
+                }
+                if (txb_fabricante.Text == "")
+                {
+                    asa = true;
+                }
+                if (txb_contacto_fabricante.Text == "")
+                {
+                    asa = false;
+                }
+                if (txb_setor.Text == "")
+                {
+                    asa = true;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+       
     }
 }

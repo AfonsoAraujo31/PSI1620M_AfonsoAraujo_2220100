@@ -47,12 +47,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txb_lote = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txb_validade = new System.Windows.Forms.TextBox();
             this.txb_principio_ativo = new System.Windows.Forms.TextBox();
             this.txb_denominacao = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txb_validade = new System.Windows.Forms.TextBox();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -258,14 +258,6 @@
             this.label5.TabIndex = 33;
             this.label5.Text = "Lote:";
             // 
-            // txb_validade
-            // 
-            this.txb_validade.Location = new System.Drawing.Point(537, 84);
-            this.txb_validade.Margin = new System.Windows.Forms.Padding(2);
-            this.txb_validade.Name = "txb_validade";
-            this.txb_validade.Size = new System.Drawing.Size(169, 20);
-            this.txb_validade.TabIndex = 32;
-            // 
             // txb_principio_ativo
             // 
             this.txb_principio_ativo.Location = new System.Drawing.Point(299, 84);
@@ -317,6 +309,14 @@
             this.label2.Size = new System.Drawing.Size(117, 18);
             this.label2.TabIndex = 27;
             this.label2.Text = "Denominação:";
+            // 
+            // txb_validade
+            // 
+            this.txb_validade.Location = new System.Drawing.Point(537, 84);
+            this.txb_validade.Margin = new System.Windows.Forms.Padding(2);
+            this.txb_validade.Name = "txb_validade";
+            this.txb_validade.Size = new System.Drawing.Size(169, 20);
+            this.txb_validade.TabIndex = 32;
             // 
             // Editar_medicamento
             // 
@@ -376,11 +376,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txb_lote;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txb_validade;
         private System.Windows.Forms.TextBox txb_principio_ativo;
         private System.Windows.Forms.TextBox txb_denominacao;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txb_validade;
     }
 }
