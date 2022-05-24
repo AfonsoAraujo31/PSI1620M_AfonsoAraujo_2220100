@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace DLS_ALFEITE
 {
@@ -114,6 +115,14 @@ namespace DLS_ALFEITE
             {
                 asa = false;
                 MessageBox.Show("Campo Setor incorreto!");
+            }
+            //regular expression
+            string strRegex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            Regex obj = new Regex(strRegex);
+            if (obj.IsMatch(txb_contacto_fabricante.Text) == false)
+            {
+                asa = false;
+                MessageBox.Show("Campo Contacto de fabricante incorreto");
             }
         }
     }

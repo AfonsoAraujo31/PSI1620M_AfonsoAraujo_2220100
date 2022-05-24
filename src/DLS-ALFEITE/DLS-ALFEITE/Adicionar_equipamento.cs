@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace DLS_ALFEITE
 {
     public partial class Adicionar_equipamento : Form
     {
+        bool asa = true;
         public Adicionar_equipamento()
         {
             InitializeComponent();
@@ -37,25 +39,79 @@ namespace DLS_ALFEITE
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            try
+            verificacao();
+            if (asa == false)
             {
-                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                string query = "insert into Equipamentos(denominacao,lote,quantidade,numero_serie,fabricante,email_tel_fabricante,observacoes,setor) VALUES('" + this.txb_denominacao.Text + "','" + this.txb_lote.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_numero_serie.Text + "','" + this.txb_fabricante.Text + "','" + this.txb_contacto_fabricante.Text + "','" + this.txb_observacoes.Text + "','" + this.txb_setor.Text + "')";
-                SqlConnection sqlCon = new SqlConnection(connectionString);
-                SqlCommand cmd = new SqlCommand(query, sqlCon);
-                SqlDataReader myreader;
-                sqlCon.Open();
-                myreader = cmd.ExecuteReader();
-                MessageBox.Show("Saved");
-                while (myreader.Read())
-                {
-
-                }
-                this.Close();
+                asa = true;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
+                    string query = "insert into Equipamentos(denominacao,lote,quantidade,numero_serie,fabricante,email_tel_fabricante,observacoes,setor) VALUES('" + this.txb_denominacao.Text + "','" + this.txb_lote.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_numero_serie.Text + "','" + this.txb_fabricante.Text + "','" + this.txb_contacto_fabricante.Text + "','" + this.txb_observacoes.Text + "','" + this.txb_setor.Text + "')";
+                    SqlConnection sqlCon = new SqlConnection(connectionString);
+                    SqlCommand cmd = new SqlCommand(query, sqlCon);
+                    SqlDataReader myreader;
+                    sqlCon.Open();
+                    myreader = cmd.ExecuteReader();
+                    MessageBox.Show("Saved");
+                    while (myreader.Read())
+                    {
+
+                    }
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        public void verificacao()
+        {
+            if (txb_denominacao.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Denominação incorreto!");
+            }
+            if (txb_numero_serie.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Número de série incorreto!");
+            }
+            if (txb_lote.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Lote incorreto!");
+            }
+            if (txb_quantidade.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Quantidade incorreto!");
+            }
+            if (txb_fabricante.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Fabricante incorreto!");
+            }
+            if (txb_contacto_fabricante.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Contacto do Fabricante incorreto!");
+            }
+            if (txb_setor.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Setor incorreto!");
+            }
+            //regular expression
+            string strRegex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            Regex obj = new Regex(strRegex);
+            if (obj.IsMatch(txb_contacto_fabricante.Text) == false)
+            {
+                asa = false;
+                MessageBox.Show("Campo Contacto de fabricante incorreto");
             }
         }
     }

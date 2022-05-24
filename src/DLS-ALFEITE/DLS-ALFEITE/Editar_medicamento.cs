@@ -122,6 +122,14 @@ namespace DLS_ALFEITE
                 asa = false;
                 MessageBox.Show("Campo Setor incorreto!");
             }
+            //regular expression
+            string strRegex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            Regex obj = new Regex(strRegex);
+            if (obj.IsMatch(txb_contacto_fabricante.Text) == false)
+            {
+                asa = false;
+                MessageBox.Show("Campo Contacto de fabricante incorreto");
+            }
         }
        
     }
