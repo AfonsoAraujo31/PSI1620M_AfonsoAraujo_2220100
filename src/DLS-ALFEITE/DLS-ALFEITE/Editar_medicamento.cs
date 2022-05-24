@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace DLS_ALFEITE
 {
     public partial class Editar_medicamento : Form
     {
         int id1 = 0;
+        bool asa = true;
         public Editar_medicamento(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9)
         {
             InitializeComponent();
@@ -41,13 +43,12 @@ namespace DLS_ALFEITE
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btn_guardar_Click(object sender, EventArgs e)
+        public void btn_guardar_Click(object sender, EventArgs e)
         {
             verificacao();
-            if(asa == true)
+            if(asa == false)
             {
-                MessageBox.Show("Valores dos campos incorretos");
-                txb_denominacao.Focus();
+                asa = true;
             }
             else
             {
@@ -79,47 +80,47 @@ namespace DLS_ALFEITE
         {
             this.Close();
         }
-        bool asa = false;
         public void verificacao()
         {
-            try
+            if (txb_denominacao.Text == "")
             {
-                if (txb_denominacao.Text == "")
-                {
-                    asa = true;
-                }
-                if (txb_principio_ativo.Text == "")
-                {
-                    asa = true;
-                }
-                if (txb_validade.Text == "")
-                {
-                    asa = true;
-                }
-                if (txb_lote.Text == "")
-                {
-                    asa = true;
-                }
-                if (txb_quantidade.Text == "")
-                {
-                    asa = true; 
-                }
-                if (txb_fabricante.Text == "")
-                {
-                    asa = true;
-                }
-                if (txb_contacto_fabricante.Text == "")
-                {
-                    asa = false;
-                }
-                if (txb_setor.Text == "")
-                {
-                    asa = true;
-                }
+                asa = false;
+                MessageBox.Show("Campo Denominação incorreto!");
             }
-            catch(Exception ex)
+            if (txb_principio_ativo.Text == "")
             {
-                MessageBox.Show(ex.Message);
+                asa = false;
+                MessageBox.Show("Campo Princípio/Ativo incorreto!");
+            }
+            if (txb_validade.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Validade incorreto!");
+            }
+            if (txb_lote.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Lote incorreto!");
+            }
+            if (txb_quantidade.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Quantidade incorreto!");
+            }
+            if (txb_fabricante.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Fabricante incorreto!");
+            }
+            if (txb_contacto_fabricante.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Contacto do Fabricante incorreto!");
+            }
+            if (txb_setor.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Setor incorreto!");
             }
         }
        
