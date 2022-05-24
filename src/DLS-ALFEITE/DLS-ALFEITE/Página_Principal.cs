@@ -27,6 +27,7 @@ namespace DLS_ALFEITE
             frm_med.Dock = DockStyle.Fill;
             btnsetcolor(btn_medicamento);
         }
+
         private void btnsetcolor(Button btn)
         {
             btn_medicamento.BackColor = Color.Transparent;

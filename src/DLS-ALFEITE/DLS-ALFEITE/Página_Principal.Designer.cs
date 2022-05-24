@@ -40,9 +40,17 @@ namespace DLS_ALFEITE
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_min = new System.Windows.Forms.Button();
             this.btnclose = new System.Windows.Forms.Button();
+            this.panel_equipamentos = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel_medicamentos = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel_equipamentos.SuspendLayout();
+            this.panel_medicamentos.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -50,6 +58,8 @@ namespace DLS_ALFEITE
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.panel_equipamentos);
+            this.panel2.Controls.Add(this.panel_medicamentos);
             this.panel2.Controls.Add(this.label_data);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btn_inflamavel);
@@ -93,7 +103,7 @@ namespace DLS_ALFEITE
             this.btn_inflamavel.ForeColor = System.Drawing.Color.White;
             this.btn_inflamavel.Image = ((System.Drawing.Image)(resources.GetObject("btn_inflamavel.Image")));
             this.btn_inflamavel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inflamavel.Location = new System.Drawing.Point(2, 250);
+            this.btn_inflamavel.Location = new System.Drawing.Point(-1, 387);
             this.btn_inflamavel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_inflamavel.Name = "btn_inflamavel";
             this.btn_inflamavel.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -110,7 +120,7 @@ namespace DLS_ALFEITE
             this.btn_equipamento.ForeColor = System.Drawing.Color.White;
             this.btn_equipamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_equipamento.Image")));
             this.btn_equipamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_equipamento.Location = new System.Drawing.Point(1, 196);
+            this.btn_equipamento.Location = new System.Drawing.Point(0, 263);
             this.btn_equipamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_equipamento.Name = "btn_equipamento";
             this.btn_equipamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -196,6 +206,94 @@ namespace DLS_ALFEITE
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
+            // panel_equipamentos
+            // 
+            this.panel_equipamentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel_equipamentos.Controls.Add(this.button3);
+            this.panel_equipamentos.Controls.Add(this.button4);
+            this.panel_equipamentos.Location = new System.Drawing.Point(2, 320);
+            this.panel_equipamentos.Name = "panel_equipamentos";
+            this.panel_equipamentos.Size = new System.Drawing.Size(190, 74);
+            this.panel_equipamentos.TabIndex = 13;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(-1, 34);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(191, 31);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Fornecimento";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(-1, 1);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(191, 31);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Aquisição";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(-1, 1);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(191, 31);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Aquisição";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(-1, 34);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(191, 31);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Fornecimento";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // panel_medicamentos
+            // 
+            this.panel_medicamentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel_medicamentos.Controls.Add(this.button2);
+            this.panel_medicamentos.Controls.Add(this.button1);
+            this.panel_medicamentos.Location = new System.Drawing.Point(1, 188);
+            this.panel_medicamentos.Name = "panel_medicamentos";
+            this.panel_medicamentos.Size = new System.Drawing.Size(190, 74);
+            this.panel_medicamentos.TabIndex = 10;
+            // 
             // Página_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +313,8 @@ namespace DLS_ALFEITE
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
+            this.panel_equipamentos.ResumeLayout(false);
+            this.panel_medicamentos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -230,5 +330,11 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_username;
         private System.Windows.Forms.Label label_data;
+        private System.Windows.Forms.Panel panel_equipamentos;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel_medicamentos;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

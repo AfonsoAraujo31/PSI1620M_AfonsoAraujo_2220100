@@ -61,7 +61,7 @@ namespace DLS_ALFEITE
                     }
                     else
                     {
-                        MessageBox.Show("aaaaaaa");
+                        MessageBox.Show("Username ou password incorretos!");
                     }
                 }
             }
@@ -119,6 +119,48 @@ namespace DLS_ALFEITE
             if (textBox_username.Text == "")
             {
                 textBox_username.Text = "Username";
+            }
+        }
+
+        private void textBox_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    if (textBox_username.Text == "" && textBox_password.Text == "")
+                    {
+                        MessageBox.Show("Preencha os campos");
+                    }
+                    else
+                    {
+                        SqlConnection sqlcon = new SqlConnection(connection);
+                        SqlCommand cmd = sqlcon.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = $"SELECT username,password FROM login_utilizadores WHERE username=@Username AND password=@Userpass";
+                        cmd.Parameters.AddWithValue("@Username", textBox_username.Text);
+                        cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);
+                        sqlcon.Open();
+                        SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
+                        DataSet ds = new DataSet();
+                        sqladp.Fill(ds);
+                        sqlcon.Close();
+                        int count = ds.Tables[0].Rows.Count;
+                        if (count == 1)
+                        {
+                            new Página_Principal(textBox_username.Text).Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username ou password incorretos!");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
