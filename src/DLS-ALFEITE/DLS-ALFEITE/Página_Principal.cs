@@ -105,6 +105,11 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_inflamavel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
