@@ -14,6 +14,7 @@ namespace DLS_ALFEITE
     {
         Equipamentos frm_equip;
         Medicamentos frm_med;
+        Inflamáveis frm_infla;
         public Página_Principal(string value)
         {
             InitializeComponent();
@@ -108,7 +109,31 @@ namespace DLS_ALFEITE
 
         private void btn_inflamavel_Click(object sender, EventArgs e)
         {
-
+            btnsetcolor(btn_inflamavel);
+            try
+            {
+                if (frm_infla == null)
+                {
+                    frm_infla = new Inflamáveis();
+                    frm_infla.MdiParent = this;
+                    frm_infla.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_infla.Show();
+                    frm_infla.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    frm_infla.Close();
+                    frm_infla = new Inflamáveis();
+                    frm_infla.MdiParent = this;
+                    frm_infla.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_infla.Show();
+                    frm_infla.Dock = DockStyle.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
