@@ -232,14 +232,33 @@ namespace DLS_ALFEITE
         {
             SqlConnection sqlCon1 = new SqlConnection(ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString);
             SqlCommand cmd1;
+            SqlCommand cmd2;
+            SqlCommand cmd3;
+            MessageBox.Show(id);
             try
             {
-                using (cmd1 = new SqlCommand("DELETE FROM Medicamentos WHERE id = @id", sqlCon1))
+                using (cmd1 = new SqlCommand("DELETE FROM Aquisição_medicamento WHERE id_aquisicao = @id", sqlCon1))
                 {
                     cmd1.CommandType = CommandType.Text;
-                    cmd1.Parameters.AddWithValue("@id", id);
+                    cmd1.Parameters.AddWithValue("@id",id);
                     sqlCon1.Open();
                     cmd1.ExecuteNonQuery();
+                    sqlCon1.Close();
+                }
+                using (cmd2 = new SqlCommand("DELETE FROM fornecimento_medicamento WHERE id_fornecimento = @id", sqlCon1))
+                {
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.Parameters.AddWithValue("@id", id);
+                    sqlCon1.Open();
+                    cmd2.ExecuteNonQuery();
+                    sqlCon1.Close();
+                }
+                using (cmd3 = new SqlCommand("DELETE FROM Medicamentos WHERE id = @id", sqlCon1))
+                {
+                    cmd3.CommandType = CommandType.Text;
+                    cmd3.Parameters.AddWithValue("@id", id);
+                    sqlCon1.Open();
+                    cmd3.ExecuteNonQuery();
                     sqlCon1.Close();
                 }
                 Medicamentos frm_med = new Medicamentos();
