@@ -236,6 +236,12 @@
     <Compile Include="Adicionar_equipamento.Designer.cs">
       <DependentUpon>Adicionar_equipamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Adicionar_inflamavel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar_inflamavel.Designer.cs">
+      <DependentUpon>Adicionar_inflamavel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adicionar_medicamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,12 @@
     </Compile>
     <Compile Include="Editar_equipamento.Designer.cs">
       <DependentUpon>Editar_equipamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar_inflamavel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar_inflamavel.Designer.cs">
+      <DependentUpon>Editar_inflamavel.cs</DependentUpon>
     </Compile>
     <Compile Include="Editar_medicamento.cs">
       <SubType>Form</SubType>
@@ -319,6 +331,9 @@
     <EmbeddedResource Include="Adicionar_equipamento.resx">
       <DependentUpon>Adicionar_equipamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar_inflamavel.resx">
+      <DependentUpon>Adicionar_inflamavel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Adicionar_medicamento.resx">
       <DependentUpon>Adicionar_medicamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -330,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editar_equipamento.resx">
       <DependentUpon>Editar_equipamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar_inflamavel.resx">
+      <DependentUpon>Editar_inflamavel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editar_medicamento.resx">
       <DependentUpon>Editar_medicamento.cs</DependentUpon>

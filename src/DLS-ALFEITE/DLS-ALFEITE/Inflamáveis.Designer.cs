@@ -1,5 +1,4 @@
-﻿
-namespace DLS_ALFEITE
+﻿namespace DLS_ALFEITE
 {
     partial class Inflamáveis
     {
@@ -32,9 +31,9 @@ namespace DLS_ALFEITE
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inflamáveis));
-            this.btn_adicionar_medicamentos = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
+            this.btn_adicionar_inflamavel = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -53,16 +52,33 @@ namespace DLS_ALFEITE
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_adicionar_medicamentos
+            // textbox_searchbar
             // 
-            this.btn_adicionar_medicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_adicionar_medicamentos.Location = new System.Drawing.Point(1604, 24);
-            this.btn_adicionar_medicamentos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btn_adicionar_medicamentos.Name = "btn_adicionar_medicamentos";
-            this.btn_adicionar_medicamentos.Size = new System.Drawing.Size(279, 24);
-            this.btn_adicionar_medicamentos.TabIndex = 6;
-            this.btn_adicionar_medicamentos.Text = "Adicionar Medicamento";
-            this.btn_adicionar_medicamentos.UseVisualStyleBackColor = true;
+            this.textbox_searchbar.BackColor = System.Drawing.Color.White;
+            this.textbox_searchbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbox_searchbar.CausesValidation = false;
+            this.textbox_searchbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox_searchbar.Location = new System.Drawing.Point(219, 25);
+            this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textbox_searchbar.Name = "textbox_searchbar";
+            this.textbox_searchbar.Size = new System.Drawing.Size(713, 24);
+            this.textbox_searchbar.TabIndex = 1;
+            this.textbox_searchbar.Text = "Search...";
+            this.textbox_searchbar.TextChanged += new System.EventHandler(this.textbox_searchbar_TextChanged);
+            this.textbox_searchbar.Enter += new System.EventHandler(this.textbox_searchbar_Enter);
+            this.textbox_searchbar.Leave += new System.EventHandler(this.textbox_searchbar_Leave);
+            // 
+            // btn_adicionar_inflamavel
+            // 
+            this.btn_adicionar_inflamavel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_adicionar_inflamavel.Location = new System.Drawing.Point(1604, 24);
+            this.btn_adicionar_inflamavel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_adicionar_inflamavel.Name = "btn_adicionar_inflamavel";
+            this.btn_adicionar_inflamavel.Size = new System.Drawing.Size(279, 24);
+            this.btn_adicionar_inflamavel.TabIndex = 4;
+            this.btn_adicionar_inflamavel.Text = "Adicionar Inflamável";
+            this.btn_adicionar_inflamavel.UseVisualStyleBackColor = true;
+            this.btn_adicionar_inflamavel.Click += new System.EventHandler(this.btn_adicionar_inflamavel_Click);
             // 
             // dataGridView1
             // 
@@ -86,27 +102,14 @@ namespace DLS_ALFEITE
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(219, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(219, 55);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1668, 803);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // textbox_searchbar
-            // 
-            this.textbox_searchbar.BackColor = System.Drawing.Color.White;
-            this.textbox_searchbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textbox_searchbar.CausesValidation = false;
-            this.textbox_searchbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_searchbar.Location = new System.Drawing.Point(219, 25);
-            this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.textbox_searchbar.Name = "textbox_searchbar";
-            this.textbox_searchbar.Size = new System.Drawing.Size(713, 24);
-            this.textbox_searchbar.TabIndex = 4;
-            this.textbox_searchbar.Text = "Search...";
-            this.textbox_searchbar.Enter += new System.EventHandler(this.textbox_searchbar_Enter);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel1
             // 
@@ -222,13 +225,13 @@ namespace DLS_ALFEITE
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1894, 1069);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btn_adicionar_medicamentos);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btn_adicionar_inflamavel);
             this.Controls.Add(this.textbox_searchbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Inflamáveis";
             this.Text = "Inflamáveis";
-            this.Load += new System.EventHandler(this.Inflamáveis_Load_1);
+            this.Load += new System.EventHandler(this.Inflamáveis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -244,9 +247,9 @@ namespace DLS_ALFEITE
 
         #endregion
 
-        private System.Windows.Forms.Button btn_adicionar_medicamentos;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textbox_searchbar;
+        private System.Windows.Forms.Button btn_adicionar_inflamavel;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
