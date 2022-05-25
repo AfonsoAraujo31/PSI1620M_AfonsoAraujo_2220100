@@ -272,9 +272,10 @@ namespace DLS_ALFEITE
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                     id = row.Cells["Id"].Value.ToString();
                     denominacao = row.Cells["Denominação"].Value.ToString();
+                    numero_serie = row.Cells["Número de série"].Value.ToString();
                     lote = row.Cells["Lote"].Value.ToString();
                 }
-                //new (id, denominacao, lote).Show();
+                new Aquisição_inflamavel(id, denominacao, lote, numero_serie).Show();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
             {
@@ -288,9 +289,10 @@ namespace DLS_ALFEITE
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                     id = row.Cells["Id"].Value.ToString();
                     denominacao = row.Cells["Denominação"].Value.ToString();
+                    numero_serie = row.Cells["Número de série"].Value.ToString();
                     lote = row.Cells["Lote"].Value.ToString();
                 }
-                //new (id, denominacao, lote).Show();
+                new Fornecimento_inflamavel(id, denominacao,numero_serie, lote).Show();
             }
             else
             {
