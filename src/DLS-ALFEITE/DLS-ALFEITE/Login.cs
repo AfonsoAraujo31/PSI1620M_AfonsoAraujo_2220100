@@ -32,6 +32,7 @@ namespace DLS_ALFEITE
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
+
         private void btn_login_Click(object sender, EventArgs e)
         {
             try

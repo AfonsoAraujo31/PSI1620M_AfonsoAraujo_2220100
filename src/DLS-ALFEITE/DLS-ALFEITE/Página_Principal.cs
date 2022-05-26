@@ -15,6 +15,7 @@ namespace DLS_ALFEITE
         Equipamentos frm_equip;
         Medicamentos frm_med;
         Inflamáveis frm_infla;
+        Notas frm_notas;
         public Página_Principal(string value)
         {
             InitializeComponent();
@@ -128,6 +129,41 @@ namespace DLS_ALFEITE
                     frm_infla.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_infla.Show();
                     frm_infla.Dock = DockStyle.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            new Frm_login().Show();
+            this.Hide();
+        }
+
+        private void btn_notas_Click(object sender, EventArgs e)
+        {
+            btnsetcolor(btn_notas);
+            try
+            {
+                if (frm_notas == null)
+                {
+                    frm_notas = new Notas();
+                    frm_notas.MdiParent = this;
+                    frm_notas.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_notas.Show();
+                    frm_notas.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    frm_notas.Close();
+                    frm_notas = new Notas();
+                    frm_notas.MdiParent = this;
+                    frm_notas.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_notas.Show();
+                    frm_notas.Dock = DockStyle.Fill;
                 }
             }
             catch (Exception ex)
