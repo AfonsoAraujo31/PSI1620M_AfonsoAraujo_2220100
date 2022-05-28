@@ -240,7 +240,7 @@ namespace DLS_ALFEITE
             //MessageBox.Show(id);
             try
             {
-                using (cmd1 = new SqlCommand("DELETE FROM Aquisição_medicamento WHERE id_aquisicao = @id", sqlCon1))
+                using (cmd1 = new SqlCommand("DELETE FROM Aquisição_medicamentos WHERE id_aquisicao = @id", sqlCon1))
                 {
                     cmd1.CommandType = CommandType.Text;
                     cmd1.Parameters.AddWithValue("@id",id);
@@ -248,7 +248,7 @@ namespace DLS_ALFEITE
                     cmd1.ExecuteNonQuery();
                     sqlCon1.Close();
                 }
-                using (cmd2 = new SqlCommand("DELETE FROM fornecimento_medicamento WHERE id_fornecimento = @id", sqlCon1))
+                using (cmd2 = new SqlCommand("DELETE FROM fornecimento_medicamentos WHERE id_fornecimento = @id", sqlCon1))
                 {
                     cmd2.CommandType = CommandType.Text;
                     cmd2.Parameters.AddWithValue("@id", id);

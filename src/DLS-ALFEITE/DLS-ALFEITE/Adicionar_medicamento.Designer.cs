@@ -38,7 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txb_denominacao = new System.Windows.Forms.TextBox();
             this.txb_principio_ativo = new System.Windows.Forms.TextBox();
-            this.txb_validade = new System.Windows.Forms.TextBox();
             this.txb_lote = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txb_quantidade = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@
             this.txb_observacoes = new System.Windows.Forms.TextBox();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.dtp_validade = new System.Windows.Forms.DateTimePicker();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,14 +166,6 @@
             this.txb_principio_ativo.Name = "txb_principio_ativo";
             this.txb_principio_ativo.Size = new System.Drawing.Size(169, 20);
             this.txb_principio_ativo.TabIndex = 11;
-            // 
-            // txb_validade
-            // 
-            this.txb_validade.Location = new System.Drawing.Point(536, 82);
-            this.txb_validade.Margin = new System.Windows.Forms.Padding(2);
-            this.txb_validade.Name = "txb_validade";
-            this.txb_validade.Size = new System.Drawing.Size(169, 20);
-            this.txb_validade.TabIndex = 12;
             // 
             // txb_lote
             // 
@@ -318,12 +310,20 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // dtp_validade
+            // 
+            this.dtp_validade.Location = new System.Drawing.Point(536, 82);
+            this.dtp_validade.Name = "dtp_validade";
+            this.dtp_validade.Size = new System.Drawing.Size(169, 20);
+            this.dtp_validade.TabIndex = 27;
+            // 
             // Adicionar_medicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(750, 524);
+            this.Controls.Add(this.dtp_validade);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txb_observacoes);
@@ -338,7 +338,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txb_lote);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txb_validade);
             this.Controls.Add(this.txb_principio_ativo);
             this.Controls.Add(this.txb_denominacao);
             this.Controls.Add(this.label4);
@@ -368,7 +367,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txb_denominacao;
         private System.Windows.Forms.TextBox txb_principio_ativo;
-        private System.Windows.Forms.TextBox txb_validade;
         private System.Windows.Forms.TextBox txb_lote;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txb_quantidade;
@@ -383,5 +381,6 @@
         private System.Windows.Forms.TextBox txb_observacoes;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dtp_validade;
     }
 }
