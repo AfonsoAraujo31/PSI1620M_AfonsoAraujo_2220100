@@ -19,7 +19,7 @@ namespace DLS_ALFEITE
         {
             InitializeComponent();
             StyleDatagridview();
-            //this.ActiveControl = label1;
+            this.ActiveControl = label2;
         }
         private void Inflamáveis_Load(object sender, EventArgs e)
         {

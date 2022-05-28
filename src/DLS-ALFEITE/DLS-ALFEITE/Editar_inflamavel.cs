@@ -24,7 +24,7 @@ namespace DLS_ALFEITE
             InitializeComponent();
             id1 = Convert.ToInt32(id);
             txb_denominacao.Text = value;
-            txb_validade.Text = value2;
+            dtp_validade.Text = value2;
             txb_lote.Text = value3;
             txb_quantidade.Text = value4;
             txb_numero_serie.Text = value5;
@@ -62,7 +62,7 @@ namespace DLS_ALFEITE
                 try
                 {
                     string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                    string query = "UPDATE Inflamaveis SET denominacao = '" + this.txb_denominacao.Text + "',validade = '" + this.txb_validade.Text + "', lote = '" + this.txb_lote.Text + "',quantidade = '" + this.txb_quantidade.Text + "',numero_serie = '" + this.txb_numero_serie.Text + "', fabricante = '" + this.txb_fabricante.Text + "',email_tel_fabricante = '" + this.txb_contacto_fabricante.Text + "',setor = '" + this.txb_setor.Text + "' ,observacoes = '" + this.txb_observacoes.Text + "' WHERE id = @id ";
+                    string query = "UPDATE Inflamaveis SET denominacao = '" + this.txb_denominacao.Text + "',validade = '" + this.dtp_validade.Text + "', lote = '" + this.txb_lote.Text + "',quantidade = '" + this.txb_quantidade.Text + "',numero_serie = '" + this.txb_numero_serie.Text + "', fabricante = '" + this.txb_fabricante.Text + "',email_tel_fabricante = '" + this.txb_contacto_fabricante.Text + "',setor = '" + this.txb_setor.Text + "' ,observacoes = '" + this.txb_observacoes.Text + "' WHERE id = @id ";
                     SqlConnection sqlCon = new SqlConnection(connectionString);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     cmd.Parameters.AddWithValue("@id", id1);
@@ -102,7 +102,7 @@ namespace DLS_ALFEITE
                 asa = false;
                 MessageBox.Show("Campo Número de série incorreto!");
             }
-            if (txb_validade.Text == "")
+            if (dtp_validade.Text == "")
             {
                 asa = false;
                 MessageBox.Show("Campo Validade incorreto!");

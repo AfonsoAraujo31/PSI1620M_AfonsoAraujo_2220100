@@ -46,7 +46,7 @@ namespace DLS_ALFEITE
                 try
                 {
                     string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                    string query = "insert into Inflamaveis(denominacao,validade,lote,quantidade,numero_serie,fabricante,email_tel_fabricante,setor,observacoes) VALUES('" + this.txb_denominacao.Text + "','" + this.txb_validade.Text + "','" + this.txb_lote.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_numero_serie.Text + "','" + this.txb_fabricante.Text + "','" + this.txb_contacto_fabricante.Text + "','" + this.txb_setor.Text + "','" + this.txb_observacoes.Text + "' )";
+                    string query = "insert into Inflamaveis(denominacao,validade,lote,quantidade,numero_serie,fabricante,email_tel_fabricante,setor,observacoes) VALUES('" + this.txb_denominacao.Text + "','" + this.dtp_validade.Text + "','" + this.txb_lote.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_numero_serie.Text + "','" + this.txb_fabricante.Text + "','" + this.txb_contacto_fabricante.Text + "','" + this.txb_setor.Text + "','" + this.txb_observacoes.Text + "' )";
                     SqlConnection sqlCon = new SqlConnection(connectionString);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     SqlDataReader myreader;
@@ -86,7 +86,7 @@ namespace DLS_ALFEITE
                 asa = false;
                 MessageBox.Show("Campo Princípio/Ativo incorreto!");
             }
-            if (txb_validade.Text == "")
+            if (dtp_validade.Text == "")
             {
                 asa = false;
                 MessageBox.Show("Campo Validade incorreto!");

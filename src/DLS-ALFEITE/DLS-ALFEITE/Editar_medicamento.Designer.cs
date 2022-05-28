@@ -52,7 +52,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txb_validade = new System.Windows.Forms.TextBox();
+            this.dtp_validade = new System.Windows.Forms.DateTimePicker();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -310,13 +310,17 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Denominação:";
             // 
-            // txb_validade
+            // dtp_validade
             // 
-            this.txb_validade.Location = new System.Drawing.Point(537, 84);
-            this.txb_validade.Margin = new System.Windows.Forms.Padding(2);
-            this.txb_validade.Name = "txb_validade";
-            this.txb_validade.Size = new System.Drawing.Size(169, 20);
-            this.txb_validade.TabIndex = 32;
+            this.dtp_validade.CustomFormat = "dd-MM-yyyy";
+            this.dtp_validade.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_validade.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtp_validade.Location = new System.Drawing.Point(537, 84);
+            this.dtp_validade.Name = "dtp_validade";
+            this.dtp_validade.Size = new System.Drawing.Size(169, 20);
+            this.dtp_validade.TabIndex = 47;
+            this.dtp_validade.TabStop = false;
+            this.dtp_validade.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
             // 
             // Editar_medicamento
             // 
@@ -324,6 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(750, 524);
+            this.Controls.Add(this.dtp_validade);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txb_observacoes);
@@ -338,7 +343,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txb_lote);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txb_validade);
             this.Controls.Add(this.txb_principio_ativo);
             this.Controls.Add(this.txb_denominacao);
             this.Controls.Add(this.label4);
@@ -381,6 +385,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txb_validade;
+        private System.Windows.Forms.DateTimePicker dtp_validade;
     }
 }

@@ -312,10 +312,15 @@
             // 
             // dtp_validade
             // 
+            this.dtp_validade.CustomFormat = "dd-MM-yyyy";
+            this.dtp_validade.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_validade.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtp_validade.Location = new System.Drawing.Point(536, 82);
             this.dtp_validade.Name = "dtp_validade";
             this.dtp_validade.Size = new System.Drawing.Size(169, 20);
             this.dtp_validade.TabIndex = 27;
+            this.dtp_validade.TabStop = false;
+            this.dtp_validade.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
             // 
             // Adicionar_medicamento
             // 
