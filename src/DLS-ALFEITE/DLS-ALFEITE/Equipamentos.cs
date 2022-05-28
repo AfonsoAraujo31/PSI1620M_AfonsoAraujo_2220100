@@ -21,6 +21,7 @@ namespace DLS_ALFEITE
             StyleDatagridview();
             this.ActiveControl = label2;
         }
+        string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
         private void Equipamentos_Load_1(object sender, EventArgs e)
         {
             try
@@ -273,7 +274,8 @@ namespace DLS_ALFEITE
                     observacoes = row.Cells["Observações"].Value.ToString();
                     setor = row.Cells["Setor"].Value.ToString();
                 }
-                new Editar_equipamento(id, denominacao, lote, stock, numero_serie, fabricante, contacto_do_fabricante, observacoes, setor).Show();
+                Editar_equipamento eq = new Editar_equipamento(id, denominacao, lote, stock, numero_serie, fabricante, contacto_do_fabricante, observacoes, setor, this);
+                eq.Show();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")
             {
@@ -315,9 +317,10 @@ namespace DLS_ALFEITE
             }
         }
 
-        private void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
+        public void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
         {
-            new Adicionar_equipamento().Show();
+            Adicionar_equipamento eq = new Adicionar_equipamento(this);
+            eq.Show();
         }
 
         private void textbox_searchbar_TextChanged(object sender, EventArgs e)
@@ -343,6 +346,21 @@ namespace DLS_ALFEITE
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void reload_tabela()
+        {
+            string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
+            using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
+            {
+                sqlCon1.Open();
+                SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon1);
+                DataTable dtbl1 = new DataTable();
+                sqlDa1.Fill(dtbl1);
+                //method 1 - direct method
+                dataGridView1.DataSource = dtbl1;
+                sqlCon1.Close();
             }
         }
     }

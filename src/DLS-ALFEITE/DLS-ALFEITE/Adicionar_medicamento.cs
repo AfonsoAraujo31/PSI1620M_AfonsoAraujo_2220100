@@ -17,11 +17,12 @@ namespace DLS_ALFEITE
     public partial class Adicionar_medicamento : Form
     {
         bool asa = true;
-        public Adicionar_medicamento()
+        private readonly Medicamentos medicamentos;
+        public Adicionar_medicamento(Medicamentos a)
         {
             InitializeComponent();
+            medicamentos = a;
         }
-
         private void btnclose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -55,7 +56,16 @@ namespace DLS_ALFEITE
                     {
 
                     }
-                    this.Close();
+
+                    try
+                    {
+                        medicamentos.reload_tabela();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -63,7 +73,7 @@ namespace DLS_ALFEITE
                 }
             }
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

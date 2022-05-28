@@ -18,7 +18,8 @@ namespace DLS_ALFEITE
     {
         bool asa = true;
         int id1 = 0;
-        public Editar_inflamavel(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9)
+        private readonly Inflamáveis inflamáveis;
+        public Editar_inflamavel(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9, Inflamáveis a)
         {
             InitializeComponent();
             id1 = Convert.ToInt32(id);
@@ -31,6 +32,7 @@ namespace DLS_ALFEITE
             txb_contacto_fabricante.Text = value7;
             txb_observacoes.Text = value8;
             txb_setor.Text = value9;
+            inflamáveis = a;
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -72,7 +74,15 @@ namespace DLS_ALFEITE
                     {
 
                     }
-                    this.Close();
+                    try
+                    {
+                        inflamáveis.reload_tabela();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 catch (Exception ex)
                 {

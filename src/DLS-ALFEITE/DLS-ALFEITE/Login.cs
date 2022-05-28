@@ -43,6 +43,7 @@ namespace DLS_ALFEITE
                 }
                 else
                 {
+                    //string id = null;
                     SqlConnection sqlcon = new SqlConnection(connection);
                     SqlCommand cmd = sqlcon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
@@ -52,13 +53,26 @@ namespace DLS_ALFEITE
                     sqlcon.Open();
                     SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
-                    sqladp.Fill(ds);
-                    sqlcon.Close();
+                    sqladp.Fill(ds);    
                     int count = ds.Tables[0].Rows.Count;
                     if (count == 1)
                     {
+                        /*using (cmd)
+                        {
+                            using (var rdr = cmd.ExecuteReader())
+                            {
+                                if (rdr.HasRows)
+                                {
+                                    while (rdr.Read())
+                                    {
+                                        label4.Text = Convert.ToString(rdr.GetInt32(0));
+                                    }
+                                }
+                            }
+                        }*/
                         new Página_Principal(textBox_username.Text).Show();
                         this.Hide();
+                        sqlcon.Close();
                     }
                     else
                     {

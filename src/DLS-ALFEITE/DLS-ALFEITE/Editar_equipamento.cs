@@ -18,7 +18,8 @@ namespace DLS_ALFEITE
     {
         int id1 = 0;
         bool asa = true;
-        public Editar_equipamento(string id, string value, string value2, string value4, string value5, string value6, string value7, string value8, string value9)
+        private readonly Equipamentos equipamentos;
+        public Editar_equipamento(string id, string value, string value2, string value4, string value5, string value6, string value7, string value8, string value9, Equipamentos a)
         {
             InitializeComponent();
             id1 = Convert.ToInt32(id);
@@ -30,6 +31,7 @@ namespace DLS_ALFEITE
             txb_contacto_fabricante.Text = value7;
             txb_observacoes.Text = value8;
             txb_setor.Text = value9;
+            equipamentos = a;
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -71,7 +73,15 @@ namespace DLS_ALFEITE
                     {
 
                     }
-                    this.Close();
+                    try
+                    {
+                        equipamentos.reload_tabela();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 catch (Exception ex)
                 {

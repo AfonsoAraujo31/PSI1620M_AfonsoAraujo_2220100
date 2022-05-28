@@ -258,7 +258,8 @@ namespace DLS_ALFEITE
                     observacoes = row.Cells["Observações"].Value.ToString();
                     setor = row.Cells["Setor"].Value.ToString();
                 }
-                new Editar_inflamavel(id, denominacao, validade, lote, stock, numero_serie, fabricante, contacto_do_fabricante, observacoes, setor).Show();
+                Editar_inflamavel inf = new Editar_inflamavel(id, denominacao, validade, lote, stock, numero_serie, fabricante, contacto_do_fabricante, observacoes, setor, this);
+                inf.Show();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")
             {
@@ -299,7 +300,7 @@ namespace DLS_ALFEITE
                 //MessageBox.Show("1");
             }
         }
-        private void reload_tabela()
+        public void reload_tabela()
         {
             string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
             using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
@@ -357,7 +358,9 @@ namespace DLS_ALFEITE
 
         private void btn_adicionar_inflamavel_Click(object sender, EventArgs e)
         {
-            new Adicionar_inflamavel().Show();
+            //new Adicionar_inflamavel().Show();
+            Adicionar_inflamavel inf = new Adicionar_inflamavel(this);
+            inf.Show();
         }
     }
 }

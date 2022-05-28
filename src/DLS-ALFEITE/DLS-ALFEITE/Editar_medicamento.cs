@@ -18,7 +18,8 @@ namespace DLS_ALFEITE
     {
         int id1 = 0;
         bool asa = true;
-        public Editar_medicamento(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9)
+        private readonly Medicamentos medicamentos;
+        public Editar_medicamento(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9, Medicamentos a)
         {
             InitializeComponent();
             id1 = Convert.ToInt32(id);
@@ -31,6 +32,8 @@ namespace DLS_ALFEITE
             txb_contacto_fabricante.Text = value7;
             txb_observacoes.Text = value8;
             txb_setor.Text = value9;
+            //this.medicamentos = medicamentos;
+            medicamentos = a;
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -67,7 +70,15 @@ namespace DLS_ALFEITE
                     {
 
                     }
-                    this.Close();
+                    try
+                    {
+                        medicamentos.reload_tabela();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 catch (Exception ex)
                 {

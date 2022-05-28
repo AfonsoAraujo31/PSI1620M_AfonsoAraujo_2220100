@@ -17,9 +17,11 @@ namespace DLS_ALFEITE
     public partial class Adicionar_equipamento : Form
     {
         bool asa = true;
-        public Adicionar_equipamento()
+        private readonly Equipamentos equipamentos;
+        public Adicionar_equipamento(Equipamentos a)
         {
             InitializeComponent();
+            equipamentos = a;
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -60,7 +62,15 @@ namespace DLS_ALFEITE
                     {
 
                     }
-                    this.Close();
+                    try
+                    {
+                        equipamentos.reload_tabela();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 catch (Exception ex)
                 {

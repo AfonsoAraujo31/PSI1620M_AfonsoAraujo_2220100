@@ -243,7 +243,7 @@ namespace DLS_ALFEITE
             this.Location = new System.Drawing.Point(190, 0);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Medicamentos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Medicamentos";
             this.Load += new System.EventHandler(this.Medicamentos_Load);
             this.panel2.ResumeLayout(false);

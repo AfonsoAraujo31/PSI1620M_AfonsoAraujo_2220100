@@ -17,9 +17,11 @@ namespace DLS_ALFEITE
     public partial class Adicionar_inflamavel : Form
     {
         bool asa = true;
-        public Adicionar_inflamavel()
+        private readonly Inflamáveis inflamáveis;
+        public Adicionar_inflamavel(Inflamáveis a)
         {
             InitializeComponent();
+            inflamáveis = a;
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -55,7 +57,15 @@ namespace DLS_ALFEITE
                     {
 
                     }
-                    this.Close();
+                    try
+                    {
+                        inflamáveis.reload_tabela();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 catch (Exception ex)
                 {

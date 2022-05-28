@@ -183,7 +183,10 @@ namespace DLS_ALFEITE
                     observacoes = row.Cells["Observações"].Value.ToString();
                     setor = row.Cells["Setor"].Value.ToString();
                 }
-                new Editar_medicamento(id,denominacao, principio_ativo, validade, lote, stock, fabricante, contacto_do_fabricante, observacoes, setor).Show();
+                
+                Editar_medicamento med = new Editar_medicamento(id, denominacao, principio_ativo, validade, lote, stock, fabricante, contacto_do_fabricante, observacoes, setor, this);
+                med.Show();
+
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")
             {
@@ -225,16 +228,16 @@ namespace DLS_ALFEITE
         }
         public void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
         {
-            new Adicionar_medicamento().Show();
+            Adicionar_medicamento med = new Adicionar_medicamento(this);
+            med.Show();
         }
-
         public void delete()
         {
             SqlConnection sqlCon1 = new SqlConnection(ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString);
             SqlCommand cmd1;
             SqlCommand cmd2;
             SqlCommand cmd3;
-            MessageBox.Show(id);
+            //MessageBox.Show(id);
             try
             {
                 using (cmd1 = new SqlCommand("DELETE FROM Aquisição_medicamento WHERE id_aquisicao = @id", sqlCon1))
@@ -342,11 +345,12 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
         }
-        private void reload_tabela()
+        public void reload_tabela()
         {
             string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
             using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
             {
+                string a = null;
                 sqlCon1.Open();
                 SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos", sqlCon1);
                 DataTable dtbl1 = new DataTable();
@@ -354,8 +358,11 @@ namespace DLS_ALFEITE
                 //method 1 - direct method
                 dataGridView1.DataSource = dtbl1;
                 sqlCon1.Close();
+                
             }
         }
+
+
     }
 }
 
