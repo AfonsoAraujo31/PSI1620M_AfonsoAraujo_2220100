@@ -32,6 +32,8 @@ namespace DLS_ALFEITE
             txb_observacoes.Text = value8;
             txb_setor.Text = value9;
             equipamentos = a;
+            txb_numero_serie.MaxLength = 9;
+            txb_lote.MaxLength = 5;
         }
 
         private void btnclose_Click(object sender, EventArgs e)

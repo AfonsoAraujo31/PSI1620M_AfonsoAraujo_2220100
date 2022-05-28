@@ -33,6 +33,9 @@ namespace DLS_ALFEITE
             txb_observacoes.Text = value8;
             txb_setor.Text = value9;
             inflamáveis = a;
+            dtp_validade.MinDate = DateTime.Today;
+            txb_lote.MaxLength = 5;
+            txb_numero_serie.MaxLength = 9;
         }
 
         private void btnclose_Click(object sender, EventArgs e)

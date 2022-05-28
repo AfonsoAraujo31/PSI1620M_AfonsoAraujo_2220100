@@ -34,6 +34,8 @@ namespace DLS_ALFEITE
             txb_setor.Text = value9;
             //this.medicamentos = medicamentos;
             medicamentos = a;
+            dtp_validade.MinDate = DateTime.Today;
+            txb_lote.MaxLength = 5;
         }
 
         private void btnclose_Click(object sender, EventArgs e)

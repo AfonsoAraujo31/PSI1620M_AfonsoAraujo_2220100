@@ -22,6 +22,9 @@ namespace DLS_ALFEITE
         {
             InitializeComponent();
             inflamáveis = a;
+            dtp_validade.MinDate = DateTime.Today;
+            txb_lote.MaxLength = 5;
+            txb_numero_serie.MaxLength = 9;
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -84,7 +87,12 @@ namespace DLS_ALFEITE
             if (txb_numero_serie.Text == "")
             {
                 asa = false;
-                MessageBox.Show("Campo Princípio/Ativo incorreto!");
+                MessageBox.Show("Campo Número de série incorreto!");
+            }
+            if (txb_lote.Text == "")
+            {
+                asa = false;
+                MessageBox.Show("Campo Lote incorreto!");
             }
             if (dtp_validade.Text == "")
             {
@@ -123,6 +131,37 @@ namespace DLS_ALFEITE
             {
                 asa = false;
                 MessageBox.Show("Campo Contacto de fabricante incorreto");
+            }
+            if (obj.IsMatch(txb_contacto_fabricante.Text) == false)
+            {
+                asa = false;
+                MessageBox.Show("Campo Contacto de fabricante incorreto");
+            }
+            try
+            {
+                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
+                SqlConnection sqlcon = new SqlConnection(connectionString);
+                SqlCommand cmd = sqlcon.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"SELECT denominacao,lote,numero_serie FROM Inflamaveis WHERE denominacao=@denominacao OR lote=@lote OR numero_serie=@numero_serie ";
+                cmd.Parameters.AddWithValue("@denominacao", txb_denominacao.Text);
+                cmd.Parameters.AddWithValue("@numero_serie", txb_numero_serie.Text);
+                cmd.Parameters.AddWithValue("@lote", txb_lote.Text);
+                sqlcon.Open();
+                SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                sqladp.Fill(ds);
+                int count = ds.Tables[0].Rows.Count;
+                if (count >= 1)
+                {
+                    asa = false;
+                    MessageBox.Show("Já existe um registo com esse nome ou com número de série igual.");
+                }
+                sqlcon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

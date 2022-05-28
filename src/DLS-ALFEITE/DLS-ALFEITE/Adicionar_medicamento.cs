@@ -22,6 +22,8 @@ namespace DLS_ALFEITE
         {
             InitializeComponent();
             medicamentos = a;
+            dtp_validade.MinDate = DateTime.Today;
+            txb_lote.MaxLength = 5;
         }
         private void btnclose_Click(object sender, EventArgs e)
         {
@@ -56,7 +58,6 @@ namespace DLS_ALFEITE
                     {
 
                     }
-
                     try
                     {
                         medicamentos.reload_tabela();
@@ -127,6 +128,32 @@ namespace DLS_ALFEITE
             {
                 asa = false;
                 MessageBox.Show("Campo Contacto de fabricante incorreto");
+            }
+            try
+            {
+                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
+                SqlConnection sqlcon = new SqlConnection(connectionString);
+                SqlCommand cmd = sqlcon.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"SELECT denominacao,principio_ativo,lote FROM Medicamentos WHERE denominacao=@denominacao OR principio_ativo=@principio OR lote=@lote";
+                cmd.Parameters.AddWithValue("@denominacao", txb_denominacao.Text);
+                cmd.Parameters.AddWithValue("@principio", txb_principio_ativo.Text);
+                cmd.Parameters.AddWithValue("@lote", txb_lote.Text);
+                sqlcon.Open();
+                SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                sqladp.Fill(ds);
+                int count = ds.Tables[0].Rows.Count;
+                if (count >= 1)
+                {
+                    asa = false;
+                    MessageBox.Show("Já existe um registo com esse nome ou lote igual");
+                }
+                sqlcon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

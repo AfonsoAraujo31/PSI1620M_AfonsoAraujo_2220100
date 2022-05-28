@@ -312,7 +312,7 @@
             // 
             // dtp_validade
             // 
-            this.dtp_validade.CustomFormat = "dd-MM-yyyy";
+            this.dtp_validade.CustomFormat = "dd/MM/yyyy";
             this.dtp_validade.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_validade.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtp_validade.Location = new System.Drawing.Point(536, 82);
