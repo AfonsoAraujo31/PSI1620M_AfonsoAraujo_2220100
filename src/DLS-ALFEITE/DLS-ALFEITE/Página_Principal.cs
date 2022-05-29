@@ -16,6 +16,7 @@ namespace DLS_ALFEITE
         Medicamentos frm_med;
         Inflamáveis frm_infla;
         Notas frm_notas;
+        Aquisição_medicamento_menu frm_med_menu;
         public panel_mdi(string value)
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace DLS_ALFEITE
             btn_medicamento.BackColor = Color.Transparent;
             btn_equipamento.BackColor = Color.Transparent;
             btn_inflamavel.BackColor = Color.Transparent;
+            btn_aquisicao_medicamentos.BackColor = Color.Transparent;
             btn.BackColor = Color.Yellow;
         }
 
@@ -255,6 +257,35 @@ namespace DLS_ALFEITE
             {
                 btn_aquisicao_inflamaveis.Visible = false;
                 btn_fornecimento_inflamaveis.Visible = false;
+            }
+        }
+
+        private void btn_aquisicao_medicamentos_Click(object sender, EventArgs e)
+        {
+            btnsetcolor(btn_aquisicao_medicamentos);
+            try
+            {
+                if (frm_med_menu == null)
+                {
+                    frm_med_menu = new Aquisição_medicamento_menu();
+                    frm_med_menu.MdiParent = this;
+                    frm_med_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_med_menu.Show();
+                    frm_med_menu.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    frm_med_menu.Close();
+                    frm_med_menu = new Aquisição_medicamento_menu();
+                    frm_med_menu.MdiParent = this;
+                    frm_med_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_med_menu.Show();
+                    frm_med_menu.Dock = DockStyle.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

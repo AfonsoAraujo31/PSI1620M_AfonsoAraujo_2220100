@@ -370,6 +370,9 @@
     <EmbeddedResource Include="Aquisição_medicamento.resx">
       <DependentUpon>Aquisição_medicamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Aquisição_medicamento_menu.resx">
+      <DependentUpon>Aquisição_medicamento_menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editar_equipamento.resx">
       <DependentUpon>Editar_equipamento.cs</DependentUpon>
     </EmbeddedResource>
