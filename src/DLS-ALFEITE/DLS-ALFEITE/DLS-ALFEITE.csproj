@@ -266,6 +266,12 @@
     <Compile Include="Aquisição_medicamento.Designer.cs">
       <DependentUpon>Aquisição_medicamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aquisição_medicamento_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aquisição_medicamento_menu.Designer.cs">
+      <DependentUpon>Aquisição_medicamento_menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editar_equipamento.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -37,8 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txb_lote = new System.Windows.Forms.TextBox();
             this.txb_quantidade = new System.Windows.Forms.TextBox();
-            this.txb_data_prevista_entrega = new System.Windows.Forms.TextBox();
-            this.txb_data_fornecimento = new System.Windows.Forms.TextBox();
             this.txb_numero_serie = new System.Windows.Forms.TextBox();
             this.txb_denominacao = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,6 +49,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtp_data_fornecimento = new System.Windows.Forms.DateTimePicker();
+            this.dtp_data_prevista_entrega = new System.Windows.Forms.DateTimePicker();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,22 +146,6 @@
             this.txb_quantidade.Name = "txb_quantidade";
             this.txb_quantidade.Size = new System.Drawing.Size(224, 22);
             this.txb_quantidade.TabIndex = 69;
-            // 
-            // txb_data_prevista_entrega
-            // 
-            this.txb_data_prevista_entrega.Location = new System.Drawing.Point(538, 212);
-            this.txb_data_prevista_entrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txb_data_prevista_entrega.Name = "txb_data_prevista_entrega";
-            this.txb_data_prevista_entrega.Size = new System.Drawing.Size(408, 22);
-            this.txb_data_prevista_entrega.TabIndex = 68;
-            // 
-            // txb_data_fornecimento
-            // 
-            this.txb_data_fornecimento.Location = new System.Drawing.Point(70, 212);
-            this.txb_data_fornecimento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txb_data_fornecimento.Name = "txb_data_fornecimento";
-            this.txb_data_fornecimento.Size = new System.Drawing.Size(408, 22);
-            this.txb_data_fornecimento.TabIndex = 67;
             // 
             // txb_numero_serie
             // 
@@ -287,18 +271,44 @@
             this.label2.TabIndex = 55;
             this.label2.Text = "Denominação:";
             // 
+            // dtp_data_fornecimento
+            // 
+            this.dtp_data_fornecimento.CustomFormat = "dd/MM/yyyy";
+            this.dtp_data_fornecimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_data_fornecimento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtp_data_fornecimento.Location = new System.Drawing.Point(70, 212);
+            this.dtp_data_fornecimento.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_data_fornecimento.Name = "dtp_data_fornecimento";
+            this.dtp_data_fornecimento.Size = new System.Drawing.Size(408, 22);
+            this.dtp_data_fornecimento.TabIndex = 84;
+            this.dtp_data_fornecimento.TabStop = false;
+            this.dtp_data_fornecimento.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
+            // 
+            // dtp_data_prevista_entrega
+            // 
+            this.dtp_data_prevista_entrega.CustomFormat = "dd/MM/yyyy";
+            this.dtp_data_prevista_entrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_data_prevista_entrega.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtp_data_prevista_entrega.Location = new System.Drawing.Point(537, 212);
+            this.dtp_data_prevista_entrega.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_data_prevista_entrega.Name = "dtp_data_prevista_entrega";
+            this.dtp_data_prevista_entrega.Size = new System.Drawing.Size(409, 22);
+            this.dtp_data_prevista_entrega.TabIndex = 85;
+            this.dtp_data_prevista_entrega.TabStop = false;
+            this.dtp_data_prevista_entrega.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
+            // 
             // Fornecimento_equipamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1000, 645);
+            this.Controls.Add(this.dtp_data_prevista_entrega);
+            this.Controls.Add(this.dtp_data_fornecimento);
             this.Controls.Add(this.txb_entidade);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txb_lote);
             this.Controls.Add(this.txb_quantidade);
-            this.Controls.Add(this.txb_data_prevista_entrega);
-            this.Controls.Add(this.txb_data_fornecimento);
             this.Controls.Add(this.txb_numero_serie);
             this.Controls.Add(this.txb_denominacao);
             this.Controls.Add(this.button2);
@@ -333,8 +343,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txb_lote;
         private System.Windows.Forms.TextBox txb_quantidade;
-        private System.Windows.Forms.TextBox txb_data_prevista_entrega;
-        private System.Windows.Forms.TextBox txb_data_fornecimento;
         private System.Windows.Forms.TextBox txb_numero_serie;
         private System.Windows.Forms.TextBox txb_denominacao;
         private System.Windows.Forms.Button button2;
@@ -347,5 +355,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtp_data_fornecimento;
+        private System.Windows.Forms.DateTimePicker dtp_data_prevista_entrega;
     }
 }

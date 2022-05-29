@@ -70,7 +70,7 @@ namespace DLS_ALFEITE
                                 }
                             }
                         }*/
-                        new Página_Principal(textBox_username.Text).Show();
+                        new panel_mdi(textBox_username.Text).Show();
                         this.Hide();
                         sqlcon.Close();
                     }
@@ -163,7 +163,7 @@ namespace DLS_ALFEITE
                         int count = ds.Tables[0].Rows.Count;
                         if (count == 1)
                         {
-                            new Página_Principal(textBox_username.Text).Show();
+                            new panel_mdi(textBox_username.Text).Show();
                             this.Hide();
                         }
                         else

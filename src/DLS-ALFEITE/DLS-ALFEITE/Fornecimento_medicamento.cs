@@ -24,6 +24,9 @@ namespace DLS_ALFEITE
             txb_denominacao.Text = value1;
             txb_principio_ativo.Text = value2;
             txb_lote.Text = value3;
+            txb_lote.MaxLength = 5;
+            dtp_data_fornecimento.MinDate = DateTime.Today;
+            dtp_data_prevista_entrega.MinDate = DateTime.Today;
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -48,7 +51,7 @@ namespace DLS_ALFEITE
                 try
                 {
                     string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                    string query = "insert into fornecimento_medicamento(id_fornecimento,data_fornecimento,data_entrega,quantidade_fornecimento,entidade,observacoes) VALUES( " + id1 + ", '" + this.txb_data_fornecimento.Text + "','" + this.txb_data_prevista_entrega.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_observacoes.Text + "')";
+                    string query = "insert into fornecimento_medicamentos(id_fornecimento,data_fornecimento,data_entrega,quantidade_fornecimento,entidade,observacoes) VALUES( " + id1 + ", '" + this.dtp_data_fornecimento.Text + "','" + this.dtp_data_prevista_entrega.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_observacoes.Text + "')";
                     SqlConnection sqlCon = new SqlConnection(connectionString);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     SqlDataReader myreader;
@@ -84,12 +87,12 @@ namespace DLS_ALFEITE
                 asa = false;
                 MessageBox.Show("Campo Princípio/Ativo incorreto!");
             }
-            if (txb_data_fornecimento.Text == "")
+            if (dtp_data_fornecimento.Text == "")
             {
                 asa = false;
                 MessageBox.Show("Campo Validade incorreto!");
             }
-            if (txb_data_prevista_entrega.Text == "")
+            if (dtp_data_prevista_entrega.Text == "")
             {
                 asa = false;
                 MessageBox.Show("Campo Lote incorreto!");

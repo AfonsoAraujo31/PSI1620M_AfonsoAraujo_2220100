@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace DLS_ALFEITE
 {
-    public partial class Página_Principal : Form
+    public partial class panel_mdi : Form
     {
         Equipamentos frm_equip;
         Medicamentos frm_med;
         Inflamáveis frm_infla;
         Notas frm_notas;
-        public Página_Principal(string value)
+        public panel_mdi(string value)
         {
             InitializeComponent();
             label_username.Text = value;
@@ -28,6 +28,12 @@ namespace DLS_ALFEITE
             frm_med.Show();
             frm_med.Dock = DockStyle.Fill;
             btnsetcolor(btn_medicamento);
+            btn_aquisicao_medicamentos.Visible = true;
+            btn_fornecimento_medicamento.Visible = true;
+            btn_fornecimento_equipamentos.Visible = false;
+            btn_aquisicao_equipamentos.Visible = false;
+            btn_fornecimento_inflamaveis.Visible = false;
+            btn_aquisicao_inflamaveis.Visible = false;
         }
 
         private void btnsetcolor(Button btn)
@@ -73,6 +79,26 @@ namespace DLS_ALFEITE
             catch(Exception ex) {
                 MessageBox.Show(ex.Message);
             }
+            if (btn_aquisicao_inflamaveis.Visible == true || btn_fornecimento_inflamaveis.Visible == true)
+            {
+                btn_aquisicao_inflamaveis.Visible = false;
+                btn_fornecimento_inflamaveis.Visible = false;
+            }
+            if (btn_aquisicao_medicamentos.Visible == true || btn_fornecimento_medicamento.Visible == true)
+            {
+                btn_aquisicao_medicamentos.Visible = false;
+                btn_fornecimento_medicamento.Visible = false;
+            }
+            else if (btn_aquisicao_medicamentos.Visible == false)
+            {
+                btn_aquisicao_medicamentos.Visible = true;
+                btn_fornecimento_medicamento.Visible = true;
+            }
+            if (btn_aquisicao_equipamentos.Visible == true || btn_fornecimento_equipamentos.Visible == true)
+            {
+                btn_aquisicao_equipamentos.Visible = false;
+                btn_fornecimento_equipamentos.Visible = false;
+            }
         }
         void frm_medFormClosed(object sender, FormClosedEventArgs e)
         {
@@ -106,6 +132,26 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show(ex.Message);
             }
+            if (btn_aquisicao_inflamaveis.Visible == true || btn_fornecimento_inflamaveis.Visible == true)
+            {
+                btn_aquisicao_inflamaveis.Visible = false;
+                btn_fornecimento_inflamaveis.Visible = false;
+            }
+            if (btn_aquisicao_medicamentos.Visible == true || btn_fornecimento_medicamento.Visible == true)
+            {
+                btn_aquisicao_medicamentos.Visible = false;
+                btn_fornecimento_medicamento.Visible = false;
+            }
+            if (btn_aquisicao_equipamentos.Visible == true || btn_fornecimento_equipamentos.Visible == true)
+            {
+                btn_aquisicao_equipamentos.Visible = false;
+                btn_fornecimento_equipamentos.Visible = false;
+            }
+            else if (btn_aquisicao_equipamentos.Visible == false || btn_fornecimento_equipamentos.Visible == true) 
+            {
+                btn_aquisicao_equipamentos.Visible = true;
+                btn_fornecimento_equipamentos.Visible = true;
+            }
         }
 
         private void btn_inflamavel_Click(object sender, EventArgs e)
@@ -134,6 +180,26 @@ namespace DLS_ALFEITE
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            if (btn_aquisicao_inflamaveis.Visible == true || btn_fornecimento_inflamaveis.Visible == true)
+            {
+                btn_aquisicao_inflamaveis.Visible = false;
+                btn_fornecimento_inflamaveis.Visible = false;
+            }
+            else if (btn_aquisicao_inflamaveis.Visible == false || btn_fornecimento_inflamaveis.Visible == true)
+            {
+                btn_aquisicao_inflamaveis.Visible = true;
+                btn_fornecimento_inflamaveis.Visible = true;
+            }
+            if (btn_aquisicao_equipamentos.Visible == true || btn_fornecimento_equipamentos.Visible == true)
+            {
+                btn_aquisicao_equipamentos.Visible = false;
+                btn_fornecimento_equipamentos.Visible = false;
+            }
+            if (btn_aquisicao_medicamentos.Visible == true || btn_fornecimento_medicamento.Visible == true)
+            {
+                btn_aquisicao_medicamentos.Visible = false;
+                btn_fornecimento_medicamento.Visible = false;
             }
         }
 
@@ -169,6 +235,26 @@ namespace DLS_ALFEITE
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            btn_show();
+        }
+
+        private void btn_show()
+        {
+            if (btn_aquisicao_medicamentos.Visible == true || btn_fornecimento_medicamento.Visible == true)
+            {
+                btn_aquisicao_medicamentos.Visible = false;
+                btn_fornecimento_medicamento.Visible = false;
+            }
+            if (btn_aquisicao_equipamentos.Visible == true || btn_fornecimento_equipamentos.Visible == true)
+            {
+                btn_aquisicao_equipamentos.Visible = false;
+                btn_fornecimento_equipamentos.Visible = false;
+            }
+            if (btn_aquisicao_inflamaveis.Visible == true || btn_fornecimento_inflamaveis.Visible == true)
+            {
+                btn_aquisicao_inflamaveis.Visible = false;
+                btn_fornecimento_inflamaveis.Visible = false;
             }
         }
     }
