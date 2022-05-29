@@ -33,7 +33,6 @@
             this.label_med = new System.Windows.Forms.Label();
             this.btn_min = new System.Windows.Forms.Button();
             this.btnclose = new System.Windows.Forms.Button();
-            this.txb_data_rececao = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.txb_motivo = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtp_data_rececao = new System.Windows.Forms.DateTimePicker();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,14 +109,6 @@
             this.btnclose.TabIndex = 6;
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
-            // 
-            // txb_data_rececao
-            // 
-            this.txb_data_rececao.Location = new System.Drawing.Point(69, 254);
-            this.txb_data_rececao.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_data_rececao.Name = "txb_data_rececao";
-            this.txb_data_rececao.Size = new System.Drawing.Size(224, 22);
-            this.txb_data_rececao.TabIndex = 83;
             // 
             // button2
             // 
@@ -266,13 +258,26 @@
             this.label2.TabIndex = 68;
             this.label2.Text = "Denominação:";
             // 
+            // dtp_data_rececao
+            // 
+            this.dtp_data_rececao.CustomFormat = "dd/MM/yyyy";
+            this.dtp_data_rececao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_data_rececao.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtp_data_rececao.Location = new System.Drawing.Point(69, 254);
+            this.dtp_data_rececao.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_data_rececao.Name = "dtp_data_rececao";
+            this.dtp_data_rececao.Size = new System.Drawing.Size(224, 22);
+            this.dtp_data_rececao.TabIndex = 83;
+            this.dtp_data_rececao.TabStop = false;
+            this.dtp_data_rececao.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
+            // 
             // Aquisição_equipamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1000, 645);
-            this.Controls.Add(this.txb_data_rececao);
+            this.Controls.Add(this.dtp_data_rececao);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txb_motivo);
@@ -306,7 +311,6 @@
         private System.Windows.Forms.Label label_med;
         private System.Windows.Forms.Button btn_min;
         private System.Windows.Forms.Button btnclose;
-        private System.Windows.Forms.TextBox txb_data_rececao;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.TextBox txb_motivo;
@@ -322,5 +326,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtp_data_rececao;
     }
 }

@@ -24,6 +24,9 @@ namespace DLS_ALFEITE
             txb_denominacao.Text = value;
             txb_lote.Text = value1;
             txb_numero_serie.Text = value2;
+            txb_numero_serie.MaxLength = 9;
+            txb_lote.MaxLength = 5;
+            dtp_data_rececao.MinDate = DateTime.Today;
         }
 
         private void btnclose_Click(object sender, EventArgs e)
@@ -53,7 +56,7 @@ namespace DLS_ALFEITE
                 try
                 {
                     string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                    string query = "insert into Aquisição_equipamentos(id_aquisicao,data_limite_rececao,quantidade_aquisicao,entidade,motivo) VALUES( " + id1 + ", '" + this.txb_data_rececao.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_motivo.Text + "')";
+                    string query = "insert into Aquisição_equipamentos(id_aquisicao,data_limite_rececao,quantidade_aquisicao,entidade,motivo) VALUES( " + id1 + ", '" + this.dtp_data_rececao.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_motivo.Text + "')";
                     SqlConnection sqlCon = new SqlConnection(connectionString);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     SqlDataReader myreader;
@@ -94,7 +97,7 @@ namespace DLS_ALFEITE
                 asa = false;
                 MessageBox.Show("Campo Quantidade incorreto!");
             }
-            if (txb_data_rececao.Text == "")
+            if (dtp_data_rececao.Text == "")
             {
                 asa = false;
                 MessageBox.Show("Campo Data receção incorreto!");
