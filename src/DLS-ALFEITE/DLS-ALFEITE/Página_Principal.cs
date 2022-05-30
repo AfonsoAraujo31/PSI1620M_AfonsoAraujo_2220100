@@ -17,6 +17,7 @@ namespace DLS_ALFEITE
         Inflamáveis frm_infla;
         Notas frm_notas;
         Aquisição_medicamento_menu frm_med_menu;
+        Fornecimento_medicamento_menu frmm_med_menu_forn;
         public panel_mdi(string value)
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace DLS_ALFEITE
             btn_equipamento.BackColor = Color.Transparent;
             btn_inflamavel.BackColor = Color.Transparent;
             btn_aquisicao_medicamentos.BackColor = Color.Transparent;
+            btn_fornecimento_medicamento.BackColor = Color.Transparent;
             btn.BackColor = Color.Yellow;
         }
 
@@ -281,6 +283,35 @@ namespace DLS_ALFEITE
                     frm_med_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_med_menu.Show();
                     frm_med_menu.Dock = DockStyle.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_fornecimento_medicamento_Click(object sender, EventArgs e)
+        {
+            btnsetcolor(btn_fornecimento_medicamento);
+            try
+            {
+                if (frmm_med_menu_forn == null)
+                {
+                    frmm_med_menu_forn = new Fornecimento_medicamento_menu();
+                    frmm_med_menu_forn.MdiParent = this;
+                    frmm_med_menu_forn.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frmm_med_menu_forn.Show();
+                    frmm_med_menu_forn.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    frmm_med_menu_forn.Close();
+                    frmm_med_menu_forn = new Fornecimento_medicamento_menu();
+                    frmm_med_menu_forn.MdiParent = this;
+                    frmm_med_menu_forn.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frmm_med_menu_forn.Show();
+                    frmm_med_menu_forn.Dock = DockStyle.Fill;
                 }
             }
             catch (Exception ex)

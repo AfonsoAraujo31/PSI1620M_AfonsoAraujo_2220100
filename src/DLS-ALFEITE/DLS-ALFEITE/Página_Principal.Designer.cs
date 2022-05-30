@@ -69,9 +69,9 @@ namespace DLS_ALFEITE
             this.panel2.Controls.Add(this.label_data);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btn_inflamavel);
-            this.panel2.Controls.Add(this.btn_equipamento);
             this.panel2.Controls.Add(this.btn_medicamento);
             this.panel2.Controls.Add(this.label_username);
+            this.panel2.Controls.Add(this.btn_equipamento);
             this.panel2.Location = new System.Drawing.Point(0, -1);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel2.Name = "panel2";
@@ -131,6 +131,7 @@ namespace DLS_ALFEITE
             this.btn_fornecimento_medicamento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_fornecimento_medicamento.UseVisualStyleBackColor = true;
             this.btn_fornecimento_medicamento.Visible = false;
+            this.btn_fornecimento_medicamento.Click += new System.EventHandler(this.btn_fornecimento_medicamento_Click);
             // 
             // btn_notas
             // 
@@ -229,7 +230,7 @@ namespace DLS_ALFEITE
             this.label_data.Location = new System.Drawing.Point(59, 107);
             this.label_data.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_data.Name = "label_data";
-            this.label_data.Size = new System.Drawing.Size(34, 13);
+            this.label_data.Size = new System.Drawing.Size(42, 17);
             this.label_data.TabIndex = 9;
             this.label_data.Text = "Data";
             // 
@@ -306,7 +307,7 @@ namespace DLS_ALFEITE
             this.label_username.Location = new System.Drawing.Point(53, 87);
             this.label_username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_username.Name = "label_username";
-            this.label_username.Size = new System.Drawing.Size(42, 17);
+            this.label_username.Size = new System.Drawing.Size(49, 20);
             this.label_username.TabIndex = 6;
             this.label_username.Text = "User";
             // 

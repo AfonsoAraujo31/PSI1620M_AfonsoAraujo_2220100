@@ -59,7 +59,7 @@ namespace DLS_ALFEITE
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(35, 177);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 15);
             this.label1.TabIndex = 5;
             // 
             // panel2
@@ -79,7 +79,7 @@ namespace DLS_ALFEITE
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
+            this.listBox1.ItemHeight = 24;
             this.listBox1.Location = new System.Drawing.Point(29, 37);
             this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
@@ -100,9 +100,9 @@ namespace DLS_ALFEITE
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 8);
+            this.label2.Location = new System.Drawing.Point(3, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(281, 20);
+            this.label2.Size = new System.Drawing.Size(343, 25);
             this.label2.TabIndex = 7;
             this.label2.Text = "Próximos medicamentos a expirar:";
             // 
@@ -123,7 +123,7 @@ namespace DLS_ALFEITE
             this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 18;
+            this.listBox2.ItemHeight = 24;
             this.listBox2.Location = new System.Drawing.Point(28, 32);
             this.listBox2.Margin = new System.Windows.Forms.Padding(2);
             this.listBox2.Name = "listBox2";
@@ -146,7 +146,7 @@ namespace DLS_ALFEITE
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(2, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(270, 20);
+            this.label3.Size = new System.Drawing.Size(327, 25);
             this.label3.TabIndex = 12;
             this.label3.Text = "Medicamentos com pouco stock:";
             // 
@@ -172,7 +172,7 @@ namespace DLS_ALFEITE
             // btn_adicionar_medicamentos
             // 
             this.btn_adicionar_medicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_adicionar_medicamentos.Location = new System.Drawing.Point(1604, 24);
+            this.btn_adicionar_medicamentos.Location = new System.Drawing.Point(1608, 25);
             this.btn_adicionar_medicamentos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_adicionar_medicamentos.Name = "btn_adicionar_medicamentos";
             this.btn_adicionar_medicamentos.Size = new System.Drawing.Size(279, 24);
@@ -190,7 +190,7 @@ namespace DLS_ALFEITE
             this.textbox_searchbar.Location = new System.Drawing.Point(219, 25);
             this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_searchbar.Name = "textbox_searchbar";
-            this.textbox_searchbar.Size = new System.Drawing.Size(713, 24);
+            this.textbox_searchbar.Size = new System.Drawing.Size(713, 28);
             this.textbox_searchbar.TabIndex = 0;
             this.textbox_searchbar.Text = "Search...";
             this.textbox_searchbar.TextChanged += new System.EventHandler(this.textbox_searchbar_TextChanged);
@@ -219,9 +219,11 @@ namespace DLS_ALFEITE
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(219, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(219, 59);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1668, 803);

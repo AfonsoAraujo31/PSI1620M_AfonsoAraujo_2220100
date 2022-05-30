@@ -53,13 +53,11 @@ namespace DLS_ALFEITE
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.AllowUserToResizeRows = false;
         }
         DataGridViewCheckBoxColumn btn;
         public void update()
         {
-            btn = new DataGridViewCheckBoxColumn();
-            btn.HeaderText = "";
-            btn.Name = "btn_selecionado";
             //tamanho das colunas
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.Columns[0].Width = 15;
@@ -70,9 +68,7 @@ namespace DLS_ALFEITE
             dataGridView1.Columns[5].Width = 70;
             dataGridView1.Columns[6].Width = 50;
             dataGridView1.Columns[7].Width = 70;
-            dataGridView1.Columns.Add(btn);
         }
-        string id = null;
         private void textbox_searchbar_Enter(object sender, EventArgs e)
         {
             if (textbox_searchbar.Text == "Search...")
@@ -163,76 +159,41 @@ namespace DLS_ALFEITE
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_selecionado")
-                {
-                    foreach (DataGridViewRow row in dataGridView1.Rows)
-                    {
-                        if ((Convert.ToBoolean(row.Cells[1].Value) == true))
-                        {
-                            id = row.Cells["Id"].Value.ToString();
-                            SqlConnection sql = new SqlConnection(connectionString);
-                            using (sql)
-                            {
-                                SqlCommand cmd = sql.CreateCommand();
-                                cmd.CommandType = CommandType.Text;
-                                cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade',lote,motivo FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao Where id_aquisicao = @id";
-                                cmd.Parameters.AddWithValue("@id", id);
-                                sql.Open();
-                                using (cmd)
-                                {
-                                    using (var rdr = cmd.ExecuteReader())
-                                    {
-                                        if (rdr.HasRows)
-                                        {
-                                            while (rdr.Read())
-                                            {
-                                                txb_denominacao.Text = rdr.GetString(1);
-                                                txb_princpio_ativo.Text = rdr.GetString(2);
-                                                txb_quantidade.Text = Convert.ToString(rdr.GetInt32(3));
-                                                txb_fabricante.Text = rdr.GetString(4);
-                                                txb_contacto_fabricante.Text = rdr.GetString(5);
-                                                dtp_data_limite_rececao.Text = rdr.GetString(6);
-                                                txb_entidade.Text = rdr.GetString(7);
-                                                txb_lote.Text = Convert.ToString(rdr.GetInt32(8));
-                                                txb_motivo.Text = rdr.GetString(9);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
 
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string id1 = null;
+            id1 = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);    
+            string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
+            SqlConnection sql = new SqlConnection(connectionString);
+            using (sql)
+            {
+                SqlCommand cmd = sql.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade',lote,motivo FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao Where id_aquisicao = @id";
+                cmd.Parameters.AddWithValue("@id", id1);
+                sql.Open();
+                using (cmd)
+                {
+                    using (var rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.HasRows)
+                        {
+                            while (rdr.Read())
+                            {
+                                txb_denominacao.Text = rdr.GetString(1);
+                                txb_princpio_ativo.Text = rdr.GetString(2);
+                                txb_quantidade.Text = Convert.ToString(rdr.GetInt32(3));
+                                txb_fabricante.Text = rdr.GetString(4);
+                                txb_contacto_fabricante.Text = rdr.GetString(5);
+                                dtp_data_limite_rececao.Text = rdr.GetString(6);
+                                txb_entidade.Text = rdr.GetString(7);
+                                txb_lote.Text = Convert.ToString(rdr.GetInt32(8));
+                                txb_motivo.Text = rdr.GetString(9);
+                            }
                         }
                     }
-                   
                 }
-                else
-                {
-                    //MessageBox.Show("1");
-                }   
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            foreach (Control c in Controls)
-            {
-                if (c is CheckBox)
-                {
-                    CheckBox cb = (CheckBox)c;
-                    if (cb.Checked == false)
-                    {
-                        cb.Checked = true;
-                    }
-                    else
-                    {
-                        cb.Checked = false;
-                    }                    
-                }   
             }
         }
     }

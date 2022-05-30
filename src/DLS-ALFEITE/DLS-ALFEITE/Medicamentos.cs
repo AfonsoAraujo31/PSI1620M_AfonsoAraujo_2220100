@@ -59,6 +59,7 @@ namespace DLS_ALFEITE
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.AllowUserToResizeRows = false;
         }
 
         private void textbox_searchbar_Enter(object sender, EventArgs e)

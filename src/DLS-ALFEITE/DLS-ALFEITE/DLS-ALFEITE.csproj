@@ -314,6 +314,12 @@
     <Compile Include="Fornecimento_medicamento.Designer.cs">
       <DependentUpon>Fornecimento_medicamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fornecimento_medicamento_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecimento_medicamento_menu.Designer.cs">
+      <DependentUpon>Fornecimento_medicamento_menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inflamáveis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -393,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fornecimento_medicamento.resx">
       <DependentUpon>Fornecimento_medicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecimento_medicamento_menu.resx">
+      <DependentUpon>Fornecimento_medicamento_menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inflamáveis.resx">
       <DependentUpon>Inflamáveis.cs</DependentUpon>
