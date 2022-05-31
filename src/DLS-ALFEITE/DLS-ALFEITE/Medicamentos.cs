@@ -15,11 +15,22 @@ namespace DLS_ALFEITE
 {
     public partial class Medicamentos : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+             int nleftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nwidthEllipse,
+             int nHeightEllipse
+        );
         public Medicamentos()
         {
             InitializeComponent();
             StyleDatagridview();
             this.ActiveControl = label1;
+            panel2.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 40, 40));
+            panel4.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 40, 40));
         }
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         private void Medicamentos_Load(object sender, EventArgs e)

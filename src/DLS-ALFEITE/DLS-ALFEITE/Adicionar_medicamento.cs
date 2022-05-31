@@ -16,11 +16,23 @@ namespace DLS_ALFEITE
 {
     public partial class Adicionar_medicamento : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+             int nleftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nwidthEllipse,
+             int nHeightEllipse
+        );
+
         bool asa = true;
         private readonly Medicamentos medicamentos;
         public Adicionar_medicamento(Medicamentos a)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             medicamentos = a;
             dtp_validade.MinDate = DateTime.Today;
             txb_lote.MaxLength = 5;

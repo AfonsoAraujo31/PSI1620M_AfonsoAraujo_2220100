@@ -16,11 +16,23 @@ namespace DLS_ALFEITE
 {
     public partial class Adicionar_equipamento : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+             int nleftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nwidthEllipse,
+             int nHeightEllipse
+        );
+
         bool asa = true;
         private readonly Equipamentos equipamentos;
         public Adicionar_equipamento(Equipamentos a)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             equipamentos = a;
             txb_numero_serie.MaxLength = 9;
             txb_lote.MaxLength = 5;

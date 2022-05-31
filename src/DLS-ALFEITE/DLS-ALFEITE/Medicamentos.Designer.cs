@@ -29,31 +29,31 @@ namespace DLS_ALFEITE
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Medicamentos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Medicamentos));
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.btn_adicionar_medicamentos = new System.Windows.Forms.Button();
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,102 +63,6 @@ namespace DLS_ALFEITE
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Azure;
-            this.panel2.Controls.Add(this.listBox4);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.listBox1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(9, 15);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(291, 124);
-            this.panel2.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(248, 85);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(281, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Próximos medicamentos a expirar:";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Azure;
-            this.panel3.Controls.Add(this.listBox3);
-            this.panel3.Controls.Add(this.listBox2);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(306, 15);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(291, 124);
-            this.panel3.TabIndex = 1;
-            // 
-            // listBox2
-            // 
-            this.listBox2.BackColor = System.Drawing.Color.Azure;
-            this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 18;
-            this.listBox2.Location = new System.Drawing.Point(9, 32);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(132, 72);
-            this.listBox2.TabIndex = 14;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(247, 81);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(43, 39);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(2, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(270, 20);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Medicamentos com pouco stock:";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(605, 867);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 153);
-            this.panel1.TabIndex = 6;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Azure;
-            this.panel4.Location = new System.Drawing.Point(602, 15);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(291, 124);
-            this.panel4.TabIndex = 15;
             // 
             // btn_adicionar_medicamentos
             // 
@@ -221,18 +125,51 @@ namespace DLS_ALFEITE
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // listBox3
+            // panel2
             // 
-            this.listBox3.BackColor = System.Drawing.Color.Azure;
-            this.listBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 18;
-            this.listBox3.Location = new System.Drawing.Point(112, 32);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(132, 72);
-            this.listBox3.TabIndex = 15;
+            this.panel2.BackColor = System.Drawing.Color.Azure;
+            this.panel2.Controls.Add(this.listBox4);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.listBox1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel2.Location = new System.Drawing.Point(9, 15);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(291, 124);
+            this.panel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(281, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Próximos medicamentos a expirar:";
+            // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.Color.Azure;
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 18;
+            this.listBox1.Location = new System.Drawing.Point(7, 32);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(132, 72);
+            this.listBox1.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(248, 85);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // listBox4
             // 
@@ -247,18 +184,83 @@ namespace DLS_ALFEITE
             this.listBox4.Size = new System.Drawing.Size(132, 72);
             this.listBox4.TabIndex = 17;
             // 
-            // listBox1
+            // panel3
             // 
-            this.listBox1.BackColor = System.Drawing.Color.Azure;
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Location = new System.Drawing.Point(7, 32);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(132, 72);
-            this.listBox1.TabIndex = 16;
+            this.panel3.BackColor = System.Drawing.Color.Azure;
+            this.panel3.Controls.Add(this.listBox3);
+            this.panel3.Controls.Add(this.listBox2);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel3.Location = new System.Drawing.Point(306, 15);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(291, 124);
+            this.panel3.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(2, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(270, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Medicamentos com pouco stock:";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(247, 81);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // listBox2
+            // 
+            this.listBox2.BackColor = System.Drawing.Color.Azure;
+            this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 18;
+            this.listBox2.Location = new System.Drawing.Point(9, 32);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(132, 72);
+            this.listBox2.TabIndex = 14;
+            // 
+            // listBox3
+            // 
+            this.listBox3.BackColor = System.Drawing.Color.Azure;
+            this.listBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 18;
+            this.listBox3.Location = new System.Drawing.Point(112, 32);
+            this.listBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(132, 72);
+            this.listBox3.TabIndex = 15;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Azure;
+            this.panel4.Location = new System.Drawing.Point(602, 15);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(291, 124);
+            this.panel4.TabIndex = 15;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(605, 867);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(900, 153);
+            this.panel1.TabIndex = 6;
             // 
             // Medicamentos
             // 
@@ -278,6 +280,7 @@ namespace DLS_ALFEITE
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Medicamentos";
             this.Load += new System.EventHandler(this.Medicamentos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -285,7 +288,6 @@ namespace DLS_ALFEITE
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,20 +295,20 @@ namespace DLS_ALFEITE
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_adicionar_medicamentos;
         private System.Windows.Forms.TextBox textbox_searchbar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel1;
     }
 }

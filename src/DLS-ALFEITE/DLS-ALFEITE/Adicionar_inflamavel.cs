@@ -16,11 +16,23 @@ namespace DLS_ALFEITE
 {
     public partial class Adicionar_inflamavel : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+             int nleftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nwidthEllipse,
+             int nHeightEllipse
+        );
+
         bool asa = true;
         private readonly Inflamáveis inflamáveis;
         public Adicionar_inflamavel(Inflamáveis a)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             inflamáveis = a;
             dtp_validade.MinDate = DateTime.Today;
             txb_lote.MaxLength = 5;

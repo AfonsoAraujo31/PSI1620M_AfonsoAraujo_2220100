@@ -16,12 +16,24 @@ namespace DLS_ALFEITE
 {
     public partial class Editar_equipamento : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+             int nleftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nwidthEllipse,
+             int nHeightEllipse
+        );
+
         int id1 = 0;
         bool asa = true;
         private readonly Equipamentos equipamentos;
         public Editar_equipamento(string id, string value, string value2, string value4, string value5, string value6, string value7, string value8, string value9, Equipamentos a)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20 ));
             id1 = Convert.ToInt32(id);
             txb_denominacao.Text = value;
             txb_lote.Text = value2;

@@ -16,12 +16,24 @@ namespace DLS_ALFEITE
 {
     public partial class Editar_inflamavel : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+             int nleftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nwidthEllipse,
+             int nHeightEllipse
+        );
+
         bool asa = true;
         int id1 = 0;
         private readonly Inflamáveis inflamáveis;
         public Editar_inflamavel(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9, Inflamáveis a)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             id1 = Convert.ToInt32(id);
             txb_denominacao.Text = value;
             dtp_validade.Text = value2;

@@ -1,7 +1,7 @@
 ﻿
 namespace DLS_ALFEITE
 {
-    partial class Fornecimento_medicamento_menu
+    partial class Aquisição_equipamento_menu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,19 @@ namespace DLS_ALFEITE
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fornecimento_medicamento_menu));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Aquisição_equipamento_menu));
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txb_observacoes = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dtp_data_fornecimento = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dtp_data_limite_rececao = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txb_motivo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txb_entidade = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,10 +54,9 @@ namespace DLS_ALFEITE
             this.label5 = new System.Windows.Forms.Label();
             this.txb_lote = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txb_princpio_ativo = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.txb_numero_serie = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txb_denominacao = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -68,11 +69,11 @@ namespace DLS_ALFEITE
             this.textbox_searchbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_searchbar.CausesValidation = false;
             this.textbox_searchbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.textbox_searchbar.Location = new System.Drawing.Point(221, 24);
+            this.textbox_searchbar.Location = new System.Drawing.Point(219, 28);
             this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_searchbar.Name = "textbox_searchbar";
             this.textbox_searchbar.Size = new System.Drawing.Size(939, 24);
-            this.textbox_searchbar.TabIndex = 4;
+            this.textbox_searchbar.TabIndex = 5;
             this.textbox_searchbar.Text = "Search...";
             this.textbox_searchbar.TextChanged += new System.EventHandler(this.textbox_searchbar_TextChanged);
             this.textbox_searchbar.Enter += new System.EventHandler(this.textbox_searchbar_Enter);
@@ -82,25 +83,25 @@ namespace DLS_ALFEITE
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeight = 22;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(221, 58);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.Location = new System.Drawing.Point(219, 58);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -108,28 +109,19 @@ namespace DLS_ALFEITE
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(939, 980);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(1175, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 24);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Registo do pedido de aquisição:";
+            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txb_observacoes);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.dtp_data_fornecimento);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.dtp_data_limite_rececao);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.txb_motivo);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txb_entidade);
             this.panel1.Controls.Add(this.label9);
@@ -142,28 +134,28 @@ namespace DLS_ALFEITE
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txb_lote);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txb_princpio_ativo);
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.txb_numero_serie);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txb_denominacao);
-            this.panel1.Location = new System.Drawing.Point(1179, 58);
+            this.panel1.Location = new System.Drawing.Point(1180, 58);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 980);
-            this.panel1.TabIndex = 8;
+            this.panel1.TabIndex = 7;
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(70, 530);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
-            this.label2.TabIndex = 93;
-            this.label2.Text = "Observações:";
+            this.label1.AutoSize = true;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(70, 744);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.TabIndex = 93;
+            this.label1.Text = "Observações:";
             // 
             // txb_observacoes
             // 
             this.txb_observacoes.Enabled = false;
-            this.txb_observacoes.Location = new System.Drawing.Point(73, 546);
+            this.txb_observacoes.Location = new System.Drawing.Point(73, 760);
             this.txb_observacoes.Multiline = true;
             this.txb_observacoes.Name = "txb_observacoes";
             this.txb_observacoes.Size = new System.Drawing.Size(566, 153);
@@ -180,18 +172,47 @@ namespace DLS_ALFEITE
             this.pictureBox2.TabIndex = 89;
             this.pictureBox2.TabStop = false;
             // 
-            // dtp_data_fornecimento
+            // pictureBox1
             // 
-            this.dtp_data_fornecimento.CustomFormat = "dd/MM/yyyy";
-            this.dtp_data_fornecimento.Enabled = false;
-            this.dtp_data_fornecimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_data_fornecimento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtp_data_fornecimento.Location = new System.Drawing.Point(73, 464);
-            this.dtp_data_fornecimento.Name = "dtp_data_fornecimento";
-            this.dtp_data_fornecimento.Size = new System.Drawing.Size(249, 20);
-            this.dtp_data_fornecimento.TabIndex = 87;
-            this.dtp_data_fornecimento.TabStop = false;
-            this.dtp_data_fornecimento.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(208, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(306, 31);
+            this.pictureBox1.TabIndex = 88;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dtp_data_limite_rececao
+            // 
+            this.dtp_data_limite_rececao.CustomFormat = "dd/MM/yyyy";
+            this.dtp_data_limite_rececao.Enabled = false;
+            this.dtp_data_limite_rececao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_data_limite_rececao.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtp_data_limite_rececao.Location = new System.Drawing.Point(73, 464);
+            this.dtp_data_limite_rececao.Name = "dtp_data_limite_rececao";
+            this.dtp_data_limite_rececao.Size = new System.Drawing.Size(249, 20);
+            this.dtp_data_limite_rececao.TabIndex = 87;
+            this.dtp_data_limite_rececao.TabStop = false;
+            this.dtp_data_limite_rececao.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label10.Location = new System.Drawing.Point(70, 534);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Motivo:";
+            // 
+            // txb_motivo
+            // 
+            this.txb_motivo.Enabled = false;
+            this.txb_motivo.Location = new System.Drawing.Point(73, 550);
+            this.txb_motivo.Multiline = true;
+            this.txb_motivo.Name = "txb_motivo";
+            this.txb_motivo.Size = new System.Drawing.Size(566, 153);
+            this.txb_motivo.TabIndex = 17;
             // 
             // label8
             // 
@@ -217,9 +238,9 @@ namespace DLS_ALFEITE
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label9.Location = new System.Drawing.Point(70, 448);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(112, 13);
+            this.label9.Size = new System.Drawing.Size(116, 13);
             this.label9.TabIndex = 14;
-            this.label9.Text = "Data do fornecimento:";
+            this.label9.Text = "Data limite de receção:";
             // 
             // label6
             // 
@@ -263,9 +284,9 @@ namespace DLS_ALFEITE
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label4.Location = new System.Drawing.Point(387, 254);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 13);
+            this.label4.Size = new System.Drawing.Size(111, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Quantidade a fornecer:";
+            this.label4.Text = "Quantidade a adquirir:";
             // 
             // txb_quantidade
             // 
@@ -299,27 +320,27 @@ namespace DLS_ALFEITE
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label3.Location = new System.Drawing.Point(387, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.Size = new System.Drawing.Size(87, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Princípio/Ativo:";
+            this.label3.Text = "Número de série:";
             // 
-            // txb_princpio_ativo
+            // txb_numero_serie
             // 
-            this.txb_princpio_ativo.Enabled = false;
-            this.txb_princpio_ativo.Location = new System.Drawing.Point(390, 178);
-            this.txb_princpio_ativo.Name = "txb_princpio_ativo";
-            this.txb_princpio_ativo.Size = new System.Drawing.Size(249, 20);
-            this.txb_princpio_ativo.TabIndex = 3;
+            this.txb_numero_serie.Enabled = false;
+            this.txb_numero_serie.Location = new System.Drawing.Point(390, 178);
+            this.txb_numero_serie.Name = "txb_numero_serie";
+            this.txb_numero_serie.Size = new System.Drawing.Size(249, 20);
+            this.txb_numero_serie.TabIndex = 3;
             // 
-            // label11
+            // label2
             // 
-            this.label11.AutoSize = true;
-            this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(70, 162);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 13);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Denominação:";
+            this.label2.AutoSize = true;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(70, 162);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Denominação:";
             // 
             // txb_denominacao
             // 
@@ -330,29 +351,18 @@ namespace DLS_ALFEITE
             this.txb_denominacao.Size = new System.Drawing.Size(249, 21);
             this.txb_denominacao.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(210, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(306, 31);
-            this.pictureBox1.TabIndex = 94;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Fornecimento_medicamento_menu
+            // Aquisição_equipamento_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1940, 1100);
+            this.ClientSize = new System.Drawing.Size(1894, 1069);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textbox_searchbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Fornecimento_medicamento_menu";
-            this.Text = "Fornecimento_medicamento_menu";
+            this.Name = "Aquisição_equipamento_menu";
+            this.Text = "Aquisição_equipamento_menu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -367,12 +377,14 @@ namespace DLS_ALFEITE
 
         private System.Windows.Forms.TextBox textbox_searchbar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txb_observacoes;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DateTimePicker dtp_data_fornecimento;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dtp_data_limite_rececao;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txb_motivo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txb_entidade;
         private System.Windows.Forms.Label label9;
@@ -385,9 +397,8 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txb_lote;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txb_princpio_ativo;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txb_numero_serie;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txb_denominacao;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

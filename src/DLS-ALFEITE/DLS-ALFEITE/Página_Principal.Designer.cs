@@ -82,18 +82,19 @@ namespace DLS_ALFEITE
             // 
             this.btn_aquisicao_equipamentos.FlatAppearance.BorderSize = 0;
             this.btn_aquisicao_equipamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_aquisicao_equipamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aquisicao_equipamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aquisicao_equipamentos.ForeColor = System.Drawing.Color.White;
             this.btn_aquisicao_equipamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_aquisicao_equipamentos.Location = new System.Drawing.Point(0, 316);
+            this.btn_aquisicao_equipamentos.Location = new System.Drawing.Point(0, 308);
             this.btn_aquisicao_equipamentos.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_aquisicao_equipamentos.Name = "btn_aquisicao_equipamentos";
             this.btn_aquisicao_equipamentos.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btn_aquisicao_equipamentos.Size = new System.Drawing.Size(191, 31);
             this.btn_aquisicao_equipamentos.TabIndex = 23;
-            this.btn_aquisicao_equipamentos.Text = "Aquisição";
+            this.btn_aquisicao_equipamentos.Text = "Pedidos de aquisição";
             this.btn_aquisicao_equipamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_aquisicao_equipamentos.UseVisualStyleBackColor = true;
+            this.btn_aquisicao_equipamentos.Click += new System.EventHandler(this.btn_aquisicao_equipamentos_Click);
             // 
             // btn_aquisicao_medicamentos
             // 
@@ -209,18 +210,19 @@ namespace DLS_ALFEITE
             // 
             this.btn_fornecimento_equipamentos.FlatAppearance.BorderSize = 0;
             this.btn_fornecimento_equipamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_fornecimento_equipamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fornecimento_equipamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fornecimento_equipamentos.ForeColor = System.Drawing.Color.White;
             this.btn_fornecimento_equipamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fornecimento_equipamentos.Location = new System.Drawing.Point(0, 348);
+            this.btn_fornecimento_equipamentos.Location = new System.Drawing.Point(0, 339);
             this.btn_fornecimento_equipamentos.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_fornecimento_equipamentos.Name = "btn_fornecimento_equipamentos";
             this.btn_fornecimento_equipamentos.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btn_fornecimento_equipamentos.Size = new System.Drawing.Size(191, 31);
             this.btn_fornecimento_equipamentos.TabIndex = 16;
-            this.btn_fornecimento_equipamentos.Text = "Fornecimento";
+            this.btn_fornecimento_equipamentos.Text = "Registo de fornecimentos";
             this.btn_fornecimento_equipamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_fornecimento_equipamentos.UseVisualStyleBackColor = true;
+            this.btn_fornecimento_equipamentos.Click += new System.EventHandler(this.btn_fornecimento_equipamentos_Click);
             // 
             // label_data
             // 
@@ -301,7 +303,7 @@ namespace DLS_ALFEITE
             this.btn_equipamento.ForeColor = System.Drawing.Color.White;
             this.btn_equipamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_equipamento.Image")));
             this.btn_equipamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_equipamento.Location = new System.Drawing.Point(0, 262);
+            this.btn_equipamento.Location = new System.Drawing.Point(0, 257);
             this.btn_equipamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_equipamento.Name = "btn_equipamento";
             this.btn_equipamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);

@@ -15,11 +15,23 @@ namespace DLS_ALFEITE
 {
     public partial class Fornecimento_medicamento : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+             int nleftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nwidthEllipse,
+             int nHeightEllipse
+        );
+
         int id1 = 0;
         bool asa = true;
         public Fornecimento_medicamento(string id, string value1, string value2, string value3)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));  
             id1 = Convert.ToInt32(id);
             txb_denominacao.Text = value1;
             txb_principio_ativo.Text = value2;
