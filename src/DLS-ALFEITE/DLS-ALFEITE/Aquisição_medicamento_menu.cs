@@ -19,7 +19,6 @@ namespace DLS_ALFEITE
         {
             InitializeComponent();
             StyleDatagridview();
-            inputes();
             try
             {
                 string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
@@ -55,7 +54,6 @@ namespace DLS_ALFEITE
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.AllowUserToResizeRows = false;
         }
-        DataGridViewCheckBoxColumn btn;
         public void update()
         {
             //tamanho das colunas
@@ -128,38 +126,6 @@ namespace DLS_ALFEITE
             }
         }
 
-        private void inputes()
-        {
-            txb_fabricante.Enabled = false;
-            txb_princpio_ativo.Enabled = false;
-            txb_contacto_fabricante.Enabled = false;
-            txb_entidade.Enabled=   false;
-            txb_fabricante.Enabled = false;
-            txb_lote.Enabled = false;   
-            txb_motivo.Enabled = false;    
-            txb_quantidade.Enabled = false; 
-            txb_denominacao.Enabled = false;
-            dtp_data_limite_rececao.Enabled = false;
-        }
-
-        public void reload_tabela()
-        {
-            string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-            using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
-            {
-                string a = null;
-                sqlCon1.Open();
-                SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao", sqlCon1);
-                DataTable dtbl1 = new DataTable();
-                sqlDa1.Fill(dtbl1);
-                //method 1 - direct method
-                dataGridView1.DataSource = dtbl1;
-                sqlCon1.Close();
-
-            }
-        }
-
-
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string id1 = null;
@@ -170,7 +136,7 @@ namespace DLS_ALFEITE
             {
                 SqlCommand cmd = sql.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade',lote,motivo FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao Where id_aquisicao = @id";
+                cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade',lote,motivo,Medicamentos.observacoes FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao Where id_aquisicao = @id";
                 cmd.Parameters.AddWithValue("@id", id1);
                 sql.Open();
                 using (cmd)

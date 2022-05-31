@@ -298,7 +298,7 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
         }
-        private void listbox()
+        public void listbox()
         {
             string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
             //listbox1
@@ -314,7 +314,9 @@ namespace DLS_ALFEITE
                     while (myReader.Read())
                     {
 
-                        listBox1.Items.Add(string.Format("{0} ➡️ {1}", myReader["denominacao"].ToString(), myReader["validade"].ToString()));
+                        //listBox1.Items.Add(string.Format("{0} ➡️ {1}", myReader["denominacao"].ToString(), myReader["validade"].ToString()));
+                        listBox1.Items.Add(myReader["denominacao"].ToString());
+                        listBox4.Items.Add(string.Format("➡️ {0}", myReader["validade"].ToString()));
                     }
                 }
             }
@@ -323,8 +325,8 @@ namespace DLS_ALFEITE
 
                 MessageBox.Show(ex.Message);
             }
-            //listbox2
-            string Query2 = "SELECT denominacao, quantidade FROM Medicamentos WHERE quantidade <= 150";
+            //listbox2 
+            string Query2 = "SELECT TOP 4 denominacao, quantidade FROM Medicamentos ORDER BY quantidade ";
             SqlConnection sqlCon2 = new SqlConnection(connectionString);
             SqlCommand cmd2 = new SqlCommand(Query2, sqlCon2);
             SqlDataReader myReader2;
@@ -336,7 +338,9 @@ namespace DLS_ALFEITE
                     while (myReader2.Read())
                     {
 
-                        listBox2.Items.Add(string.Format("{0} ➡️ {1}", myReader2["denominacao"].ToString(), myReader2["quantidade"].ToString()));
+                        //listBox2.Items.Add(string.Format("{0} ➡️ {1}", myReader2["denominacao"].ToString(), myReader2["quantidade"].ToString()));
+                        listBox2.Items.Add(myReader2["denominacao"].ToString());
+                        listBox3.Items.Add(string.Format("➡️ {0}", myReader2["quantidade"].ToString()));
                     }
                 }
             }

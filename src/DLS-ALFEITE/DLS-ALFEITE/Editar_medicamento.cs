@@ -75,6 +75,7 @@ namespace DLS_ALFEITE
                     try
                     {
                         medicamentos.reload_tabela();
+                        medicamentos.listbox();
                         this.Close();
                     }
                     catch (Exception ex)

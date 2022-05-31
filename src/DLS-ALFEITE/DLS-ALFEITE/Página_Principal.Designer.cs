@@ -42,9 +42,9 @@ namespace DLS_ALFEITE
             this.label_data = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_inflamavel = new System.Windows.Forms.Button();
-            this.btn_equipamento = new System.Windows.Forms.Button();
             this.btn_medicamento = new System.Windows.Forms.Button();
             this.label_username = new System.Windows.Forms.Label();
+            this.btn_equipamento = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_min = new System.Windows.Forms.Button();
             this.btnclose = new System.Windows.Forms.Button();
@@ -99,7 +99,7 @@ namespace DLS_ALFEITE
             // 
             this.btn_aquisicao_medicamentos.FlatAppearance.BorderSize = 0;
             this.btn_aquisicao_medicamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_aquisicao_medicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aquisicao_medicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aquisicao_medicamentos.ForeColor = System.Drawing.Color.White;
             this.btn_aquisicao_medicamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_aquisicao_medicamentos.Location = new System.Drawing.Point(0, 195);
@@ -108,7 +108,7 @@ namespace DLS_ALFEITE
             this.btn_aquisicao_medicamentos.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btn_aquisicao_medicamentos.Size = new System.Drawing.Size(191, 31);
             this.btn_aquisicao_medicamentos.TabIndex = 21;
-            this.btn_aquisicao_medicamentos.Text = "Aquisição";
+            this.btn_aquisicao_medicamentos.Text = "Pedidos de aquisição";
             this.btn_aquisicao_medicamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_aquisicao_medicamentos.UseVisualStyleBackColor = true;
             this.btn_aquisicao_medicamentos.Visible = false;
@@ -118,7 +118,7 @@ namespace DLS_ALFEITE
             // 
             this.btn_fornecimento_medicamento.FlatAppearance.BorderSize = 0;
             this.btn_fornecimento_medicamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_fornecimento_medicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fornecimento_medicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fornecimento_medicamento.ForeColor = System.Drawing.Color.White;
             this.btn_fornecimento_medicamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_fornecimento_medicamento.Location = new System.Drawing.Point(0, 226);
@@ -127,7 +127,7 @@ namespace DLS_ALFEITE
             this.btn_fornecimento_medicamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btn_fornecimento_medicamento.Size = new System.Drawing.Size(191, 31);
             this.btn_fornecimento_medicamento.TabIndex = 22;
-            this.btn_fornecimento_medicamento.Text = "Fornecimento";
+            this.btn_fornecimento_medicamento.Text = "Registo de fornecimentos";
             this.btn_fornecimento_medicamento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_fornecimento_medicamento.UseVisualStyleBackColor = true;
             this.btn_fornecimento_medicamento.Visible = false;
@@ -230,7 +230,7 @@ namespace DLS_ALFEITE
             this.label_data.Location = new System.Drawing.Point(59, 107);
             this.label_data.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_data.Name = "label_data";
-            this.label_data.Size = new System.Drawing.Size(42, 17);
+            this.label_data.Size = new System.Drawing.Size(34, 13);
             this.label_data.TabIndex = 9;
             this.label_data.Text = "Data";
             // 
@@ -263,24 +263,6 @@ namespace DLS_ALFEITE
             this.btn_inflamavel.UseVisualStyleBackColor = true;
             this.btn_inflamavel.Click += new System.EventHandler(this.btn_inflamavel_Click);
             // 
-            // btn_equipamento
-            // 
-            this.btn_equipamento.FlatAppearance.BorderSize = 0;
-            this.btn_equipamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_equipamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_equipamento.ForeColor = System.Drawing.Color.White;
-            this.btn_equipamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_equipamento.Image")));
-            this.btn_equipamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_equipamento.Location = new System.Drawing.Point(0, 262);
-            this.btn_equipamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btn_equipamento.Name = "btn_equipamento";
-            this.btn_equipamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_equipamento.Size = new System.Drawing.Size(191, 53);
-            this.btn_equipamento.TabIndex = 7;
-            this.btn_equipamento.Text = "EQUIPAMENTOS";
-            this.btn_equipamento.UseVisualStyleBackColor = true;
-            this.btn_equipamento.Click += new System.EventHandler(this.btn_equipamento_Click);
-            // 
             // btn_medicamento
             // 
             this.btn_medicamento.FlatAppearance.BorderSize = 0;
@@ -307,9 +289,27 @@ namespace DLS_ALFEITE
             this.label_username.Location = new System.Drawing.Point(53, 87);
             this.label_username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_username.Name = "label_username";
-            this.label_username.Size = new System.Drawing.Size(49, 20);
+            this.label_username.Size = new System.Drawing.Size(42, 17);
             this.label_username.TabIndex = 6;
             this.label_username.Text = "User";
+            // 
+            // btn_equipamento
+            // 
+            this.btn_equipamento.FlatAppearance.BorderSize = 0;
+            this.btn_equipamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_equipamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_equipamento.ForeColor = System.Drawing.Color.White;
+            this.btn_equipamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_equipamento.Image")));
+            this.btn_equipamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_equipamento.Location = new System.Drawing.Point(0, 262);
+            this.btn_equipamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_equipamento.Name = "btn_equipamento";
+            this.btn_equipamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btn_equipamento.Size = new System.Drawing.Size(191, 53);
+            this.btn_equipamento.TabIndex = 7;
+            this.btn_equipamento.Text = "EQUIPAMENTOS";
+            this.btn_equipamento.UseVisualStyleBackColor = true;
+            this.btn_equipamento.Click += new System.EventHandler(this.btn_equipamento_Click);
             // 
             // panel5
             // 
