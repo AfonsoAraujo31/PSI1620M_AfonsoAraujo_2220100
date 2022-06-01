@@ -24,6 +24,8 @@ namespace DLS_ALFEITE
         public panel_mdi(string value)
         {
             InitializeComponent();
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.WindowState = FormWindowState.Maximized;
             label_username.Text = value;
             DateTime today = DateTime.Today;
             label_data.Text = today.ToString("dd/MM/yyyy");
