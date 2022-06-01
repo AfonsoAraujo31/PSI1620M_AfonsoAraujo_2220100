@@ -21,6 +21,9 @@ namespace DLS_ALFEITE
         Fornecimento_medicamento_menu frmm_med_menu_form;
         Aquisição_equipamento_menu frm_equip_menu_form;
         Fornecimento_equipamento_menu frm_equip_menu;
+        Definições frm_definicoes;
+        Aquisição_inflamavel_menu frm_infla_menu;
+        Fornecimento_inflamavel_menu frm_infla_forn_menu;
         public panel_mdi(string value)
         {
             InitializeComponent();
@@ -53,7 +56,9 @@ namespace DLS_ALFEITE
             btn_fornecimento_medicamento.BackColor = Color.Transparent;
             btn_aquisicao_equipamentos.BackColor = Color.Transparent;
             btn_fornecimento_equipamentos.BackColor = Color.Transparent;
-
+            btn_definicoes.BackColor = Color.Transparent;
+            btn_aquisicao_inflamaveis.BackColor = Color.Transparent;
+            btn_fornecimento_inflamaveis.BackColor = Color.Transparent;
             btn.BackColor = Color.Yellow;
         }
 
@@ -378,6 +383,94 @@ namespace DLS_ALFEITE
                     frm_equip_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_equip_menu.Show();
                     frm_equip_menu.Dock = DockStyle.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_definicoes_Click(object sender, EventArgs e)
+        {
+            btnsetcolor(btn_definicoes);
+            try
+            {
+                if (frm_definicoes == null)
+                {
+                    frm_definicoes = new Definições();
+                    frm_definicoes.MdiParent = this;
+                    frm_definicoes.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_definicoes.Show();
+                    frm_definicoes.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    frm_definicoes.Close();
+                    frm_definicoes = new Definições();
+                    frm_definicoes.MdiParent = this;
+                    frm_definicoes.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_definicoes.Show();
+                    frm_definicoes.Dock = DockStyle.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            btn_show();
+        }
+
+        private void btn_aquisicao_inflamaveis_Click(object sender, EventArgs e)
+        {
+            btnsetcolor(btn_aquisicao_inflamaveis);
+            try
+            {
+                if (frm_infla_menu == null)
+                {
+                    frm_infla_menu = new Aquisição_inflamavel_menu();
+                    frm_infla_menu.MdiParent = this;
+                    frm_infla_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_infla_menu.Show();
+                    frm_infla_menu.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    frm_infla_menu.Close();
+                    frm_infla_menu = new Aquisição_inflamavel_menu();
+                    frm_infla_menu.MdiParent = this;
+                    frm_infla_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_infla_menu.Show();
+                    frm_infla_menu.Dock = DockStyle.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_fornecimento_inflamaveis_Click(object sender, EventArgs e)
+        {
+            btnsetcolor(btn_fornecimento_inflamaveis);
+            try
+            {
+                if (frm_infla_forn_menu == null)
+                {
+                    frm_infla_forn_menu = new Fornecimento_inflamavel_menu();
+                    frm_infla_forn_menu.MdiParent = this;
+                    frm_infla_forn_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_infla_forn_menu.Show();
+                    frm_infla_forn_menu.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    frm_infla_forn_menu.Close();
+                    frm_infla_forn_menu = new Fornecimento_inflamavel_menu();
+                    frm_infla_forn_menu.MdiParent = this;
+                    frm_infla_forn_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_infla_forn_menu.Show();
+                    frm_infla_forn_menu.Dock = DockStyle.Fill;
                 }
             }
             catch (Exception ex)

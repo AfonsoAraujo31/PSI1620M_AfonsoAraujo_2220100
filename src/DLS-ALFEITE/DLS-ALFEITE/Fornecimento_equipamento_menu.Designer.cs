@@ -106,7 +106,7 @@ namespace DLS_ALFEITE
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(939, 980);
+            this.dataGridView1.Size = new System.Drawing.Size(939, 937);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -135,7 +135,7 @@ namespace DLS_ALFEITE
             this.panel1.Controls.Add(this.txb_denominacao);
             this.panel1.Location = new System.Drawing.Point(1180, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(702, 980);
+            this.panel1.Size = new System.Drawing.Size(702, 937);
             this.panel1.TabIndex = 6;
             // 
             // label1
