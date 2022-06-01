@@ -58,7 +58,7 @@ namespace DLS_ALFEITE
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panel2.Controls.Add(this.btn_definicoes);
             this.panel2.Controls.Add(this.btn_aquisicao_equipamentos);
             this.panel2.Controls.Add(this.btn_aquisicao_medicamentos);
@@ -75,9 +75,9 @@ namespace DLS_ALFEITE
             this.panel2.Controls.Add(this.label_username);
             this.panel2.Controls.Add(this.btn_equipamento);
             this.panel2.Location = new System.Drawing.Point(0, -1);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(190, 898);
+            this.panel2.Size = new System.Drawing.Size(253, 1105);
             this.panel2.TabIndex = 2;
             // 
             // btn_definicoes
@@ -89,11 +89,11 @@ namespace DLS_ALFEITE
             this.btn_definicoes.ForeColor = System.Drawing.Color.White;
             this.btn_definicoes.Image = ((System.Drawing.Image)(resources.GetObject("btn_definicoes.Image")));
             this.btn_definicoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_definicoes.Location = new System.Drawing.Point(0, 664);
-            this.btn_definicoes.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_definicoes.Location = new System.Drawing.Point(0, 817);
+            this.btn_definicoes.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_definicoes.Name = "btn_definicoes";
-            this.btn_definicoes.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_definicoes.Size = new System.Drawing.Size(191, 53);
+            this.btn_definicoes.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_definicoes.Size = new System.Drawing.Size(255, 65);
             this.btn_definicoes.TabIndex = 24;
             this.btn_definicoes.Text = "SETTINGS";
             this.btn_definicoes.UseVisualStyleBackColor = true;
@@ -106,11 +106,11 @@ namespace DLS_ALFEITE
             this.btn_aquisicao_equipamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aquisicao_equipamentos.ForeColor = System.Drawing.Color.White;
             this.btn_aquisicao_equipamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_aquisicao_equipamentos.Location = new System.Drawing.Point(0, 308);
-            this.btn_aquisicao_equipamentos.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_aquisicao_equipamentos.Location = new System.Drawing.Point(0, 379);
+            this.btn_aquisicao_equipamentos.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_aquisicao_equipamentos.Name = "btn_aquisicao_equipamentos";
-            this.btn_aquisicao_equipamentos.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_aquisicao_equipamentos.Size = new System.Drawing.Size(191, 31);
+            this.btn_aquisicao_equipamentos.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_aquisicao_equipamentos.Size = new System.Drawing.Size(255, 38);
             this.btn_aquisicao_equipamentos.TabIndex = 23;
             this.btn_aquisicao_equipamentos.Text = "Pedidos de aquisição";
             this.btn_aquisicao_equipamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,11 +124,11 @@ namespace DLS_ALFEITE
             this.btn_aquisicao_medicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aquisicao_medicamentos.ForeColor = System.Drawing.Color.White;
             this.btn_aquisicao_medicamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_aquisicao_medicamentos.Location = new System.Drawing.Point(0, 195);
-            this.btn_aquisicao_medicamentos.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_aquisicao_medicamentos.Location = new System.Drawing.Point(0, 240);
+            this.btn_aquisicao_medicamentos.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_aquisicao_medicamentos.Name = "btn_aquisicao_medicamentos";
-            this.btn_aquisicao_medicamentos.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_aquisicao_medicamentos.Size = new System.Drawing.Size(191, 31);
+            this.btn_aquisicao_medicamentos.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_aquisicao_medicamentos.Size = new System.Drawing.Size(255, 38);
             this.btn_aquisicao_medicamentos.TabIndex = 21;
             this.btn_aquisicao_medicamentos.Text = "Pedidos de aquisição";
             this.btn_aquisicao_medicamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -143,11 +143,11 @@ namespace DLS_ALFEITE
             this.btn_fornecimento_medicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fornecimento_medicamento.ForeColor = System.Drawing.Color.White;
             this.btn_fornecimento_medicamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fornecimento_medicamento.Location = new System.Drawing.Point(0, 226);
-            this.btn_fornecimento_medicamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_fornecimento_medicamento.Location = new System.Drawing.Point(0, 278);
+            this.btn_fornecimento_medicamento.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_fornecimento_medicamento.Name = "btn_fornecimento_medicamento";
-            this.btn_fornecimento_medicamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_fornecimento_medicamento.Size = new System.Drawing.Size(191, 31);
+            this.btn_fornecimento_medicamento.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_fornecimento_medicamento.Size = new System.Drawing.Size(255, 38);
             this.btn_fornecimento_medicamento.TabIndex = 22;
             this.btn_fornecimento_medicamento.Text = "Registo de fornecimentos";
             this.btn_fornecimento_medicamento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,11 +163,11 @@ namespace DLS_ALFEITE
             this.btn_notas.ForeColor = System.Drawing.Color.White;
             this.btn_notas.Image = ((System.Drawing.Image)(resources.GetObject("btn_notas.Image")));
             this.btn_notas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_notas.Location = new System.Drawing.Point(-1, 500);
-            this.btn_notas.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_notas.Location = new System.Drawing.Point(-1, 615);
+            this.btn_notas.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_notas.Name = "btn_notas";
-            this.btn_notas.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_notas.Size = new System.Drawing.Size(191, 53);
+            this.btn_notas.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_notas.Size = new System.Drawing.Size(255, 65);
             this.btn_notas.TabIndex = 20;
             this.btn_notas.Text = "Notas";
             this.btn_notas.UseVisualStyleBackColor = true;
@@ -182,11 +182,11 @@ namespace DLS_ALFEITE
             this.btn_logout.ForeColor = System.Drawing.Color.White;
             this.btn_logout.Image = ((System.Drawing.Image)(resources.GetObject("btn_logout.Image")));
             this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_logout.Location = new System.Drawing.Point(0, 719);
-            this.btn_logout.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_logout.Location = new System.Drawing.Point(0, 885);
+            this.btn_logout.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_logout.Size = new System.Drawing.Size(191, 53);
+            this.btn_logout.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_logout.Size = new System.Drawing.Size(255, 65);
             this.btn_logout.TabIndex = 19;
             this.btn_logout.Text = "LOGOUT";
             this.btn_logout.UseVisualStyleBackColor = true;
@@ -199,11 +199,11 @@ namespace DLS_ALFEITE
             this.btn_fornecimento_inflamaveis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fornecimento_inflamaveis.ForeColor = System.Drawing.Color.White;
             this.btn_fornecimento_inflamaveis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fornecimento_inflamaveis.Location = new System.Drawing.Point(0, 454);
-            this.btn_fornecimento_inflamaveis.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_fornecimento_inflamaveis.Location = new System.Drawing.Point(0, 559);
+            this.btn_fornecimento_inflamaveis.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_fornecimento_inflamaveis.Name = "btn_fornecimento_inflamaveis";
-            this.btn_fornecimento_inflamaveis.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_fornecimento_inflamaveis.Size = new System.Drawing.Size(191, 31);
+            this.btn_fornecimento_inflamaveis.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_fornecimento_inflamaveis.Size = new System.Drawing.Size(255, 38);
             this.btn_fornecimento_inflamaveis.TabIndex = 18;
             this.btn_fornecimento_inflamaveis.Text = "Registo de fornecimentos";
             this.btn_fornecimento_inflamaveis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -217,11 +217,11 @@ namespace DLS_ALFEITE
             this.btn_aquisicao_inflamaveis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aquisicao_inflamaveis.ForeColor = System.Drawing.Color.White;
             this.btn_aquisicao_inflamaveis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_aquisicao_inflamaveis.Location = new System.Drawing.Point(0, 423);
-            this.btn_aquisicao_inflamaveis.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_aquisicao_inflamaveis.Location = new System.Drawing.Point(0, 521);
+            this.btn_aquisicao_inflamaveis.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_aquisicao_inflamaveis.Name = "btn_aquisicao_inflamaveis";
-            this.btn_aquisicao_inflamaveis.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_aquisicao_inflamaveis.Size = new System.Drawing.Size(191, 31);
+            this.btn_aquisicao_inflamaveis.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_aquisicao_inflamaveis.Size = new System.Drawing.Size(255, 38);
             this.btn_aquisicao_inflamaveis.TabIndex = 17;
             this.btn_aquisicao_inflamaveis.Text = "Pedidos de aquisição";
             this.btn_aquisicao_inflamaveis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -236,11 +236,11 @@ namespace DLS_ALFEITE
             this.btn_fornecimento_equipamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fornecimento_equipamentos.ForeColor = System.Drawing.Color.White;
             this.btn_fornecimento_equipamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fornecimento_equipamentos.Location = new System.Drawing.Point(0, 339);
-            this.btn_fornecimento_equipamentos.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_fornecimento_equipamentos.Location = new System.Drawing.Point(0, 417);
+            this.btn_fornecimento_equipamentos.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_fornecimento_equipamentos.Name = "btn_fornecimento_equipamentos";
-            this.btn_fornecimento_equipamentos.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_fornecimento_equipamentos.Size = new System.Drawing.Size(191, 31);
+            this.btn_fornecimento_equipamentos.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_fornecimento_equipamentos.Size = new System.Drawing.Size(255, 38);
             this.btn_fornecimento_equipamentos.TabIndex = 16;
             this.btn_fornecimento_equipamentos.Text = "Registo de fornecimentos";
             this.btn_fornecimento_equipamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,8 +252,7 @@ namespace DLS_ALFEITE
             this.label_data.AutoSize = true;
             this.label_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_data.ForeColor = System.Drawing.Color.White;
-            this.label_data.Location = new System.Drawing.Point(59, 107);
-            this.label_data.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_data.Location = new System.Drawing.Point(79, 132);
             this.label_data.Name = "label_data";
             this.label_data.Size = new System.Drawing.Size(34, 13);
             this.label_data.TabIndex = 9;
@@ -262,10 +261,10 @@ namespace DLS_ALFEITE
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(71, 27);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(95, 33);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(71, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -278,11 +277,11 @@ namespace DLS_ALFEITE
             this.btn_inflamavel.ForeColor = System.Drawing.Color.White;
             this.btn_inflamavel.Image = ((System.Drawing.Image)(resources.GetObject("btn_inflamavel.Image")));
             this.btn_inflamavel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inflamavel.Location = new System.Drawing.Point(-1, 370);
-            this.btn_inflamavel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_inflamavel.Location = new System.Drawing.Point(-1, 455);
+            this.btn_inflamavel.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_inflamavel.Name = "btn_inflamavel";
-            this.btn_inflamavel.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_inflamavel.Size = new System.Drawing.Size(191, 53);
+            this.btn_inflamavel.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_inflamavel.Size = new System.Drawing.Size(255, 65);
             this.btn_inflamavel.TabIndex = 8;
             this.btn_inflamavel.Text = "INFLAMÁVEIS";
             this.btn_inflamavel.UseVisualStyleBackColor = true;
@@ -296,11 +295,11 @@ namespace DLS_ALFEITE
             this.btn_medicamento.ForeColor = System.Drawing.Color.White;
             this.btn_medicamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_medicamento.Image")));
             this.btn_medicamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_medicamento.Location = new System.Drawing.Point(0, 143);
-            this.btn_medicamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_medicamento.Location = new System.Drawing.Point(0, 176);
+            this.btn_medicamento.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_medicamento.Name = "btn_medicamento";
-            this.btn_medicamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_medicamento.Size = new System.Drawing.Size(191, 53);
+            this.btn_medicamento.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_medicamento.Size = new System.Drawing.Size(255, 65);
             this.btn_medicamento.TabIndex = 6;
             this.btn_medicamento.Text = " MEDICAMENTOS";
             this.btn_medicamento.UseVisualStyleBackColor = true;
@@ -311,8 +310,7 @@ namespace DLS_ALFEITE
             this.label_username.AutoSize = true;
             this.label_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_username.ForeColor = System.Drawing.Color.White;
-            this.label_username.Location = new System.Drawing.Point(53, 87);
-            this.label_username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_username.Location = new System.Drawing.Point(71, 107);
             this.label_username.Name = "label_username";
             this.label_username.Size = new System.Drawing.Size(42, 17);
             this.label_username.TabIndex = 6;
@@ -326,11 +324,11 @@ namespace DLS_ALFEITE
             this.btn_equipamento.ForeColor = System.Drawing.Color.White;
             this.btn_equipamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_equipamento.Image")));
             this.btn_equipamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_equipamento.Location = new System.Drawing.Point(0, 257);
-            this.btn_equipamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_equipamento.Location = new System.Drawing.Point(0, 316);
+            this.btn_equipamento.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_equipamento.Name = "btn_equipamento";
-            this.btn_equipamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_equipamento.Size = new System.Drawing.Size(191, 53);
+            this.btn_equipamento.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btn_equipamento.Size = new System.Drawing.Size(255, 65);
             this.btn_equipamento.TabIndex = 7;
             this.btn_equipamento.Text = "EQUIPAMENTOS";
             this.btn_equipamento.UseVisualStyleBackColor = true;
@@ -338,29 +336,29 @@ namespace DLS_ALFEITE
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panel5.Controls.Add(this.btn_min);
             this.panel5.Controls.Add(this.btnclose);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(867, 29);
+            this.panel5.Size = new System.Drawing.Size(1156, 36);
             this.panel5.TabIndex = 5;
             // 
             // btn_min
             // 
             this.btn_min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_min.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_min.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.btn_min.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btn_min.FlatAppearance.BorderSize = 0;
             this.btn_min.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_min.Image = ((System.Drawing.Image)(resources.GetObject("btn_min.Image")));
-            this.btn_min.Location = new System.Drawing.Point(779, -3);
-            this.btn_min.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_min.Location = new System.Drawing.Point(1021, -4);
+            this.btn_min.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btn_min.Name = "btn_min";
-            this.btn_min.Size = new System.Drawing.Size(50, 33);
+            this.btn_min.Size = new System.Drawing.Size(67, 41);
             this.btn_min.TabIndex = 8;
             this.btn_min.UseVisualStyleBackColor = false;
             this.btn_min.Click += new System.EventHandler(this.btn_min_Click);
@@ -368,32 +366,32 @@ namespace DLS_ALFEITE
             // btnclose
             // 
             this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.btnclose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnclose.FlatAppearance.BorderSize = 0;
             this.btnclose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
-            this.btnclose.Location = new System.Drawing.Point(819, -3);
-            this.btnclose.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnclose.Location = new System.Drawing.Point(1090, -4);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(50, 33);
+            this.btnclose.Size = new System.Drawing.Size(67, 41);
             this.btnclose.TabIndex = 6;
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // panel_mdi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(867, 804);
+            this.ClientSize = new System.Drawing.Size(1156, 990);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.Name = "panel_mdi";
             this.Text = "Medicamentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

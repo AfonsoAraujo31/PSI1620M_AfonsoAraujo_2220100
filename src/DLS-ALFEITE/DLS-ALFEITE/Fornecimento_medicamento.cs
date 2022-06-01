@@ -39,8 +39,19 @@ namespace DLS_ALFEITE
             txb_lote.MaxLength = 5;
             dtp_data_fornecimento.MinDate = DateTime.Today;
             dtp_data_prevista_entrega.MinDate = DateTime.Today;
+            texbox_redondas();
         }
-
+        public void texbox_redondas()
+        {
+            txb_denominacao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            txb_principio_ativo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            txb_observacoes.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_observacoes.Width, txb_observacoes.Height, 20, 20));
+            txb_quantidade.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_quantidade.Width, txb_quantidade.Height, 12, 12));
+            txb_entidade.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_entidade.Width, txb_entidade.Height, 12, 12));
+            txb_lote.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_lote.Width, txb_lote.Height, 12, 12));
+            dtp_data_fornecimento.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            dtp_data_prevista_entrega.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+        }
         private void btnclose_Click(object sender, EventArgs e)
         {
             this.Close();
