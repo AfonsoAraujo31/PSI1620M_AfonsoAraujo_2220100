@@ -25,7 +25,7 @@ namespace DLS_ALFEITE
                 using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
                 {
                     sqlCon1.Open();
-                    SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento", sqlCon1);
+                    SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Número de série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento", sqlCon1);
                     DataTable dtbl1 = new DataTable();
                     sqlDa1.Fill(dtbl1);
                     dataGridView1.DataSource = dtbl1;
@@ -79,7 +79,7 @@ namespace DLS_ALFEITE
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento where denominacao like '" + textbox_searchbar.Text + "%'";
+                    cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Número de série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento where denominacao like '" + textbox_searchbar.Text + "%'";
 
                     SqlDataAdapter adpt = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
@@ -113,7 +113,7 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
                     {
                         sqlCon1.Open();
-                        SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento", sqlCon1);
+                        SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Número de série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento           ", sqlCon1);
                         DataTable dtbl1 = new DataTable();
                         sqlDa1.Fill(dtbl1);
                         dataGridView1.DataSource = dtbl1;
@@ -137,7 +137,7 @@ namespace DLS_ALFEITE
             {
                 SqlCommand cmd = sql.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', lote,fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade',fornecimento_medicamentos.observacoes FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento Where id_fornecimento = @id";
+                cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,lote,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento Where id_fornecimento = @id";
                 cmd.Parameters.AddWithValue("@id", id1);
                 sql.Open();
                 using (cmd)
@@ -149,9 +149,9 @@ namespace DLS_ALFEITE
                             while (rdr.Read())
                             {
                                 txb_denominacao.Text = rdr.GetString(1);
-                                txb_princpio_ativo.Text = rdr.GetString(2);
-                                txb_quantidade.Text = Convert.ToString(rdr.GetInt32(3));
-                                txb_lote.Text = Convert.ToString(rdr.GetInt32(4));
+                                txb_numero_serie.Text = rdr.GetString(2);
+                                txb_lote.Text = Convert.ToString(rdr.GetInt32(3));
+                                txb_quantidade.Text = Convert.ToString(rdr.GetInt32(4));    
                                 txb_fabricante.Text = rdr.GetString(5);
                                 txb_contacto_fabricante.Text = rdr.GetString(6);
                                 dtp_data_fornecimento.Text = rdr.GetString(7);
