@@ -8,6 +8,7 @@ namespace DLS_ALFEITE
 {
     static class Program
     {
+        public static string value { get; set; }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

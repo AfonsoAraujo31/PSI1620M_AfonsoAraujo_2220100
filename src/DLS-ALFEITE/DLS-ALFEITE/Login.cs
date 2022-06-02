@@ -70,6 +70,7 @@ namespace DLS_ALFEITE
                                 }
                             }
                         }*/
+                        Program.value = textBox_username.Text;
                         new panel_mdi(textBox_username.Text).Show();
                         this.Hide();
                         sqlcon.Close();

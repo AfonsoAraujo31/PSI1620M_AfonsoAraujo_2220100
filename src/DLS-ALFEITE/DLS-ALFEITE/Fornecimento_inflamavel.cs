@@ -40,8 +40,19 @@ namespace DLS_ALFEITE
             dtp_data_fornecimento.MinDate = DateTime.Today;
             dtp_data_prevista_entrega.MinDate = DateTime.Today;
             txb_numero_serie.MaxLength = 9;
+            texbox_redondas();
         }
-
+        public void texbox_redondas()
+        {
+            txb_denominacao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            txb_numero_serie.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_numero_serie.Width, txb_numero_serie.Height, 12, 12));
+            txb_lote.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_lote.Width, txb_lote.Height, 12, 12));
+            txb_observacoes.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_observacoes.Width, txb_observacoes.Height, 12, 12));
+            txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_quantidade.Width, txb_quantidade.Height, 12, 12));
+            txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_entidade.Width, txb_entidade.Height, 12, 12));
+            dtp_data_fornecimento.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtp_data_fornecimento.Width, dtp_data_fornecimento.Height, 12, 12));
+            dtp_data_prevista_entrega.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtp_data_prevista_entrega.Width, dtp_data_prevista_entrega.Height, 12, 12));
+        }
         private void btnclose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -125,6 +136,41 @@ namespace DLS_ALFEITE
                 asa = false;
                 MessageBox.Show("Campo Contacto do Fabricante incorreto!");
             }
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
 
         }
     }

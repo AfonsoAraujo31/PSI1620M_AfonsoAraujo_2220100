@@ -29,6 +29,7 @@ namespace DLS_ALFEITE
             InitializeComponent();
             StyleDatagridview();
             texbox_redondas();
+            this.ActiveControl = label2;
             try
             {
                 string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";

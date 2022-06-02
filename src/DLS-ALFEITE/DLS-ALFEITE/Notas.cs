@@ -21,32 +21,24 @@ namespace DLS_ALFEITE
 
         private void notas_preecnher()
         {
+            string asas=null;
+            Program.value = asas;
             try
             {
+                Frm_login lg = new Frm_login();
                 string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
                 using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
                 {
                     sqlCon1.Open();
-                    SqlCommand cmd1 = sqlCon1.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = $"select nota, nome_nota from notas inner join login_utilizadores ON Notas.id = login_utilizadores.id_utilizador where login_utilizadores.id_utilizador = @id";
-                    cmd1.Parameters.AddWithValue("@id", 3);
-                    cmd1.Parameters.AddWithValue("@nomedanota", label1.Text);
-                    using (cmd1)
+                    SqlCommand cmd = new SqlCommand("select username,nota,nome_nota from Notas inner join login_utilizador on Notas.id = Utilizador.id_utilizador", sqlCon1);
+                    cmd.Parameters.AddWithValue("username", asas);
+                    SqlDataReader reader;
+                    reader = cmd.ExecuteReader();
+                    if (reader.Read())
                     {
-                        using (var rdr = cmd1.ExecuteReader())
-                        {
-                            if (rdr.HasRows)
-                            {
-                                while (rdr.Read())
-                                {
-                                    textBox1.Text = Convert.ToString(rdr.GetString(0));
-                                }
-                            }
-
-                        }
+                        label1.Text = reader["nome_nota"].ToString();
+                        textBox1.Text = reader["nota"].ToString();
                     }
-                    sqlCon1.Close();
                 }
             }
             catch (Exception ex)

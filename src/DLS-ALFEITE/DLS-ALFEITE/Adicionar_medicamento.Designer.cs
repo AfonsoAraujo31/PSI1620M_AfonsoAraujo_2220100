@@ -118,169 +118,177 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(44, 64);
+            this.label2.Location = new System.Drawing.Point(44, 62);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 18);
+            this.label2.Size = new System.Drawing.Size(127, 21);
             this.label2.TabIndex = 7;
             this.label2.Text = "Denominação:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(296, 64);
+            this.label3.Location = new System.Drawing.Point(296, 62);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 18);
+            this.label3.Size = new System.Drawing.Size(134, 21);
             this.label3.TabIndex = 8;
             this.label3.Text = "Princípio/Ativo:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label4.ForeColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(533, 64);
+            this.label4.Location = new System.Drawing.Point(533, 62);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 18);
+            this.label4.Size = new System.Drawing.Size(88, 21);
             this.label4.TabIndex = 9;
             this.label4.Text = "Validade:";
             // 
             // txb_denominacao
             // 
+            this.txb_denominacao.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_denominacao.Location = new System.Drawing.Point(46, 82);
             this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2);
             this.txb_denominacao.Name = "txb_denominacao";
-            this.txb_denominacao.Size = new System.Drawing.Size(169, 20);
+            this.txb_denominacao.Size = new System.Drawing.Size(169, 25);
             this.txb_denominacao.TabIndex = 10;
             // 
             // txb_principio_ativo
             // 
+            this.txb_principio_ativo.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_principio_ativo.Location = new System.Drawing.Point(298, 82);
             this.txb_principio_ativo.Margin = new System.Windows.Forms.Padding(2);
             this.txb_principio_ativo.Name = "txb_principio_ativo";
-            this.txb_principio_ativo.Size = new System.Drawing.Size(169, 20);
+            this.txb_principio_ativo.Size = new System.Drawing.Size(169, 25);
             this.txb_principio_ativo.TabIndex = 11;
             // 
             // txb_lote
             // 
+            this.txb_lote.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_lote.Location = new System.Drawing.Point(46, 164);
             this.txb_lote.Margin = new System.Windows.Forms.Padding(2);
             this.txb_lote.Name = "txb_lote";
-            this.txb_lote.Size = new System.Drawing.Size(169, 20);
+            this.txb_lote.Size = new System.Drawing.Size(169, 25);
             this.txb_lote.TabIndex = 14;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label5.ForeColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(44, 146);
+            this.label5.Location = new System.Drawing.Point(44, 144);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 18);
+            this.label5.Size = new System.Drawing.Size(51, 21);
             this.label5.TabIndex = 13;
             this.label5.Text = "Lote:";
             // 
             // txb_quantidade
             // 
+            this.txb_quantidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_quantidade.Location = new System.Drawing.Point(298, 164);
             this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txb_quantidade.Name = "txb_quantidade";
-            this.txb_quantidade.Size = new System.Drawing.Size(169, 20);
+            this.txb_quantidade.Size = new System.Drawing.Size(169, 25);
             this.txb_quantidade.TabIndex = 16;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label6.ForeColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(296, 146);
+            this.label6.Location = new System.Drawing.Point(294, 143);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 18);
+            this.label6.Size = new System.Drawing.Size(113, 21);
             this.label6.TabIndex = 15;
             this.label6.Text = "Quantidade:";
             // 
             // txb_setor
             // 
+            this.txb_setor.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_setor.Location = new System.Drawing.Point(536, 164);
             this.txb_setor.Margin = new System.Windows.Forms.Padding(2);
             this.txb_setor.Name = "txb_setor";
-            this.txb_setor.Size = new System.Drawing.Size(169, 20);
+            this.txb_setor.Size = new System.Drawing.Size(169, 25);
             this.txb_setor.TabIndex = 18;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label7.ForeColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(533, 146);
+            this.label7.Location = new System.Drawing.Point(532, 144);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 18);
+            this.label7.Size = new System.Drawing.Size(56, 21);
             this.label7.TabIndex = 17;
             this.label7.Text = "Setor:";
             // 
             // txb_fabricante
             // 
+            this.txb_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_fabricante.Location = new System.Drawing.Point(46, 245);
             this.txb_fabricante.Margin = new System.Windows.Forms.Padding(2);
             this.txb_fabricante.Name = "txb_fabricante";
-            this.txb_fabricante.Size = new System.Drawing.Size(307, 20);
+            this.txb_fabricante.Size = new System.Drawing.Size(307, 25);
             this.txb_fabricante.TabIndex = 20;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label8.ForeColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(44, 228);
+            this.label8.Location = new System.Drawing.Point(44, 226);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 18);
+            this.label8.Size = new System.Drawing.Size(102, 21);
             this.label8.TabIndex = 19;
             this.label8.Text = "Fabricante:";
             // 
             // txb_contacto_fabricante
             // 
+            this.txb_contacto_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_contacto_fabricante.Location = new System.Drawing.Point(398, 245);
             this.txb_contacto_fabricante.Margin = new System.Windows.Forms.Padding(2);
             this.txb_contacto_fabricante.Name = "txb_contacto_fabricante";
-            this.txb_contacto_fabricante.Size = new System.Drawing.Size(307, 20);
+            this.txb_contacto_fabricante.Size = new System.Drawing.Size(307, 25);
             this.txb_contacto_fabricante.TabIndex = 22;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label9.ForeColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(395, 228);
+            this.label9.Location = new System.Drawing.Point(394, 225);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(190, 18);
+            this.label9.Size = new System.Drawing.Size(207, 21);
             this.label9.TabIndex = 21;
             this.label9.Text = "Contacto do Fabricante:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label10.ForeColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(44, 310);
+            this.label10.Location = new System.Drawing.Point(42, 304);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(113, 18);
+            this.label10.Size = new System.Drawing.Size(116, 21);
             this.label10.TabIndex = 23;
             this.label10.Text = "Observações:";
             // 
             // txb_observacoes
             // 
+            this.txb_observacoes.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_observacoes.Location = new System.Drawing.Point(46, 327);
             this.txb_observacoes.Margin = new System.Windows.Forms.Padding(2);
             this.txb_observacoes.Multiline = true;
@@ -313,11 +321,12 @@
             // dtp_validade
             // 
             this.dtp_validade.CustomFormat = "dd/MM/yyyy";
+            this.dtp_validade.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_validade.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_validade.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtp_validade.Location = new System.Drawing.Point(536, 82);
             this.dtp_validade.Name = "dtp_validade";
-            this.dtp_validade.Size = new System.Drawing.Size(169, 20);
+            this.dtp_validade.Size = new System.Drawing.Size(169, 25);
             this.dtp_validade.TabIndex = 27;
             this.dtp_validade.TabStop = false;
             this.dtp_validade.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);

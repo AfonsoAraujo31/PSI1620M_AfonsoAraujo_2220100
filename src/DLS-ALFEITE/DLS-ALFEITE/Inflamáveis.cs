@@ -15,6 +15,15 @@ namespace DLS_ALFEITE
 {
     public partial class Inflamáveis : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+             int nleftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nwidthEllipse,
+             int nHeightEllipse
+        );
         public Inflamáveis()
         {
             InitializeComponent();
@@ -23,6 +32,10 @@ namespace DLS_ALFEITE
         }
         private void Inflamáveis_Load(object sender, EventArgs e)
         {
+            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 30, 30));
+            panel3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel3.Width, panel3.Height, 30, 30));
+            panel4.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel4.Width, panel4.Height, 30, 30));
+            btn_adicionar_inflamavel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_adicionar_inflamavel.Width, btn_adicionar_inflamavel.Height, 25, 30));
             try
             {
                 string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
@@ -108,13 +121,13 @@ namespace DLS_ALFEITE
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.RosyBrown;
             dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGridView1.BackgroundColor = Color.FromArgb(0, 0, 64);
+            dataGridView1.BackgroundColor = Color.FromArgb(52, 73, 94);
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;//optional
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 12);
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.AllowUserToResizeRows = false;
@@ -171,7 +184,7 @@ namespace DLS_ALFEITE
         {
             string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
             //listbox1
-            string Query = "SELECT TOP 4 denominacao, validade FROM Inflamaveis ORDER BY validade ASC";
+            string Query = "SELECT TOP 3 denominacao, validade FROM Inflamaveis ORDER BY validade ASC";
             SqlConnection sqlCon = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(Query, sqlCon);
             SqlDataReader myReader;
@@ -183,7 +196,8 @@ namespace DLS_ALFEITE
                     while (myReader.Read())
                     {
 
-                        listBox1.Items.Add(string.Format("{0} ➡️ {1}", myReader["denominacao"].ToString(), myReader["validade"].ToString()));
+                        listBox1.Items.Add(myReader["denominacao"].ToString());
+                        listBox4.Items.Add(string.Format("➡️ {0}", myReader["validade"].ToString()));
                     }
                 }
             }
@@ -193,7 +207,7 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
             //listbox2
-            string Query2 = "SELECT denominacao, quantidade FROM Inflamaveis WHERE quantidade <= 150";
+            string Query2 = "SELECT TOP 3 denominacao, quantidade FROM Inflamaveis WHERE quantidade <= 150";
             SqlConnection sqlCon2 = new SqlConnection(connectionString);
             SqlCommand cmd2 = new SqlCommand(Query2, sqlCon2);
             SqlDataReader myReader2;
@@ -204,7 +218,8 @@ namespace DLS_ALFEITE
                 {
                     while (myReader2.Read())
                     {
-                        listBox2.Items.Add(string.Format("{0} ➡️ {1}", myReader2["denominacao"].ToString(), myReader2["quantidade"].ToString()));
+                        listBox3.Items.Add(myReader2["denominacao"].ToString());
+                        listBox2.Items.Add(string.Format("➡️ {0}", myReader2["quantidade"].ToString()));
                     }
                 }
             }

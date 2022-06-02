@@ -69,12 +69,12 @@ namespace DLS_ALFEITE
             this.btn_adicionar_medicamentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.btn_adicionar_medicamentos.FlatAppearance.BorderSize = 0;
             this.btn_adicionar_medicamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_adicionar_medicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_adicionar_medicamentos.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.btn_adicionar_medicamentos.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_adicionar_medicamentos.Location = new System.Drawing.Point(1608, 25);
+            this.btn_adicionar_medicamentos.Location = new System.Drawing.Point(1608, 12);
             this.btn_adicionar_medicamentos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_adicionar_medicamentos.Name = "btn_adicionar_medicamentos";
-            this.btn_adicionar_medicamentos.Size = new System.Drawing.Size(279, 24);
+            this.btn_adicionar_medicamentos.Size = new System.Drawing.Size(279, 37);
             this.btn_adicionar_medicamentos.TabIndex = 3;
             this.btn_adicionar_medicamentos.Text = "Adicionar Medicamento";
             this.btn_adicionar_medicamentos.UseVisualStyleBackColor = false;
@@ -85,11 +85,11 @@ namespace DLS_ALFEITE
             this.textbox_searchbar.BackColor = System.Drawing.Color.White;
             this.textbox_searchbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_searchbar.CausesValidation = false;
-            this.textbox_searchbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox_searchbar.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
             this.textbox_searchbar.Location = new System.Drawing.Point(219, 25);
             this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_searchbar.Name = "textbox_searchbar";
-            this.textbox_searchbar.Size = new System.Drawing.Size(713, 24);
+            this.textbox_searchbar.Size = new System.Drawing.Size(713, 25);
             this.textbox_searchbar.TabIndex = 0;
             this.textbox_searchbar.Text = "Search...";
             this.textbox_searchbar.TextChanged += new System.EventHandler(this.textbox_searchbar_TextChanged);
@@ -146,7 +146,7 @@ namespace DLS_ALFEITE
             // 
             this.listBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.listBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox4.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
             this.listBox4.ForeColor = System.Drawing.Color.Transparent;
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 18;
@@ -170,7 +170,7 @@ namespace DLS_ALFEITE
             // 
             this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
             this.listBox1.ForeColor = System.Drawing.Color.Transparent;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 18;
@@ -183,11 +183,11 @@ namespace DLS_ALFEITE
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(3, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(281, 20);
+            this.label2.Size = new System.Drawing.Size(285, 21);
             this.label2.TabIndex = 7;
             this.label2.Text = "Próximos medicamentos a expirar:";
             // 
@@ -218,7 +218,7 @@ namespace DLS_ALFEITE
             // 
             this.listBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.listBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox3.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
             this.listBox3.ForeColor = System.Drawing.Color.Transparent;
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 18;
@@ -232,7 +232,7 @@ namespace DLS_ALFEITE
             // 
             this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox2.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
             this.listBox2.ForeColor = System.Drawing.Color.Transparent;
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 18;
@@ -245,11 +245,11 @@ namespace DLS_ALFEITE
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(2, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(270, 20);
+            this.label3.Size = new System.Drawing.Size(270, 21);
             this.label3.TabIndex = 12;
             this.label3.Text = "Medicamentos com pouco stock:";
             // 

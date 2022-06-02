@@ -54,15 +54,15 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panel5.Controls.Add(this.label_med);
             this.panel5.Controls.Add(this.btn_min);
             this.panel5.Controls.Add(this.btnclose);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1000, 36);
+            this.panel5.Size = new System.Drawing.Size(750, 29);
             this.panel5.TabIndex = 10;
             // 
             // label_med
@@ -70,7 +70,8 @@
             this.label_med.AutoSize = true;
             this.label_med.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_med.ForeColor = System.Drawing.Color.Transparent;
-            this.label_med.Location = new System.Drawing.Point(3, 5);
+            this.label_med.Location = new System.Drawing.Point(2, 4);
+            this.label_med.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_med.Name = "label_med";
             this.label_med.Size = new System.Drawing.Size(199, 20);
             this.label_med.TabIndex = 7;
@@ -79,16 +80,16 @@
             // btn_min
             // 
             this.btn_min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_min.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_min.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.btn_min.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btn_min.FlatAppearance.BorderSize = 0;
             this.btn_min.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_min.Image = ((System.Drawing.Image)(resources.GetObject("btn_min.Image")));
-            this.btn_min.Location = new System.Drawing.Point(883, -4);
-            this.btn_min.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_min.Location = new System.Drawing.Point(661, -3);
+            this.btn_min.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_min.Name = "btn_min";
-            this.btn_min.Size = new System.Drawing.Size(67, 41);
+            this.btn_min.Size = new System.Drawing.Size(50, 33);
             this.btn_min.TabIndex = 8;
             this.btn_min.UseVisualStyleBackColor = false;
             this.btn_min.Click += new System.EventHandler(this.btn_min_Click);
@@ -96,26 +97,26 @@
             // btnclose
             // 
             this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.btnclose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnclose.FlatAppearance.BorderSize = 0;
             this.btnclose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
-            this.btnclose.Location = new System.Drawing.Point(936, -4);
-            this.btnclose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnclose.Location = new System.Drawing.Point(702, -3);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(67, 41);
+            this.btnclose.Size = new System.Drawing.Size(50, 33);
             this.btnclose.TabIndex = 6;
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(917, 619);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(688, 503);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(76, 23);
+            this.button2.Size = new System.Drawing.Size(57, 19);
             this.button2.TabIndex = 98;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
@@ -123,10 +124,10 @@
             // 
             // btn_guardar
             // 
-            this.btn_guardar.Location = new System.Drawing.Point(837, 619);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_guardar.Location = new System.Drawing.Point(628, 503);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(75, 23);
+            this.btn_guardar.Size = new System.Drawing.Size(56, 19);
             this.btn_guardar.TabIndex = 97;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = true;
@@ -134,149 +135,162 @@
             // 
             // txb_motivo
             // 
-            this.txb_motivo.Location = new System.Drawing.Point(69, 367);
-            this.txb_motivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_motivo.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_motivo.Location = new System.Drawing.Point(52, 298);
+            this.txb_motivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txb_motivo.Multiline = true;
             this.txb_motivo.Name = "txb_motivo";
-            this.txb_motivo.Size = new System.Drawing.Size(877, 171);
+            this.txb_motivo.Size = new System.Drawing.Size(659, 140);
             this.txb_motivo.TabIndex = 96;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label10.ForeColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(67, 342);
+            this.label10.Location = new System.Drawing.Point(50, 278);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 18);
+            this.label10.Size = new System.Drawing.Size(72, 21);
             this.label10.TabIndex = 95;
             this.label10.Text = "Motivo:";
             // 
             // txb_entidade
             // 
-            this.txb_entidade.Location = new System.Drawing.Point(723, 255);
-            this.txb_entidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_entidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_entidade.Location = new System.Drawing.Point(542, 207);
+            this.txb_entidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txb_entidade.Name = "txb_entidade";
-            this.txb_entidade.Size = new System.Drawing.Size(224, 22);
+            this.txb_entidade.Size = new System.Drawing.Size(169, 25);
             this.txb_entidade.TabIndex = 94;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label7.ForeColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(717, 233);
+            this.label7.Location = new System.Drawing.Point(538, 187);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 18);
+            this.label7.Size = new System.Drawing.Size(88, 21);
             this.label7.TabIndex = 93;
             this.label7.Text = "Entidade:";
             // 
             // txb_quantidade
             // 
-            this.txb_quantidade.Location = new System.Drawing.Point(405, 255);
-            this.txb_quantidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_quantidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_quantidade.Location = new System.Drawing.Point(304, 207);
+            this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txb_quantidade.Name = "txb_quantidade";
-            this.txb_quantidade.Size = new System.Drawing.Size(224, 22);
+            this.txb_quantidade.Size = new System.Drawing.Size(169, 25);
             this.txb_quantidade.TabIndex = 92;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label6.ForeColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(403, 233);
+            this.label6.Location = new System.Drawing.Point(302, 187);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 18);
+            this.label6.Size = new System.Drawing.Size(113, 21);
             this.label6.TabIndex = 91;
             this.label6.Text = "Quantidade:";
             // 
             // txb_lote
             // 
-            this.txb_lote.Location = new System.Drawing.Point(723, 158);
-            this.txb_lote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_lote.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_lote.Location = new System.Drawing.Point(542, 128);
+            this.txb_lote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txb_lote.Name = "txb_lote";
-            this.txb_lote.Size = new System.Drawing.Size(224, 22);
+            this.txb_lote.Size = new System.Drawing.Size(169, 25);
             this.txb_lote.TabIndex = 90;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label5.ForeColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(67, 233);
+            this.label5.Location = new System.Drawing.Point(50, 187);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 18);
+            this.label5.Size = new System.Drawing.Size(148, 21);
             this.label5.TabIndex = 89;
             this.label5.Text = "Data de receção:";
             // 
             // txb_numero_serie
             // 
-            this.txb_numero_serie.Location = new System.Drawing.Point(405, 154);
-            this.txb_numero_serie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_numero_serie.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_numero_serie.Location = new System.Drawing.Point(304, 125);
+            this.txb_numero_serie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txb_numero_serie.Name = "txb_numero_serie";
-            this.txb_numero_serie.Size = new System.Drawing.Size(224, 22);
+            this.txb_numero_serie.Size = new System.Drawing.Size(169, 25);
             this.txb_numero_serie.TabIndex = 88;
             // 
             // txb_denominacao
             // 
-            this.txb_denominacao.Location = new System.Drawing.Point(69, 154);
-            this.txb_denominacao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_denominacao.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_denominacao.Location = new System.Drawing.Point(52, 125);
+            this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txb_denominacao.Name = "txb_denominacao";
-            this.txb_denominacao.Size = new System.Drawing.Size(224, 22);
+            this.txb_denominacao.Size = new System.Drawing.Size(169, 25);
             this.txb_denominacao.TabIndex = 87;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label4.ForeColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(717, 132);
+            this.label4.Location = new System.Drawing.Point(538, 108);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 18);
+            this.label4.Size = new System.Drawing.Size(51, 21);
             this.label4.TabIndex = 86;
             this.label4.Text = "Lote:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(403, 132);
+            this.label3.Location = new System.Drawing.Point(302, 105);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 18);
+            this.label3.Size = new System.Drawing.Size(144, 21);
             this.label3.TabIndex = 85;
             this.label3.Text = "Número de série:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(67, 132);
+            this.label2.Location = new System.Drawing.Point(50, 105);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 18);
+            this.label2.Size = new System.Drawing.Size(127, 21);
             this.label2.TabIndex = 84;
             this.label2.Text = "Denominação:";
             // 
             // dtp_data_rececao
             // 
             this.dtp_data_rececao.CustomFormat = "dd/MM/yyyy";
+            this.dtp_data_rececao.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.dtp_data_rececao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_data_rececao.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtp_data_rececao.Location = new System.Drawing.Point(69, 255);
-            this.dtp_data_rececao.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_data_rececao.Location = new System.Drawing.Point(52, 207);
             this.dtp_data_rececao.Name = "dtp_data_rececao";
-            this.dtp_data_rececao.Size = new System.Drawing.Size(224, 22);
+            this.dtp_data_rececao.Size = new System.Drawing.Size(169, 25);
             this.dtp_data_rececao.TabIndex = 99;
             this.dtp_data_rececao.TabStop = false;
             this.dtp_data_rececao.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
             // 
             // Aquisição_inflamavel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(1000, 645);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(146)))), ((int)(((byte)(158)))));
+            this.ClientSize = new System.Drawing.Size(750, 524);
             this.Controls.Add(this.dtp_data_rececao);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_guardar);
@@ -295,7 +309,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Aquisição_inflamavel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aquisição_inflamavel";

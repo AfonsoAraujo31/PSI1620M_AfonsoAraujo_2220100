@@ -61,42 +61,41 @@ namespace DLS_ALFEITE
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.dtp_data_limite_rececao);
-            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.txb_motivo);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txb_entidade);
+            this.panel1.Controls.Add(this.txb_contacto_fabricante);
+            this.panel1.Controls.Add(this.txb_fabricante);
+            this.panel1.Controls.Add(this.txb_quantidade);
+            this.panel1.Controls.Add(this.txb_lote);
+            this.panel1.Controls.Add(this.txb_numero_serie);
+            this.panel1.Controls.Add(this.txb_denominacao);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.txb_contacto_fabricante);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txb_fabricante);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txb_quantidade);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txb_lote);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txb_numero_serie);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txb_denominacao);
-            this.panel1.Location = new System.Drawing.Point(1573, 71);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(1180, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(936, 1153);
+            this.panel1.Size = new System.Drawing.Size(702, 937);
             this.panel1.TabIndex = 7;
             // 
             // dtp_data_limite_rececao
             // 
             this.dtp_data_limite_rececao.CustomFormat = "dd/MM/yyyy";
             this.dtp_data_limite_rececao.Enabled = false;
+            this.dtp_data_limite_rececao.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
             this.dtp_data_limite_rececao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_data_limite_rececao.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtp_data_limite_rececao.Location = new System.Drawing.Point(97, 644);
-            this.dtp_data_limite_rececao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_data_limite_rececao.Location = new System.Drawing.Point(73, 539);
             this.dtp_data_limite_rececao.Name = "dtp_data_limite_rececao";
-            this.dtp_data_limite_rececao.Size = new System.Drawing.Size(331, 22);
+            this.dtp_data_limite_rececao.Size = new System.Drawing.Size(249, 25);
             this.dtp_data_limite_rececao.TabIndex = 87;
             this.dtp_data_limite_rececao.TabStop = false;
             this.dtp_data_limite_rececao.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
@@ -104,174 +103,182 @@ namespace DLS_ALFEITE
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.label10.ForeColor = System.Drawing.Color.Transparent;
             this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(93, 730);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(70, 604);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 16);
+            this.label10.Size = new System.Drawing.Size(72, 21);
             this.label10.TabIndex = 18;
             this.label10.Text = "Motivo:";
             // 
             // txb_motivo
             // 
             this.txb_motivo.Enabled = false;
-            this.txb_motivo.Location = new System.Drawing.Point(97, 750);
-            this.txb_motivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_motivo.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_motivo.Location = new System.Drawing.Point(73, 625);
             this.txb_motivo.Multiline = true;
             this.txb_motivo.Name = "txb_motivo";
-            this.txb_motivo.Size = new System.Drawing.Size(753, 187);
+            this.txb_motivo.Size = new System.Drawing.Size(566, 153);
             this.txb_motivo.TabIndex = 17;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.label8.ForeColor = System.Drawing.Color.Transparent;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(516, 624);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(387, 518);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 16);
+            this.label8.Size = new System.Drawing.Size(88, 21);
             this.label8.TabIndex = 16;
             this.label8.Text = "Entidade:";
             // 
             // txb_entidade
             // 
             this.txb_entidade.Enabled = false;
-            this.txb_entidade.Location = new System.Drawing.Point(520, 644);
-            this.txb_entidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_entidade.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_entidade.Location = new System.Drawing.Point(390, 539);
             this.txb_entidade.Name = "txb_entidade";
-            this.txb_entidade.Size = new System.Drawing.Size(331, 22);
+            this.txb_entidade.Size = new System.Drawing.Size(249, 25);
             this.txb_entidade.TabIndex = 15;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.label9.ForeColor = System.Drawing.Color.Transparent;
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(93, 624);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(70, 518);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 16);
+            this.label9.Size = new System.Drawing.Size(197, 21);
             this.label9.TabIndex = 14;
             this.label9.Text = "Data limite de receção:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.label6.ForeColor = System.Drawing.Color.Transparent;
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(516, 498);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(387, 416);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 16);
+            this.label6.Size = new System.Drawing.Size(203, 21);
             this.label6.TabIndex = 12;
             this.label6.Text = "Contacto do fabricante:";
             // 
             // txb_contacto_fabricante
             // 
             this.txb_contacto_fabricante.Enabled = false;
-            this.txb_contacto_fabricante.Location = new System.Drawing.Point(520, 517);
-            this.txb_contacto_fabricante.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_contacto_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_contacto_fabricante.Location = new System.Drawing.Point(390, 436);
             this.txb_contacto_fabricante.Name = "txb_contacto_fabricante";
-            this.txb_contacto_fabricante.Size = new System.Drawing.Size(331, 22);
+            this.txb_contacto_fabricante.Size = new System.Drawing.Size(249, 25);
             this.txb_contacto_fabricante.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.label7.ForeColor = System.Drawing.Color.Transparent;
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(93, 498);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(70, 416);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 16);
+            this.label7.Size = new System.Drawing.Size(102, 21);
             this.label7.TabIndex = 10;
             this.label7.Text = "Fabricante:";
             // 
             // txb_fabricante
             // 
             this.txb_fabricante.Enabled = false;
-            this.txb_fabricante.Location = new System.Drawing.Point(97, 517);
-            this.txb_fabricante.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_fabricante.Location = new System.Drawing.Point(73, 436);
             this.txb_fabricante.Name = "txb_fabricante";
-            this.txb_fabricante.Size = new System.Drawing.Size(331, 22);
+            this.txb_fabricante.Size = new System.Drawing.Size(249, 25);
             this.txb_fabricante.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.label4.ForeColor = System.Drawing.Color.Transparent;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(516, 386);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(387, 325);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 16);
+            this.label4.Size = new System.Drawing.Size(197, 21);
             this.label4.TabIndex = 8;
             this.label4.Text = "Quantidade a adquirir:";
             // 
             // txb_quantidade
             // 
             this.txb_quantidade.Enabled = false;
-            this.txb_quantidade.Location = new System.Drawing.Point(520, 405);
-            this.txb_quantidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_quantidade.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_quantidade.Location = new System.Drawing.Point(390, 345);
             this.txb_quantidade.Name = "txb_quantidade";
-            this.txb_quantidade.Size = new System.Drawing.Size(331, 22);
+            this.txb_quantidade.Size = new System.Drawing.Size(249, 25);
             this.txb_quantidade.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.label5.ForeColor = System.Drawing.Color.Transparent;
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(93, 386);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(70, 325);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 16);
+            this.label5.Size = new System.Drawing.Size(51, 21);
             this.label5.TabIndex = 6;
             this.label5.Text = "Lote:";
             // 
             // txb_lote
             // 
             this.txb_lote.Enabled = false;
-            this.txb_lote.Location = new System.Drawing.Point(97, 405);
-            this.txb_lote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_lote.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_lote.Location = new System.Drawing.Point(73, 345);
             this.txb_lote.Name = "txb_lote";
-            this.txb_lote.Size = new System.Drawing.Size(331, 22);
+            this.txb_lote.Size = new System.Drawing.Size(249, 25);
             this.txb_lote.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.label3.ForeColor = System.Drawing.Color.Transparent;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(516, 272);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(387, 232);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 16);
+            this.label3.Size = new System.Drawing.Size(144, 21);
             this.label3.TabIndex = 4;
             this.label3.Text = "Número de série:";
             // 
             // txb_numero_serie
             // 
             this.txb_numero_serie.Enabled = false;
-            this.txb_numero_serie.Location = new System.Drawing.Point(520, 292);
-            this.txb_numero_serie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_numero_serie.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_numero_serie.Location = new System.Drawing.Point(390, 253);
             this.txb_numero_serie.Name = "txb_numero_serie";
-            this.txb_numero_serie.Size = new System.Drawing.Size(331, 22);
+            this.txb_numero_serie.Size = new System.Drawing.Size(249, 25);
             this.txb_numero_serie.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(93, 272);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(69, 233);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 16);
+            this.label2.Size = new System.Drawing.Size(127, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Denominação:";
             // 
             // txb_denominacao
             // 
             this.txb_denominacao.Enabled = false;
-            this.txb_denominacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txb_denominacao.Location = new System.Drawing.Point(97, 292);
-            this.txb_denominacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_denominacao.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_denominacao.Location = new System.Drawing.Point(73, 253);
             this.txb_denominacao.Name = "txb_denominacao";
-            this.txb_denominacao.Size = new System.Drawing.Size(331, 21);
+            this.txb_denominacao.Size = new System.Drawing.Size(249, 25);
             this.txb_denominacao.TabIndex = 0;
             // 
             // textbox_searchbar
@@ -279,11 +286,11 @@ namespace DLS_ALFEITE
             this.textbox_searchbar.BackColor = System.Drawing.Color.White;
             this.textbox_searchbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_searchbar.CausesValidation = false;
-            this.textbox_searchbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.textbox_searchbar.Location = new System.Drawing.Point(292, 34);
-            this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textbox_searchbar.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.textbox_searchbar.Location = new System.Drawing.Point(219, 28);
+            this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_searchbar.Name = "textbox_searchbar";
-            this.textbox_searchbar.Size = new System.Drawing.Size(1251, 24);
+            this.textbox_searchbar.Size = new System.Drawing.Size(939, 25);
             this.textbox_searchbar.TabIndex = 6;
             this.textbox_searchbar.Text = "Search...";
             this.textbox_searchbar.TextChanged += new System.EventHandler(this.textbox_searchbar_TextChanged);
@@ -312,14 +319,14 @@ namespace DLS_ALFEITE
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(292, 71);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(219, 58);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1252, 1153);
+            this.dataGridView1.Size = new System.Drawing.Size(939, 937);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -327,25 +334,23 @@ namespace DLS_ALFEITE
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(310, 33);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(232, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(314, 196);
+            this.pictureBox1.Size = new System.Drawing.Size(236, 159);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 97;
+            this.pictureBox1.TabIndex = 96;
             this.pictureBox1.TabStop = false;
             // 
             // Aquisição_inflamavel_menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(2525, 1153);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1940, 1041);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textbox_searchbar);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Aquisição_inflamavel_menu";
             this.Text = "Aquisição_inflamavel_menu";
             this.panel1.ResumeLayout(false);

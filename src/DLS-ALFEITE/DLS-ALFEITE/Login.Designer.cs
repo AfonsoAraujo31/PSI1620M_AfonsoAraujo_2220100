@@ -267,7 +267,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox_username;
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -275,6 +274,7 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.PictureBox btn_login;
         private System.Windows.Forms.TextBox textBox_codigounico;
+        public System.Windows.Forms.TextBox textBox_username;
     }
 }
 
