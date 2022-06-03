@@ -49,6 +49,7 @@ namespace DLS_ALFEITE
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = $"SELECT username,password FROM login_utilizadores WHERE username=@Username AND password=@Userpass";
                     cmd.Parameters.AddWithValue("@Username", textBox_username.Text);
+                    Program.value = textBox_username.Text;  
                     cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);
                     sqlcon.Open();
                     SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
@@ -70,7 +71,6 @@ namespace DLS_ALFEITE
                                 }
                             }
                         }*/
-                        Program.value = textBox_username.Text;
                         new panel_mdi(textBox_username.Text).Show();
                         this.Hide();
                         sqlcon.Close();

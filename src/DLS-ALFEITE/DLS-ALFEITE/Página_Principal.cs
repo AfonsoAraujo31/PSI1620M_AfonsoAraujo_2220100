@@ -398,7 +398,7 @@ namespace DLS_ALFEITE
             {
                 if (frm_definicoes == null)
                 {
-                    frm_definicoes = new Definições();
+                    frm_definicoes = new Definições(label_username.Text);
                     frm_definicoes.MdiParent = this;
                     frm_definicoes.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_definicoes.Show();
@@ -407,7 +407,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frm_definicoes.Close();
-                    frm_definicoes = new Definições();
+                    frm_definicoes = new Definições(label_username.Text);
                     frm_definicoes.MdiParent = this;
                     frm_definicoes.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_definicoes.Show();

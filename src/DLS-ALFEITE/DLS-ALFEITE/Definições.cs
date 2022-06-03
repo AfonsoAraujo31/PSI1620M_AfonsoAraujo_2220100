@@ -7,14 +7,125 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Runtime.InteropServices;
 
 namespace DLS_ALFEITE
 {
     public partial class Definições : Form
     {
-        public Definições()
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+             int nleftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nwidthEllipse,
+             int nHeightEllipse
+        );
+        private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
+        int id = 0;
+        public Definições(string value)
         {
             InitializeComponent();
+            txb_username.Text = value;
+            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 30, 30));
+            txb_username.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_username.Width, txb_username.Height, 30, 30));
+            cb_genero.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, cb_genero.Width, cb_genero.Height, 30, 30));
+            txb_email.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_email.Width, txb_email.Height, 30, 30));
+            txb_nome.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_nome.Width, txb_nome.Height, 30, 30));
+            txb_numero_telemovel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_numero_telemovel.Width, txb_numero_telemovel.Height, 30, 30));
+            txb_password.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_password.Width, txb_password.Height, 30, 30));
+            this.ActiveControl = panel2;
+            txb_password.PasswordChar = '●';
+            btn_guardar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_guardar.Width, btn_guardar    .Height, 30, 30));
+            try
+            {
+                SqlConnection sqlcon = new SqlConnection(connection);
+                SqlCommand cmd = sqlcon.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"select id_utilizador,nome,username,password,codigo_unico,genero,email,num_tel from login_utilizadores WHERE username=@Username";
+                cmd.Parameters.AddWithValue("@Username", txb_username.Text);
+                sqlcon.Open();
+                SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                sqladp.Fill(ds);
+                int count = ds.Tables[0].Rows.Count;
+                if (count == 1)
+                {
+                    using (cmd)
+                    {
+                        using (var rdr = cmd.ExecuteReader())
+                        {
+                            if (rdr.HasRows)
+                            {
+                                while (rdr.Read())
+                                {
+                                    id = rdr.GetInt32(0);
+                                    txb_nome.Text = rdr.GetString(1);
+                                    txb_password.Text = rdr.GetString(3);
+                                    cb_genero.Text = rdr.GetString(5);
+                                    txb_email.Text = rdr.GetString(6);
+                                    txb_numero_telemovel.Text = rdr.GetString(7);
+                                }
+                            }
+                        }
+                    }
+                    sqlcon.Close();
+                }
+                else
+                {
+                    MessageBox.Show("ERRO!");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void btn_guardar_Click(object sender, EventArgs e)
+        {
+            try 
+            { 
+                string query = "UPDATE login_utilizadores SET nome = '" + this.txb_nome.Text + "',password = '" + this.txb_password.Text + "',genero = '" + this.cb_genero.Text + "', email = '" + this.txb_email.Text + "',num_tel = '" + this.txb_numero_telemovel.Text + "' WHERE id_utilizador = @id ";
+                SqlConnection sqlCon = new SqlConnection(connection);
+                SqlCommand cmd = new SqlCommand(query, sqlCon);
+                cmd.Parameters.AddWithValue("@id", id);
+                SqlDataReader myreader;
+                sqlCon.Open();
+                myreader = cmd.ExecuteReader();
+                MessageBox.Show("Saved");
+                while (myreader.Read())
+                {
+
+                }
+                sqlCon.Close();
+                txb_password.PasswordChar = '●';
+                button3.BringToFront();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Login_Codigo frm_cd = new Login_Codigo(txb_username.Text);
+            frm_cd.ShowDialog();
+            button1.BringToFront();
+            txb_password.PasswordChar = '\0';
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (txb_password.PasswordChar == '\0')
+            {
+                button3.BringToFront();
+                txb_password.PasswordChar = '●';
+            }
         }
     }
 }
