@@ -24,22 +24,21 @@ namespace DLS_ALFEITE
              int nwidthEllipse,
              int nHeightEllipse
         );
+        private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         public Fornecimento_inflamavel_menu()
         {
             InitializeComponent();
-            StyleDatagridview();
-            texbox_redondas();
+            Form_estilo();
             try
             {
-                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
+                using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
-                    sqlCon1.Open();
-                    SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Número de série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento", sqlCon1);
-                    DataTable dtbl1 = new DataTable();
-                    sqlDa1.Fill(dtbl1);
-                    dataGridView1.DataSource = dtbl1;
-                    sqlCon1.Close();
+                    sqlCon.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Número de série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento", sqlCon);
+                    DataTable dtbl = new DataTable();
+                    adapter.Fill(dtbl);
+                    dataGridView1.DataSource = dtbl;
+                    sqlCon.Close();
                 }
             }
             catch (Exception ex)
@@ -48,20 +47,9 @@ namespace DLS_ALFEITE
             }
             update();
         }
-        public void texbox_redondas()
+        public void Form_estilo()
         {
-            txb_denominacao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-            txb_numero_serie.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_numero_serie.Width, txb_numero_serie.Height, 12, 12));
-            txb_lote.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-            txb_observacoes.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_observacoes.Width, txb_observacoes.Height, 20, 20));
-            txb_contacto_fabricante.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_contacto_fabricante.Width, txb_contacto_fabricante.Height, 12, 12));
-            txb_fabricante.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 12, 12));
-            txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-            dtp_data_fornecimento.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-            txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-        }
-        void StyleDatagridview()
-        {
+            //datagridview
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -75,6 +63,16 @@ namespace DLS_ALFEITE
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.AllowUserToResizeRows = false;
+            //inputs_redondos
+            txb_denominacao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            txb_numero_serie.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_numero_serie.Width, txb_numero_serie.Height, 12, 12));
+            txb_lote.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            txb_observacoes.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_observacoes.Width, txb_observacoes.Height, 20, 20));
+            txb_contacto_fabricante.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_contacto_fabricante.Width, txb_contacto_fabricante.Height, 12, 12));
+            txb_fabricante.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 12, 12));
+            txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            dtp_data_fornecimento.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
         }
         public void update()
         {
@@ -92,20 +90,18 @@ namespace DLS_ALFEITE
 
         private void textbox_searchbar_TextChanged(object sender, EventArgs e)
         {
-            string mainconn = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
             try
             {
                 dataGridView1.Columns.Clear();
-                using (SqlConnection sqlCon = new SqlConnection(mainconn))
+                using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Número de série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento where denominacao like '" + textbox_searchbar.Text + "%'";
-
-                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
-                    adpt.Fill(dtbl);
+                    adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
                 }
                 update();
@@ -131,15 +127,14 @@ namespace DLS_ALFEITE
                 textbox_searchbar.Text = "Search...";
                 try
                 {
-                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                    using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
+                    using (SqlConnection sqlCon = new SqlConnection(connection))
                     {
-                        sqlCon1.Open();
-                        SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Número de série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento           ", sqlCon1);
-                        DataTable dtbl1 = new DataTable();
-                        sqlDa1.Fill(dtbl1);
-                        dataGridView1.DataSource = dtbl1;
-                        sqlCon1.Close();
+                        sqlCon.Open();
+                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Número de série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento", sqlCon);
+                        DataTable dtbl = new DataTable();
+                        adapter.Fill(dtbl);
+                        dataGridView1.DataSource = dtbl;
+                        sqlCon.Close();
                     }
                 }
                 catch (Exception ex)
@@ -153,8 +148,7 @@ namespace DLS_ALFEITE
         {
             string id1 = null;
             id1 = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
-            string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-            SqlConnection sql = new SqlConnection(connectionString);
+            SqlConnection sql = new SqlConnection(connection);
             using (sql)
             {
                 SqlCommand cmd = sql.CreateCommand();
@@ -183,71 +177,6 @@ namespace DLS_ALFEITE
                     }
                 }
             }
-        }
-
-        private void txb_numero_serie_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txb_denominacao_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txb_lote_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txb_quantidade_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txb_fabricante_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -98,7 +98,6 @@ namespace DLS_ALFEITE
             this.label2.Size = new System.Drawing.Size(116, 21);
             this.label2.TabIndex = 93;
             this.label2.Text = "Observações:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txb_observacoes
             // 
@@ -135,7 +134,6 @@ namespace DLS_ALFEITE
             this.label8.Size = new System.Drawing.Size(88, 21);
             this.label8.TabIndex = 16;
             this.label8.Text = "Entidade:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txb_entidade
             // 
@@ -157,7 +155,6 @@ namespace DLS_ALFEITE
             this.label9.Size = new System.Drawing.Size(193, 21);
             this.label9.TabIndex = 14;
             this.label9.Text = "Data do fornecimento:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label6
             // 
@@ -170,7 +167,6 @@ namespace DLS_ALFEITE
             this.label6.Size = new System.Drawing.Size(203, 21);
             this.label6.TabIndex = 12;
             this.label6.Text = "Contacto do fabricante:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txb_contacto_fabricante
             // 
@@ -192,7 +188,6 @@ namespace DLS_ALFEITE
             this.label7.Size = new System.Drawing.Size(102, 21);
             this.label7.TabIndex = 10;
             this.label7.Text = "Fabricante:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txb_fabricante
             // 
@@ -202,7 +197,6 @@ namespace DLS_ALFEITE
             this.txb_fabricante.Name = "txb_fabricante";
             this.txb_fabricante.Size = new System.Drawing.Size(249, 25);
             this.txb_fabricante.TabIndex = 9;
-            this.txb_fabricante.TextChanged += new System.EventHandler(this.txb_fabricante_TextChanged);
             // 
             // label4
             // 
@@ -215,7 +209,6 @@ namespace DLS_ALFEITE
             this.label4.Size = new System.Drawing.Size(198, 21);
             this.label4.TabIndex = 8;
             this.label4.Text = "Quantidade a fornecer:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txb_quantidade
             // 
@@ -225,7 +218,6 @@ namespace DLS_ALFEITE
             this.txb_quantidade.Name = "txb_quantidade";
             this.txb_quantidade.Size = new System.Drawing.Size(249, 25);
             this.txb_quantidade.TabIndex = 7;
-            this.txb_quantidade.TextChanged += new System.EventHandler(this.txb_quantidade_TextChanged);
             // 
             // label5
             // 
@@ -238,7 +230,6 @@ namespace DLS_ALFEITE
             this.label5.Size = new System.Drawing.Size(51, 21);
             this.label5.TabIndex = 6;
             this.label5.Text = "Lote:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txb_lote
             // 
@@ -248,7 +239,6 @@ namespace DLS_ALFEITE
             this.txb_lote.Name = "txb_lote";
             this.txb_lote.Size = new System.Drawing.Size(249, 25);
             this.txb_lote.TabIndex = 5;
-            this.txb_lote.TextChanged += new System.EventHandler(this.txb_lote_TextChanged);
             // 
             // label3
             // 
@@ -261,7 +251,6 @@ namespace DLS_ALFEITE
             this.label3.Size = new System.Drawing.Size(144, 21);
             this.label3.TabIndex = 4;
             this.label3.Text = "Número de série:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txb_numero_serie
             // 
@@ -271,7 +260,6 @@ namespace DLS_ALFEITE
             this.txb_numero_serie.Name = "txb_numero_serie";
             this.txb_numero_serie.Size = new System.Drawing.Size(249, 25);
             this.txb_numero_serie.TabIndex = 3;
-            this.txb_numero_serie.TextChanged += new System.EventHandler(this.txb_numero_serie_TextChanged);
             // 
             // label11
             // 
@@ -294,7 +282,6 @@ namespace DLS_ALFEITE
             this.txb_denominacao.Name = "txb_denominacao";
             this.txb_denominacao.Size = new System.Drawing.Size(249, 25);
             this.txb_denominacao.TabIndex = 0;
-            this.txb_denominacao.TextChanged += new System.EventHandler(this.txb_denominacao_TextChanged);
             // 
             // label1
             // 

@@ -34,7 +34,6 @@ namespace DLS_ALFEITE
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fornecimento_medicamento_menu));
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txb_observacoes = new System.Windows.Forms.TextBox();
@@ -108,17 +107,6 @@ namespace DLS_ALFEITE
             this.dataGridView1.Size = new System.Drawing.Size(939, 937);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(1175, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 24);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Registo do pedido de aquisição:";
             // 
             // panel1
             // 
@@ -361,7 +349,6 @@ namespace DLS_ALFEITE
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1940, 937);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textbox_searchbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -380,7 +367,6 @@ namespace DLS_ALFEITE
 
         private System.Windows.Forms.TextBox textbox_searchbar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txb_observacoes;

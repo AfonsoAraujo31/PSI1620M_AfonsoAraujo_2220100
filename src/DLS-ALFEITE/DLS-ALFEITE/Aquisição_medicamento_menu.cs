@@ -24,23 +24,21 @@ namespace DLS_ALFEITE
              int nwidthEllipse,
              int nHeightEllipse
         );
+        private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         public Aquisição_medicamento_menu()
         {
             InitializeComponent();
-            StyleDatagridview();
-            texbox_redondas();
-            this.ActiveControl = label2;
+            Form_estilo();
             try
             {
-                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
+                using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
-                    sqlCon1.Open();
-                    SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao", sqlCon1);
-                    DataTable dtbl1 = new DataTable();
-                    sqlDa1.Fill(dtbl1);
-                    dataGridView1.DataSource = dtbl1;
-                    sqlCon1.Close();
+                    sqlCon.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao", sqlCon);
+                    DataTable dtbl = new DataTable();
+                    adapter.Fill(dtbl);
+                    dataGridView1.DataSource = dtbl;
+                    sqlCon.Close();
                 }
             }
             catch (Exception ex)
@@ -49,21 +47,9 @@ namespace DLS_ALFEITE
             }
             update();
         }
-        public void texbox_redondas()
+        public void Form_estilo()
         {
-            txb_denominacao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-            txb_principio_ativo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-            txb_lote.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-            txb_motivo.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_motivo.Width, txb_motivo.Height, 20, 20));
-            txb_contacto_fabricante.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_contacto_fabricante.Width, txb_contacto_fabricante.Height, 12, 12));
-            txb_fabricante.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 12, 12));
-            txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-            dtp_data_limite_rececao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-            txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-
-        }
-        void StyleDatagridview()
-        {
+            //datagridview
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -77,6 +63,17 @@ namespace DLS_ALFEITE
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.AllowUserToResizeRows = false;
+            //inputs_redondos
+            txb_denominacao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            txb_principio_ativo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            txb_lote.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            txb_motivo.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_motivo.Width, txb_motivo.Height, 20, 20));
+            txb_contacto_fabricante.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_contacto_fabricante.Width, txb_contacto_fabricante.Height, 12, 12));
+            txb_fabricante.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 12, 12));
+            txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            dtp_data_limite_rececao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            this.ActiveControl = label2;
         }
         public void update()
         {
@@ -106,15 +103,14 @@ namespace DLS_ALFEITE
                 textbox_searchbar.Text = "Search...";
                 try
                 {
-                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                    using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
+                    using (SqlConnection sqlCon = new SqlConnection(connection))
                     {
-                        sqlCon1.Open();
-                        SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao", sqlCon1);
-                        DataTable dtbl1 = new DataTable();
-                        sqlDa1.Fill(dtbl1);
-                        dataGridView1.DataSource = dtbl1;
-                        sqlCon1.Close();
+                        sqlCon.Open();
+                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao", sqlCon);
+                        DataTable dtbl = new DataTable();
+                        adapter.Fill(dtbl);
+                        dataGridView1.DataSource = dtbl;
+                        sqlCon.Close();
                     }
                 }
                 catch (Exception ex)
@@ -126,20 +122,18 @@ namespace DLS_ALFEITE
 
         private void textbox_searchbar_TextChanged(object sender, EventArgs e)
         {
-            string mainconn = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
             try
             {
                 dataGridView1.Columns.Clear();
-                using (SqlConnection sqlCon = new SqlConnection(mainconn))
+                using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao where denominacao like '" + textbox_searchbar.Text + "%'";
-
-                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
-                    adpt.Fill(dtbl);
+                    adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
                 }
                 update();
@@ -154,8 +148,7 @@ namespace DLS_ALFEITE
         {
             string id1 = null;
             id1 = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);    
-            string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-            SqlConnection sql = new SqlConnection(connectionString);
+            SqlConnection sql = new SqlConnection(connection);
             using (sql)
             {
                 SqlCommand cmd = sql.CreateCommand();
