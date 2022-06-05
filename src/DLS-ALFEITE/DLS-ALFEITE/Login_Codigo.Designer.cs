@@ -35,11 +35,11 @@ namespace DLS_ALFEITE
             this.textBox_username_confirmação = new System.Windows.Forms.TextBox();
             this.btn_login_codigounico = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2_cu = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_codigounico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -47,9 +47,10 @@ namespace DLS_ALFEITE
             // 
             // textBox_codigo_unico
             // 
-            this.textBox_codigo_unico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(146)))), ((int)(((byte)(158)))));
+            this.textBox_codigo_unico.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox_codigo_unico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_codigo_unico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_codigo_unico.ForeColor = System.Drawing.Color.Black;
             this.textBox_codigo_unico.Location = new System.Drawing.Point(101, 84);
             this.textBox_codigo_unico.Name = "textBox_codigo_unico";
             this.textBox_codigo_unico.Size = new System.Drawing.Size(100, 15);
@@ -74,9 +75,10 @@ namespace DLS_ALFEITE
             // 
             // textBox_username_confirmação
             // 
-            this.textBox_username_confirmação.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(146)))), ((int)(((byte)(158)))));
+            this.textBox_username_confirmação.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox_username_confirmação.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_username_confirmação.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_username_confirmação.ForeColor = System.Drawing.Color.Black;
             this.textBox_username_confirmação.Location = new System.Drawing.Point(101, 53);
             this.textBox_username_confirmação.Name = "textBox_username_confirmação";
             this.textBox_username_confirmação.Size = new System.Drawing.Size(100, 15);
@@ -85,9 +87,10 @@ namespace DLS_ALFEITE
             // 
             // btn_login_codigounico
             // 
+            this.btn_login_codigounico.BackColor = System.Drawing.Color.Gainsboro;
             this.btn_login_codigounico.Image = ((System.Drawing.Image)(resources.GetObject("btn_login_codigounico.Image")));
             this.btn_login_codigounico.Location = new System.Drawing.Point(117, 111);
-            this.btn_login_codigounico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_login_codigounico.Margin = new System.Windows.Forms.Padding(2);
             this.btn_login_codigounico.Name = "btn_login_codigounico";
             this.btn_login_codigounico.Size = new System.Drawing.Size(85, 37);
             this.btn_login_codigounico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -99,40 +102,19 @@ namespace DLS_ALFEITE
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(58, 23);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(55, 18);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(202, 15);
             this.label2.TabIndex = 21;
             this.label2.Text = "CONFIRMAÇÃO DE IDENTIDADE";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(68, 45);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 23);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(68, 78);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 23);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 23;
-            this.pictureBox3.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(68, 68);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(178, 2);
             this.panel1.TabIndex = 24;
@@ -141,7 +123,7 @@ namespace DLS_ALFEITE
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(68, 101);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(178, 2);
             this.panel2.TabIndex = 25;
@@ -160,26 +142,49 @@ namespace DLS_ALFEITE
             this.button2_cu.UseVisualStyleBackColor = true;
             this.button2_cu.Click += new System.EventHandler(this.button2_cu_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(68, 45);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 23);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(68, 78);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 23);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 32;
+            this.pictureBox3.TabStop = false;
+            // 
             // Login_Codigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(146)))), ((int)(((byte)(158)))));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(311, 162);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button1_cu);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_login_codigounico);
             this.Controls.Add(this.textBox_username_confirmação);
             this.Controls.Add(this.textBox_codigo_unico);
             this.Controls.Add(this.button2_cu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Location = new System.Drawing.Point(805, 450);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login_Codigo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Login_Codigo";
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_codigounico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -192,13 +197,13 @@ namespace DLS_ALFEITE
         #endregion
         private System.Windows.Forms.TextBox textBox_codigo_unico;
         private System.Windows.Forms.Button button1_cu;
-        private System.Windows.Forms.TextBox textBox_username_confirmação;
         private System.Windows.Forms.PictureBox btn_login_codigounico;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2_cu;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.TextBox textBox_username_confirmação;
     }
 }

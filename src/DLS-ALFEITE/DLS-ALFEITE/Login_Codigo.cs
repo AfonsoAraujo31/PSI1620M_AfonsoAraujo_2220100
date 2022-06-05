@@ -29,7 +29,7 @@ namespace DLS_ALFEITE
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
-            textBox_username_confirmação.Enabled = false;
+            //textBox_username_confirmação.Enabled = false;
             textBox_username_confirmação.Text = value;
         }
         private string value { get; set; }
@@ -51,8 +51,7 @@ namespace DLS_ALFEITE
                 textBox_codigo_unico.PasswordChar = '\0';
             }
         }
-        
-        private void btn_login_codigounico_Click(object sender, EventArgs e)
+        public void btn_login_codigounico_Click(object sender, EventArgs e)
         {
             SqlConnection sqlcon = new SqlConnection(connection);
             SqlCommand cmd = sqlcon.CreateCommand();
@@ -68,13 +67,14 @@ namespace DLS_ALFEITE
             if (count1 == 1)
             {
                 this.Close();
+                Reset_password res = new Reset_password(textBox_username_confirmação.Text);
+                res.ShowDialog();
             }
             else
             {
-                MessageBox.Show("ERRO");
+                MessageBox.Show("Username ou código único errados!");
             }
         }
-
         private void button1_cu_Click(object sender, EventArgs e)
         {
             if (textBox_codigo_unico.PasswordChar == '●')

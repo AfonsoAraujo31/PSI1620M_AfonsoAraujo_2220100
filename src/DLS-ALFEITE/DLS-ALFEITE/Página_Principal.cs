@@ -59,6 +59,7 @@ namespace DLS_ALFEITE
             btn_definicoes.BackColor = Color.Transparent;
             btn_aquisicao_inflamaveis.BackColor = Color.Transparent;
             btn_fornecimento_inflamaveis.BackColor = Color.Transparent;
+            btn_notas.BackColor = Color.Transparent;
             btn.BackColor = Color.RosyBrown;
         }
 

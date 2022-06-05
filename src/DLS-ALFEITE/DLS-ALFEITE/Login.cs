@@ -179,6 +179,23 @@ namespace DLS_ALFEITE
                 }
             }
         }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_min_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        public void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Opacity = 0.80;
+            Login_Codigo frm_cd = new Login_Codigo(null);
+            frm_cd.ShowDialog();
+        }
     }
 }
 

@@ -373,7 +373,6 @@ namespace DLS_ALFEITE
             string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
             using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
             {
-                string a = null;
                 sqlCon1.Open();
                 SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos", sqlCon1);
                 DataTable dtbl1 = new DataTable();
