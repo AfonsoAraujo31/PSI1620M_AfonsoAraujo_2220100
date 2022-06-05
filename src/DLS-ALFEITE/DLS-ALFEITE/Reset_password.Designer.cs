@@ -29,91 +29,36 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reset_password));
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox_password = new System.Windows.Forms.TextBox();
-            this.textBox_codigounico = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txb_username = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btn_ = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_login_codigounico = new System.Windows.Forms.PictureBox();
+            this.textBox_codigo_unico = new System.Windows.Forms.TextBox();
+            this.btn_2 = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.txb_nova_password = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txb_comfirmacao_password = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_login_codigounico)).BeginInit();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Azure;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(286, 138);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(33, 23);
-            this.button2.TabIndex = 27;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(92, 159);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 2);
-            this.panel2.TabIndex = 23;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(92, 136);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 23);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 21;
-            this.pictureBox3.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Azure;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(286, 138);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 23);
-            this.button1.TabIndex = 26;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox_password
-            // 
-            this.textBox_password.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_password.Location = new System.Drawing.Point(125, 144);
-            this.textBox_password.Name = "textBox_password";
-            this.textBox_password.Size = new System.Drawing.Size(164, 15);
-            this.textBox_password.TabIndex = 25;
-            this.textBox_password.Text = "Confirmação da Password";
-            // 
-            // textBox_codigounico
-            // 
-            this.textBox_codigounico.BackColor = System.Drawing.Color.Azure;
-            this.textBox_codigounico.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_codigounico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_codigounico.Location = new System.Drawing.Point(125, 144);
-            this.textBox_codigounico.Name = "textBox_codigounico";
-            this.textBox_codigounico.Size = new System.Drawing.Size(100, 15);
-            this.textBox_codigounico.TabIndex = 28;
-            this.textBox_codigounico.Text = "Código Único";
             // 
             // label1
             // 
@@ -137,72 +82,234 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "RECUPERAÇÃO DA PASSWORD";
             // 
-            // button3
+            // panel1
             // 
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Azure;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(286, 95);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(33, 23);
-            this.button3.TabIndex = 36;
-            this.button3.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.txb_username);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.btn_);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btn_login_codigounico);
+            this.panel1.Controls.Add(this.textBox_codigo_unico);
+            this.panel1.Controls.Add(this.btn_2);
+            this.panel1.Location = new System.Drawing.Point(80, 61);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(251, 146);
+            this.panel1.TabIndex = 38;
+            // 
+            // txb_username
+            // 
+            this.txb_username.BackColor = System.Drawing.Color.Gainsboro;
+            this.txb_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txb_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_username.ForeColor = System.Drawing.Color.Black;
+            this.txb_username.Location = new System.Drawing.Point(74, 34);
+            this.txb_username.Name = "txb_username";
+            this.txb_username.Size = new System.Drawing.Size(100, 15);
+            this.txb_username.TabIndex = 43;
+            this.txb_username.Text = "Username";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(40, 60);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 23);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 42;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(40, 27);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(33, 23);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 41;
+            this.pictureBox4.TabStop = false;
+            // 
+            // btn_
+            // 
+            this.btn_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_.FlatAppearance.BorderSize = 0;
+            this.btn_.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_.ForeColor = System.Drawing.Color.Azure;
+            this.btn_.Image = ((System.Drawing.Image)(resources.GetObject("btn_.Image")));
+            this.btn_.Location = new System.Drawing.Point(185, 59);
+            this.btn_.Name = "btn_";
+            this.btn_.Size = new System.Drawing.Size(33, 23);
+            this.btn_.TabIndex = 39;
+            this.btn_.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(40, 83);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(178, 2);
+            this.panel3.TabIndex = 35;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Location = new System.Drawing.Point(40, 50);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(178, 2);
+            this.panel5.TabIndex = 34;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(25, 5);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(202, 15);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "CONFIRMAÇÃO DE IDENTIDADE";
+            // 
+            // btn_login_codigounico
+            // 
+            this.btn_login_codigounico.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_login_codigounico.Image = ((System.Drawing.Image)(resources.GetObject("btn_login_codigounico.Image")));
+            this.btn_login_codigounico.Location = new System.Drawing.Point(89, 93);
+            this.btn_login_codigounico.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_login_codigounico.Name = "btn_login_codigounico";
+            this.btn_login_codigounico.Size = new System.Drawing.Size(85, 37);
+            this.btn_login_codigounico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btn_login_codigounico.TabIndex = 36;
+            this.btn_login_codigounico.TabStop = false;
+            this.btn_login_codigounico.Click += new System.EventHandler(this.btn_login_codigounico_Click);
+            // 
+            // textBox_codigo_unico
+            // 
+            this.textBox_codigo_unico.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox_codigo_unico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_codigo_unico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_codigo_unico.ForeColor = System.Drawing.Color.Black;
+            this.textBox_codigo_unico.Location = new System.Drawing.Point(73, 66);
+            this.textBox_codigo_unico.Name = "textBox_codigo_unico";
+            this.textBox_codigo_unico.Size = new System.Drawing.Size(100, 15);
+            this.textBox_codigo_unico.TabIndex = 38;
+            this.textBox_codigo_unico.Text = "Código Único";
+            // 
+            // btn_2
+            // 
+            this.btn_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_2.FlatAppearance.BorderSize = 0;
+            this.btn_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_2.ForeColor = System.Drawing.Color.Azure;
+            this.btn_2.Image = ((System.Drawing.Image)(resources.GetObject("btn_2.Image")));
+            this.btn_2.Location = new System.Drawing.Point(185, 59);
+            this.btn_2.Name = "btn_2";
+            this.btn_2.Size = new System.Drawing.Size(33, 23);
+            this.btn_2.TabIndex = 40;
+            this.btn_2.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.button5);
+            this.panel6.Controls.Add(this.panel4);
+            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Controls.Add(this.txb_nova_password);
+            this.panel6.Controls.Add(this.panel2);
+            this.panel6.Controls.Add(this.pictureBox3);
+            this.panel6.Controls.Add(this.txb_comfirmacao_password);
+            this.panel6.Location = new System.Drawing.Point(80, 64);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(251, 146);
+            this.panel6.TabIndex = 39;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(6, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 15);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "label4";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(89, 116);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 49;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(92, 118);
+            this.panel4.Location = new System.Drawing.Point(8, 63);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 2);
-            this.panel4.TabIndex = 33;
+            this.panel4.TabIndex = 45;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(92, 95);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 40);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(33, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             // 
-            // button4
+            // txb_nova_password
             // 
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Azure;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(286, 95);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(33, 23);
-            this.button4.TabIndex = 35;
-            this.button4.UseVisualStyleBackColor = true;
+            this.txb_nova_password.BackColor = System.Drawing.Color.Gainsboro;
+            this.txb_nova_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txb_nova_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_nova_password.Location = new System.Drawing.Point(41, 48);
+            this.txb_nova_password.Name = "txb_nova_password";
+            this.txb_nova_password.Size = new System.Drawing.Size(164, 15);
+            this.txb_nova_password.TabIndex = 46;
+            this.txb_nova_password.Text = "Nova Password";
             // 
-            // textBox2
+            // panel2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(125, 103);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 15);
-            this.textBox2.TabIndex = 34;
-            this.textBox2.Text = "Nova Password";
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(8, 104);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 2);
+            this.panel2.TabIndex = 39;
             // 
-            // button5
+            // pictureBox3
             // 
-            this.button5.Location = new System.Drawing.Point(255, 178);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 37;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(8, 81);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 23);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 38;
+            this.pictureBox3.TabStop = false;
+            // 
+            // txb_comfirmacao_password
+            // 
+            this.txb_comfirmacao_password.BackColor = System.Drawing.Color.Gainsboro;
+            this.txb_comfirmacao_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txb_comfirmacao_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_comfirmacao_password.Location = new System.Drawing.Point(41, 89);
+            this.txb_comfirmacao_password.Name = "txb_comfirmacao_password";
+            this.txb_comfirmacao_password.Size = new System.Drawing.Size(100, 15);
+            this.txb_comfirmacao_password.TabIndex = 43;
+            this.txb_comfirmacao_password.Text = "Password";
             // 
             // Reset_password
             // 
@@ -210,47 +317,52 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(412, 213);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox_password);
-            this.Controls.Add(this.textBox_codigounico);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(755, 420);
             this.Name = "Reset_password";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Reset_password";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_login_codigounico)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox_password;
-        private System.Windows.Forms.TextBox textBox_codigounico;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btn_;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox btn_login_codigounico;
+        public System.Windows.Forms.TextBox txb_confirmacao;
+        private System.Windows.Forms.TextBox textBox_codigo_unico;
+        private System.Windows.Forms.Button btn_2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txb_nova_password;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.TextBox txb_comfirmacao_password;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txb_username;
     }
 }

@@ -24,26 +24,22 @@ namespace DLS_ALFEITE
              int nwidthEllipse,
              int nHeightEllipse
         );
-
+        private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         int id1 = 0;
-        bool asa = true;
+        bool ver = true;
         public Fornecimento_inflamavel(string id, string value1, string value2, string value3)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Form_estilo();
             id1 = Convert.ToInt32(id);
             txb_denominacao.Text = value1;
             txb_numero_serie.Text = value2;
             txb_lote.Text = value3;
-            txb_lote.MaxLength = 5;
-            dtp_data_fornecimento.MinDate = DateTime.Today;
-            dtp_data_prevista_entrega.MinDate = DateTime.Today;
-            txb_numero_serie.MaxLength = 9;
-            texbox_redondas();
         }
-        public void texbox_redondas()
+        public void Form_estilo()
         {
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            //inputs_redondos
             txb_denominacao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             txb_numero_serie.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_numero_serie.Width, txb_numero_serie.Height, 12, 12));
             txb_lote.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_lote.Width, txb_lote.Height, 12, 12));
@@ -52,31 +48,30 @@ namespace DLS_ALFEITE
             txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_entidade.Width, txb_entidade.Height, 12, 12));
             dtp_data_fornecimento.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtp_data_fornecimento.Width, dtp_data_fornecimento.Height, 12, 12));
             dtp_data_prevista_entrega.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtp_data_prevista_entrega.Width, dtp_data_prevista_entrega.Height, 12, 12));
+            //validacao_dos_campos
+            txb_lote.MaxLength = 5;
+            dtp_data_fornecimento.MinDate = DateTime.Today;
+            dtp_data_prevista_entrega.MinDate = DateTime.Today;
+            txb_numero_serie.MaxLength = 9;
         }
         private void btnclose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            verificacao();
-            if (asa == false)
+            Verificacao();
+            if (ver == false)
             {
-                asa = true;
+                ver = true;
             }
             else
             {
                 try
                 {
-                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
                     string query = "insert into fornecimento_inflamavel(id_fornecimento,data_fornecimento,data_entrega,quantidade_fornecimento,entidade,observacoes) VALUES( " + id1 + ", '" + this.dtp_data_fornecimento.Text + "','" + this.dtp_data_prevista_entrega.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_observacoes.Text + "')";
-                    SqlConnection sqlCon = new SqlConnection(connectionString);
+                    SqlConnection sqlCon = new SqlConnection(connection);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     SqlDataReader myreader;
                     sqlCon.Open();
@@ -91,6 +86,7 @@ namespace DLS_ALFEITE
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    MessageBox.Show("Já existe um registo desse inflamável.");
                 }
             }
         }
@@ -99,79 +95,49 @@ namespace DLS_ALFEITE
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        public void verificacao()
+        public void Verificacao()
         {
             if (txb_denominacao.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Denominação incorreto!");
             }
             if (txb_numero_serie.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo ´Número de série incorreto!");
             }
             if (dtp_data_fornecimento.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Validade incorreto!");
             }
             if (dtp_data_prevista_entrega.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Lote incorreto!");
             }
             if (txb_quantidade.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Quantidade incorreto!");
             }
             if (txb_entidade.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Fabricante incorreto!");
             }
             if (txb_lote.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Contacto do Fabricante incorreto!");
             }
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btn_cancelar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

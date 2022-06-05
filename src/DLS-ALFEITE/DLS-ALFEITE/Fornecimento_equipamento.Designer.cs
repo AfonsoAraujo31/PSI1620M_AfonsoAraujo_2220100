@@ -39,7 +39,7 @@
             this.txb_quantidade = new System.Windows.Forms.TextBox();
             this.txb_numero_serie = new System.Windows.Forms.TextBox();
             this.txb_denominacao = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.txb_observacoes = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -133,7 +133,6 @@
             this.label1.Size = new System.Drawing.Size(88, 21);
             this.label1.TabIndex = 71;
             this.label1.Text = "Entidade:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txb_lote
             // 
@@ -171,16 +170,16 @@
             this.txb_denominacao.Size = new System.Drawing.Size(307, 25);
             this.txb_denominacao.TabIndex = 65;
             // 
-            // button2
+            // btn_cancelar
             // 
-            this.button2.Location = new System.Drawing.Point(688, 503);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(58, 19);
-            this.button2.TabIndex = 64;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_cancelar.Location = new System.Drawing.Point(688, 503);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(58, 19);
+            this.btn_cancelar.TabIndex = 64;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
@@ -214,7 +213,6 @@
             this.label10.Size = new System.Drawing.Size(116, 21);
             this.label10.TabIndex = 61;
             this.label10.Text = "Observações:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -227,7 +225,6 @@
             this.label9.Size = new System.Drawing.Size(51, 21);
             this.label9.TabIndex = 60;
             this.label9.Text = "Lote:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -240,7 +237,6 @@
             this.label8.Size = new System.Drawing.Size(113, 21);
             this.label8.TabIndex = 59;
             this.label8.Text = "Quantidade:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -265,7 +261,6 @@
             this.label5.Size = new System.Drawing.Size(192, 21);
             this.label5.TabIndex = 57;
             this.label5.Text = "Data de fornecimento:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label3
             // 
@@ -278,7 +273,6 @@
             this.label3.Size = new System.Drawing.Size(144, 21);
             this.label3.TabIndex = 56;
             this.label3.Text = "Número de série:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -291,7 +285,6 @@
             this.label2.Size = new System.Drawing.Size(127, 21);
             this.label2.TabIndex = 55;
             this.label2.Text = "Denominação:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtp_data_fornecimento
             // 
@@ -333,7 +326,7 @@
             this.Controls.Add(this.txb_quantidade);
             this.Controls.Add(this.txb_numero_serie);
             this.Controls.Add(this.txb_denominacao);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txb_observacoes);
             this.Controls.Add(this.label10);
@@ -368,7 +361,7 @@
         private System.Windows.Forms.TextBox txb_quantidade;
         private System.Windows.Forms.TextBox txb_numero_serie;
         private System.Windows.Forms.TextBox txb_denominacao;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.TextBox txb_observacoes;
         private System.Windows.Forms.Label label10;

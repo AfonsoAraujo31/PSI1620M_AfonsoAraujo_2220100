@@ -35,7 +35,6 @@ namespace DLS_ALFEITE
             this.btn_aquisicao_equipamentos = new System.Windows.Forms.Button();
             this.btn_aquisicao_medicamentos = new System.Windows.Forms.Button();
             this.btn_fornecimento_medicamento = new System.Windows.Forms.Button();
-            this.btn_notas = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_fornecimento_inflamaveis = new System.Windows.Forms.Button();
             this.btn_aquisicao_inflamaveis = new System.Windows.Forms.Button();
@@ -63,7 +62,6 @@ namespace DLS_ALFEITE
             this.panel2.Controls.Add(this.btn_aquisicao_equipamentos);
             this.panel2.Controls.Add(this.btn_aquisicao_medicamentos);
             this.panel2.Controls.Add(this.btn_fornecimento_medicamento);
-            this.panel2.Controls.Add(this.btn_notas);
             this.panel2.Controls.Add(this.btn_logout);
             this.panel2.Controls.Add(this.btn_fornecimento_inflamaveis);
             this.panel2.Controls.Add(this.btn_aquisicao_inflamaveis);
@@ -154,24 +152,6 @@ namespace DLS_ALFEITE
             this.btn_fornecimento_medicamento.UseVisualStyleBackColor = true;
             this.btn_fornecimento_medicamento.Visible = false;
             this.btn_fornecimento_medicamento.Click += new System.EventHandler(this.btn_fornecimento_medicamento_Click);
-            // 
-            // btn_notas
-            // 
-            this.btn_notas.FlatAppearance.BorderSize = 0;
-            this.btn_notas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_notas.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_notas.ForeColor = System.Drawing.Color.White;
-            this.btn_notas.Image = ((System.Drawing.Image)(resources.GetObject("btn_notas.Image")));
-            this.btn_notas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_notas.Location = new System.Drawing.Point(-1, 500);
-            this.btn_notas.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btn_notas.Name = "btn_notas";
-            this.btn_notas.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_notas.Size = new System.Drawing.Size(191, 53);
-            this.btn_notas.TabIndex = 20;
-            this.btn_notas.Text = "Notas";
-            this.btn_notas.UseVisualStyleBackColor = true;
-            this.btn_notas.Click += new System.EventHandler(this.btn_notas_Click);
             // 
             // btn_logout
             // 
@@ -420,7 +400,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.Button btn_fornecimento_inflamaveis;
         private System.Windows.Forms.Button btn_aquisicao_inflamaveis;
         private System.Windows.Forms.Button btn_logout;
-        private System.Windows.Forms.Button btn_notas;
         private System.Windows.Forms.Button btn_aquisicao_medicamentos;
         private System.Windows.Forms.Button btn_fornecimento_medicamento;
         private System.Windows.Forms.Button btn_aquisicao_equipamentos;

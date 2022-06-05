@@ -29,7 +29,15 @@ namespace DLS_ALFEITE
         public Definições(string value)
         {
             InitializeComponent();
+            Form_estilo();
             txb_username.Text = value;
+            carregar_dados();
+        }
+        public void Form_estilo()
+        {
+            txb_fabricante.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 30, 30));
+            txb_versao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_versao.Width, txb_versao.Height, 30, 30));
+            panel1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 30, 30));
             panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 30, 30));
             txb_username.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_username.Width, txb_username.Height, 30, 30));
             cb_genero.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, cb_genero.Width, cb_genero.Height, 30, 30));
@@ -37,9 +45,13 @@ namespace DLS_ALFEITE
             txb_nome.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_nome.Width, txb_nome.Height, 30, 30));
             txb_numero_telemovel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_numero_telemovel.Width, txb_numero_telemovel.Height, 30, 30));
             txb_password.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_password.Width, txb_password.Height, 30, 30));
+            btn_guardar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_guardar.Width, btn_guardar.Height, 30, 30));
             this.ActiveControl = panel2;
             txb_password.PasswordChar = '●';
-            btn_guardar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_guardar.Width, btn_guardar    .Height, 30, 30));
+        }
+
+        public void carregar_dados()
+        {
             try
             {
                 SqlConnection sqlcon = new SqlConnection(connection);
@@ -79,7 +91,7 @@ namespace DLS_ALFEITE
                     MessageBox.Show("ERRO!");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -103,7 +115,7 @@ namespace DLS_ALFEITE
                 }
                 sqlCon.Close();
                 txb_password.PasswordChar = '●';
-                button3.BringToFront();
+                btn_verpassword.BringToFront();
             }
             catch (Exception ex)
             {
@@ -111,19 +123,19 @@ namespace DLS_ALFEITE
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_verpassword_Click(object sender, EventArgs e)
         {
             Login_Codigo frm_cd = new Login_Codigo(txb_username.Text);
             frm_cd.ShowDialog();
-            button1.BringToFront();
+            btn_esconder_password.BringToFront();
             txb_password.PasswordChar = '\0';
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btn_esconder_password_Click(object sender, EventArgs e)
         {
             if (txb_password.PasswordChar == '\0')
             {
-                button3.BringToFront();
+                btn_verpassword.BringToFront();
                 txb_password.PasswordChar = '●';
             }
         }

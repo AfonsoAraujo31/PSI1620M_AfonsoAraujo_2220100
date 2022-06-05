@@ -25,15 +25,15 @@ namespace DLS_ALFEITE
              int nwidthEllipse,
              int nHeightEllipse
         );
-
-        bool asa = true;
+        private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
+        bool ver = true;
         int id1 = 0;
         private readonly Inflamáveis inflamáveis;
         public Editar_inflamavel(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9, Inflamáveis a)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Form_estilo();
+            inflamáveis = a;
             id1 = Convert.ToInt32(id);
             txb_denominacao.Text = value;
             dtp_validade.Text = value2;
@@ -44,14 +44,11 @@ namespace DLS_ALFEITE
             txb_contacto_fabricante.Text = value7;
             txb_observacoes.Text = value8;
             txb_setor.Text = value9;
-            inflamáveis = a;
-            dtp_validade.MinDate = DateTime.Today;
-            txb_lote.MaxLength = 5;
-            txb_numero_serie.MaxLength = 9;
-            texbox_redondas();
         }
-        public void texbox_redondas()
+        public void Form_estilo()
         {
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            //inputs_redondos
             txb_denominacao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             txb_numero_serie.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_numero_serie.Width, txb_numero_serie.Height, 12, 12));
             txb_lote.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_lote.Width, txb_lote.Height, 12, 12));
@@ -61,6 +58,10 @@ namespace DLS_ALFEITE
             txb_setor.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_setor.Width, txb_setor.Height, 12, 12));
             txb_fabricante.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 12, 12));
             txb_contacto_fabricante.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 12, 12));
+            //validacao_dos_campos
+            dtp_validade.MinDate = DateTime.Today;
+            txb_lote.MaxLength = 5;
+            txb_numero_serie.MaxLength = 9;
         }
         private void btnclose_Click(object sender, EventArgs e)
         {
@@ -72,25 +73,19 @@ namespace DLS_ALFEITE
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            verificacao();
-            if (asa == false)
+            Verificacao();
+            if (ver == false)
             {
-                asa = true;
+                ver = true;
             }
             else
             {
                 try
                 {
-                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
                     string query = "UPDATE Inflamaveis SET denominacao = '" + this.txb_denominacao.Text + "',validade = '" + this.dtp_validade.Text + "', lote = '" + this.txb_lote.Text + "',quantidade = '" + this.txb_quantidade.Text + "',numero_serie = '" + this.txb_numero_serie.Text + "', fabricante = '" + this.txb_fabricante.Text + "',email_tel_fabricante = '" + this.txb_contacto_fabricante.Text + "',setor = '" + this.txb_setor.Text + "' ,observacoes = '" + this.txb_observacoes.Text + "' WHERE id = @id ";
-                    SqlConnection sqlCon = new SqlConnection(connectionString);
+                    SqlConnection sqlCon = new SqlConnection(connection);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     cmd.Parameters.AddWithValue("@id", id1);
                     SqlDataReader myreader;
@@ -101,15 +96,8 @@ namespace DLS_ALFEITE
                     {
 
                     }
-                    try
-                    {
-                        inflamáveis.reload_tabela();
-                        this.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                    inflamáveis.atualiza_tabela();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -117,46 +105,46 @@ namespace DLS_ALFEITE
                 }
             }
         }
-        public void verificacao()
+        public void Verificacao()
         {
             if (txb_denominacao.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Denominação incorreto!");
             }
             if (txb_numero_serie.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Número de série incorreto!");
             }
             if (dtp_validade.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Validade incorreto!");
             }
             if (txb_lote.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Lote incorreto!");
             }
             if (txb_quantidade.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Quantidade incorreto!");
             }
             if (txb_fabricante.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Fabricante incorreto!");
             }
             if (txb_contacto_fabricante.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Contacto do Fabricante incorreto!");
             }
             if (txb_setor.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Setor incorreto!");
             }
             //regular expression
@@ -164,49 +152,13 @@ namespace DLS_ALFEITE
             Regex obj = new Regex(strRegex);
             if (obj.IsMatch(txb_contacto_fabricante.Text) == false)
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Contacto de fabricante incorreto");
             }
         }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void btn_cancelar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

@@ -374,12 +374,6 @@
     <Compile Include="Medicamentos.Designer.cs">
       <DependentUpon>Medicamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Notas.Designer.cs">
-      <DependentUpon>Notas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Página_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -465,9 +459,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Medicamentos.resx">
       <DependentUpon>Medicamentos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Notas.resx">
-      <DependentUpon>Notas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Página_Principal.resx">
       <DependentUpon>Página_Principal.cs</DependentUpon>

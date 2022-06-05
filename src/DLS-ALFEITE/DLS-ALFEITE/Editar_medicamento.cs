@@ -25,15 +25,15 @@ namespace DLS_ALFEITE
              int nwidthEllipse,
              int nHeightEllipse
         );
-
+        private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         int id1 = 0;
-        bool asa = true;
+        bool ver = true;
         private readonly Medicamentos medicamentos;
         public Editar_medicamento(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9, Medicamentos a)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Form_estilo();
+            medicamentos = a;
             id1 = Convert.ToInt32(id);
             txb_denominacao.Text = value;
             txb_principio_ativo.Text = value2;
@@ -44,14 +44,11 @@ namespace DLS_ALFEITE
             txb_contacto_fabricante.Text = value7;
             txb_observacoes.Text = value8;
             txb_setor.Text = value9;
-            //this.medicamentos = medicamentos;
-            medicamentos = a;
-            dtp_validade.MinDate = DateTime.Today;
-            txb_lote.MaxLength = 5;
-            texbox_redondas();
         }
-        public void texbox_redondas()
+        public void Form_estilo()
         {
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            //inputs_redondos
             txb_denominacao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             txb_principio_ativo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_principio_ativo.Width, txb_principio_ativo.Height, 12, 12));
             txb_lote.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_lote.Width, txb_lote.Height, 12, 12));
@@ -61,6 +58,9 @@ namespace DLS_ALFEITE
             txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_quantidade.Width, txb_quantidade.Height, 12, 12));
             txb_setor.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_setor.Width, txb_setor.Height, 12, 12));
             dtp_validade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtp_validade.Width, dtp_validade.Height, 12, 12));
+            //validacao_dos_campos
+            dtp_validade.MinDate = DateTime.Today;
+            txb_lote.MaxLength = 5;
         }
         private void btnclose_Click(object sender, EventArgs e)
         {
@@ -75,17 +75,16 @@ namespace DLS_ALFEITE
         public void btn_guardar_Click(object sender, EventArgs e)
         {
             verificacao();
-            if(asa == false)
+            if(ver == false)
             {
-                asa = true;
+                ver = true;
             }
             else
             {
                 try
                 {
-                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
                     string query = "UPDATE Medicamentos SET denominacao = '" + this.txb_denominacao.Text + "',principio_ativo = '" + this.txb_principio_ativo.Text + "',validade = '" + this.dtp_validade.Text + "', lote = '" + this.txb_lote.Text + "',quantidade = '" + this.txb_quantidade.Text + "',fabricante = '" + this.txb_fabricante.Text + "',email_tel_fabricante = '" + this.txb_contacto_fabricante.Text + "',setor = '" + this.txb_setor.Text + "' ,observacoes = '" + this.txb_observacoes.Text + "' WHERE id = @id ";
-                    SqlConnection sqlCon = new SqlConnection(connectionString);
+                    SqlConnection sqlCon = new SqlConnection(connection);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     cmd.Parameters.AddWithValue("@id", id1);
                     SqlDataReader myreader;
@@ -96,16 +95,9 @@ namespace DLS_ALFEITE
                     {
 
                     }
-                    try
-                    {
-                        medicamentos.reload_tabela();
-                        medicamentos.listbox();
-                        this.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                    medicamentos.atualiza_tabela();
+                    medicamentos.listbox();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -114,50 +106,46 @@ namespace DLS_ALFEITE
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         public void verificacao()
         {
             if (txb_denominacao.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Denominação incorreto!");
             }
             if (txb_principio_ativo.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Princípio/Ativo incorreto!");
             }
             if (dtp_validade.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Validade incorreto!");
             }
             if (txb_lote.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Lote incorreto!");
             }
             if (txb_quantidade.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Quantidade incorreto!");
             }
             if (txb_fabricante.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Fabricante incorreto!");
             }
             if (txb_contacto_fabricante.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Contacto do Fabricante incorreto!");
             }
             if (txb_setor.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Setor incorreto!");
             }
             //regular expression
@@ -165,10 +153,14 @@ namespace DLS_ALFEITE
             Regex obj = new Regex(strRegex);
             if (obj.IsMatch(txb_contacto_fabricante.Text) == false)
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Contacto de fabricante incorreto");
             }
         }
-       
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

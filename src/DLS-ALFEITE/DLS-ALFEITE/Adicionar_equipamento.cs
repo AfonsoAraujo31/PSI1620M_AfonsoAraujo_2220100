@@ -25,21 +25,19 @@ namespace DLS_ALFEITE
              int nwidthEllipse,
              int nHeightEllipse
         );
-
-        bool asa = true;
+        private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
+        bool ver = true;
         private readonly Equipamentos equipamentos;
         public Adicionar_equipamento(Equipamentos a)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Form_estilo();
             equipamentos = a;
-            txb_numero_serie.MaxLength = 9;
-            txb_lote.MaxLength = 5;
-            texbox_redondas();
         }
-        public void texbox_redondas()
+        public void Form_estilo()
         {
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            //inputs_redondos
             txb_denominacao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             txb_numero_serie.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_numero_serie.Width, txb_numero_serie.Height, 12, 12));
             txb_lote.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_lote.Width, txb_lote.Height, 12, 12));
@@ -48,6 +46,9 @@ namespace DLS_ALFEITE
             txb_fabricante.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 12, 12));
             txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_quantidade.Width, txb_quantidade.Height, 12, 12));
             txb_setor.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_setor.Width, txb_setor.Height, 12, 12));
+            //validacao_dos_campos
+            txb_numero_serie.MaxLength = 9;
+            txb_lote.MaxLength = 5;
         }
         private void btnclose_Click(object sender, EventArgs e)
         {
@@ -59,25 +60,19 @@ namespace DLS_ALFEITE
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            verificacao();
-            if (asa == false)
+            Verificacao();
+            if (ver == false)
             {
-                asa = true;
+                ver = true;
             }
             else
             {
                 try
                 {
-                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
                     string query = "insert into Equipamentos(denominacao,lote,quantidade,numero_serie,fabricante,email_tel_fabricante,observacoes,setor) VALUES('" + this.txb_denominacao.Text + "','" + this.txb_lote.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_numero_serie.Text + "','" + this.txb_fabricante.Text + "','" + this.txb_contacto_fabricante.Text + "','" + this.txb_observacoes.Text + "','" + this.txb_setor.Text + "')";
-                    SqlConnection sqlCon = new SqlConnection(connectionString);
+                    SqlConnection sqlCon = new SqlConnection(connection);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     SqlDataReader myreader;
                     sqlCon.Open();
@@ -87,15 +82,8 @@ namespace DLS_ALFEITE
                     {
 
                     }
-                    try
-                    {
-                        equipamentos.reload_tabela();
-                        this.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                    equipamentos.atualiza_tabela();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -103,41 +91,41 @@ namespace DLS_ALFEITE
                 }
             }
         }
-        public void verificacao()
+        public void Verificacao()
         {
             if (txb_denominacao.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Denominação incorreto!");
             }
             if (txb_numero_serie.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Número de série incorreto!");
             }
             if (txb_lote.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Lote incorreto!");
             }
             if (txb_quantidade.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Quantidade incorreto!");
             }
             if (txb_fabricante.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Fabricante incorreto!");
             }
             if (txb_contacto_fabricante.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Contacto do Fabricante incorreto!");
             }
             if (txb_setor.Text == "")
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Setor incorreto!");
             }
             //regular expression
@@ -145,13 +133,12 @@ namespace DLS_ALFEITE
             Regex obj = new Regex(strRegex);
             if (obj.IsMatch(txb_contacto_fabricante.Text) == false)
             {
-                asa = false;
+                ver = false;
                 MessageBox.Show("Campo Contacto de fabricante incorreto");
             }
             try
             {
-                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                SqlConnection sqlcon = new SqlConnection(connectionString);
+                SqlConnection sqlcon = new SqlConnection(connection);
                 SqlCommand cmd = sqlcon.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = $"SELECT denominacao,lote,numero_serie FROM Equipamentos WHERE denominacao=@denominacao OR lote=@lote OR numero_serie=@numero_serie ";
@@ -165,7 +152,7 @@ namespace DLS_ALFEITE
                 int count = ds.Tables[0].Rows.Count;
                 if (count >= 1)
                 {
-                    asa = false;
+                    ver = false;
                     MessageBox.Show("Já existe um registo com esse nome ou com número de série igual.");
                 }
                 sqlcon.Close();
@@ -174,6 +161,10 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

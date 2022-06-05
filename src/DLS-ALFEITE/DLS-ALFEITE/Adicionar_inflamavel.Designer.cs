@@ -33,7 +33,7 @@
             this.label_med = new System.Windows.Forms.Label();
             this.btn_min = new System.Windows.Forms.Button();
             this.btnclose = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.txb_observacoes = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -115,16 +115,16 @@
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
-            // button2
+            // btn_cancelar
             // 
-            this.button2.Location = new System.Drawing.Point(690, 503);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(58, 19);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_cancelar.Location = new System.Drawing.Point(690, 503);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(58, 19);
+            this.btn_cancelar.TabIndex = 46;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
@@ -158,7 +158,6 @@
             this.label10.Size = new System.Drawing.Size(116, 21);
             this.label10.TabIndex = 43;
             this.label10.Text = "Observações:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txb_contacto_fabricante
             // 
@@ -180,7 +179,6 @@
             this.label9.Size = new System.Drawing.Size(207, 21);
             this.label9.TabIndex = 41;
             this.label9.Text = "Contacto do Fabricante:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // txb_fabricante
             // 
@@ -202,7 +200,6 @@
             this.label8.Size = new System.Drawing.Size(102, 21);
             this.label8.TabIndex = 39;
             this.label8.Text = "Fabricante:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txb_setor
             // 
@@ -224,7 +221,6 @@
             this.label7.Size = new System.Drawing.Size(56, 21);
             this.label7.TabIndex = 37;
             this.label7.Text = "Setor:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txb_quantidade
             // 
@@ -267,7 +263,6 @@
             this.label5.Size = new System.Drawing.Size(51, 21);
             this.label5.TabIndex = 33;
             this.label5.Text = "Lote:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txb_numero_serie
             // 
@@ -298,7 +293,6 @@
             this.label4.Size = new System.Drawing.Size(88, 21);
             this.label4.TabIndex = 29;
             this.label4.Text = "Validade:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -311,7 +305,6 @@
             this.label3.Size = new System.Drawing.Size(144, 21);
             this.label3.TabIndex = 28;
             this.label3.Text = "Número de série:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -324,7 +317,6 @@
             this.label2.Size = new System.Drawing.Size(127, 21);
             this.label2.TabIndex = 27;
             this.label2.Text = "Denominação:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtp_validade
             // 
@@ -346,7 +338,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(146)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(750, 524);
             this.Controls.Add(this.dtp_validade);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txb_observacoes);
             this.Controls.Add(this.label10);
@@ -383,7 +375,7 @@
         private System.Windows.Forms.Label label_med;
         private System.Windows.Forms.Button btn_min;
         private System.Windows.Forms.Button btnclose;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.TextBox txb_observacoes;
         private System.Windows.Forms.Label label10;

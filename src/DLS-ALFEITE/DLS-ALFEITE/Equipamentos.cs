@@ -27,72 +27,23 @@ namespace DLS_ALFEITE
         public Equipamentos()
         {
             InitializeComponent();
-            StyleDatagridview();
-            this.ActiveControl = label2;
+            Form_estilo();
         }
-        string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-        private void Equipamentos_Load_1(object sender, EventArgs e)
+        private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
+        private void Equipamentos_Load(object sender, EventArgs e)
         {
-            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 30, 30));
-            panel3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel3.Width, panel3.Height, 30, 30));
-            panel4.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel4.Width, panel4.Height, 30, 30));
-            btn_adicionar_medicamentos.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_adicionar_medicamentos.Width, btn_adicionar_medicamentos.Height, 25, 30));
             try
             {
-                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
-                {
-                    sqlCon1.Open();
-                    SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon1);
-                    DataTable dtbl1 = new DataTable();
-                    sqlDa1.Fill(dtbl1);
-                    //method 1 - direct method
-                    dataGridView1.DataSource = dtbl1;
-                    sqlCon1.Close();
-                }
-                //listbox1
-                string Query = "SELECT TOP 4 denominacao, quantidade FROM Equipamentos WHERE quantidade <= 20 ORDER BY quantidade ASC";
-                SqlConnection sqlCon = new SqlConnection(connectionString);
-                SqlCommand cmd = new SqlCommand(Query, sqlCon);
-                SqlDataReader myReader;
-                try
+                using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
-                    using (myReader = cmd.ExecuteReader())
-                    {
-                        while (myReader.Read())
-                        {
-                            listBox1.Items.Add(myReader["denominacao"].ToString());
-                            listBox4.Items.Add(string.Format("➡️ {0}", myReader["quantidade"].ToString()));
-                        }
-                    }
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon);
+                    DataTable dtbl = new DataTable();
+                    adapter.Fill(dtbl);
+                    dataGridView1.DataSource = dtbl;
+                    sqlCon.Close();
                 }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
-                //listbox2
-                string Query3 = "SELECT TOP 3 denominacao FROM Equipamentos ORDER BY id DESC";
-                SqlConnection sqlCon3 = new SqlConnection(connectionString);
-                SqlCommand cmd3 = new SqlCommand(Query3, sqlCon3);
-                SqlDataReader myReader3;
-                try
-                {
-                    sqlCon3.Open();
-                    using (myReader3 = cmd3.ExecuteReader())
-                    {
-                        while (myReader3.Read())
-                        {
-                            listBox2.Items.Add(string.Format("Denominação: {0}", myReader3["denominacao"].ToString()));
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
+                listbox();
             }
             catch (Exception ex)
             {
@@ -100,8 +51,56 @@ namespace DLS_ALFEITE
             }
             update();
         }
-        void StyleDatagridview()
+        public void listbox()
         {
+            //listbox1
+            string Query = "SELECT TOP 4 denominacao, quantidade FROM Equipamentos WHERE quantidade <= 20 ORDER BY quantidade ASC";
+            SqlConnection sqlCon = new SqlConnection(connection);
+            SqlCommand cmd = new SqlCommand(Query, sqlCon);
+            SqlDataReader myReader;
+            try
+            {
+                sqlCon.Open();
+                using (myReader = cmd.ExecuteReader())
+                {
+                    while (myReader.Read())
+                    {
+                        listBox1.Items.Add(myReader["denominacao"].ToString());
+                        listBox4.Items.Add(string.Format("➡️ {0}", myReader["quantidade"].ToString()));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            //listbox2
+            string Query3 = "SELECT TOP 3 denominacao FROM Equipamentos ORDER BY id DESC";
+            SqlConnection sqlCon3 = new SqlConnection(connection);
+            SqlCommand cmd3 = new SqlCommand(Query3, sqlCon3);
+            SqlDataReader myReader3;
+            try
+            {
+                sqlCon3.Open();
+                using (myReader3 = cmd3.ExecuteReader())
+                {
+                    while (myReader3.Read())
+                    {
+                        listBox2.Items.Add(string.Format("Denominação: {0}", myReader3["denominacao"].ToString()));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void Form_estilo()
+        {
+            this.ActiveControl = label2;
+            //datagridview
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -115,6 +114,11 @@ namespace DLS_ALFEITE
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.AllowUserToResizeRows = false;
+            //inputs_redondos
+            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 30, 30));
+            panel3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel3.Width, panel3.Height, 30, 30));
+            panel4.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel4.Width, panel4.Height, 30, 30));
+            btn_adicionar_medicamentos.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_adicionar_medicamentos.Width, btn_adicionar_medicamentos.Height, 25, 30));
         }
         public void update()
         {
@@ -177,16 +181,15 @@ namespace DLS_ALFEITE
                 textbox_searchbar.Text = "Search...";
                 try
                 {
-                    string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                    using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
+                    using (SqlConnection sqlCon = new SqlConnection(connection))
                     {
-                        sqlCon1.Open();
-                        SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon1);
-                        DataTable dtbl1 = new DataTable();
-                        sqlDa1.Fill(dtbl1);
+                        sqlCon.Open();
+                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon);
+                        DataTable dtbl = new DataTable();
+                        adapter.Fill(dtbl);
                         //method 1 - direct method
-                        dataGridView1.DataSource = dtbl1;
-                        sqlCon1.Close();
+                        dataGridView1.DataSource = adapter;
+                        sqlCon.Close();
                     }
                 }
                 catch (Exception ex)
@@ -198,24 +201,40 @@ namespace DLS_ALFEITE
         
         public void delete()
         {
-            SqlConnection sqlCon = new SqlConnection(ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString);
-            SqlCommand cmd;
+            SqlConnection sqlCon = new SqlConnection(connection);
+            SqlCommand cmd1, cmd2, cmd3;
             try
             {
-                using (cmd = new SqlCommand("DELETE FROM Equipamentos WHERE id = @id", sqlCon))
+                using (cmd1 = new SqlCommand("DELETE FROM Aquisição_equipamentos WHERE id_aquisicao = @id", sqlCon))
                 {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd1.Parameters.AddWithValue("@id", id);
                     sqlCon.Open();
-                    cmd.ExecuteNonQuery();
+                    cmd1.ExecuteNonQuery();
                     sqlCon.Close();
                 }
+                using (cmd2 = new SqlCommand("DELETE FROM fornecimento_equipamento WHERE id_fornecimento = @id", sqlCon))
+                {
+                    cmd2.Parameters.AddWithValue("@id", id);
+                    sqlCon.Open();
+                    cmd2.ExecuteNonQuery();
+                    sqlCon.Close();
+                }
+                using (cmd3 = new SqlCommand("DELETE FROM Equipamentos WHERE id = @id", sqlCon))
+                {
+                    cmd3.Parameters.AddWithValue("@id", id);
+                    sqlCon.Open();
+                    cmd3.ExecuteNonQuery();
+                    sqlCon.Close();
+                }
+                Equipamentos equipamentos = new Equipamentos();
+                equipamentos.Refresh();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
         string id = null;
         string denominacao = null;
         string lote = null;
@@ -227,111 +246,62 @@ namespace DLS_ALFEITE
         string setor = null;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            id = row.Cells["Id"].Value.ToString();
+            denominacao = row.Cells["Denominação"].Value.ToString();
+            lote = row.Cells["Lote"].Value.ToString();
+            stock = row.Cells["Stock"].Value.ToString();
+            numero_serie = row.Cells["Nº de série"].Value.ToString();
+            fabricante = row.Cells["Fabricante"].Value.ToString();
+            contacto_do_fabricante = row.Cells["Contacto do Fabricante"].Value.ToString();
+            observacoes = row.Cells["Observações"].Value.ToString();
+            setor = row.Cells["Setor"].Value.ToString();
+
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_eliminar")
             {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    id = row.Cells["Id"].Value.ToString();
-                }
+                id = row.Cells["Id"].Value.ToString();
                 delete();
-                string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-                using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
-                {
-                    sqlCon1.Open();
-                    SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon1);
-                    DataTable dtbl1 = new DataTable();
-                    sqlDa1.Fill(dtbl1);
-                    //method 1 - direct method
-                    dataGridView1.DataSource = dtbl1;
-                    sqlCon1.Close();
-                }
+                atualiza_tabela();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
             {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    id = row.Cells["Id"].Value.ToString();
-                }
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    id = row.Cells["Id"].Value.ToString();
-                    denominacao = row.Cells["Denominação"].Value.ToString();
-                    lote = row.Cells["Lote"].Value.ToString();
-                    stock = row.Cells["Stock"].Value.ToString();
-                    numero_serie = row.Cells["Nº de série"].Value.ToString();
-                    fabricante = row.Cells["Fabricante"].Value.ToString();
-                    contacto_do_fabricante = row.Cells["Contacto do Fabricante"].Value.ToString();
-                    observacoes = row.Cells["Observações"].Value.ToString();
-                    setor = row.Cells["Setor"].Value.ToString();
-                }
-                Editar_equipamento eq = new Editar_equipamento(id, denominacao, lote, stock, numero_serie, fabricante, contacto_do_fabricante, observacoes, setor, this);
-                eq.Show();
+                Editar_equipamento editar_equipamento = new Editar_equipamento(id, denominacao, lote, stock, numero_serie, fabricante, contacto_do_fabricante, observacoes, setor, this);
+                editar_equipamento.Show();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")
             {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    id = row.Cells["Id"].Value.ToString();
-                }
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    id = row.Cells["Id"].Value.ToString();
-                    denominacao = row.Cells["Denominação"].Value.ToString();
-                    numero_serie = row.Cells["Nº de série"].Value.ToString();
-                    lote = row.Cells["Lote"].Value.ToString();
-                }
-                new Aquisição_equipamento(id, denominacao, lote, numero_serie).Show();
+                Aquisição_equipamento aquisição_equipamento = new Aquisição_equipamento(id, denominacao, lote, numero_serie);
+                aquisição_equipamento.Show();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
             {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    id = row.Cells["Id"].Value.ToString();
-                }
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    id = row.Cells["Id"].Value.ToString();
-                    denominacao = row.Cells["Denominação"].Value.ToString();
-                    numero_serie = row.Cells["Nº de série"].Value.ToString();
-                    lote = row.Cells["Lote"].Value.ToString();
-                }
-                new Fornecimento_equipamento(id, denominacao, lote, numero_serie).Show();
+                Fornecimento_equipamento fornecimento_equipamento = new Fornecimento_equipamento(id, denominacao, lote, numero_serie);
+                fornecimento_equipamento.Show();
             }
             else
             {
                 //MessageBox.Show("1");
             }
         }
-
         public void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
         {
-            Adicionar_equipamento eq = new Adicionar_equipamento(this);
-            eq.Show();
+            Adicionar_equipamento adicionar_equipamento = new Adicionar_equipamento(this);
+            adicionar_equipamento.Show();
         }
-
         private void textbox_searchbar_TextChanged(object sender, EventArgs e)
         {
-            string mainconn = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
             try
             {
                 dataGridView1.Columns.Clear();
-                using (SqlConnection sqlCon = new SqlConnection(mainconn))
+                using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = $"SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos where denominacao like '" + textbox_searchbar.Text + "%'";
-
-                    SqlDataAdapter adpt = new SqlDataAdapter(cmd);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
-                    adpt.Fill(dtbl);
+                    adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
                 }
                 update();
@@ -341,19 +311,16 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
         }
-
-        public void reload_tabela()
+        public void atualiza_tabela()
         {
-            string connectionString = @"Server=devlab.thenotepad.eu;Database=PSI20M_AfonsoAraujo_2220100;User Id=U2220100;Password=UUvrK9MT;";
-            using (SqlConnection sqlCon1 = new SqlConnection(connectionString))
+            using (SqlConnection sqlCon = new SqlConnection(connection))
             {
-                sqlCon1.Open();
-                SqlDataAdapter sqlDa1 = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon1);
-                DataTable dtbl1 = new DataTable();
-                sqlDa1.Fill(dtbl1);
-                //method 1 - direct method
-                dataGridView1.DataSource = dtbl1;
-                sqlCon1.Close();
+                sqlCon.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon);
+                DataTable dtbl = new DataTable();
+                adapter.Fill(dtbl);
+                dataGridView1.DataSource = dtbl;
+                sqlCon.Close();
             }
         }
     }

@@ -16,7 +16,6 @@ namespace DLS_ALFEITE
         Equipamentos frm_equip;
         Medicamentos frm_med;
         Inflamáveis frm_infla;
-        Notas frm_notas;
         Aquisição_medicamento_menu frm_med_menu;
         Fornecimento_medicamento_menu frmm_med_menu_form;
         Aquisição_equipamento_menu frm_equip_menu_form;
@@ -59,7 +58,6 @@ namespace DLS_ALFEITE
             btn_definicoes.BackColor = Color.Transparent;
             btn_aquisicao_inflamaveis.BackColor = Color.Transparent;
             btn_fornecimento_inflamaveis.BackColor = Color.Transparent;
-            btn_notas.BackColor = Color.Transparent;
             btn.BackColor = Color.RosyBrown;
         }
 
@@ -225,36 +223,6 @@ namespace DLS_ALFEITE
         {
             new Frm_login().Show();
             this.Hide();
-        }
-
-        private void btn_notas_Click(object sender, EventArgs e)
-        {
-            btnsetcolor(btn_notas);
-            try
-            {
-                if (frm_notas == null)
-                {
-                    frm_notas = new Notas();
-                    frm_notas.MdiParent = this;
-                    frm_notas.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
-                    frm_notas.Show();
-                    frm_notas.Dock = DockStyle.Fill;
-                }
-                else
-                {
-                    frm_notas.Close();
-                    frm_notas = new Notas();
-                    frm_notas.MdiParent = this;
-                    frm_notas.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
-                    frm_notas.Show();
-                    frm_notas.Dock = DockStyle.Fill;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            btn_show();
         }
 
         private void btn_show()

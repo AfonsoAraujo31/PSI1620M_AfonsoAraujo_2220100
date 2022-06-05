@@ -39,7 +39,7 @@
             this.txb_quantidade = new System.Windows.Forms.TextBox();
             this.txb_numero_serie = new System.Windows.Forms.TextBox();
             this.txb_denominacao = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.txb_observacoes = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.panel5.Controls.Add(this.btnclose);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(750, 29);
             this.panel5.TabIndex = 10;
@@ -89,7 +89,7 @@
             this.btn_min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_min.Image = ((System.Drawing.Image)(resources.GetObject("btn_min.Image")));
             this.btn_min.Location = new System.Drawing.Point(659, -3);
-            this.btn_min.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_min.Margin = new System.Windows.Forms.Padding(2);
             this.btn_min.Name = "btn_min";
             this.btn_min.Size = new System.Drawing.Size(50, 33);
             this.btn_min.TabIndex = 8;
@@ -106,7 +106,7 @@
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
             this.btnclose.Location = new System.Drawing.Point(702, -3);
-            this.btnclose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(2);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(50, 33);
             this.btnclose.TabIndex = 6;
@@ -117,7 +117,7 @@
             // 
             this.txb_entidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_entidade.Location = new System.Drawing.Point(295, 255);
-            this.txb_entidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_entidade.Margin = new System.Windows.Forms.Padding(2);
             this.txb_entidade.Name = "txb_entidade";
             this.txb_entidade.Size = new System.Drawing.Size(169, 25);
             this.txb_entidade.TabIndex = 72;
@@ -138,7 +138,7 @@
             // 
             this.txb_lote.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_lote.Location = new System.Drawing.Point(540, 255);
-            this.txb_lote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_lote.Margin = new System.Windows.Forms.Padding(2);
             this.txb_lote.Name = "txb_lote";
             this.txb_lote.Size = new System.Drawing.Size(169, 25);
             this.txb_lote.TabIndex = 70;
@@ -147,7 +147,7 @@
             // 
             this.txb_quantidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_quantidade.Location = new System.Drawing.Point(50, 255);
-            this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txb_quantidade.Name = "txb_quantidade";
             this.txb_quantidade.Size = new System.Drawing.Size(169, 25);
             this.txb_quantidade.TabIndex = 69;
@@ -156,7 +156,7 @@
             // 
             this.txb_numero_serie.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_numero_serie.Location = new System.Drawing.Point(402, 91);
-            this.txb_numero_serie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_numero_serie.Margin = new System.Windows.Forms.Padding(2);
             this.txb_numero_serie.Name = "txb_numero_serie";
             this.txb_numero_serie.Size = new System.Drawing.Size(307, 25);
             this.txb_numero_serie.TabIndex = 66;
@@ -165,26 +165,26 @@
             // 
             this.txb_denominacao.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_denominacao.Location = new System.Drawing.Point(51, 91);
-            this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2);
             this.txb_denominacao.Name = "txb_denominacao";
             this.txb_denominacao.Size = new System.Drawing.Size(307, 25);
             this.txb_denominacao.TabIndex = 65;
             // 
-            // button2
+            // btn_cancelar
             // 
-            this.button2.Location = new System.Drawing.Point(687, 503);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(58, 19);
-            this.button2.TabIndex = 64;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_cancelar.Location = new System.Drawing.Point(687, 503);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(58, 19);
+            this.btn_cancelar.TabIndex = 64;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
             this.btn_guardar.Location = new System.Drawing.Point(627, 503);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(56, 19);
             this.btn_guardar.TabIndex = 63;
@@ -196,7 +196,7 @@
             // 
             this.txb_observacoes.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_observacoes.Location = new System.Drawing.Point(50, 334);
-            this.txb_observacoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_observacoes.Margin = new System.Windows.Forms.Padding(2);
             this.txb_observacoes.Multiline = true;
             this.txb_observacoes.Name = "txb_observacoes";
             this.txb_observacoes.Size = new System.Drawing.Size(659, 140);
@@ -213,7 +213,6 @@
             this.label10.Size = new System.Drawing.Size(116, 21);
             this.label10.TabIndex = 61;
             this.label10.Text = "Observações:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -226,7 +225,6 @@
             this.label9.Size = new System.Drawing.Size(51, 21);
             this.label9.TabIndex = 60;
             this.label9.Text = "Lote:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -239,7 +237,6 @@
             this.label8.Size = new System.Drawing.Size(113, 21);
             this.label8.TabIndex = 59;
             this.label8.Text = "Quantidade:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -252,7 +249,6 @@
             this.label7.Size = new System.Drawing.Size(219, 21);
             this.label7.TabIndex = 58;
             this.label7.Text = "Data prevista de entrega:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label5
             // 
@@ -265,7 +261,6 @@
             this.label5.Size = new System.Drawing.Size(192, 21);
             this.label5.TabIndex = 57;
             this.label5.Text = "Data de fornecimento:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label3
             // 
@@ -278,7 +273,6 @@
             this.label3.Size = new System.Drawing.Size(144, 21);
             this.label3.TabIndex = 56;
             this.label3.Text = "Número de série:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -291,7 +285,6 @@
             this.label2.Size = new System.Drawing.Size(127, 21);
             this.label2.TabIndex = 55;
             this.label2.Text = "Denominação:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtp_data_fornecimento
             // 
@@ -333,7 +326,7 @@
             this.Controls.Add(this.txb_quantidade);
             this.Controls.Add(this.txb_numero_serie);
             this.Controls.Add(this.txb_denominacao);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txb_observacoes);
             this.Controls.Add(this.label10);
@@ -367,7 +360,7 @@
         private System.Windows.Forms.TextBox txb_quantidade;
         private System.Windows.Forms.TextBox txb_numero_serie;
         private System.Windows.Forms.TextBox txb_denominacao;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.TextBox txb_observacoes;
         private System.Windows.Forms.Label label10;

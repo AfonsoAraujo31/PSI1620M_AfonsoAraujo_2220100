@@ -37,6 +37,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -44,8 +46,6 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -149,6 +149,34 @@
             this.panel3.Size = new System.Drawing.Size(291, 124);
             this.panel3.TabIndex = 1;
             // 
+            // listBox2
+            // 
+            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox2.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.listBox2.ForeColor = System.Drawing.Color.Transparent;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 18;
+            this.listBox2.Location = new System.Drawing.Point(109, 32);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(132, 54);
+            this.listBox2.TabIndex = 23;
+            // 
+            // listBox3
+            // 
+            this.listBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.listBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox3.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.listBox3.ForeColor = System.Drawing.Color.Transparent;
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 18;
+            this.listBox3.Location = new System.Drawing.Point(6, 32);
+            this.listBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(132, 54);
+            this.listBox3.TabIndex = 22;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -231,34 +259,6 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Equipamentos com pouco stock:";
             // 
-            // listBox2
-            // 
-            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox2.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
-            this.listBox2.ForeColor = System.Drawing.Color.Transparent;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 18;
-            this.listBox2.Location = new System.Drawing.Point(109, 32);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(132, 54);
-            this.listBox2.TabIndex = 23;
-            // 
-            // listBox3
-            // 
-            this.listBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.listBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox3.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
-            this.listBox3.ForeColor = System.Drawing.Color.Transparent;
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 18;
-            this.listBox3.Location = new System.Drawing.Point(6, 32);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(132, 54);
-            this.listBox3.TabIndex = 22;
-            // 
             // Equipamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,7 +273,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Equipamentos";
             this.Text = "Equipamentos";
-            this.Load += new System.EventHandler(this.Equipamentos_Load_1);
+            this.Load += new System.EventHandler(this.Equipamentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

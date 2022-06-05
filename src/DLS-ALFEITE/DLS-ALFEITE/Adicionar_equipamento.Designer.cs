@@ -35,7 +35,7 @@
             this.btnclose = new System.Windows.Forms.Button();
             this.txb_numero_serie = new System.Windows.Forms.TextBox();
             this.txb_denominacao = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.txb_observacoes = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -131,16 +131,16 @@
             this.txb_denominacao.Size = new System.Drawing.Size(307, 25);
             this.txb_denominacao.TabIndex = 85;
             // 
-            // button2
+            // btn_cancelar
             // 
-            this.button2.Location = new System.Drawing.Point(688, 503);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 19);
-            this.button2.TabIndex = 84;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_cancelar.Location = new System.Drawing.Point(688, 503);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(57, 19);
+            this.btn_cancelar.TabIndex = 84;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
@@ -312,7 +312,7 @@
             this.ClientSize = new System.Drawing.Size(750, 524);
             this.Controls.Add(this.txb_numero_serie);
             this.Controls.Add(this.txb_denominacao);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txb_observacoes);
             this.Controls.Add(this.label10);
@@ -349,7 +349,7 @@
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.TextBox txb_numero_serie;
         private System.Windows.Forms.TextBox txb_denominacao;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.TextBox txb_observacoes;
         private System.Windows.Forms.Label label10;

@@ -193,8 +193,8 @@ namespace DLS_ALFEITE
         public void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Opacity = 0.80;
-            Login_Codigo frm_cd = new Login_Codigo(null);
-            frm_cd.ShowDialog();
+            Reset_password reset_Password = new Reset_password();
+            reset_Password.ShowDialog();
         }
     }
 }

@@ -67,8 +67,6 @@ namespace DLS_ALFEITE
             if (count1 == 1)
             {
                 this.Close();
-                Reset_password res = new Reset_password(textBox_username_confirmação.Text);
-                res.ShowDialog();
             }
             else
             {

@@ -33,7 +33,7 @@
             this.label_med = new System.Windows.Forms.Label();
             this.btn_min = new System.Windows.Forms.Button();
             this.btnclose = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.txb_motivo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.panel5.Controls.Add(this.btnclose);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(750, 29);
             this.panel5.TabIndex = 10;
@@ -87,7 +87,7 @@
             this.btn_min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_min.Image = ((System.Drawing.Image)(resources.GetObject("btn_min.Image")));
             this.btn_min.Location = new System.Drawing.Point(661, -3);
-            this.btn_min.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_min.Margin = new System.Windows.Forms.Padding(2);
             this.btn_min.Name = "btn_min";
             this.btn_min.Size = new System.Drawing.Size(50, 33);
             this.btn_min.TabIndex = 8;
@@ -104,28 +104,28 @@
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
             this.btnclose.Location = new System.Drawing.Point(702, -3);
-            this.btnclose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(2);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(50, 33);
             this.btnclose.TabIndex = 6;
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
-            // button2
+            // btn_cancelar
             // 
-            this.button2.Location = new System.Drawing.Point(688, 503);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 19);
-            this.button2.TabIndex = 98;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_cancelar.Location = new System.Drawing.Point(688, 503);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(57, 19);
+            this.btn_cancelar.TabIndex = 98;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
             this.btn_guardar.Location = new System.Drawing.Point(628, 503);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(56, 19);
             this.btn_guardar.TabIndex = 97;
@@ -137,7 +137,7 @@
             // 
             this.txb_motivo.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_motivo.Location = new System.Drawing.Point(52, 298);
-            this.txb_motivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_motivo.Margin = new System.Windows.Forms.Padding(2);
             this.txb_motivo.Multiline = true;
             this.txb_motivo.Name = "txb_motivo";
             this.txb_motivo.Size = new System.Drawing.Size(659, 140);
@@ -159,7 +159,7 @@
             // 
             this.txb_entidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_entidade.Location = new System.Drawing.Point(542, 207);
-            this.txb_entidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_entidade.Margin = new System.Windows.Forms.Padding(2);
             this.txb_entidade.Name = "txb_entidade";
             this.txb_entidade.Size = new System.Drawing.Size(169, 25);
             this.txb_entidade.TabIndex = 94;
@@ -180,7 +180,7 @@
             // 
             this.txb_quantidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_quantidade.Location = new System.Drawing.Point(304, 207);
-            this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txb_quantidade.Name = "txb_quantidade";
             this.txb_quantidade.Size = new System.Drawing.Size(169, 25);
             this.txb_quantidade.TabIndex = 92;
@@ -201,7 +201,7 @@
             // 
             this.txb_lote.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_lote.Location = new System.Drawing.Point(542, 128);
-            this.txb_lote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_lote.Margin = new System.Windows.Forms.Padding(2);
             this.txb_lote.Name = "txb_lote";
             this.txb_lote.Size = new System.Drawing.Size(169, 25);
             this.txb_lote.TabIndex = 90;
@@ -222,7 +222,7 @@
             // 
             this.txb_numero_serie.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_numero_serie.Location = new System.Drawing.Point(304, 125);
-            this.txb_numero_serie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_numero_serie.Margin = new System.Windows.Forms.Padding(2);
             this.txb_numero_serie.Name = "txb_numero_serie";
             this.txb_numero_serie.Size = new System.Drawing.Size(169, 25);
             this.txb_numero_serie.TabIndex = 88;
@@ -231,7 +231,7 @@
             // 
             this.txb_denominacao.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.txb_denominacao.Location = new System.Drawing.Point(52, 125);
-            this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2);
             this.txb_denominacao.Name = "txb_denominacao";
             this.txb_denominacao.Size = new System.Drawing.Size(169, 25);
             this.txb_denominacao.TabIndex = 87;
@@ -292,7 +292,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(146)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(750, 524);
             this.Controls.Add(this.dtp_data_rececao);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txb_motivo);
             this.Controls.Add(this.label10);
@@ -325,7 +325,7 @@
         private System.Windows.Forms.Label label_med;
         private System.Windows.Forms.Button btn_min;
         private System.Windows.Forms.Button btnclose;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.TextBox txb_motivo;
         private System.Windows.Forms.Label label10;
