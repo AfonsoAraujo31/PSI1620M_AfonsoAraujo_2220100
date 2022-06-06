@@ -321,7 +321,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel3;
@@ -332,6 +331,7 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.Button btn_min;
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox textBox_password;
     }
 }
 

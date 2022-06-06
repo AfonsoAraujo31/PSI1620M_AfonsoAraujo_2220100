@@ -32,7 +32,6 @@ namespace DLS_ALFEITE
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
-
         private void btn_login_Click(object sender, EventArgs e)
         {
             try
@@ -43,7 +42,6 @@ namespace DLS_ALFEITE
                 }
                 else
                 {
-                    //string id = null;
                     SqlConnection sqlcon = new SqlConnection(connection);
                     SqlCommand cmd = sqlcon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
@@ -52,25 +50,12 @@ namespace DLS_ALFEITE
                     Program.value = textBox_username.Text;  
                     cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);
                     sqlcon.Open();
-                    SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
-                    sqladp.Fill(ds);    
+                    adapter.Fill(ds);    
                     int count = ds.Tables[0].Rows.Count;
                     if (count == 1)
                     {
-                        /*using (cmd)
-                        {
-                            using (var rdr = cmd.ExecuteReader())
-                            {
-                                if (rdr.HasRows)
-                                {
-                                    while (rdr.Read())
-                                    {
-                                        label4.Text = Convert.ToString(rdr.GetInt32(0));
-                                    }
-                                }
-                            }
-                        }*/
                         new panel_mdi(textBox_username.Text).Show();
                         this.Hide();
                         sqlcon.Close();
@@ -157,9 +142,9 @@ namespace DLS_ALFEITE
                         cmd.Parameters.AddWithValue("@Username", textBox_username.Text);
                         cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);
                         sqlcon.Open();
-                        SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         DataSet ds = new DataSet();
-                        sqladp.Fill(ds);
+                        adapter.Fill(ds);
                         sqlcon.Close();
                         int count = ds.Tables[0].Rows.Count;
                         if (count == 1)

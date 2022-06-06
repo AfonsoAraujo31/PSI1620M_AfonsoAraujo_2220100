@@ -12,7 +12,6 @@ namespace DLS_ALFEITE
 {
     public partial class panel_mdi : Form
     {
-
         Equipamentos frm_equip;
         Medicamentos frm_med;
         Inflamáveis frm_infla;
@@ -26,26 +25,30 @@ namespace DLS_ALFEITE
         public panel_mdi(string value)
         {
             InitializeComponent();
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            this.WindowState = FormWindowState.Maximized;
+            Form_estilo();
             label_username.Text = value;
             DateTime today = DateTime.Today;
             label_data.Text = today.ToString("dd/MM/yyyy");
-            frm_med = new Medicamentos();
-            frm_med.MdiParent = this;
-            frm_med.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
-            frm_med.Show();
-            frm_med.Dock = DockStyle.Fill;
-            btnsetcolor(btn_medicamento);
+        }
+        private void Form_estilo()
+        {
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.WindowState = FormWindowState.Maximized;
             btn_aquisicao_medicamentos.Visible = true;
             btn_fornecimento_medicamento.Visible = true;
             btn_fornecimento_equipamentos.Visible = false;
             btn_aquisicao_equipamentos.Visible = false;
             btn_fornecimento_inflamaveis.Visible = false;
             btn_aquisicao_inflamaveis.Visible = false;
+            //panel_medicamentos
+            frm_med = new Medicamentos();
+            frm_med.MdiParent = this;
+            frm_med.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+            frm_med.Show();
+            frm_med.Dock = DockStyle.Fill;
+            btn_cor(btn_medicamento);
         }
-
-        private void btnsetcolor(Button btn)
+        private void btn_cor(Button btn)
         {
             btn_medicamento.BackColor = Color.Transparent;
             btn_medicamento.BackColor = Color.Transparent;
@@ -60,7 +63,6 @@ namespace DLS_ALFEITE
             btn_fornecimento_inflamaveis.BackColor = Color.Transparent;
             btn.BackColor = Color.RosyBrown;
         }
-
         private void btnclose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -71,7 +73,7 @@ namespace DLS_ALFEITE
         }
         private void btn_medicamento_Click(object sender, EventArgs e)
         {
-            btnsetcolor(btn_medicamento);
+            btn_cor(btn_medicamento);
             try
             {
                 if (frm_med == null)
@@ -123,7 +125,7 @@ namespace DLS_ALFEITE
 
         private void btn_equipamento_Click(object sender, EventArgs e)
         {
-            btnsetcolor(btn_equipamento);
+            btn_cor(btn_equipamento);
             try
             {
                 if (frm_equip == null)
@@ -172,7 +174,7 @@ namespace DLS_ALFEITE
 
         private void btn_inflamavel_Click(object sender, EventArgs e)
         {
-            btnsetcolor(btn_inflamavel);
+            btn_cor(btn_inflamavel);
             try
             {
                 if (frm_infla == null)
@@ -246,7 +248,7 @@ namespace DLS_ALFEITE
 
         private void btn_aquisicao_medicamentos_Click(object sender, EventArgs e)
         {
-            btnsetcolor(btn_aquisicao_medicamentos);
+            btn_cor(btn_aquisicao_medicamentos);
             try
             {
                 if (frm_med_menu == null)
@@ -275,7 +277,7 @@ namespace DLS_ALFEITE
 
         private void btn_fornecimento_medicamento_Click(object sender, EventArgs e)
         {
-            btnsetcolor(btn_fornecimento_medicamento);
+            btn_cor(btn_fornecimento_medicamento);
             try
             {
                 if (frmm_med_menu_form == null)
@@ -304,7 +306,7 @@ namespace DLS_ALFEITE
 
         private void btn_aquisicao_equipamentos_Click(object sender, EventArgs e)
         {
-            btnsetcolor(btn_aquisicao_equipamentos);
+            btn_cor(btn_aquisicao_equipamentos);
             try
             {
                 if (frm_equip_menu_form == null)
@@ -333,7 +335,7 @@ namespace DLS_ALFEITE
 
         private void btn_fornecimento_equipamentos_Click(object sender, EventArgs e)
         {
-            btnsetcolor(btn_fornecimento_equipamentos);
+            btn_cor(btn_fornecimento_equipamentos);
             try
             {
                 if (frm_equip_menu == null)
@@ -362,7 +364,7 @@ namespace DLS_ALFEITE
 
         private void btn_definicoes_Click(object sender, EventArgs e)
         {
-            btnsetcolor(btn_definicoes);
+            btn_cor(btn_definicoes);
             try
             {
                 if (frm_definicoes == null)
@@ -392,7 +394,7 @@ namespace DLS_ALFEITE
 
         private void btn_aquisicao_inflamaveis_Click(object sender, EventArgs e)
         {
-            btnsetcolor(btn_aquisicao_inflamaveis);
+            btn_cor(btn_aquisicao_inflamaveis);
             try
             {
                 if (frm_infla_menu == null)
@@ -421,7 +423,7 @@ namespace DLS_ALFEITE
 
         private void btn_fornecimento_inflamaveis_Click(object sender, EventArgs e)
         {
-            btnsetcolor(btn_fornecimento_inflamaveis);
+            btn_cor(btn_fornecimento_inflamaveis);
             try
             {
                 if (frm_infla_forn_menu == null)

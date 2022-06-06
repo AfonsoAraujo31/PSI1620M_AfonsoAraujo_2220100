@@ -30,6 +30,7 @@ namespace DLS_ALFEITE
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+            this.ActiveControl = txb_username;
         }
         private void btn_login_codigounico_Click(object sender, EventArgs e)
         {
@@ -37,11 +38,11 @@ namespace DLS_ALFEITE
             SqlCommand cmd = sqlcon.CreateCommand();
             cmd.CommandText = $"SELECT username,codigo_unico FROM login_utilizadores WHERE username=@user AND codigo_unico=@cd_unico";
             cmd.Parameters.AddWithValue("@user", txb_username.Text);
-            cmd.Parameters.AddWithValue("@cd_unico", textBox_codigo_unico.Text);
+            cmd.Parameters.AddWithValue("@cd_unico", txb_codigo_unico.Text);
             sqlcon.Open();
-            SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
-            sqladp.Fill(ds);
+            adapter.Fill(ds);
             sqlcon.Close();
             int count1 = ds.Tables[0].Rows.Count;
             if (count1 == 1)
@@ -55,8 +56,7 @@ namespace DLS_ALFEITE
                 MessageBox.Show("Username ou código único errados!");
             }
         }
-
-        private void button5_Click_1(object sender, EventArgs e)
+        private void btn_login_reset_Click(object sender, EventArgs e)
         {
             if (txb_nova_password.Text == txb_comfirmacao_password.Text)
             {
@@ -73,14 +73,98 @@ namespace DLS_ALFEITE
                     {
                         MessageBox.Show("Saved");
                     }
-                    sqlCon.Close();
+                    this.Close();
                     Frm_login fr = new Frm_login();
+                    sqlCon.Close();
                     fr.Show();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+        private void txb_username_Enter(object sender, EventArgs e)
+        {
+            if (txb_username.Text == "Username")
+            {
+                txb_username.Text = "";
+            }
+        }
+
+        private void txb_username_Leave(object sender, EventArgs e)
+        {
+            if (txb_username.Text == "")
+            {
+                txb_username.Text = "Username";
+            }
+        }
+
+        private void textBox_codigo_unico_Enter(object sender, EventArgs e)
+        {
+            if (txb_codigo_unico.Text == "Código Único")
+            {
+                txb_codigo_unico.Text = "";
+                txb_codigo_unico.PasswordChar = '●';
+            }
+        }
+
+        private void txb_codigo_unico_Leave(object sender, EventArgs e)
+        {
+            if (txb_codigo_unico.Text == "")
+            {
+                txb_codigo_unico.Text = "Código Único";
+                txb_codigo_unico.PasswordChar = '\0';
+            }
+        }
+
+        private void btn__Click(object sender, EventArgs e)
+        {
+            if (txb_codigo_unico.PasswordChar == '●')
+            {
+                btn_2.BringToFront();
+                txb_codigo_unico.PasswordChar = '\0';
+            }
+        }
+
+        private void btn_2_Click(object sender, EventArgs e)
+        {
+            if (txb_codigo_unico.PasswordChar == '\0')
+            {
+                btn_.BringToFront();
+                txb_codigo_unico.PasswordChar = '●';
+            }
+        }
+
+        private void txb_nova_password_Enter(object sender, EventArgs e)
+        {
+            if (txb_nova_password.Text == "Nova Password")
+            {
+                txb_nova_password.Text = "";
+            }
+        }
+
+        private void txb_nova_password_Leave(object sender, EventArgs e)
+        {
+            if (txb_nova_password.Text == "")
+            {
+                txb_nova_password.Text = "Nova Password";
+            }
+        }
+
+        private void txb_comfirmacao_password_Enter(object sender, EventArgs e)
+        {
+            if (txb_comfirmacao_password.Text == "Confirmar Password")
+            {
+                txb_comfirmacao_password.Text = "";
+            }
+        }
+
+        private void txb_comfirmacao_password_Leave(object sender, EventArgs e)
+        {
+            if (txb_comfirmacao_password.Text == "")
+            {
+                txb_comfirmacao_password.Text = "Confirmar Password";
             }
         }
     }
