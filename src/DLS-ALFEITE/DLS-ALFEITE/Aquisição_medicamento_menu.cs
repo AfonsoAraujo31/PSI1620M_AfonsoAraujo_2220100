@@ -48,7 +48,7 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
             update();
-            if(check == true)
+            if (check == true)
             {
                 //aprovar
                 DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
@@ -57,13 +57,6 @@ namespace DLS_ALFEITE
                 btn.Text = "✅";
                 btn.UseColumnTextForButtonValue = true;
                 dataGridView1.Columns.Add(btn);
-                //reprovar
-                DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
-                btn1.HeaderText = "";
-                btn1.Name = "btn_reprovar";
-                btn1.Text = "❌";
-                btn1.UseColumnTextForButtonValue = true;
-                dataGridView1.Columns.Add(btn1);
             }
         }
         public void Form_estilo()
@@ -196,7 +189,7 @@ namespace DLS_ALFEITE
                 dataGridView1.Columns.Add(btn1);
             }
         }
-      
+        string id = null;
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string id1 = null;
@@ -232,7 +225,6 @@ namespace DLS_ALFEITE
                 }
             }
         }
-        string id = null;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
@@ -240,12 +232,6 @@ namespace DLS_ALFEITE
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_aprovar")
             {
                 id = row.Cells["Id"].Value.ToString();
-                MessageBox.Show("Aprovar");
-            }
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_reprovar")
-            {
-                MessageBox.Show("Reprovar");
-
             }
         }
     }
