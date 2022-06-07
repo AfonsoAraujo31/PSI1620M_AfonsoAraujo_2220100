@@ -46,7 +46,6 @@ namespace DLS_ALFEITE
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -85,11 +84,11 @@ namespace DLS_ALFEITE
             this.textbox_searchbar.BackColor = System.Drawing.Color.White;
             this.textbox_searchbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_searchbar.CausesValidation = false;
-            this.textbox_searchbar.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.textbox_searchbar.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.textbox_searchbar.Location = new System.Drawing.Point(219, 25);
             this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_searchbar.Name = "textbox_searchbar";
-            this.textbox_searchbar.Size = new System.Drawing.Size(713, 25);
+            this.textbox_searchbar.Size = new System.Drawing.Size(713, 26);
             this.textbox_searchbar.TabIndex = 0;
             this.textbox_searchbar.Text = "Search...";
             this.textbox_searchbar.TextChanged += new System.EventHandler(this.textbox_searchbar_TextChanged);
@@ -184,7 +183,7 @@ namespace DLS_ALFEITE
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
-            this.label2.ForeColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(285, 21);
@@ -253,23 +252,14 @@ namespace DLS_ALFEITE
             this.label3.TabIndex = 12;
             this.label3.Text = "Medicamentos com pouco stock:";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panel4.Location = new System.Drawing.Point(602, 15);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(291, 124);
-            this.panel4.TabIndex = 15;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(605, 845);
+            this.panel1.Location = new System.Drawing.Point(754, 841);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 153);
+            this.panel1.Size = new System.Drawing.Size(607, 153);
             this.panel1.TabIndex = 6;
             // 
             // Medicamentos
@@ -317,7 +307,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
     }

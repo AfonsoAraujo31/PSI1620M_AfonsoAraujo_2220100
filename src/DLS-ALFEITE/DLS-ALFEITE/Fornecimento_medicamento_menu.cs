@@ -173,6 +173,7 @@ namespace DLS_ALFEITE
                                 txb_contacto_fabricante.Text = rdr.GetString(6);
                                 dtp_data_fornecimento.Text = rdr.GetString(7);
                                 txb_entidade.Text = rdr.GetString(8);
+                                txb_observacoes.Text = rdr.GetString(9);
                             }
                         }
                     }

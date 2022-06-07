@@ -25,10 +25,12 @@ namespace DLS_ALFEITE
              int nHeightEllipse
         );
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
-        public Aquisição_medicamento_menu()
+        bool check = false;
+        public Aquisição_medicamento_menu(bool value)
         {
             InitializeComponent();
             Form_estilo();
+            check = value;
             try
             {
                 using (SqlConnection sqlCon = new SqlConnection(connection))
@@ -46,6 +48,23 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
             update();
+            if(check == true)
+            {
+                //aprovar
+                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+                btn.HeaderText = "";
+                btn.Name = "btn_aprovar";
+                btn.Text = "✅";
+                btn.UseColumnTextForButtonValue = true;
+                dataGridView1.Columns.Add(btn);
+                //reprovar
+                DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
+                btn1.HeaderText = "";
+                btn1.Name = "btn_reprovar";
+                btn1.Text = "❌";
+                btn1.UseColumnTextForButtonValue = true;
+                dataGridView1.Columns.Add(btn1);
+            }
         }
         public void Form_estilo()
         {
@@ -117,6 +136,23 @@ namespace DLS_ALFEITE
                 {
                     MessageBox.Show(ex.Message);
                 }
+                if (check == true)
+                {
+                    //aprovar
+                    DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+                    btn.HeaderText = "";
+                    btn.Name = "btn_aprovar";
+                    btn.Text = "✅";
+                    btn.UseColumnTextForButtonValue = true;
+                    dataGridView1.Columns.Add(btn);
+                    //reprovar
+                    DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
+                    btn1.HeaderText = "";
+                    btn1.Name = "btn_aprovar";
+                    btn1.Text = "❌";
+                    btn1.UseColumnTextForButtonValue = true;
+                    dataGridView1.Columns.Add(btn1);
+                }
             }
         }
 
@@ -142,8 +178,25 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show(ex.Message);
             }
+            if (check == true)
+            {
+                //aprovar
+                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+                btn.HeaderText = "";
+                btn.Name = "btn_aprovar";
+                btn.Text = "✅";
+                btn.UseColumnTextForButtonValue = true;
+                dataGridView1.Columns.Add(btn);
+                //reprovar
+                DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
+                btn1.HeaderText = "";
+                btn1.Name = "btn_aprovar";
+                btn1.Text = "❌";
+                btn1.UseColumnTextForButtonValue = true;
+                dataGridView1.Columns.Add(btn1);
+            }
         }
-
+      
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string id1 = null;
@@ -177,6 +230,22 @@ namespace DLS_ALFEITE
                         }
                     }
                 }
+            }
+        }
+        string id = null;
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            id = row.Cells["Id"].Value.ToString();
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_aprovar")
+            {
+                id = row.Cells["Id"].Value.ToString();
+                MessageBox.Show("Aprovar");
+            }
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_reprovar")
+            {
+                MessageBox.Show("Reprovar");
+
             }
         }
     }

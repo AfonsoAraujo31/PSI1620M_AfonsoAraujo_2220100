@@ -153,7 +153,7 @@ namespace DLS_ALFEITE
             {
                 SqlCommand cmd = sql.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,lote,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento Where id_fornecimento = @id";
+                cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,lote,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade',fornecimento_inflamavel.observacoes FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento Where id_fornecimento = @id";
                 cmd.Parameters.AddWithValue("@id", id1);
                 sql.Open();
                 using (cmd)
@@ -172,6 +172,7 @@ namespace DLS_ALFEITE
                                 txb_contacto_fabricante.Text = rdr.GetString(6);
                                 dtp_data_fornecimento.Text = rdr.GetString(7);
                                 txb_entidade.Text = rdr.GetString(8);
+                                txb_observacoes.Text = rdr.GetString(9);
                             }
                         }
                     }

@@ -25,6 +25,7 @@ namespace DLS_ALFEITE
              int nwidthEllipse,
              int nHeightEllipse
         );
+        bool check = false;
         public Frm_login()
         {
             InitializeComponent();
@@ -34,41 +35,51 @@ namespace DLS_ALFEITE
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         private void btn_login_Click(object sender, EventArgs e)
         {
-            try
+            if (textBox_username.Text == "AdminAA22" && textBox_password.Text == "AdminAA22")
             {
-                if (textBox_username.Text == "" && textBox_password.Text == "")
+                check = true;
+                new panel_mdi(textBox_username.Text, check).Show();
+                this.Hide();
+            }
+            else
+            {
+                check = false;
+                try
                 {
-                    MessageBox.Show("Preencha os campos");
-                }
-                else
-                {
-                    SqlConnection sqlcon = new SqlConnection(connection);
-                    SqlCommand cmd = sqlcon.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT username,password FROM login_utilizadores WHERE username=@Username AND password=@Userpass";
-                    cmd.Parameters.AddWithValue("@Username", textBox_username.Text);
-                    Program.value = textBox_username.Text;  
-                    cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);
-                    sqlcon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds);    
-                    int count = ds.Tables[0].Rows.Count;
-                    if (count == 1)
+                    if (textBox_username.Text == "" && textBox_password.Text == "")
                     {
-                        new panel_mdi(textBox_username.Text).Show();
-                        this.Hide();
-                        sqlcon.Close();
+                        MessageBox.Show("Preencha os campos");
                     }
                     else
                     {
-                        MessageBox.Show("Username ou password incorretos!");
+                        SqlConnection sqlcon = new SqlConnection(connection);
+                        SqlCommand cmd = sqlcon.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = $"SELECT username,password FROM login_utilizadores WHERE username=@Username AND password=@Userpass";
+                        cmd.Parameters.AddWithValue("@Username", textBox_username.Text);
+                        Program.value = textBox_username.Text;
+                        cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);
+                        sqlcon.Open();
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataSet ds = new DataSet();
+                        adapter.Fill(ds);
+                        int count = ds.Tables[0].Rows.Count;
+                        if (count == 1)
+                        {
+                            new panel_mdi(textBox_username.Text, check).Show();
+                            this.Hide();
+                            sqlcon.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username ou password incorretos!");
+                        }
                     }
                 }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -127,40 +138,51 @@ namespace DLS_ALFEITE
         {
             if(e.KeyCode == Keys.Enter)
             {
-                try
+                if (textBox_username.Text == "AdminAA22" && textBox_password.Text == "AdminAA22")
                 {
-                    if (textBox_username.Text == "" && textBox_password.Text == "")
+                    check = true;
+                    new panel_mdi(textBox_username.Text,check).Show();
+                    this.Hide();
+                }
+                else
+                {
+                    check = false;
+                    try
                     {
-                        MessageBox.Show("Preencha os campos");
-                    }
-                    else
-                    {
-                        SqlConnection sqlcon = new SqlConnection(connection);
-                        SqlCommand cmd = sqlcon.CreateCommand();
-                        cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = $"SELECT username,password FROM login_utilizadores WHERE username=@Username AND password=@Userpass";
-                        cmd.Parameters.AddWithValue("@Username", textBox_username.Text);
-                        cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);
-                        sqlcon.Open();
-                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                        DataSet ds = new DataSet();
-                        adapter.Fill(ds);
-                        sqlcon.Close();
-                        int count = ds.Tables[0].Rows.Count;
-                        if (count == 1)
+                        if (textBox_username.Text == "" && textBox_password.Text == "")
                         {
-                            new panel_mdi(textBox_username.Text).Show();
-                            this.Hide();
+                            MessageBox.Show("Preencha os campos");
                         }
                         else
                         {
-                            MessageBox.Show("Username ou password incorretos!");
+                            SqlConnection sqlcon = new SqlConnection(connection);
+                            SqlCommand cmd = sqlcon.CreateCommand();
+                            cmd.CommandType = CommandType.Text;
+                            cmd.CommandText = $"SELECT username,password FROM login_utilizadores WHERE username=@Username AND password=@Userpass";
+                            cmd.Parameters.AddWithValue("@Username", textBox_username.Text);
+                            Program.value = textBox_username.Text;
+                            cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);
+                            sqlcon.Open();
+                            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                            DataSet ds = new DataSet();
+                            adapter.Fill(ds);
+                            int count = ds.Tables[0].Rows.Count;
+                            if (count == 1)
+                            {
+                                new panel_mdi(textBox_username.Text,check).Show();
+                                this.Hide();
+                                sqlcon.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Username ou password incorretos!");
+                            }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
         }
@@ -179,7 +201,7 @@ namespace DLS_ALFEITE
         {
             this.Opacity = 0.80;
             Reset_password reset_Password = new Reset_password();
-            reset_Password.ShowDialog();
+            reset_Password.Show();
         }
 
         private void textBox_password_TextChanged(object sender, EventArgs e)

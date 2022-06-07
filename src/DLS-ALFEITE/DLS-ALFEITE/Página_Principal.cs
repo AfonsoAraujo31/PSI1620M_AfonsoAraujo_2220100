@@ -22,10 +22,12 @@ namespace DLS_ALFEITE
         Definições frm_definicoes;
         Aquisição_inflamavel_menu frm_infla_menu;
         Fornecimento_inflamavel_menu frm_infla_forn_menu;
-        public panel_mdi(string value)
+        bool check = false;
+        public panel_mdi(string value,bool value1)
         {
             InitializeComponent();
             Form_estilo();
+            check = value1;
             label_username.Text = value;
             DateTime today = DateTime.Today;
             label_data.Text = today.ToString("dd/MM/yyyy");
@@ -117,6 +119,7 @@ namespace DLS_ALFEITE
                 btn_aquisicao_equipamentos.Visible = false;
                 btn_fornecimento_equipamentos.Visible = false;
             }
+
         }
         void frm_medFormClosed(object sender, FormClosedEventArgs e)
         {
@@ -253,7 +256,7 @@ namespace DLS_ALFEITE
             {
                 if (frm_med_menu == null)
                 {
-                    frm_med_menu = new Aquisição_medicamento_menu();
+                    frm_med_menu = new Aquisição_medicamento_menu(check);
                     frm_med_menu.MdiParent = this;
                     frm_med_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_med_menu.Show();
@@ -262,7 +265,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frm_med_menu.Close();
-                    frm_med_menu = new Aquisição_medicamento_menu();
+                    frm_med_menu = new Aquisição_medicamento_menu(check);
                     frm_med_menu.MdiParent = this;
                     frm_med_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_med_menu.Show();

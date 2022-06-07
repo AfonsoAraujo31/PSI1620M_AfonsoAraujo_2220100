@@ -259,9 +259,9 @@ namespace DLS_ALFEITE
             this.btn_inflamavel.Image = ((System.Drawing.Image)(resources.GetObject("btn_inflamavel.Image")));
             this.btn_inflamavel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_inflamavel.Location = new System.Drawing.Point(-1, 370);
-            this.btn_inflamavel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_inflamavel.Margin = new System.Windows.Forms.Padding(10, 1, 2, 1);
             this.btn_inflamavel.Name = "btn_inflamavel";
-            this.btn_inflamavel.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btn_inflamavel.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btn_inflamavel.Size = new System.Drawing.Size(191, 53);
             this.btn_inflamavel.TabIndex = 8;
             this.btn_inflamavel.Text = "INFLAMÁVEIS";
@@ -279,7 +279,7 @@ namespace DLS_ALFEITE
             this.btn_medicamento.Location = new System.Drawing.Point(0, 143);
             this.btn_medicamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_medicamento.Name = "btn_medicamento";
-            this.btn_medicamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btn_medicamento.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.btn_medicamento.Size = new System.Drawing.Size(191, 53);
             this.btn_medicamento.TabIndex = 6;
             this.btn_medicamento.Text = " MEDICAMENTOS";
@@ -309,7 +309,7 @@ namespace DLS_ALFEITE
             this.btn_equipamento.Location = new System.Drawing.Point(0, 257);
             this.btn_equipamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_equipamento.Name = "btn_equipamento";
-            this.btn_equipamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btn_equipamento.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_equipamento.Size = new System.Drawing.Size(191, 53);
             this.btn_equipamento.TabIndex = 7;
             this.btn_equipamento.Text = "EQUIPAMENTOS";

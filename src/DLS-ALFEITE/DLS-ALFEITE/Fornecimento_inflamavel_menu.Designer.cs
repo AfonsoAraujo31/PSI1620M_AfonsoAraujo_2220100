@@ -52,7 +52,6 @@ namespace DLS_ALFEITE
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -294,17 +293,6 @@ namespace DLS_ALFEITE
             this.label11.TabIndex = 1;
             this.label11.Text = "Denominação:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(1175, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 24);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Registo do pedido de aquisição:";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -361,7 +349,6 @@ namespace DLS_ALFEITE
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1940, 1100);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textbox_searchbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -397,7 +384,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.TextBox txb_numero_serie;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txb_denominacao;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textbox_searchbar;
         private System.Windows.Forms.PictureBox pictureBox1;

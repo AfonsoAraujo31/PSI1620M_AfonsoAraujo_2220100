@@ -76,18 +76,19 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
             //listbox2
-            string Query3 = "SELECT TOP 3 denominacao FROM Equipamentos ORDER BY id DESC";
-            SqlConnection sqlCon3 = new SqlConnection(connection);
-            SqlCommand cmd3 = new SqlCommand(Query3, sqlCon3);
-            SqlDataReader myReader3;
+            string Query1 = "SELECT TOP 3 denominacao FROM Equipamentos ORDER BY id DESC";
+            SqlConnection sqlCon1 = new SqlConnection(connection);
+            SqlCommand cmd1 = new SqlCommand(Query1, sqlCon1);
+            SqlDataReader myReader1;
             try
             {
-                sqlCon3.Open();
-                using (myReader3 = cmd3.ExecuteReader())
+                sqlCon1.Open();
+                using (myReader1 = cmd1.ExecuteReader())
                 {
-                    while (myReader3.Read())
+                    while (myReader1.Read())
                     {
-                        listBox2.Items.Add(string.Format("Denominação: {0}", myReader3["denominacao"].ToString()));
+                        listBox3.Items.Add("Denominação:");
+                        listBox2.Items.Add(string.Format(myReader1["denominacao"].ToString()));
                     }
                 }
             }
@@ -117,7 +118,6 @@ namespace DLS_ALFEITE
             //inputs_redondos
             panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 30, 30));
             panel3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel3.Width, panel3.Height, 30, 30));
-            panel4.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel4.Width, panel4.Height, 30, 30));
             btn_adicionar_medicamentos.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_adicionar_medicamentos.Width, btn_adicionar_medicamentos.Height, 25, 30));
         }
         public void update()

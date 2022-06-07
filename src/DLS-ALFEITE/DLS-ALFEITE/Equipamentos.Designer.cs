@@ -35,7 +35,6 @@
             this.btn_adicionar_medicamentos = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
@@ -58,11 +57,11 @@
             // 
             this.textbox_searchbar.BackColor = System.Drawing.Color.White;
             this.textbox_searchbar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textbox_searchbar.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.textbox_searchbar.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.textbox_searchbar.Location = new System.Drawing.Point(219, 24);
             this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_searchbar.Name = "textbox_searchbar";
-            this.textbox_searchbar.Size = new System.Drawing.Size(713, 25);
+            this.textbox_searchbar.Size = new System.Drawing.Size(713, 26);
             this.textbox_searchbar.TabIndex = 1;
             this.textbox_searchbar.Text = "Search...";
             this.textbox_searchbar.TextChanged += new System.EventHandler(this.textbox_searchbar_TextChanged);
@@ -121,21 +120,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(605, 845);
+            this.panel1.Location = new System.Drawing.Point(754, 841);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 153);
+            this.panel1.Size = new System.Drawing.Size(605, 153);
             this.panel1.TabIndex = 8;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panel4.Location = new System.Drawing.Point(602, 15);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(291, 124);
-            this.panel4.TabIndex = 15;
             // 
             // panel3
             // 
@@ -293,7 +283,6 @@
         private System.Windows.Forms.Button btn_adicionar_medicamentos;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
