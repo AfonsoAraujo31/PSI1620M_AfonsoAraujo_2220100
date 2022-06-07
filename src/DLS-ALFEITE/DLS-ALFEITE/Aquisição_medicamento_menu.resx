@@ -618,7 +618,7 @@
     <value>False</value>
   </data>
   <data name="dtp_data_limite_rececao.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Berlin Sans FB, 12.25pt</value>
+    <value>Arial Narrow, 12pt</value>
   </data>
   <data name="dtp_data_limite_rececao.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -627,7 +627,7 @@
     <value>73, 544</value>
   </data>
   <data name="dtp_data_limite_rececao.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 25</value>
+    <value>249, 26</value>
   </data>
   <data name="dtp_data_limite_rececao.TabIndex" type="System.Int32, mscorlib">
     <value>87</value>
@@ -648,7 +648,7 @@
     <value>False</value>
   </data>
   <data name="txb_motivo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Berlin Sans FB, 12.25pt</value>
+    <value>Arial Narrow, 12pt</value>
   </data>
   <data name="txb_motivo.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 630</value>
@@ -678,13 +678,13 @@
     <value>False</value>
   </data>
   <data name="txb_entidade.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Berlin Sans FB, 12.25pt</value>
+    <value>Arial Narrow, 12pt</value>
   </data>
   <data name="txb_entidade.Location" type="System.Drawing.Point, System.Drawing">
     <value>390, 544</value>
   </data>
   <data name="txb_entidade.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 25</value>
+    <value>249, 26</value>
   </data>
   <data name="txb_entidade.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -705,13 +705,13 @@
     <value>False</value>
   </data>
   <data name="txb_contacto_fabricante.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Berlin Sans FB, 12.25pt</value>
+    <value>Arial Narrow, 12pt</value>
   </data>
   <data name="txb_contacto_fabricante.Location" type="System.Drawing.Point, System.Drawing">
     <value>390, 441</value>
   </data>
   <data name="txb_contacto_fabricante.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 25</value>
+    <value>249, 26</value>
   </data>
   <data name="txb_contacto_fabricante.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -732,13 +732,13 @@
     <value>False</value>
   </data>
   <data name="txb_fabricante.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Berlin Sans FB, 12.25pt</value>
+    <value>Arial Narrow, 12pt</value>
   </data>
   <data name="txb_fabricante.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 441</value>
   </data>
   <data name="txb_fabricante.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 25</value>
+    <value>249, 26</value>
   </data>
   <data name="txb_fabricante.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -759,13 +759,13 @@
     <value>False</value>
   </data>
   <data name="txb_quantidade.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Berlin Sans FB, 12.25pt</value>
+    <value>Arial Narrow, 12pt</value>
   </data>
   <data name="txb_quantidade.Location" type="System.Drawing.Point, System.Drawing">
     <value>390, 350</value>
   </data>
   <data name="txb_quantidade.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 25</value>
+    <value>249, 26</value>
   </data>
   <data name="txb_quantidade.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -786,13 +786,13 @@
     <value>False</value>
   </data>
   <data name="txb_lote.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Berlin Sans FB, 12.25pt</value>
+    <value>Arial Narrow, 12pt</value>
   </data>
   <data name="txb_lote.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 350</value>
   </data>
   <data name="txb_lote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 25</value>
+    <value>249, 26</value>
   </data>
   <data name="txb_lote.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -813,13 +813,13 @@
     <value>False</value>
   </data>
   <data name="txb_principio_ativo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Berlin Sans FB, 12.25pt</value>
+    <value>Arial Narrow, 12pt</value>
   </data>
   <data name="txb_principio_ativo.Location" type="System.Drawing.Point, System.Drawing">
     <value>390, 258</value>
   </data>
   <data name="txb_principio_ativo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 25</value>
+    <value>249, 26</value>
   </data>
   <data name="txb_principio_ativo.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -840,13 +840,13 @@
     <value>False</value>
   </data>
   <data name="txb_denominacao.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Berlin Sans FB, 12.25pt</value>
+    <value>Arial Narrow, 12pt</value>
   </data>
   <data name="txb_denominacao.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 258</value>
   </data>
   <data name="txb_denominacao.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 25</value>
+    <value>249, 26</value>
   </data>
   <data name="txb_denominacao.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

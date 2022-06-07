@@ -90,5 +90,10 @@ namespace DLS_ALFEITE
                 textBox_codigo_unico.PasswordChar = '●';
             }
         }
+
+        private void textBox_codigo_unico_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

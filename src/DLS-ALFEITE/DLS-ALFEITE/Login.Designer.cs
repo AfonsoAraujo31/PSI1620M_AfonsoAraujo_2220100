@@ -132,10 +132,10 @@ namespace DLS_ALFEITE
             // 
             this.textBox_username.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_username.Location = new System.Drawing.Point(339, 144);
+            this.textBox_username.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.textBox_username.Location = new System.Drawing.Point(339, 142);
             this.textBox_username.Name = "textBox_username";
-            this.textBox_username.Size = new System.Drawing.Size(100, 15);
+            this.textBox_username.Size = new System.Drawing.Size(100, 19);
             this.textBox_username.TabIndex = 14;
             this.textBox_username.Text = "Username";
             this.textBox_username.Enter += new System.EventHandler(this.textBox_username_Enter_1);
@@ -145,12 +145,13 @@ namespace DLS_ALFEITE
             // 
             this.textBox_password.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_password.Location = new System.Drawing.Point(339, 177);
+            this.textBox_password.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.textBox_password.Location = new System.Drawing.Point(339, 175);
             this.textBox_password.Name = "textBox_password";
-            this.textBox_password.Size = new System.Drawing.Size(100, 15);
+            this.textBox_password.Size = new System.Drawing.Size(100, 19);
             this.textBox_password.TabIndex = 15;
             this.textBox_password.Text = "Password";
+            this.textBox_password.TextChanged += new System.EventHandler(this.textBox_password_TextChanged);
             this.textBox_password.Enter += new System.EventHandler(this.textBox_password_Enter_1);
             this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_password_KeyDown);
             this.textBox_password.Leave += new System.EventHandler(this.textBox_password_Leave);
@@ -230,13 +231,13 @@ namespace DLS_ALFEITE
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(399, 253);
+            this.linkLabel1.Location = new System.Drawing.Point(405, 253);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(159, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(140, 16);
             this.linkLabel1.TabIndex = 13;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Esqueceu-se da password?";

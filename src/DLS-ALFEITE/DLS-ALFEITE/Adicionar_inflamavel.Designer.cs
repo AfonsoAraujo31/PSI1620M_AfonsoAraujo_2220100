@@ -139,7 +139,7 @@
             // 
             // txb_observacoes
             // 
-            this.txb_observacoes.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_observacoes.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_observacoes.Location = new System.Drawing.Point(53, 334);
             this.txb_observacoes.Margin = new System.Windows.Forms.Padding(2);
             this.txb_observacoes.Multiline = true;
@@ -161,11 +161,11 @@
             // 
             // txb_contacto_fabricante
             // 
-            this.txb_contacto_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_contacto_fabricante.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_contacto_fabricante.Location = new System.Drawing.Point(405, 252);
             this.txb_contacto_fabricante.Margin = new System.Windows.Forms.Padding(2);
             this.txb_contacto_fabricante.Name = "txb_contacto_fabricante";
-            this.txb_contacto_fabricante.Size = new System.Drawing.Size(307, 25);
+            this.txb_contacto_fabricante.Size = new System.Drawing.Size(307, 26);
             this.txb_contacto_fabricante.TabIndex = 42;
             // 
             // label9
@@ -182,11 +182,11 @@
             // 
             // txb_fabricante
             // 
-            this.txb_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_fabricante.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_fabricante.Location = new System.Drawing.Point(53, 252);
             this.txb_fabricante.Margin = new System.Windows.Forms.Padding(2);
             this.txb_fabricante.Name = "txb_fabricante";
-            this.txb_fabricante.Size = new System.Drawing.Size(307, 25);
+            this.txb_fabricante.Size = new System.Drawing.Size(307, 26);
             this.txb_fabricante.TabIndex = 40;
             // 
             // label8
@@ -203,11 +203,11 @@
             // 
             // txb_setor
             // 
-            this.txb_setor.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_setor.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_setor.Location = new System.Drawing.Point(543, 171);
             this.txb_setor.Margin = new System.Windows.Forms.Padding(2);
             this.txb_setor.Name = "txb_setor";
-            this.txb_setor.Size = new System.Drawing.Size(169, 25);
+            this.txb_setor.Size = new System.Drawing.Size(169, 26);
             this.txb_setor.TabIndex = 38;
             // 
             // label7
@@ -224,11 +224,11 @@
             // 
             // txb_quantidade
             // 
-            this.txb_quantidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_quantidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_quantidade.Location = new System.Drawing.Point(305, 171);
             this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txb_quantidade.Name = "txb_quantidade";
-            this.txb_quantidade.Size = new System.Drawing.Size(169, 25);
+            this.txb_quantidade.Size = new System.Drawing.Size(169, 26);
             this.txb_quantidade.TabIndex = 36;
             // 
             // label6
@@ -245,11 +245,11 @@
             // 
             // txb_lote
             // 
-            this.txb_lote.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_lote.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_lote.Location = new System.Drawing.Point(53, 171);
             this.txb_lote.Margin = new System.Windows.Forms.Padding(2);
             this.txb_lote.Name = "txb_lote";
-            this.txb_lote.Size = new System.Drawing.Size(169, 25);
+            this.txb_lote.Size = new System.Drawing.Size(169, 26);
             this.txb_lote.TabIndex = 34;
             // 
             // label5
@@ -266,20 +266,20 @@
             // 
             // txb_numero_serie
             // 
-            this.txb_numero_serie.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_numero_serie.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_numero_serie.Location = new System.Drawing.Point(305, 89);
             this.txb_numero_serie.Margin = new System.Windows.Forms.Padding(2);
             this.txb_numero_serie.Name = "txb_numero_serie";
-            this.txb_numero_serie.Size = new System.Drawing.Size(169, 25);
+            this.txb_numero_serie.Size = new System.Drawing.Size(169, 26);
             this.txb_numero_serie.TabIndex = 31;
             // 
             // txb_denominacao
             // 
-            this.txb_denominacao.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_denominacao.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_denominacao.Location = new System.Drawing.Point(53, 89);
             this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2);
             this.txb_denominacao.Name = "txb_denominacao";
-            this.txb_denominacao.Size = new System.Drawing.Size(169, 25);
+            this.txb_denominacao.Size = new System.Drawing.Size(169, 26);
             this.txb_denominacao.TabIndex = 30;
             // 
             // label4
@@ -321,12 +321,12 @@
             // dtp_validade
             // 
             this.dtp_validade.CustomFormat = "dd-MM-yyyy";
-            this.dtp_validade.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.dtp_validade.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.dtp_validade.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_validade.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtp_validade.Location = new System.Drawing.Point(543, 89);
             this.dtp_validade.Name = "dtp_validade";
-            this.dtp_validade.Size = new System.Drawing.Size(169, 25);
+            this.dtp_validade.Size = new System.Drawing.Size(169, 26);
             this.dtp_validade.TabIndex = 47;
             this.dtp_validade.TabStop = false;
             this.dtp_validade.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);

@@ -29,35 +29,35 @@ namespace DLS_ALFEITE
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fornecimento_inflamavel_menu));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fornecimento_inflamavel_menu));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txb_observacoes = new System.Windows.Forms.TextBox();
             this.dtp_data_fornecimento = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
             this.txb_entidade = new System.Windows.Forms.TextBox();
+            this.txb_contacto_fabricante = new System.Windows.Forms.TextBox();
+            this.txb_fabricante = new System.Windows.Forms.TextBox();
+            this.txb_quantidade = new System.Windows.Forms.TextBox();
+            this.txb_lote = new System.Windows.Forms.TextBox();
+            this.txb_numero_serie = new System.Windows.Forms.TextBox();
+            this.txb_denominacao = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txb_contacto_fabricante = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txb_fabricante = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txb_quantidade = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txb_lote = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txb_numero_serie = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txb_denominacao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,6 +87,105 @@ namespace DLS_ALFEITE
             this.panel1.Size = new System.Drawing.Size(702, 937);
             this.panel1.TabIndex = 12;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(208, 37);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(313, 146);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 95;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txb_observacoes
+            // 
+            this.txb_observacoes.Enabled = false;
+            this.txb_observacoes.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txb_observacoes.Location = new System.Drawing.Point(73, 613);
+            this.txb_observacoes.Multiline = true;
+            this.txb_observacoes.Name = "txb_observacoes";
+            this.txb_observacoes.Size = new System.Drawing.Size(566, 153);
+            this.txb_observacoes.TabIndex = 92;
+            // 
+            // dtp_data_fornecimento
+            // 
+            this.dtp_data_fornecimento.CustomFormat = "dd/MM/yyyy";
+            this.dtp_data_fornecimento.Enabled = false;
+            this.dtp_data_fornecimento.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.dtp_data_fornecimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_data_fornecimento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtp_data_fornecimento.Location = new System.Drawing.Point(73, 531);
+            this.dtp_data_fornecimento.Name = "dtp_data_fornecimento";
+            this.dtp_data_fornecimento.Size = new System.Drawing.Size(249, 26);
+            this.dtp_data_fornecimento.TabIndex = 87;
+            this.dtp_data_fornecimento.TabStop = false;
+            this.dtp_data_fornecimento.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
+            // 
+            // txb_entidade
+            // 
+            this.txb_entidade.Enabled = false;
+            this.txb_entidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txb_entidade.Location = new System.Drawing.Point(390, 531);
+            this.txb_entidade.Name = "txb_entidade";
+            this.txb_entidade.Size = new System.Drawing.Size(249, 26);
+            this.txb_entidade.TabIndex = 15;
+            // 
+            // txb_contacto_fabricante
+            // 
+            this.txb_contacto_fabricante.Enabled = false;
+            this.txb_contacto_fabricante.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txb_contacto_fabricante.Location = new System.Drawing.Point(390, 428);
+            this.txb_contacto_fabricante.Name = "txb_contacto_fabricante";
+            this.txb_contacto_fabricante.Size = new System.Drawing.Size(249, 26);
+            this.txb_contacto_fabricante.TabIndex = 11;
+            // 
+            // txb_fabricante
+            // 
+            this.txb_fabricante.Enabled = false;
+            this.txb_fabricante.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txb_fabricante.Location = new System.Drawing.Point(73, 428);
+            this.txb_fabricante.Name = "txb_fabricante";
+            this.txb_fabricante.Size = new System.Drawing.Size(249, 26);
+            this.txb_fabricante.TabIndex = 9;
+            // 
+            // txb_quantidade
+            // 
+            this.txb_quantidade.Enabled = false;
+            this.txb_quantidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txb_quantidade.Location = new System.Drawing.Point(390, 337);
+            this.txb_quantidade.Name = "txb_quantidade";
+            this.txb_quantidade.Size = new System.Drawing.Size(249, 26);
+            this.txb_quantidade.TabIndex = 7;
+            // 
+            // txb_lote
+            // 
+            this.txb_lote.Enabled = false;
+            this.txb_lote.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txb_lote.Location = new System.Drawing.Point(73, 337);
+            this.txb_lote.Name = "txb_lote";
+            this.txb_lote.Size = new System.Drawing.Size(249, 26);
+            this.txb_lote.TabIndex = 5;
+            // 
+            // txb_numero_serie
+            // 
+            this.txb_numero_serie.Enabled = false;
+            this.txb_numero_serie.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txb_numero_serie.Location = new System.Drawing.Point(390, 245);
+            this.txb_numero_serie.Name = "txb_numero_serie";
+            this.txb_numero_serie.Size = new System.Drawing.Size(249, 26);
+            this.txb_numero_serie.TabIndex = 3;
+            // 
+            // txb_denominacao
+            // 
+            this.txb_denominacao.Enabled = false;
+            this.txb_denominacao.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txb_denominacao.ForeColor = System.Drawing.Color.Black;
+            this.txb_denominacao.Location = new System.Drawing.Point(73, 245);
+            this.txb_denominacao.Name = "txb_denominacao";
+            this.txb_denominacao.Size = new System.Drawing.Size(249, 26);
+            this.txb_denominacao.TabIndex = 0;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -99,30 +198,6 @@ namespace DLS_ALFEITE
             this.label2.TabIndex = 93;
             this.label2.Text = "Observações:";
             // 
-            // txb_observacoes
-            // 
-            this.txb_observacoes.Enabled = false;
-            this.txb_observacoes.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
-            this.txb_observacoes.Location = new System.Drawing.Point(73, 613);
-            this.txb_observacoes.Multiline = true;
-            this.txb_observacoes.Name = "txb_observacoes";
-            this.txb_observacoes.Size = new System.Drawing.Size(566, 153);
-            this.txb_observacoes.TabIndex = 92;
-            // 
-            // dtp_data_fornecimento
-            // 
-            this.dtp_data_fornecimento.CustomFormat = "dd/MM/yyyy";
-            this.dtp_data_fornecimento.Enabled = false;
-            this.dtp_data_fornecimento.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
-            this.dtp_data_fornecimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_data_fornecimento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtp_data_fornecimento.Location = new System.Drawing.Point(73, 531);
-            this.dtp_data_fornecimento.Name = "dtp_data_fornecimento";
-            this.dtp_data_fornecimento.Size = new System.Drawing.Size(249, 25);
-            this.dtp_data_fornecimento.TabIndex = 87;
-            this.dtp_data_fornecimento.TabStop = false;
-            this.dtp_data_fornecimento.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -134,15 +209,6 @@ namespace DLS_ALFEITE
             this.label8.Size = new System.Drawing.Size(88, 21);
             this.label8.TabIndex = 16;
             this.label8.Text = "Entidade:";
-            // 
-            // txb_entidade
-            // 
-            this.txb_entidade.Enabled = false;
-            this.txb_entidade.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
-            this.txb_entidade.Location = new System.Drawing.Point(390, 531);
-            this.txb_entidade.Name = "txb_entidade";
-            this.txb_entidade.Size = new System.Drawing.Size(249, 25);
-            this.txb_entidade.TabIndex = 15;
             // 
             // label9
             // 
@@ -168,15 +234,6 @@ namespace DLS_ALFEITE
             this.label6.TabIndex = 12;
             this.label6.Text = "Contacto do fabricante:";
             // 
-            // txb_contacto_fabricante
-            // 
-            this.txb_contacto_fabricante.Enabled = false;
-            this.txb_contacto_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
-            this.txb_contacto_fabricante.Location = new System.Drawing.Point(390, 428);
-            this.txb_contacto_fabricante.Name = "txb_contacto_fabricante";
-            this.txb_contacto_fabricante.Size = new System.Drawing.Size(249, 25);
-            this.txb_contacto_fabricante.TabIndex = 11;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -188,15 +245,6 @@ namespace DLS_ALFEITE
             this.label7.Size = new System.Drawing.Size(102, 21);
             this.label7.TabIndex = 10;
             this.label7.Text = "Fabricante:";
-            // 
-            // txb_fabricante
-            // 
-            this.txb_fabricante.Enabled = false;
-            this.txb_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
-            this.txb_fabricante.Location = new System.Drawing.Point(73, 428);
-            this.txb_fabricante.Name = "txb_fabricante";
-            this.txb_fabricante.Size = new System.Drawing.Size(249, 25);
-            this.txb_fabricante.TabIndex = 9;
             // 
             // label4
             // 
@@ -210,15 +258,6 @@ namespace DLS_ALFEITE
             this.label4.TabIndex = 8;
             this.label4.Text = "Quantidade a fornecer:";
             // 
-            // txb_quantidade
-            // 
-            this.txb_quantidade.Enabled = false;
-            this.txb_quantidade.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
-            this.txb_quantidade.Location = new System.Drawing.Point(390, 337);
-            this.txb_quantidade.Name = "txb_quantidade";
-            this.txb_quantidade.Size = new System.Drawing.Size(249, 25);
-            this.txb_quantidade.TabIndex = 7;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -230,15 +269,6 @@ namespace DLS_ALFEITE
             this.label5.Size = new System.Drawing.Size(51, 21);
             this.label5.TabIndex = 6;
             this.label5.Text = "Lote:";
-            // 
-            // txb_lote
-            // 
-            this.txb_lote.Enabled = false;
-            this.txb_lote.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
-            this.txb_lote.Location = new System.Drawing.Point(73, 337);
-            this.txb_lote.Name = "txb_lote";
-            this.txb_lote.Size = new System.Drawing.Size(249, 25);
-            this.txb_lote.TabIndex = 5;
             // 
             // label3
             // 
@@ -252,15 +282,6 @@ namespace DLS_ALFEITE
             this.label3.TabIndex = 4;
             this.label3.Text = "Número de série:";
             // 
-            // txb_numero_serie
-            // 
-            this.txb_numero_serie.Enabled = false;
-            this.txb_numero_serie.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
-            this.txb_numero_serie.Location = new System.Drawing.Point(390, 245);
-            this.txb_numero_serie.Name = "txb_numero_serie";
-            this.txb_numero_serie.Size = new System.Drawing.Size(249, 25);
-            this.txb_numero_serie.TabIndex = 3;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -272,16 +293,6 @@ namespace DLS_ALFEITE
             this.label11.Size = new System.Drawing.Size(127, 21);
             this.label11.TabIndex = 1;
             this.label11.Text = "Denominação:";
-            // 
-            // txb_denominacao
-            // 
-            this.txb_denominacao.Enabled = false;
-            this.txb_denominacao.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
-            this.txb_denominacao.ForeColor = System.Drawing.Color.Black;
-            this.txb_denominacao.Location = new System.Drawing.Point(73, 245);
-            this.txb_denominacao.Name = "txb_denominacao";
-            this.txb_denominacao.Size = new System.Drawing.Size(249, 25);
-            this.txb_denominacao.TabIndex = 0;
             // 
             // label1
             // 
@@ -343,17 +354,6 @@ namespace DLS_ALFEITE
             this.textbox_searchbar.Enter += new System.EventHandler(this.textbox_searchbar_Enter);
             this.textbox_searchbar.Leave += new System.EventHandler(this.textbox_searchbar_Leave);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(208, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(313, 146);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 95;
-            this.pictureBox1.TabStop = false;
-            // 
             // Fornecimento_inflamavel_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,8 +369,8 @@ namespace DLS_ALFEITE
             this.Text = "Fornecimento_inflamavel_menu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

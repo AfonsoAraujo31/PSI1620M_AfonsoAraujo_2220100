@@ -149,7 +149,7 @@ namespace DLS_ALFEITE
             // txb_observacoes
             // 
             this.txb_observacoes.Enabled = false;
-            this.txb_observacoes.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_observacoes.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_observacoes.Location = new System.Drawing.Point(73, 620);
             this.txb_observacoes.Multiline = true;
             this.txb_observacoes.Name = "txb_observacoes";
@@ -160,12 +160,12 @@ namespace DLS_ALFEITE
             // 
             this.dtp_data_fornecimento.CustomFormat = "dd/MM/yyyy";
             this.dtp_data_fornecimento.Enabled = false;
-            this.dtp_data_fornecimento.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.dtp_data_fornecimento.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.dtp_data_fornecimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_data_fornecimento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtp_data_fornecimento.Location = new System.Drawing.Point(73, 538);
             this.dtp_data_fornecimento.Name = "dtp_data_fornecimento";
-            this.dtp_data_fornecimento.Size = new System.Drawing.Size(249, 25);
+            this.dtp_data_fornecimento.Size = new System.Drawing.Size(249, 26);
             this.dtp_data_fornecimento.TabIndex = 87;
             this.dtp_data_fornecimento.TabStop = false;
             this.dtp_data_fornecimento.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
@@ -173,65 +173,65 @@ namespace DLS_ALFEITE
             // txb_entidade
             // 
             this.txb_entidade.Enabled = false;
-            this.txb_entidade.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_entidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_entidade.Location = new System.Drawing.Point(390, 538);
             this.txb_entidade.Name = "txb_entidade";
-            this.txb_entidade.Size = new System.Drawing.Size(249, 25);
+            this.txb_entidade.Size = new System.Drawing.Size(249, 26);
             this.txb_entidade.TabIndex = 15;
             // 
             // txb_contacto_fabricante
             // 
             this.txb_contacto_fabricante.Enabled = false;
-            this.txb_contacto_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_contacto_fabricante.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_contacto_fabricante.Location = new System.Drawing.Point(390, 435);
             this.txb_contacto_fabricante.Name = "txb_contacto_fabricante";
-            this.txb_contacto_fabricante.Size = new System.Drawing.Size(249, 25);
+            this.txb_contacto_fabricante.Size = new System.Drawing.Size(249, 26);
             this.txb_contacto_fabricante.TabIndex = 11;
             // 
             // txb_fabricante
             // 
             this.txb_fabricante.Enabled = false;
-            this.txb_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_fabricante.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_fabricante.Location = new System.Drawing.Point(73, 435);
             this.txb_fabricante.Name = "txb_fabricante";
-            this.txb_fabricante.Size = new System.Drawing.Size(249, 25);
+            this.txb_fabricante.Size = new System.Drawing.Size(249, 26);
             this.txb_fabricante.TabIndex = 9;
             // 
             // txb_quantidade
             // 
             this.txb_quantidade.Enabled = false;
-            this.txb_quantidade.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_quantidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_quantidade.Location = new System.Drawing.Point(390, 344);
             this.txb_quantidade.Name = "txb_quantidade";
-            this.txb_quantidade.Size = new System.Drawing.Size(249, 25);
+            this.txb_quantidade.Size = new System.Drawing.Size(249, 26);
             this.txb_quantidade.TabIndex = 7;
             // 
             // txb_lote
             // 
             this.txb_lote.Enabled = false;
-            this.txb_lote.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_lote.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_lote.Location = new System.Drawing.Point(73, 344);
             this.txb_lote.Name = "txb_lote";
-            this.txb_lote.Size = new System.Drawing.Size(249, 25);
+            this.txb_lote.Size = new System.Drawing.Size(249, 26);
             this.txb_lote.TabIndex = 5;
             // 
             // txb_principio_ativo
             // 
             this.txb_principio_ativo.Enabled = false;
-            this.txb_principio_ativo.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_principio_ativo.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_principio_ativo.Location = new System.Drawing.Point(390, 252);
             this.txb_principio_ativo.Name = "txb_principio_ativo";
-            this.txb_principio_ativo.Size = new System.Drawing.Size(249, 25);
+            this.txb_principio_ativo.Size = new System.Drawing.Size(249, 26);
             this.txb_principio_ativo.TabIndex = 3;
             // 
             // txb_denominacao
             // 
             this.txb_denominacao.Enabled = false;
-            this.txb_denominacao.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_denominacao.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_denominacao.ForeColor = System.Drawing.Color.Black;
             this.txb_denominacao.Location = new System.Drawing.Point(73, 252);
             this.txb_denominacao.Name = "txb_denominacao";
-            this.txb_denominacao.Size = new System.Drawing.Size(249, 25);
+            this.txb_denominacao.Size = new System.Drawing.Size(249, 26);
             this.txb_denominacao.TabIndex = 0;
             // 
             // label2

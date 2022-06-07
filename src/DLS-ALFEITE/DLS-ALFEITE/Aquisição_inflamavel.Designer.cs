@@ -135,7 +135,7 @@
             // 
             // txb_motivo
             // 
-            this.txb_motivo.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_motivo.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_motivo.Location = new System.Drawing.Point(52, 298);
             this.txb_motivo.Margin = new System.Windows.Forms.Padding(2);
             this.txb_motivo.Multiline = true;
@@ -157,11 +157,11 @@
             // 
             // txb_entidade
             // 
-            this.txb_entidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_entidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_entidade.Location = new System.Drawing.Point(542, 207);
             this.txb_entidade.Margin = new System.Windows.Forms.Padding(2);
             this.txb_entidade.Name = "txb_entidade";
-            this.txb_entidade.Size = new System.Drawing.Size(169, 25);
+            this.txb_entidade.Size = new System.Drawing.Size(169, 26);
             this.txb_entidade.TabIndex = 94;
             // 
             // label7
@@ -178,11 +178,11 @@
             // 
             // txb_quantidade
             // 
-            this.txb_quantidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_quantidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_quantidade.Location = new System.Drawing.Point(304, 207);
             this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txb_quantidade.Name = "txb_quantidade";
-            this.txb_quantidade.Size = new System.Drawing.Size(169, 25);
+            this.txb_quantidade.Size = new System.Drawing.Size(169, 26);
             this.txb_quantidade.TabIndex = 92;
             // 
             // label6
@@ -199,11 +199,11 @@
             // 
             // txb_lote
             // 
-            this.txb_lote.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_lote.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_lote.Location = new System.Drawing.Point(542, 128);
             this.txb_lote.Margin = new System.Windows.Forms.Padding(2);
             this.txb_lote.Name = "txb_lote";
-            this.txb_lote.Size = new System.Drawing.Size(169, 25);
+            this.txb_lote.Size = new System.Drawing.Size(169, 26);
             this.txb_lote.TabIndex = 90;
             // 
             // label5
@@ -220,20 +220,20 @@
             // 
             // txb_numero_serie
             // 
-            this.txb_numero_serie.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_numero_serie.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_numero_serie.Location = new System.Drawing.Point(304, 125);
             this.txb_numero_serie.Margin = new System.Windows.Forms.Padding(2);
             this.txb_numero_serie.Name = "txb_numero_serie";
-            this.txb_numero_serie.Size = new System.Drawing.Size(169, 25);
+            this.txb_numero_serie.Size = new System.Drawing.Size(169, 26);
             this.txb_numero_serie.TabIndex = 88;
             // 
             // txb_denominacao
             // 
-            this.txb_denominacao.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.txb_denominacao.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_denominacao.Location = new System.Drawing.Point(52, 125);
             this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2);
             this.txb_denominacao.Name = "txb_denominacao";
-            this.txb_denominacao.Size = new System.Drawing.Size(169, 25);
+            this.txb_denominacao.Size = new System.Drawing.Size(169, 26);
             this.txb_denominacao.TabIndex = 87;
             // 
             // label4
@@ -275,12 +275,12 @@
             // dtp_data_rececao
             // 
             this.dtp_data_rececao.CustomFormat = "dd/MM/yyyy";
-            this.dtp_data_rececao.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.dtp_data_rececao.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.dtp_data_rececao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_data_rececao.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtp_data_rececao.Location = new System.Drawing.Point(52, 207);
             this.dtp_data_rececao.Name = "dtp_data_rececao";
-            this.dtp_data_rececao.Size = new System.Drawing.Size(169, 25);
+            this.dtp_data_rececao.Size = new System.Drawing.Size(169, 26);
             this.dtp_data_rececao.TabIndex = 99;
             this.dtp_data_rececao.TabStop = false;
             this.dtp_data_rececao.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);

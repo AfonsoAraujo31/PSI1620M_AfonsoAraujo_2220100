@@ -85,7 +85,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txb_username);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.btn_);
@@ -95,6 +94,7 @@
             this.panel1.Controls.Add(this.btn_login_codigounico);
             this.panel1.Controls.Add(this.txb_codigo_unico);
             this.panel1.Controls.Add(this.btn_2);
+            this.panel1.Controls.Add(this.txb_username);
             this.panel1.Location = new System.Drawing.Point(80, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(251, 146);
@@ -104,11 +104,11 @@
             // 
             this.txb_username.BackColor = System.Drawing.Color.Gainsboro;
             this.txb_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txb_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_username.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_username.ForeColor = System.Drawing.Color.Black;
-            this.txb_username.Location = new System.Drawing.Point(74, 34);
+            this.txb_username.Location = new System.Drawing.Point(74, 32);
             this.txb_username.Name = "txb_username";
-            this.txb_username.Size = new System.Drawing.Size(100, 15);
+            this.txb_username.Size = new System.Drawing.Size(100, 19);
             this.txb_username.TabIndex = 43;
             this.txb_username.Text = "Username";
             this.txb_username.Enter += new System.EventHandler(this.txb_username_Enter);
@@ -197,11 +197,11 @@
             // 
             this.txb_codigo_unico.BackColor = System.Drawing.Color.Gainsboro;
             this.txb_codigo_unico.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txb_codigo_unico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_codigo_unico.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_codigo_unico.ForeColor = System.Drawing.Color.Black;
-            this.txb_codigo_unico.Location = new System.Drawing.Point(73, 66);
+            this.txb_codigo_unico.Location = new System.Drawing.Point(73, 64);
             this.txb_codigo_unico.Name = "txb_codigo_unico";
-            this.txb_codigo_unico.Size = new System.Drawing.Size(100, 15);
+            this.txb_codigo_unico.Size = new System.Drawing.Size(100, 19);
             this.txb_codigo_unico.TabIndex = 38;
             this.txb_codigo_unico.Text = "Código Único";
             this.txb_codigo_unico.Enter += new System.EventHandler(this.textBox_codigo_unico_Enter);
@@ -283,10 +283,10 @@
             // 
             this.txb_nova_password.BackColor = System.Drawing.Color.Gainsboro;
             this.txb_nova_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txb_nova_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb_nova_password.Location = new System.Drawing.Point(41, 48);
+            this.txb_nova_password.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txb_nova_password.Location = new System.Drawing.Point(41, 45);
             this.txb_nova_password.Name = "txb_nova_password";
-            this.txb_nova_password.Size = new System.Drawing.Size(164, 15);
+            this.txb_nova_password.Size = new System.Drawing.Size(164, 19);
             this.txb_nova_password.TabIndex = 46;
             this.txb_nova_password.Text = "Nova Password";
             this.txb_nova_password.Enter += new System.EventHandler(this.txb_nova_password_Enter);
@@ -316,12 +316,12 @@
             // 
             this.txb_comfirmacao_password.BackColor = System.Drawing.Color.Gainsboro;
             this.txb_comfirmacao_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txb_comfirmacao_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_comfirmacao_password.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_comfirmacao_password.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txb_comfirmacao_password.Location = new System.Drawing.Point(41, 89);
+            this.txb_comfirmacao_password.Location = new System.Drawing.Point(41, 86);
             this.txb_comfirmacao_password.Name = "txb_comfirmacao_password";
             this.txb_comfirmacao_password.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txb_comfirmacao_password.Size = new System.Drawing.Size(167, 15);
+            this.txb_comfirmacao_password.Size = new System.Drawing.Size(167, 19);
             this.txb_comfirmacao_password.TabIndex = 43;
             this.txb_comfirmacao_password.Text = "Confirmar Password";
             this.txb_comfirmacao_password.Enter += new System.EventHandler(this.txb_comfirmacao_password_Enter);

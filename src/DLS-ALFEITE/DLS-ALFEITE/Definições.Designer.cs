@@ -117,14 +117,14 @@ namespace DLS_ALFEITE
             // 
             // cb_genero
             // 
-            this.cb_genero.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.cb_genero.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.cb_genero.FormattingEnabled = true;
             this.cb_genero.Items.AddRange(new object[] {
             "M",
             "F"});
             this.cb_genero.Location = new System.Drawing.Point(75, 420);
             this.cb_genero.Name = "cb_genero";
-            this.cb_genero.Size = new System.Drawing.Size(249, 26);
+            this.cb_genero.Size = new System.Drawing.Size(249, 28);
             this.cb_genero.TabIndex = 110;
             // 
             // btn_guardar
@@ -144,11 +144,11 @@ namespace DLS_ALFEITE
             // txb_numero_telemovel
             // 
             this.txb_numero_telemovel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txb_numero_telemovel.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_numero_telemovel.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_numero_telemovel.ForeColor = System.Drawing.Color.Black;
             this.txb_numero_telemovel.Location = new System.Drawing.Point(75, 567);
             this.txb_numero_telemovel.Name = "txb_numero_telemovel";
-            this.txb_numero_telemovel.Size = new System.Drawing.Size(249, 25);
+            this.txb_numero_telemovel.Size = new System.Drawing.Size(249, 26);
             this.txb_numero_telemovel.TabIndex = 106;
             // 
             // label4
@@ -166,11 +166,11 @@ namespace DLS_ALFEITE
             // txb_email
             // 
             this.txb_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txb_email.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_email.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_email.ForeColor = System.Drawing.Color.Black;
             this.txb_email.Location = new System.Drawing.Point(75, 493);
             this.txb_email.Name = "txb_email";
-            this.txb_email.Size = new System.Drawing.Size(249, 25);
+            this.txb_email.Size = new System.Drawing.Size(249, 26);
             this.txb_email.TabIndex = 104;
             // 
             // label5
@@ -200,11 +200,11 @@ namespace DLS_ALFEITE
             // txb_password
             // 
             this.txb_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txb_password.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_password.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_password.ForeColor = System.Drawing.Color.Black;
             this.txb_password.Location = new System.Drawing.Point(75, 346);
             this.txb_password.Name = "txb_password";
-            this.txb_password.Size = new System.Drawing.Size(249, 25);
+            this.txb_password.Size = new System.Drawing.Size(249, 26);
             this.txb_password.TabIndex = 100;
             // 
             // label3
@@ -222,11 +222,11 @@ namespace DLS_ALFEITE
             // txb_nome
             // 
             this.txb_nome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txb_nome.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_nome.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_nome.ForeColor = System.Drawing.Color.Black;
             this.txb_nome.Location = new System.Drawing.Point(75, 273);
             this.txb_nome.Name = "txb_nome";
-            this.txb_nome.Size = new System.Drawing.Size(249, 25);
+            this.txb_nome.Size = new System.Drawing.Size(249, 26);
             this.txb_nome.TabIndex = 98;
             // 
             // label1
@@ -245,11 +245,11 @@ namespace DLS_ALFEITE
             // 
             this.txb_username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txb_username.Enabled = false;
-            this.txb_username.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_username.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_username.ForeColor = System.Drawing.Color.Black;
             this.txb_username.Location = new System.Drawing.Point(75, 199);
             this.txb_username.Name = "txb_username";
-            this.txb_username.Size = new System.Drawing.Size(249, 25);
+            this.txb_username.Size = new System.Drawing.Size(249, 26);
             this.txb_username.TabIndex = 96;
             // 
             // label11
@@ -347,11 +347,11 @@ namespace DLS_ALFEITE
             // 
             this.txb_versao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txb_versao.Enabled = false;
-            this.txb_versao.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_versao.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_versao.ForeColor = System.Drawing.Color.Black;
             this.txb_versao.Location = new System.Drawing.Point(78, 273);
             this.txb_versao.Name = "txb_versao";
-            this.txb_versao.Size = new System.Drawing.Size(249, 25);
+            this.txb_versao.Size = new System.Drawing.Size(249, 26);
             this.txb_versao.TabIndex = 114;
             // 
             // pictureBox2
@@ -381,11 +381,11 @@ namespace DLS_ALFEITE
             // 
             this.txb_fabricante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txb_fabricante.Enabled = false;
-            this.txb_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.txb_fabricante.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_fabricante.ForeColor = System.Drawing.Color.Black;
             this.txb_fabricante.Location = new System.Drawing.Point(78, 199);
             this.txb_fabricante.Name = "txb_fabricante";
-            this.txb_fabricante.Size = new System.Drawing.Size(249, 25);
+            this.txb_fabricante.Size = new System.Drawing.Size(249, 26);
             this.txb_fabricante.TabIndex = 112;
             this.txb_fabricante.Text = "ASACompany";
             // 

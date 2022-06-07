@@ -181,6 +181,11 @@ namespace DLS_ALFEITE
             Reset_password reset_Password = new Reset_password();
             reset_Password.ShowDialog();
         }
+
+        private void textBox_password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

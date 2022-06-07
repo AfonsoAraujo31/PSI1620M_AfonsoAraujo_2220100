@@ -49,13 +49,14 @@ namespace DLS_ALFEITE
             // 
             this.textBox_codigo_unico.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox_codigo_unico.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_codigo_unico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_codigo_unico.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.textBox_codigo_unico.ForeColor = System.Drawing.Color.Black;
-            this.textBox_codigo_unico.Location = new System.Drawing.Point(101, 84);
+            this.textBox_codigo_unico.Location = new System.Drawing.Point(101, 82);
             this.textBox_codigo_unico.Name = "textBox_codigo_unico";
-            this.textBox_codigo_unico.Size = new System.Drawing.Size(100, 15);
+            this.textBox_codigo_unico.Size = new System.Drawing.Size(100, 19);
             this.textBox_codigo_unico.TabIndex = 28;
             this.textBox_codigo_unico.Text = "Código Único";
+            this.textBox_codigo_unico.TextChanged += new System.EventHandler(this.textBox_codigo_unico_TextChanged);
             this.textBox_codigo_unico.Enter += new System.EventHandler(this.textBox_codigo_unico_Enter);
             this.textBox_codigo_unico.Leave += new System.EventHandler(this.textBox_codigo_unico_Leave);
             // 
@@ -77,11 +78,11 @@ namespace DLS_ALFEITE
             // 
             this.textBox_username_confirmação.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox_username_confirmação.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_username_confirmação.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_username_confirmação.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.textBox_username_confirmação.ForeColor = System.Drawing.Color.Black;
-            this.textBox_username_confirmação.Location = new System.Drawing.Point(101, 53);
+            this.textBox_username_confirmação.Location = new System.Drawing.Point(101, 51);
             this.textBox_username_confirmação.Name = "textBox_username_confirmação";
-            this.textBox_username_confirmação.Size = new System.Drawing.Size(100, 15);
+            this.textBox_username_confirmação.Size = new System.Drawing.Size(100, 19);
             this.textBox_username_confirmação.TabIndex = 27;
             this.textBox_username_confirmação.Text = "Username";
             // 
