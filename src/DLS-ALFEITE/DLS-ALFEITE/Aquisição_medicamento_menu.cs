@@ -36,7 +36,7 @@ namespace DLS_ALFEITE
                 using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -50,13 +50,7 @@ namespace DLS_ALFEITE
             update();
             if (check == true)
             {
-                //aprovar
-                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-                btn.HeaderText = "";
-                btn.Name = "btn_aprovar";
-                btn.Text = "✅";
-                btn.UseColumnTextForButtonValue = true;
-                dataGridView1.Columns.Add(btn);
+                btn_aprovar.Visible = true;
             }
         }
         public void Form_estilo()
@@ -85,20 +79,15 @@ namespace DLS_ALFEITE
             txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             dtp_data_limite_rececao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-            this.ActiveControl = label2;
+            btn_aprovar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_aprovar.Width, btn_aprovar.Height, 12, 12));
+            this.ActiveControl = label2; 
         }
         public void update()
         {
             //tamanho das colunas
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.Columns[0].Width = 15;
-            dataGridView1.Columns[1].Width = 55;
-            dataGridView1.Columns[2].Width = 55;
-            dataGridView1.Columns[3].Width = 25;
-            dataGridView1.Columns[4].Width = 60;
-            dataGridView1.Columns[5].Width = 70;
-            dataGridView1.Columns[6].Width = 50;
-            dataGridView1.Columns[7].Width = 70;
+            dataGridView1.AllowUserToResizeColumns = true;
+            dataGridView1.Columns[0].Width = 40;
+            dataGridView1.Columns[3].Width = 50;
         }
         private void textbox_searchbar_Enter(object sender, EventArgs e)
         {
@@ -118,7 +107,7 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon = new SqlConnection(connection))
                     {
                         sqlCon.Open();
-                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao", sqlCon);
+                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção'FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao", sqlCon);
                         DataTable dtbl = new DataTable();
                         adapter.Fill(dtbl);
                         dataGridView1.DataSource = dtbl;
@@ -131,20 +120,7 @@ namespace DLS_ALFEITE
                 }
                 if (check == true)
                 {
-                    //aprovar
-                    DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-                    btn.HeaderText = "";
-                    btn.Name = "btn_aprovar";
-                    btn.Text = "✅";
-                    btn.UseColumnTextForButtonValue = true;
-                    dataGridView1.Columns.Add(btn);
-                    //reprovar
-                    DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
-                    btn1.HeaderText = "";
-                    btn1.Name = "btn_aprovar";
-                    btn1.Text = "❌";
-                    btn1.UseColumnTextForButtonValue = true;
-                    dataGridView1.Columns.Add(btn1);
+                    btn_aprovar.Visible = true;
                 }
             }
         }
@@ -159,7 +135,7 @@ namespace DLS_ALFEITE
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao where denominacao like '" + textbox_searchbar.Text + "%'";
+                    cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao where denominacao like '" + textbox_searchbar.Text + "%'";
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
@@ -173,34 +149,23 @@ namespace DLS_ALFEITE
             }
             if (check == true)
             {
-                //aprovar
-                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-                btn.HeaderText = "";
-                btn.Name = "btn_aprovar";
-                btn.Text = "✅";
-                btn.UseColumnTextForButtonValue = true;
-                dataGridView1.Columns.Add(btn);
-                //reprovar
-                DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
-                btn1.HeaderText = "";
-                btn1.Name = "btn_aprovar";
-                btn1.Text = "❌";
-                btn1.UseColumnTextForButtonValue = true;
-                dataGridView1.Columns.Add(btn1);
+                btn_aprovar.Visible = true;
             }
         }
-        string id = null;
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        public void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string id1 = null;
-            id1 = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);    
+            string id = null;
+            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            id = row.Cells["Id"].Value.ToString();
             SqlConnection sql = new SqlConnection(connection);
             using (sql)
             {
                 SqlCommand cmd = sql.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade',lote,motivo,Medicamentos.observacoes FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao Where id_aquisicao = @id";
-                cmd.Parameters.AddWithValue("@id", id1);
+                cmd.Parameters.AddWithValue("@id", id);
+                pictureBox1.Tag = id;
                 sql.Open();
                 using (cmd)
                 {
@@ -225,13 +190,33 @@ namespace DLS_ALFEITE
                 }
             }
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        public void btn_aprovar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-            id = row.Cells["Id"].Value.ToString();
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_aprovar")
+            if (pictureBox1.Tag == null)
             {
-                id = row.Cells["Id"].Value.ToString();
+                MessageBox.Show("Necessita de selecionar algum registo");
+            }
+            else
+            {
+                SqlConnection sqlCon = new SqlConnection(connection);
+                SqlCommand cmd;
+                using (cmd = new SqlCommand("DELETE FROM Aquisição_medicamentos WHERE id_aquisicao = @id", sqlCon))
+                {
+                    cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
+                    sqlCon.Open();
+                    cmd.ExecuteNonQuery();
+                    sqlCon.Close();
+                }
+                using (sqlCon)
+                {
+                    sqlCon.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Medicamentos inner join Aquisição_medicamentos ON Medicamentos.id = Aquisição_medicamentos.id_aquisicao", sqlCon);
+                    DataTable dtbl = new DataTable();
+                    adapter.Fill(dtbl);
+                    dataGridView1.DataSource = dtbl;
+                    sqlCon.Close();
+                }
             }
         }
     }

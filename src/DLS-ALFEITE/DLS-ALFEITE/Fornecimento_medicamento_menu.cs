@@ -25,10 +25,12 @@ namespace DLS_ALFEITE
              int nHeightEllipse
         );
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
-        public Fornecimento_medicamento_menu()
+        bool check = false;
+        public Fornecimento_medicamento_menu(bool value)
         {
             InitializeComponent();
             Form_estilo();
+            check = value;
             try
             {
                 using (SqlConnection sqlCon = new SqlConnection(connection))
@@ -46,6 +48,10 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
             update();
+            if (check == true)
+            {
+                btn_aprovar.Visible = true;
+            }
         }
         public void Form_estilo()
         {
@@ -73,20 +79,15 @@ namespace DLS_ALFEITE
             txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             dtp_data_fornecimento.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            btn_aprovar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_aprovar.Width, btn_aprovar.Height, 12, 12));
             this.ActiveControl = label2;
         }
         public void update()
         {
             //tamanho das colunas
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.Columns[0].Width = 15;
-            dataGridView1.Columns[1].Width = 55;
-            dataGridView1.Columns[2].Width = 55;
-            dataGridView1.Columns[3].Width = 25;
-            dataGridView1.Columns[4].Width = 60;
-            dataGridView1.Columns[5].Width = 70;
-            dataGridView1.Columns[6].Width = 50;
-            dataGridView1.Columns[7].Width = 70;
+            dataGridView1.AllowUserToResizeColumns = true;
+            dataGridView1.Columns[0].Width = 40;
+            dataGridView1.Columns[3].Width = 50;
         }
 
         private void textbox_searchbar_Enter(object sender, EventArgs e)
@@ -118,6 +119,10 @@ namespace DLS_ALFEITE
                 {
                     MessageBox.Show(ex.Message);
                 }
+                if (check == true)
+                {
+                    btn_aprovar.Visible = true;
+                }
             }
         }
 
@@ -138,6 +143,10 @@ namespace DLS_ALFEITE
                     dataGridView1.DataSource = dtbl;
                 }
                 update();
+                if (check == true)
+                {
+                    btn_aprovar.Visible = true;
+                }
             }
             catch (Exception ex)
             {
@@ -156,6 +165,7 @@ namespace DLS_ALFEITE
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', lote,fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade',fornecimento_medicamentos.observacoes FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento Where id_fornecimento = @id";
                 cmd.Parameters.AddWithValue("@id", id1);
+                pictureBox1.Tag = id1;
                 sql.Open();
                 using (cmd)
                 {
@@ -177,6 +187,35 @@ namespace DLS_ALFEITE
                             }
                         }
                     }
+                }
+            }
+        }
+
+        private void btn_aprovar_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Tag == null)
+            {
+                MessageBox.Show("Necessita de selecionar algum registo");
+            }
+            else
+            {
+                SqlConnection sqlCon = new SqlConnection(connection);
+                SqlCommand cmd;
+                using (cmd = new SqlCommand("DELETE FROM fornecimento_medicamentos WHERE id_fornecimento = @id", sqlCon))
+                {
+                    cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
+                    sqlCon.Open();
+                    cmd.ExecuteNonQuery();
+                    sqlCon.Close();
+                }
+                using (sqlCon)
+                {
+                    sqlCon.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento", sqlCon);
+                    DataTable dtbl = new DataTable();
+                    adapter.Fill(dtbl);
+                    dataGridView1.DataSource = dtbl;
+                    sqlCon.Close();
                 }
             }
         }

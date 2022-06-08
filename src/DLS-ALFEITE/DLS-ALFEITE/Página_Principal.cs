@@ -7,11 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace DLS_ALFEITE
 {
     public partial class panel_mdi : Form
     {
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         Equipamentos frm_equip;
         Medicamentos frm_med;
         Inflamáveis frm_infla;
@@ -285,7 +294,7 @@ namespace DLS_ALFEITE
             {
                 if (frmm_med_menu_form == null)
                 {
-                    frmm_med_menu_form = new Fornecimento_medicamento_menu();
+                    frmm_med_menu_form = new Fornecimento_medicamento_menu(check);
                     frmm_med_menu_form.MdiParent = this;
                     frmm_med_menu_form.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frmm_med_menu_form.Show();
@@ -294,7 +303,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frmm_med_menu_form.Close();
-                    frmm_med_menu_form = new Fornecimento_medicamento_menu();
+                    frmm_med_menu_form = new Fornecimento_medicamento_menu(check);
                     frmm_med_menu_form.MdiParent = this;
                     frmm_med_menu_form.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frmm_med_menu_form.Show();
@@ -314,7 +323,7 @@ namespace DLS_ALFEITE
             {
                 if (frm_equip_menu_form == null)
                 {
-                    frm_equip_menu_form = new Aquisição_equipamento_menu();
+                    frm_equip_menu_form = new Aquisição_equipamento_menu(check);
                     frm_equip_menu_form.MdiParent = this;
                     frm_equip_menu_form.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_equip_menu_form.Show();
@@ -323,7 +332,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frm_equip_menu_form.Close();
-                    frm_equip_menu_form = new Aquisição_equipamento_menu();
+                    frm_equip_menu_form = new Aquisição_equipamento_menu(check);
                     frm_equip_menu_form.MdiParent = this;
                     frm_equip_menu_form.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_equip_menu_form.Show();
@@ -343,7 +352,7 @@ namespace DLS_ALFEITE
             {
                 if (frm_equip_menu == null)
                 {
-                    frm_equip_menu = new Fornecimento_equipamento_menu();
+                    frm_equip_menu = new Fornecimento_equipamento_menu(check);
                     frm_equip_menu.MdiParent = this;
                     frm_equip_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_equip_menu.Show();
@@ -352,7 +361,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frm_equip_menu.Close();
-                    frm_equip_menu = new Fornecimento_equipamento_menu();
+                    frm_equip_menu = new Fornecimento_equipamento_menu(check);
                     frm_equip_menu.MdiParent = this;
                     frm_equip_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_equip_menu.Show();
@@ -451,6 +460,17 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void top_bar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btn_max_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }
