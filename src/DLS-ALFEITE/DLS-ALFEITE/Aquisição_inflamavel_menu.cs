@@ -25,16 +25,18 @@ namespace DLS_ALFEITE
              int nHeightEllipse
         );
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
-        public Aquisição_inflamavel_menu()
+        bool check = false;
+        public Aquisição_inflamavel_menu(bool value)
         {
             InitializeComponent();
             Form_estilo();
+            check = value;
             try
             {
                 using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join Aquisição_inflamavel ON Inflamaveis.id = Aquisição_inflamavel.id_aquisicao", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Inflamaveis join Aquisição_inflamavel ON Inflamaveis.id = Aquisição_inflamavel.id_aquisicao", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -46,6 +48,10 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
             update();
+            if (check == true)
+            {
+                btn_aprovar.Visible = true;
+            }
         }
         public void Form_estilo()
         {
@@ -73,18 +79,14 @@ namespace DLS_ALFEITE
             txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             dtp_data_limite_rececao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            btn_aprovar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_aprovar.Width, btn_aprovar.Height, 12, 12));
         }
         public void update()
         {
             //tamanho das colunas
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.Columns[0].Width = 15;
-            dataGridView1.Columns[1].Width = 30;
-            dataGridView1.Columns[2].Width = 25;
             dataGridView1.Columns[3].Width = 25;
-            dataGridView1.Columns[4].Width = 60;
-            dataGridView1.Columns[5].Width = 40;
-            dataGridView1.Columns[6].Width = 60;
         }
 
         private void textbox_searchbar_TextChanged(object sender, EventArgs e)
@@ -97,13 +99,17 @@ namespace DLS_ALFEITE
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join Aquisição_inflamavel ON Inflamaveis.id = Aquisição_inflamavel.id_aquisicao where denominacao like '" + textbox_searchbar.Text + "%'";
+                    cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Inflamaveis join Aquisição_inflamavel ON Inflamaveis.id = Aquisição_inflamavel.id_aquisicao where denominacao like '" + textbox_searchbar.Text + "%'";
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
                 }
                 update();
+                if (check == true)
+                {
+                    btn_aprovar.Visible = true;
+                }
             }
             catch (Exception ex)
             {
@@ -129,7 +135,7 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon = new SqlConnection(connection))
                     {
                         sqlCon.Open();
-                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join Aquisição_inflamavel ON Inflamaveis.id = Aquisição_inflamavel.id_aquisicao", sqlCon);
+                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Inflamaveis join Aquisição_inflamavel ON Inflamaveis.id = Aquisição_inflamavel.id_aquisicao", sqlCon);
                         DataTable dtbl = new DataTable();
                         adapter.Fill(dtbl);
                         dataGridView1.DataSource = dtbl;
@@ -139,6 +145,10 @@ namespace DLS_ALFEITE
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                }
+                if (check == true)
+                {
+                    btn_aprovar.Visible = true;
                 }
             }
         }
@@ -154,6 +164,7 @@ namespace DLS_ALFEITE
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',numero_serie,lote,quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade', motivo FROM Inflamaveis join Aquisição_inflamavel ON Inflamaveis.id = Aquisição_inflamavel.id_aquisicao Where id_aquisicao = @id";
                 cmd.Parameters.AddWithValue("@id", id1);
+                pictureBox1.Tag = id1;
                 sql.Open();
                 using (cmd)
                 {
@@ -175,6 +186,35 @@ namespace DLS_ALFEITE
                             }
                         }
                     }
+                }
+            }
+        }
+
+        private void btn_aprovar_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Tag == null)
+            {
+                MessageBox.Show("Necessita de selecionar algum registo");
+            }
+            else
+            {
+                SqlConnection sqlCon = new SqlConnection(connection);
+                SqlCommand cmd;
+                using (cmd = new SqlCommand("DELETE FROM Aquisição_inflamavel WHERE id_aquisicao = @id", sqlCon))
+                {
+                    cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
+                    sqlCon.Open();
+                    cmd.ExecuteNonQuery();
+                    sqlCon.Close();
+                }
+                using (sqlCon)
+                {
+                    sqlCon.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Inflamaveis join Aquisição_inflamavel ON Inflamaveis.id = Aquisição_inflamavel.id_aquisicao", sqlCon);
+                    DataTable dtbl = new DataTable();
+                    adapter.Fill(dtbl);
+                    dataGridView1.DataSource = dtbl;
+                    sqlCon.Close();
                 }
             }
         }

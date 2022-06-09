@@ -48,6 +48,9 @@ namespace DLS_ALFEITE
             btn_guardar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_guardar.Width, btn_guardar.Height, 30, 30));
             this.ActiveControl = panel2;
             txb_password.PasswordChar = '●';
+            //validacao_dos_campo
+            txb_numero_telemovel.MaxLength = 9;
+            cb_genero.MaxLength = 1;
         }
 
         public void carregar_dados()

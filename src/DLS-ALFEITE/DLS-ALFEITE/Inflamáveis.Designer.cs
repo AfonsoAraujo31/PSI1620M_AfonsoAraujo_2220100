@@ -45,12 +45,28 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.listBox6 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.listBox7 = new System.Windows.Forms.ListBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.listBox8 = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // textbox_searchbar
@@ -77,7 +93,7 @@
             this.btn_adicionar_inflamavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_adicionar_inflamavel.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.btn_adicionar_inflamavel.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_adicionar_inflamavel.Location = new System.Drawing.Point(1608, 14);
+            this.btn_adicionar_inflamavel.Location = new System.Drawing.Point(1615, 12);
             this.btn_adicionar_inflamavel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_adicionar_inflamavel.Name = "btn_adicionar_inflamavel";
             this.btn_adicionar_inflamavel.Size = new System.Drawing.Size(279, 35);
@@ -111,14 +127,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(219, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(219, 55);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1668, 777);
+            this.dataGridView1.Size = new System.Drawing.Size(1675, 780);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -128,7 +144,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(754, 854);
+            this.panel1.Location = new System.Drawing.Point(1907, 2334);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(608, 153);
             this.panel1.TabIndex = 7;
@@ -155,9 +171,9 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 18;
             this.listBox2.Location = new System.Drawing.Point(109, 32);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(132, 54);
+            this.listBox2.Size = new System.Drawing.Size(132, 36);
             this.listBox2.TabIndex = 25;
             // 
             // listBox3
@@ -169,9 +185,9 @@
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 18;
             this.listBox3.Location = new System.Drawing.Point(6, 32);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(132, 54);
+            this.listBox3.Size = new System.Drawing.Size(132, 36);
             this.listBox3.TabIndex = 24;
             // 
             // pictureBox2
@@ -217,9 +233,9 @@
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 18;
             this.listBox4.Location = new System.Drawing.Point(110, 32);
-            this.listBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(132, 54);
+            this.listBox4.Size = new System.Drawing.Size(132, 36);
             this.listBox4.TabIndex = 23;
             // 
             // listBox1
@@ -231,9 +247,9 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 18;
             this.listBox1.Location = new System.Drawing.Point(7, 32);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(132, 54);
+            this.listBox1.Size = new System.Drawing.Size(132, 36);
             this.listBox1.TabIndex = 22;
             // 
             // pictureBox3
@@ -257,12 +273,150 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Próximos inflamáveis a expirar:";
             // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Location = new System.Drawing.Point(754, 841);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(607, 153);
+            this.panel4.TabIndex = 8;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.listBox5);
+            this.panel5.Controls.Add(this.listBox6);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel5.Location = new System.Drawing.Point(306, 15);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(291, 124);
+            this.panel5.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(246, 83);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // listBox5
+            // 
+            this.listBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.listBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox5.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.listBox5.ForeColor = System.Drawing.Color.Transparent;
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.ItemHeight = 18;
+            this.listBox5.Location = new System.Drawing.Point(112, 32);
+            this.listBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(132, 54);
+            this.listBox5.TabIndex = 15;
+            // 
+            // listBox6
+            // 
+            this.listBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.listBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox6.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.listBox6.ForeColor = System.Drawing.Color.Transparent;
+            this.listBox6.FormattingEnabled = true;
+            this.listBox6.ItemHeight = 18;
+            this.listBox6.Location = new System.Drawing.Point(9, 32);
+            this.listBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox6.Name = "listBox6";
+            this.listBox6.Size = new System.Drawing.Size(132, 54);
+            this.listBox6.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(2, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(246, 21);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Inflamáveis com pouco stock:";
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel6.Controls.Add(this.listBox7);
+            this.panel6.Controls.Add(this.pictureBox4);
+            this.panel6.Controls.Add(this.listBox8);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel6.Location = new System.Drawing.Point(9, 15);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(291, 124);
+            this.panel6.TabIndex = 0;
+            // 
+            // listBox7
+            // 
+            this.listBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.listBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox7.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.listBox7.ForeColor = System.Drawing.Color.Transparent;
+            this.listBox7.FormattingEnabled = true;
+            this.listBox7.ItemHeight = 18;
+            this.listBox7.Location = new System.Drawing.Point(110, 32);
+            this.listBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox7.Name = "listBox7";
+            this.listBox7.Size = new System.Drawing.Size(132, 54);
+            this.listBox7.TabIndex = 17;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(245, 83);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 8;
+            this.pictureBox4.TabStop = false;
+            // 
+            // listBox8
+            // 
+            this.listBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.listBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox8.Font = new System.Drawing.Font("Berlin Sans FB", 12.25F);
+            this.listBox8.ForeColor = System.Drawing.Color.Transparent;
+            this.listBox8.FormattingEnabled = true;
+            this.listBox8.ItemHeight = 18;
+            this.listBox8.Location = new System.Drawing.Point(7, 32);
+            this.listBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox8.Name = "listBox8";
+            this.listBox8.Size = new System.Drawing.Size(132, 54);
+            this.listBox8.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(3, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(260, 21);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Próximos inflamáveis a expirar:";
+            // 
             // Inflamáveis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1894, 1011);
+            this.ClientSize = new System.Drawing.Size(1905, 994);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_adicionar_inflamavel);
             this.Controls.Add(this.textbox_searchbar);
@@ -279,6 +433,13 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,5 +461,16 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.ListBox listBox6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.ListBox listBox7;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox listBox8;
     }
 }

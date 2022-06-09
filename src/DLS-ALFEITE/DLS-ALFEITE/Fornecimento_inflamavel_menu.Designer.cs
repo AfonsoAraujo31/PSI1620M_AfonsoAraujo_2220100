@@ -54,6 +54,7 @@ namespace DLS_ALFEITE
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
+            this.btn_aprovar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -62,6 +63,7 @@ namespace DLS_ALFEITE
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.btn_aprovar);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.txb_observacoes);
             this.panel1.Controls.Add(this.dtp_data_fornecimento);
@@ -342,6 +344,23 @@ namespace DLS_ALFEITE
             this.textbox_searchbar.Enter += new System.EventHandler(this.textbox_searchbar_Enter);
             this.textbox_searchbar.Leave += new System.EventHandler(this.textbox_searchbar_Leave);
             // 
+            // btn_aprovar
+            // 
+            this.btn_aprovar.BackColor = System.Drawing.Color.RosyBrown;
+            this.btn_aprovar.FlatAppearance.BorderSize = 0;
+            this.btn_aprovar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aprovar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.btn_aprovar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_aprovar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_aprovar.Location = new System.Drawing.Point(285, 772);
+            this.btn_aprovar.Name = "btn_aprovar";
+            this.btn_aprovar.Size = new System.Drawing.Size(120, 47);
+            this.btn_aprovar.TabIndex = 98;
+            this.btn_aprovar.Text = "Aprovar";
+            this.btn_aprovar.UseVisualStyleBackColor = false;
+            this.btn_aprovar.Visible = false;
+            this.btn_aprovar.Click += new System.EventHandler(this.btn_aprovar_Click);
+            // 
             // Fornecimento_inflamavel_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,5 +406,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textbox_searchbar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_aprovar;
     }
 }

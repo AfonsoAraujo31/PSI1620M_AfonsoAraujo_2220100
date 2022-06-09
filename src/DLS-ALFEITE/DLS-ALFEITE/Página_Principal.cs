@@ -21,6 +21,7 @@ namespace DLS_ALFEITE
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+        Registo frm_registo;
         Equipamentos frm_equip;
         Medicamentos frm_med;
         Inflamáveis frm_infla;
@@ -40,6 +41,14 @@ namespace DLS_ALFEITE
             label_username.Text = value;
             DateTime today = DateTime.Today;
             label_data.Text = today.ToString("dd/MM/yyyy");
+            if (check == true)
+            {
+                btn_registo.Visible = true;
+            }
+            else
+            {
+                btn_registo.Visible = false;
+            }
         }
         private void Form_estilo()
         {
@@ -72,6 +81,7 @@ namespace DLS_ALFEITE
             btn_definicoes.BackColor = Color.Transparent;
             btn_aquisicao_inflamaveis.BackColor = Color.Transparent;
             btn_fornecimento_inflamaveis.BackColor = Color.Transparent;
+            btn_registo.BackColor = Color.Transparent;
             btn.BackColor = Color.RosyBrown;
         }
         private void btnclose_Click(object sender, EventArgs e)
@@ -186,6 +196,7 @@ namespace DLS_ALFEITE
 
         private void btn_inflamavel_Click(object sender, EventArgs e)
         {
+            Barra_timer.Start();
             btn_cor(btn_inflamavel);
             try
             {
@@ -211,26 +222,8 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show(ex.Message);
             }
-            if (btn_aquisicao_inflamaveis.Visible == true || btn_fornecimento_inflamaveis.Visible == true)
-            {
-                btn_aquisicao_inflamaveis.Visible = false;
-                btn_fornecimento_inflamaveis.Visible = false;
-            }
-            else if (btn_aquisicao_inflamaveis.Visible == false || btn_fornecimento_inflamaveis.Visible == true)
-            {
-                btn_aquisicao_inflamaveis.Visible = true;
-                btn_fornecimento_inflamaveis.Visible = true;
-            }
-            if (btn_aquisicao_equipamentos.Visible == true || btn_fornecimento_equipamentos.Visible == true)
-            {
-                btn_aquisicao_equipamentos.Visible = false;
-                btn_fornecimento_equipamentos.Visible = false;
-            }
-            if (btn_aquisicao_medicamentos.Visible == true || btn_fornecimento_medicamento.Visible == true)
-            {
-                btn_aquisicao_medicamentos.Visible = false;
-                btn_fornecimento_medicamento.Visible = false;
-            }
+
+            
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
@@ -411,7 +404,7 @@ namespace DLS_ALFEITE
             {
                 if (frm_infla_menu == null)
                 {
-                    frm_infla_menu = new Aquisição_inflamavel_menu();
+                    frm_infla_menu = new Aquisição_inflamavel_menu(check);
                     frm_infla_menu.MdiParent = this;
                     frm_infla_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_infla_menu.Show();
@@ -420,7 +413,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frm_infla_menu.Close();
-                    frm_infla_menu = new Aquisição_inflamavel_menu();
+                    frm_infla_menu = new Aquisição_inflamavel_menu(check);
                     frm_infla_menu.MdiParent = this;
                     frm_infla_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_infla_menu.Show();
@@ -440,7 +433,7 @@ namespace DLS_ALFEITE
             {
                 if (frm_infla_forn_menu == null)
                 {
-                    frm_infla_forn_menu = new Fornecimento_inflamavel_menu();
+                    frm_infla_forn_menu = new Fornecimento_inflamavel_menu(check);
                     frm_infla_forn_menu.MdiParent = this;
                     frm_infla_forn_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_infla_forn_menu.Show();
@@ -449,7 +442,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frm_infla_forn_menu.Close();
-                    frm_infla_forn_menu = new Fornecimento_inflamavel_menu();
+                    frm_infla_forn_menu = new Fornecimento_inflamavel_menu(check);
                     frm_infla_forn_menu.MdiParent = this;
                     frm_infla_forn_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_infla_forn_menu.Show();
@@ -471,6 +464,58 @@ namespace DLS_ALFEITE
         private void btn_max_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btn_registo_Click(object sender, EventArgs e)
+        {
+            btn_cor(btn_registo);
+            try
+            {
+                if (frm_registo == null)
+                {
+                    frm_registo = new Registo();
+                    frm_registo.MdiParent = this;
+                    frm_registo.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_registo.Show();
+                    frm_registo.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    frm_registo.Close();
+                    frm_registo = new Registo();
+                    frm_registo.MdiParent = this;
+                    frm_registo.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_registo.Show();
+                    frm_registo.Dock = DockStyle.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            btn_show();
+        }
+        bool timer;
+        private void Barra_timer_Tick(object sender, EventArgs e)
+        {
+            if (timer)
+            {
+                panel1.Height += 10; 
+                if(panel1.Height == panel1.MaximumSize.Height)
+                {
+                    timer = false;
+                    Barra_timer.Stop();
+                }
+            }
+            else
+            {
+                panel1.Height -= 10;
+                if (panel1.Height == panel1.MinimumSize.Height)
+                {
+                    timer = true;
+                    Barra_timer.Stop();
+                }
+            }
         }
     }
 }

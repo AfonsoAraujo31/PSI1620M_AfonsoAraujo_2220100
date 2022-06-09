@@ -25,10 +25,12 @@ namespace DLS_ALFEITE
              int nHeightEllipse
         );
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
-        public Fornecimento_inflamavel_menu()
+        bool check = false;
+        public Fornecimento_inflamavel_menu(bool value)
         {
             InitializeComponent();
             Form_estilo();
+            check = value;
             try
             {
                 using (SqlConnection sqlCon = new SqlConnection(connection))
@@ -46,6 +48,10 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
             update();
+            if (check == true)
+            {
+                btn_aprovar.Visible = true;
+            }
         }
         public void Form_estilo()
         {
@@ -73,6 +79,7 @@ namespace DLS_ALFEITE
             txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             dtp_data_fornecimento.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
+            btn_aprovar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_aprovar.Width, btn_aprovar.Height, 12, 12));
         }
         public void update()
         {
@@ -105,6 +112,10 @@ namespace DLS_ALFEITE
                     dataGridView1.DataSource = dtbl;
                 }
                 update();
+                if (check == true)
+                {
+                    btn_aprovar.Visible = true;
+                }
             }
             catch (Exception ex)
             {
@@ -141,6 +152,10 @@ namespace DLS_ALFEITE
                 {
                     MessageBox.Show(ex.Message);
                 }
+                if (check == true)
+                {
+                    btn_aprovar.Visible = true;
+                }
             }
         }
 
@@ -155,6 +170,7 @@ namespace DLS_ALFEITE
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,lote,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade',fornecimento_inflamavel.observacoes FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento Where id_fornecimento = @id";
                 cmd.Parameters.AddWithValue("@id", id1);
+                pictureBox1.Tag = id1;
                 sql.Open();
                 using (cmd)
                 {
@@ -176,6 +192,35 @@ namespace DLS_ALFEITE
                             }
                         }
                     }
+                }
+            }
+        }
+
+        private void btn_aprovar_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Tag == null)
+            {
+                MessageBox.Show("Necessita de selecionar algum registo");
+            }
+            else
+            {
+                SqlConnection sqlCon = new SqlConnection(connection);
+                SqlCommand cmd;
+                using (cmd = new SqlCommand("DELETE FROM fornecimento_inflamavel WHERE id_fornecimento = @id", sqlCon))
+                {
+                    cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
+                    sqlCon.Open();
+                    cmd.ExecuteNonQuery();
+                    sqlCon.Close();
+                }
+                using (sqlCon)
+                {
+                    sqlCon.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Número de série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento", sqlCon);
+                    DataTable dtbl = new DataTable();
+                    adapter.Fill(dtbl);
+                    dataGridView1.DataSource = dtbl;
+                    sqlCon.Close();
                 }
             }
         }

@@ -69,8 +69,8 @@ namespace DLS_ALFEITE
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.AllowUserToResizeRows = false;
             //inputs_redondos
-            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 30, 30));
-            panel3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel3.Width, panel3.Height, 30, 30));
+            panel6.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel6.Width, panel6.Height, 30, 30));
+            panel5.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel5.Width, panel5.Height, 30, 30));
             btn_adicionar_inflamavel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_adicionar_inflamavel.Width, btn_adicionar_inflamavel.Height, 25, 30));
         }
         private void textbox_searchbar_Enter(object sender, EventArgs e)
@@ -179,7 +179,7 @@ namespace DLS_ALFEITE
         private void listbox()
         {
             //listbox1
-            string Query = "SELECT TOP 3 denominacao, validade FROM Inflamaveis ORDER BY validade ASC";
+            string Query = "SELECT TOP 3 denominacao, validade FROM Inflamaveis ORDER BY validade DESC";
             SqlConnection sqlCon = new SqlConnection(connection);
             SqlCommand cmd = new SqlCommand(Query, sqlCon);
             SqlDataReader myReader;
@@ -190,8 +190,8 @@ namespace DLS_ALFEITE
                 {
                     while (myReader.Read())
                     {
-                        listBox1.Items.Add(myReader["denominacao"].ToString());
-                        listBox4.Items.Add(string.Format("➡️ {0}", myReader["validade"].ToString()));
+                        listBox8.Items.Add(myReader["denominacao"].ToString());
+                        listBox7.Items.Add(string.Format("➡️ {0}", myReader["validade"].ToString()));
                     }
                 }
             }
@@ -212,8 +212,8 @@ namespace DLS_ALFEITE
                 {
                     while (myReader2.Read())
                     {
-                        listBox3.Items.Add(myReader2["denominacao"].ToString());
-                        listBox2.Items.Add(string.Format("➡️ {0}", myReader2["quantidade"].ToString()));
+                        listBox6.Items.Add(myReader2["denominacao"].ToString());
+                        listBox5.Items.Add(string.Format("➡️ {0}", myReader2["quantidade"].ToString()));
                     }
                 }
             }
