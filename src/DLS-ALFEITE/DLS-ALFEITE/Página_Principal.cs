@@ -138,7 +138,6 @@ namespace DLS_ALFEITE
                 btn_aquisicao_equipamentos.Visible = false;
                 btn_fornecimento_equipamentos.Visible = false;
             }
-
         }
         void frm_medFormClosed(object sender, FormClosedEventArgs e)
         {
@@ -196,7 +195,7 @@ namespace DLS_ALFEITE
 
         private void btn_inflamavel_Click(object sender, EventArgs e)
         {
-            Barra_timer.Start();
+            
             btn_cor(btn_inflamavel);
             try
             {
@@ -222,8 +221,31 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show(ex.Message);
             }
-
-            
+            if (btn_aquisicao_inflamaveis.Visible == true || btn_fornecimento_inflamaveis.Visible == true)
+            {
+                btn_aquisicao_inflamaveis.Visible = false;
+                btn_fornecimento_inflamaveis.Visible = false;
+            }
+            if (btn_aquisicao_medicamentos.Visible == true || btn_fornecimento_medicamento.Visible == true)
+            {
+                btn_aquisicao_medicamentos.Visible = false;
+                btn_fornecimento_medicamento.Visible = false;
+            }
+            else if (btn_aquisicao_medicamentos.Visible == false)
+            {
+                btn_aquisicao_medicamentos.Visible = false;
+                btn_fornecimento_medicamento.Visible = false;
+            }
+            if (btn_aquisicao_equipamentos.Visible == true || btn_fornecimento_equipamentos.Visible == true)
+            {
+                btn_aquisicao_equipamentos.Visible = false;
+                btn_fornecimento_equipamentos.Visible = false;
+            }
+            if (btn_aquisicao_inflamaveis.Visible == false || btn_fornecimento_inflamaveis.Visible == true)
+            {
+                btn_aquisicao_inflamaveis.Visible = true;
+                btn_fornecimento_inflamaveis.Visible = true;
+            }
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
@@ -494,28 +516,6 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
             btn_show();
-        }
-        bool timer;
-        private void Barra_timer_Tick(object sender, EventArgs e)
-        {
-            if (timer)
-            {
-                panel1.Height += 10; 
-                if(panel1.Height == panel1.MaximumSize.Height)
-                {
-                    timer = false;
-                    Barra_timer.Stop();
-                }
-            }
-            else
-            {
-                panel1.Height -= 10;
-                if (panel1.Height == panel1.MinimumSize.Height)
-                {
-                    timer = true;
-                    Barra_timer.Stop();
-                }
-            }
         }
     }
 }

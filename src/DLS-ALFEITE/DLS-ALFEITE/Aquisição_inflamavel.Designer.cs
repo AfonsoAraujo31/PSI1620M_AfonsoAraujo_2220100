@@ -199,6 +199,7 @@
             // 
             // txb_lote
             // 
+            this.txb_lote.Enabled = false;
             this.txb_lote.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_lote.Location = new System.Drawing.Point(542, 128);
             this.txb_lote.Margin = new System.Windows.Forms.Padding(2);
@@ -220,6 +221,7 @@
             // 
             // txb_numero_serie
             // 
+            this.txb_numero_serie.Enabled = false;
             this.txb_numero_serie.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_numero_serie.Location = new System.Drawing.Point(304, 125);
             this.txb_numero_serie.Margin = new System.Windows.Forms.Padding(2);
@@ -229,6 +231,7 @@
             // 
             // txb_denominacao
             // 
+            this.txb_denominacao.Enabled = false;
             this.txb_denominacao.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_denominacao.Location = new System.Drawing.Point(52, 125);
             this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2);

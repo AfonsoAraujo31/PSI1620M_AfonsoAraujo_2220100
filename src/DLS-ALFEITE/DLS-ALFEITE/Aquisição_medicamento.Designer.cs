@@ -199,6 +199,7 @@
             // 
             // txb_lote
             // 
+            this.txb_lote.Enabled = false;
             this.txb_lote.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_lote.Location = new System.Drawing.Point(541, 124);
             this.txb_lote.Margin = new System.Windows.Forms.Padding(2);
@@ -220,6 +221,7 @@
             // 
             // txb_principio_ativo
             // 
+            this.txb_principio_ativo.Enabled = false;
             this.txb_principio_ativo.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_principio_ativo.Location = new System.Drawing.Point(303, 122);
             this.txb_principio_ativo.Margin = new System.Windows.Forms.Padding(2);
@@ -229,6 +231,7 @@
             // 
             // txb_denominacao
             // 
+            this.txb_denominacao.Enabled = false;
             this.txb_denominacao.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_denominacao.Location = new System.Drawing.Point(51, 122);
             this.txb_denominacao.Margin = new System.Windows.Forms.Padding(2);
@@ -275,6 +278,7 @@
             // dtp_data_rececao
             // 
             this.dtp_data_rececao.CustomFormat = "dd/MM/yyyy";
+            this.dtp_data_rececao.Enabled = false;
             this.dtp_data_rececao.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.dtp_data_rececao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_data_rececao.ImeMode = System.Windows.Forms.ImeMode.NoControl;

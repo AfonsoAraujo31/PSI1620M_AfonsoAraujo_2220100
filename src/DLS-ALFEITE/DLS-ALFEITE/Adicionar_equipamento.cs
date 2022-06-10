@@ -49,6 +49,7 @@ namespace DLS_ALFEITE
             //validacao_dos_campos
             txb_numero_serie.MaxLength = 9;
             txb_lote.MaxLength = 5;
+            txb_setor.MaxLength = 1;
         }
         private void btnclose_Click(object sender, EventArgs e)
         {

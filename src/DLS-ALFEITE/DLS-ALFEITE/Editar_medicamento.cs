@@ -61,6 +61,7 @@ namespace DLS_ALFEITE
             //validacao_dos_campos
             dtp_validade.MinDate = DateTime.Today;
             txb_lote.MaxLength = 5;
+            txb_setor.MaxLength = 1;
         }
         private void btnclose_Click(object sender, EventArgs e)
         {

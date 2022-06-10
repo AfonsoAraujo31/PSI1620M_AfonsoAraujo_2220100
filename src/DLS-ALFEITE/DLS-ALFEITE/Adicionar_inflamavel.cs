@@ -52,6 +52,7 @@ namespace DLS_ALFEITE
             dtp_validade.MinDate = DateTime.Today;
             txb_lote.MaxLength = 5;
             txb_numero_serie.MaxLength = 9;
+            txb_setor.MaxLength = 1;
         }
         private void btnclose_Click(object sender, EventArgs e)
         {

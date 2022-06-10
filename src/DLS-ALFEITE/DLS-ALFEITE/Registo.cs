@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace DLS_ALFEITE
 {
@@ -48,55 +49,117 @@ namespace DLS_ALFEITE
             txb_numero_telemovel.MaxLength = 9;
             cb_genero.MaxLength = 1;
         }
-
-        private void btn_guardar_Click(object sender, EventArgs e)
+        bool ver = false;
+        public void btn_guardar_Click(object sender, EventArgs e)
         {
+            Verificacao();
             int identifica = 0;
-            try
+            if (ver == false)
             {
-                SqlConnection sqlCon = new SqlConnection(connection);
-                SqlCommand cmd1 = sqlCon.CreateCommand();
-                sqlCon.Open();
-                cmd1.CommandText = $"Select count(id_utilizador) from login_utilizadores";
-                using (cmd1)
+                ver = true;
+            }
+            else
+            {
+                try
                 {
-                    using (var rdr1 = cmd1.ExecuteReader())
+                    SqlConnection sqlCon = new SqlConnection(connection);
+                    SqlCommand cmd1 = sqlCon.CreateCommand();
+                    sqlCon.Open();
+                    cmd1.CommandText = $"Select count(id_utilizador) from login_utilizadores";
+                    using (cmd1)
                     {
-                        if (rdr1.HasRows == true)
+                        using (var rdr1 = cmd1.ExecuteReader())
                         {
-                            while (rdr1.Read())
+                            if (rdr1.HasRows == true)
                             {
-                                identifica = rdr1.GetInt32(0);
+                                while (rdr1.Read())
+                                {
+                                    identifica = rdr1.GetInt32(0);
 
+                                }
                             }
                         }
                     }
-                }
-                sqlCon.Close();
-                identifica = identifica + 1;
-                string query = "Insert into login_utilizadores(id_utilizador,username,nome,password,genero,email,num_tel,codigo_unico) VALUES('"+ identifica + "','" + this.txb_username.Text + "','" + this.txb_nome.Text + "','" + this.txb_password.Text + "','" + this.cb_genero.Text + "','" + this.txb_email.Text + "','" + this.txb_numero_telemovel.Text + "','" + this.txb_codigo_unico.Text + "')";
-               
-                SqlCommand cmd = new SqlCommand(query, sqlCon);
-                SqlDataReader myreader;
-                sqlCon.Open();
-                myreader = cmd.ExecuteReader();
-                MessageBox.Show("Saved");
-                while (myreader.Read())
-                {
+                    sqlCon.Close();
+                    identifica = identifica + 1;
+                    string query = "Insert into login_utilizadores(id_utilizador,username,nome,password,genero,email,num_tel,codigo_unico) VALUES('" + identifica + "','" + this.txb_username.Text + "','" + this.txb_nome.Text + "','" + this.txb_password.Text + "','" + this.cb_genero.Text + "','" + this.txb_email.Text + "','" + this.txb_numero_telemovel.Text + "','" + this.txb_codigo_unico.Text + "')";
 
+                    SqlCommand cmd = new SqlCommand(query, sqlCon);
+                    SqlDataReader myreader;
+                    sqlCon.Open();
+                    myreader = cmd.ExecuteReader();
+                    MessageBox.Show("Saved");
+                    while (myreader.Read())
+                    {
+
+                    }
+                    sqlCon.Close();
+                    txb_username.Text = "";
+                    cb_genero.Text = "";
+                    txb_email.Text = "";
+                    txb_nome.Text = "";
+                    txb_numero_telemovel.Text = "";
+                    txb_password.Text = "";
+                    txb_codigo_unico.Text = "";
                 }
-                sqlCon.Close();
-                txb_username.Text = "";
-                cb_genero.Text = "";
-                txb_email.Text = "";
-                txb_nome.Text = "";
-                txb_numero_telemovel.Text = "";
-                txb_password.Text = "";
-                txb_codigo_unico.Text = "";
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+        }
+
+        public void Verificacao()
+        {
+            if (txb_username.Text == "")
             {
-                MessageBox.Show(ex.Message);
+                ver = false;
+                MessageBox.Show("Campo Username incorreto!");
+            }
+            if (cb_genero.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Género incorreto!");
+            }
+            if (txb_email.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Email incorreto!");
+            }
+            if (txb_numero_telemovel.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Número de telemóvel incorreto!");
+            }
+            if (txb_nome.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Nome incorreto!");
+            }
+            if (txb_password.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Password incorreto!");
+            }
+            if (txb_codigo_unico.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Código Único incorreto!");
+            }
+            //regular expression
+            string strRegex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            Regex obj = new Regex(strRegex);
+            if (obj.IsMatch(txb_email.Text) == false)
+            {
+                ver = false;
+                MessageBox.Show("Campo Email incorreto");
+            }
+            string strRegex1 = @"^(9[1236]\d) ?(\d{3}) ?(\d{3})";
+            Regex obj1 = new Regex(strRegex1);
+            if (obj1.IsMatch(txb_numero_telemovel.Text) == false)
+            {
+                ver = false;
+                MessageBox.Show("Campo Número de telemóvel incorreto");
             }
         }
     }

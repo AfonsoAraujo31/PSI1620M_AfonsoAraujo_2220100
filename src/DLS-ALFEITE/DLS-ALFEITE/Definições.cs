@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace DLS_ALFEITE
 {
@@ -99,30 +100,38 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
         }
-
+        bool ver = false;
         public void btn_guardar_Click(object sender, EventArgs e)
         {
-            try 
-            { 
-                string query = "UPDATE login_utilizadores SET nome = '" + this.txb_nome.Text + "',password = '" + this.txb_password.Text + "',genero = '" + this.cb_genero.Text + "', email = '" + this.txb_email.Text + "',num_tel = '" + this.txb_numero_telemovel.Text + "' WHERE id_utilizador = @id ";
-                SqlConnection sqlCon = new SqlConnection(connection);
-                SqlCommand cmd = new SqlCommand(query, sqlCon);
-                cmd.Parameters.AddWithValue("@id", id);
-                SqlDataReader myreader;
-                sqlCon.Open();
-                myreader = cmd.ExecuteReader();
-                MessageBox.Show("Saved");
-                while (myreader.Read())
-                {
-
-                }
-                sqlCon.Close();
-                txb_password.PasswordChar = '●';
-                btn_verpassword.BringToFront();
-            }
-            catch (Exception ex)
+            Verificacao();
+            if (ver == false)
             {
-                MessageBox.Show(ex.Message);
+                ver = true;
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE login_utilizadores SET nome = '" + this.txb_nome.Text + "',password = '" + this.txb_password.Text + "',genero = '" + this.cb_genero.Text + "', email = '" + this.txb_email.Text + "',num_tel = '" + this.txb_numero_telemovel.Text + "' WHERE id_utilizador = @id ";
+                    SqlConnection sqlCon = new SqlConnection(connection);
+                    SqlCommand cmd = new SqlCommand(query, sqlCon);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    SqlDataReader myreader;
+                    sqlCon.Open();
+                    myreader = cmd.ExecuteReader();
+                    MessageBox.Show("Saved");
+                    while (myreader.Read())
+                    {
+
+                    }
+                    sqlCon.Close();
+                    txb_password.PasswordChar = '●';
+                    btn_verpassword.BringToFront();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -140,6 +149,55 @@ namespace DLS_ALFEITE
             {
                 btn_verpassword.BringToFront();
                 txb_password.PasswordChar = '●';
+            }
+        }
+
+        public void Verificacao()
+        {
+            if (txb_username.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Username incorreto!");
+            }
+            if (cb_genero.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Género incorreto!");
+            }
+            if (txb_email.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Email incorreto!");
+            }
+            if (txb_numero_telemovel.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Número de telemóvel incorreto!");
+            }
+            if (txb_nome.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Nome incorreto!");
+            }
+            if (txb_password.Text == "")
+            {
+                ver = false;
+                MessageBox.Show("Campo Password incorreto!");
+            }
+            //regular expression
+            string strRegex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            Regex obj = new Regex(strRegex);
+            if (obj.IsMatch(txb_email.Text) == false)
+            {
+                ver = false;
+                MessageBox.Show("Campo Email incorreto");
+            }
+            string strRegex1 = @"^(9[1236]\d) ?(\d{3}) ?(\d{3})";
+            Regex obj1 = new Regex(strRegex1);
+            if (obj1.IsMatch(txb_numero_telemovel.Text) == false)
+            {
+                ver = false;
+                MessageBox.Show("Campo Número de telemóvel incorreto");
             }
         }
     }
