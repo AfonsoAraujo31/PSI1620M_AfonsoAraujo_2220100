@@ -37,7 +37,7 @@ namespace DLS_ALFEITE
                 using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -153,13 +153,9 @@ namespace DLS_ALFEITE
             //tamanho das colunas
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.Columns[0].Width = 25;
-            dataGridView1.Columns[1].Width = 80;
-            dataGridView1.Columns[2].Width = 40;
-            dataGridView1.Columns[3].Width = 40;
-            dataGridView1.Columns[4].Width = 60;
-            dataGridView1.Columns[5].Width = 100;
-            dataGridView1.Columns[6].Width = 150;
-            dataGridView1.Columns[7].Width = 200;
+            dataGridView1.Columns[2].Width = 50;
+            dataGridView1.Columns[3].Width = 50;
+            dataGridView1.Columns[8].Width = 40;
             dataGridView1.Columns[9].Width = 30;
             dataGridView1.Columns[10].Width = 30;
             dataGridView1.Columns[11].Width = 30;
@@ -184,7 +180,7 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon = new SqlConnection(connection))
                     {
                         sqlCon.Open();
-                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon);
+                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon);
                         DataTable dtbl = new DataTable();
                         adapter.Fill(dtbl);
                         //method 1 - direct method
@@ -253,7 +249,7 @@ namespace DLS_ALFEITE
             stock = row.Cells["Stock"].Value.ToString();
             numero_serie = row.Cells["Nº de série"].Value.ToString();
             fabricante = row.Cells["Fabricante"].Value.ToString();
-            contacto_do_fabricante = row.Cells["Contacto do Fabricante"].Value.ToString();
+            contacto_do_fabricante = row.Cells["Contacto"].Value.ToString();
             observacoes = row.Cells["Observações"].Value.ToString();
             setor = row.Cells["Setor"].Value.ToString();
 
@@ -298,7 +294,7 @@ namespace DLS_ALFEITE
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos where denominacao like '" + textbox_searchbar.Text + "%'";
+                    cmd.CommandText = $"SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos where denominacao like '" + textbox_searchbar.Text + "%'";
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
@@ -316,7 +312,7 @@ namespace DLS_ALFEITE
             using (SqlConnection sqlCon = new SqlConnection(connection))
             {
                 sqlCon.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',lote as 'Lote', quantidade as 'Stock',numero_serie as 'Nº de Série', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto',observacoes as 'Observações', setor as 'Setor' FROM Equipamentos", sqlCon);
                 DataTable dtbl = new DataTable();
                 adapter.Fill(dtbl);
                 dataGridView1.DataSource = dtbl;

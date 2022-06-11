@@ -161,19 +161,11 @@ namespace DLS_ALFEITE
             //tamanho das colunas
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.Columns[0].Width = 25;
-            dataGridView1.Columns[1].Width = 100;
-            dataGridView1.Columns[2].Width = 100;
-            dataGridView1.Columns[3].Width = 80;
-            dataGridView1.Columns[4].Width = 50;
-            dataGridView1.Columns[5].Width = 50;
-            dataGridView1.Columns[6].Width = 80;
-            dataGridView1.Columns[7].Width = 130;
-            dataGridView1.Columns[8].Width = 40;
-            dataGridView1.Columns[9].Width = 160;
             dataGridView1.Columns[10].Width = 30;
             dataGridView1.Columns[11].Width = 30;
             dataGridView1.Columns[12].Width = 30;
             dataGridView1.Columns[13].Width = 30;
+
         }
 
         private void listbox()

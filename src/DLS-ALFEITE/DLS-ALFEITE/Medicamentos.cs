@@ -38,7 +38,7 @@ namespace DLS_ALFEITE
                 using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -92,7 +92,7 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon = new SqlConnection(connection))
                     {
                         sqlCon.Open();
-                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos", sqlCon);
+                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos", sqlCon);
                         DataTable dtbl = new DataTable();
                         adapter.Fill(dtbl);
                         dataGridView1.DataSource = dtbl;
@@ -137,15 +137,7 @@ namespace DLS_ALFEITE
             //tamanho das colunas
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.Columns[0].Width = 25;
-            dataGridView1.Columns[1].Width = 100;
-            dataGridView1.Columns[2].Width = 100;
-            dataGridView1.Columns[3].Width = 80;
-            dataGridView1.Columns[4].Width = 50;
-            dataGridView1.Columns[5].Width = 50;
-            dataGridView1.Columns[6].Width = 80;
-            dataGridView1.Columns[7].Width = 130;
             dataGridView1.Columns[8].Width = 40;
-            dataGridView1.Columns[9].Width = 160;
             dataGridView1.Columns[10].Width = 30;
             dataGridView1.Columns[11].Width = 30;
             dataGridView1.Columns[12].Width = 30;
@@ -173,7 +165,7 @@ namespace DLS_ALFEITE
             lote = row.Cells["Lote"].Value.ToString();
             stock = row.Cells["stock"].Value.ToString();
             fabricante = row.Cells["Fabricante"].Value.ToString();
-            contacto_do_fabricante = row.Cells["Contacto do Fabricante"].Value.ToString();
+            contacto_do_fabricante = row.Cells["Contacto"].Value.ToString();
             observacoes = row.Cells["Observações"].Value.ToString();
             setor = row.Cells["Setor"].Value.ToString();
 
@@ -253,7 +245,7 @@ namespace DLS_ALFEITE
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text + "%'";
+                    cmd.CommandText = $"SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos where denominacao like '" + textbox_searchbar.Text + "%'";
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
@@ -319,7 +311,7 @@ namespace DLS_ALFEITE
             using (SqlConnection sqlCon1 = new SqlConnection(connection))
             {
                 sqlCon1.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos", sqlCon1);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',validade as 'Validade', lote as 'Lote',quantidade as 'Stock', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', setor as 'Setor', observacoes as 'Observações' FROM Medicamentos", sqlCon1);
                 DataTable dtbl = new DataTable();
                 adapter.Fill(dtbl);
                 dataGridView1.DataSource = dtbl;
