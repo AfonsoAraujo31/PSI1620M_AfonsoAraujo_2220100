@@ -46,6 +46,8 @@ namespace DLS_ALFEITE
             txb_fabricante.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 12, 12));
             txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_quantidade.Width, txb_quantidade.Height, 12, 12));
             txb_setor.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_setor.Width, txb_setor.Height, 12, 12));
+            btn_guardar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_cancelar.Width, btn_cancelar.Height, 12, 12));
+            btn_cancelar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_cancelar.Width, btn_cancelar.Height, 12, 12));
             //validacao_dos_campos
             txb_numero_serie.MaxLength = 9;
             txb_lote.MaxLength = 5;
@@ -61,37 +63,6 @@ namespace DLS_ALFEITE
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btn_guardar_Click(object sender, EventArgs e)
-        {
-            Verificacao();
-            if (ver == false)
-            {
-                ver = true;
-            }
-            else
-            {
-                try
-                {
-                    string query = "insert into Equipamentos(denominacao,lote,quantidade,numero_serie,fabricante,email_tel_fabricante,observacoes,setor) VALUES('" + this.txb_denominacao.Text + "','" + this.txb_lote.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_numero_serie.Text + "','" + this.txb_fabricante.Text + "','" + this.txb_contacto_fabricante.Text + "','" + this.txb_observacoes.Text + "','" + this.txb_setor.Text + "')";
-                    SqlConnection sqlCon = new SqlConnection(connection);
-                    SqlCommand cmd = new SqlCommand(query, sqlCon);
-                    SqlDataReader myreader;
-                    sqlCon.Open();
-                    myreader = cmd.ExecuteReader();
-                    MessageBox.Show("Saved");
-                    while (myreader.Read())
-                    {
-
-                    }
-                    equipamentos.atualiza_tabela();
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
         public void Verificacao()
         {
             if (txb_denominacao.Text == "")
@@ -163,9 +134,43 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
         }
-        private void btn_cancelar_Click(object sender, EventArgs e)
+
+        private void btn_cancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            Verificacao();
+            if (ver == false)
+            {
+                ver = true;
+            }
+            else
+            {
+                try
+                {
+                    string query = "insert into Equipamentos(denominacao,lote,quantidade,numero_serie,fabricante,email_tel_fabricante,observacoes,setor) VALUES('" + this.txb_denominacao.Text + "','" + this.txb_lote.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_numero_serie.Text + "','" + this.txb_fabricante.Text + "','" + this.txb_contacto_fabricante.Text + "','" + this.txb_observacoes.Text + "','" + this.txb_setor.Text + "')";
+                    SqlConnection sqlCon = new SqlConnection(connection);
+                    SqlCommand cmd = new SqlCommand(query, sqlCon);
+                    SqlDataReader myreader;
+                    sqlCon.Open();
+                    myreader = cmd.ExecuteReader();
+                    MessageBox.Show("Saved");
+                    while (myreader.Read())
+                    {
+
+                    }
+                    equipamentos.atualiza_tabela();
+                    equipamentos.listbox();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

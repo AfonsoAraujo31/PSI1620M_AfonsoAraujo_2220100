@@ -47,6 +47,8 @@ namespace DLS_ALFEITE
             txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_quantidade.Width, txb_quantidade.Height, 12, 12));
             txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_entidade.Width, txb_entidade.Height, 12, 12));
             dtp_data_rececao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtp_data_rececao.Width, dtp_data_rececao.Height, 12, 12));
+            btn_guardar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_guardar.Width, btn_guardar.Height, 12, 12));
+            btn_cancelar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_cancelar.Width, btn_cancelar.Height, 12, 12));
             //validacao_dos_campos
             txb_lote.MaxLength = 5;
             dtp_data_rececao.MinDate = DateTime.Today;
@@ -61,37 +63,6 @@ namespace DLS_ALFEITE
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btn_guardar_Click(object sender, EventArgs e)
-        {
-            verificacao();
-            if (ver == false)
-            {
-                ver = true;
-            }
-            else
-            {
-                try
-                {
-                    string query = "insert into Aquisição_medicamentos(id_aquisicao,data_limite_rececao,quantidade_aquisicao,entidade,motivo) VALUES( " + id1 + ", '" + this.dtp_data_rececao.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_motivo.Text + "')";
-                    SqlConnection sqlCon = new SqlConnection(connection);
-                    SqlCommand cmd = new SqlCommand(query, sqlCon);
-                    SqlDataReader myreader;
-                    sqlCon.Open();
-                    myreader = cmd.ExecuteReader();
-                    MessageBox.Show("Saved");
-                    while (myreader.Read())
-                    {
-
-                    }
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    MessageBox.Show("Já existe um registo desse medicamento.");
-                }
-            }
-        }
         public void verificacao()
         {
             if (txb_denominacao.Text == "")
@@ -134,6 +105,38 @@ namespace DLS_ALFEITE
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            verificacao();
+            if (ver == false)
+            {
+                ver = true;
+            }
+            else
+            {
+                try
+                {
+                    string query = "insert into Aquisição_medicamentos(id_aquisicao,data_limite_rececao,quantidade_aquisicao,entidade,motivo) VALUES( " + id1 + ", '" + this.dtp_data_rececao.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_motivo.Text + "')";
+                    SqlConnection sqlCon = new SqlConnection(connection);
+                    SqlCommand cmd = new SqlCommand(query, sqlCon);
+                    SqlDataReader myreader;
+                    sqlCon.Open();
+                    myreader = cmd.ExecuteReader();
+                    MessageBox.Show("Saved");
+                    while (myreader.Read())
+                    {
+
+                    }
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Já existe um registo desse medicamento.");
+                }
+            }
         }
     }
 }

@@ -58,6 +58,8 @@ namespace DLS_ALFEITE
             txb_setor.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_setor.Width, txb_setor.Height, 12, 12));
             txb_fabricante.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 12, 12));
             txb_contacto_fabricante.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 12, 12));
+            btn_guardar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_guardar.Width, btn_guardar.Height, 12, 12));
+            btn_cancelar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_cancelar.Width, btn_cancelar.Height, 12, 12));
             //validacao_dos_campos
             dtp_validade.MinDate = DateTime.Today;
             txb_lote.MaxLength = 5;
@@ -74,38 +76,6 @@ namespace DLS_ALFEITE
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btn_guardar_Click(object sender, EventArgs e)
-        {
-            Verificacao();
-            if (ver == false)
-            {
-                ver = true;
-            }
-            else
-            {
-                try
-                {
-                    string query = "UPDATE Inflamaveis SET denominacao = '" + this.txb_denominacao.Text + "',validade = '" + this.dtp_validade.Text + "', lote = '" + this.txb_lote.Text + "',quantidade = '" + this.txb_quantidade.Text + "',numero_serie = '" + this.txb_numero_serie.Text + "', fabricante = '" + this.txb_fabricante.Text + "',email_tel_fabricante = '" + this.txb_contacto_fabricante.Text + "',setor = '" + this.txb_setor.Text + "' ,observacoes = '" + this.txb_observacoes.Text + "' WHERE id = @id ";
-                    SqlConnection sqlCon = new SqlConnection(connection);
-                    SqlCommand cmd = new SqlCommand(query, sqlCon);
-                    cmd.Parameters.AddWithValue("@id", id1);
-                    SqlDataReader myreader;
-                    sqlCon.Open();
-                    myreader = cmd.ExecuteReader();
-                    MessageBox.Show("Saved");
-                    while (myreader.Read())
-                    {
-
-                    }
-                    inflamáveis.atualiza_tabela();
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
         public void Verificacao()
         {
             if (txb_denominacao.Text == "")
@@ -157,6 +127,41 @@ namespace DLS_ALFEITE
                 MessageBox.Show("Campo Contacto de fabricante incorreto");
             }
         }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            Verificacao();
+            if (ver == false)
+            {
+                ver = true;
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE Inflamaveis SET denominacao = '" + this.txb_denominacao.Text + "',validade = '" + this.dtp_validade.Text + "', lote = '" + this.txb_lote.Text + "',quantidade = '" + this.txb_quantidade.Text + "',numero_serie = '" + this.txb_numero_serie.Text + "', fabricante = '" + this.txb_fabricante.Text + "',email_tel_fabricante = '" + this.txb_contacto_fabricante.Text + "',setor = '" + this.txb_setor.Text + "' ,observacoes = '" + this.txb_observacoes.Text + "' WHERE id = @id ";
+                    SqlConnection sqlCon = new SqlConnection(connection);
+                    SqlCommand cmd = new SqlCommand(query, sqlCon);
+                    cmd.Parameters.AddWithValue("@id", id1);
+                    SqlDataReader myreader;
+                    sqlCon.Open();
+                    myreader = cmd.ExecuteReader();
+                    MessageBox.Show("Saved");
+                    while (myreader.Read())
+                    {
+
+                    }
+                    inflamáveis.atualiza_tabela();
+                    inflamáveis.listbox();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();

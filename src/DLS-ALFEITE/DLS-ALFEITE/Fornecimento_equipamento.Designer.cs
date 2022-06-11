@@ -39,8 +39,6 @@
             this.txb_quantidade = new System.Windows.Forms.TextBox();
             this.txb_numero_serie = new System.Windows.Forms.TextBox();
             this.txb_denominacao = new System.Windows.Forms.TextBox();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_guardar = new System.Windows.Forms.Button();
             this.txb_observacoes = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -51,6 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtp_data_fornecimento = new System.Windows.Forms.DateTimePicker();
             this.dtp_data_prevista_entrega = new System.Windows.Forms.DateTimePicker();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,28 +173,6 @@
             this.txb_denominacao.Size = new System.Drawing.Size(307, 26);
             this.txb_denominacao.TabIndex = 65;
             // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.Location = new System.Drawing.Point(688, 503);
-            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(58, 19);
-            this.btn_cancelar.TabIndex = 64;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
-            // 
-            // btn_guardar
-            // 
-            this.btn_guardar.Location = new System.Drawing.Point(628, 503);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(56, 19);
-            this.btn_guardar.TabIndex = 63;
-            this.btn_guardar.Text = "Guardar";
-            this.btn_guardar.UseVisualStyleBackColor = true;
-            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
-            // 
             // txb_observacoes
             // 
             this.txb_observacoes.Font = new System.Drawing.Font("Arial Narrow", 12F);
@@ -315,12 +293,46 @@
             this.dtp_data_prevista_entrega.TabStop = false;
             this.dtp_data_prevista_entrega.Value = new System.DateTime(2022, 5, 28, 0, 0, 0, 0);
             // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.Font = new System.Drawing.Font("Berlin Sans FB", 9F);
+            this.btn_cancelar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_cancelar.Location = new System.Drawing.Point(670, 496);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(71, 19);
+            this.btn_cancelar.TabIndex = 107;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btn_guardar.FlatAppearance.BorderSize = 0;
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guardar.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_guardar.Location = new System.Drawing.Point(606, 496);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(60, 19);
+            this.btn_guardar.TabIndex = 106;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
+            // 
             // Fornecimento_equipamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(146)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(750, 524);
+            this.Controls.Add(this.btn_cancelar);
+            this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.dtp_data_prevista_entrega);
             this.Controls.Add(this.dtp_data_fornecimento);
             this.Controls.Add(this.txb_entidade);
@@ -329,8 +341,6 @@
             this.Controls.Add(this.txb_quantidade);
             this.Controls.Add(this.txb_numero_serie);
             this.Controls.Add(this.txb_denominacao);
-            this.Controls.Add(this.btn_cancelar);
-            this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txb_observacoes);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -364,8 +374,6 @@
         private System.Windows.Forms.TextBox txb_quantidade;
         private System.Windows.Forms.TextBox txb_numero_serie;
         private System.Windows.Forms.TextBox txb_denominacao;
-        private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.TextBox txb_observacoes;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -376,5 +384,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtp_data_fornecimento;
         private System.Windows.Forms.DateTimePicker dtp_data_prevista_entrega;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_guardar;
     }
 }

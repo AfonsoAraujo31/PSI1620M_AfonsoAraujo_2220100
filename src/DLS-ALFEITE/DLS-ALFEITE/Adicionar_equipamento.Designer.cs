@@ -35,8 +35,6 @@
             this.btnclose = new System.Windows.Forms.Button();
             this.txb_numero_serie = new System.Windows.Forms.TextBox();
             this.txb_denominacao = new System.Windows.Forms.TextBox();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_guardar = new System.Windows.Forms.Button();
             this.txb_observacoes = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txb_contacto_fabricante = new System.Windows.Forms.TextBox();
@@ -51,6 +49,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,28 +130,6 @@
             this.txb_denominacao.Name = "txb_denominacao";
             this.txb_denominacao.Size = new System.Drawing.Size(307, 26);
             this.txb_denominacao.TabIndex = 85;
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.Location = new System.Drawing.Point(688, 503);
-            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(57, 19);
-            this.btn_cancelar.TabIndex = 84;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
-            // 
-            // btn_guardar
-            // 
-            this.btn_guardar.Location = new System.Drawing.Point(628, 503);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(56, 19);
-            this.btn_guardar.TabIndex = 83;
-            this.btn_guardar.Text = "Guardar";
-            this.btn_guardar.UseVisualStyleBackColor = true;
-            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // txb_observacoes
             // 
@@ -304,16 +282,46 @@
             this.label2.TabIndex = 69;
             this.label2.Text = "Denominação:";
             // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.Font = new System.Drawing.Font("Berlin Sans FB", 9F);
+            this.btn_cancelar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_cancelar.Location = new System.Drawing.Point(670, 496);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(71, 19);
+            this.btn_cancelar.TabIndex = 88;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click_1);
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btn_guardar.FlatAppearance.BorderSize = 0;
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guardar.Font = new System.Drawing.Font("Berlin Sans FB", 9F);
+            this.btn_guardar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_guardar.Location = new System.Drawing.Point(594, 496);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(71, 19);
+            this.btn_guardar.TabIndex = 90;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            // 
             // Adicionar_equipamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(146)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(750, 524);
+            this.Controls.Add(this.btn_guardar);
+            this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.txb_numero_serie);
             this.Controls.Add(this.txb_denominacao);
-            this.Controls.Add(this.btn_cancelar);
-            this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txb_observacoes);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txb_contacto_fabricante);
@@ -349,8 +357,6 @@
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.TextBox txb_numero_serie;
         private System.Windows.Forms.TextBox txb_denominacao;
-        private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.TextBox txb_observacoes;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txb_contacto_fabricante;
@@ -365,5 +371,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_guardar;
     }
 }

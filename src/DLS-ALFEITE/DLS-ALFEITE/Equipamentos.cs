@@ -53,6 +53,10 @@ namespace DLS_ALFEITE
         }
         public void listbox()
         {
+            listBox8.Items.Clear();
+            listBox7.Items.Clear();
+            listBox6.Items.Clear();
+            listBox5.Items.Clear();
             //listbox1
             string Query = "SELECT TOP 4 denominacao, quantidade FROM Equipamentos WHERE quantidade <= 20 ORDER BY quantidade ASC";
             SqlConnection sqlCon = new SqlConnection(connection);
@@ -65,8 +69,8 @@ namespace DLS_ALFEITE
                 {
                     while (myReader.Read())
                     {
-                        listBox1.Items.Add(myReader["denominacao"].ToString());
-                        listBox4.Items.Add(string.Format("➡️ {0}", myReader["quantidade"].ToString()));
+                        listBox8.Items.Add(myReader["denominacao"].ToString());
+                        listBox7.Items.Add(string.Format("➡️ {0}", myReader["quantidade"].ToString()));
                     }
                 }
             }
@@ -87,8 +91,8 @@ namespace DLS_ALFEITE
                 {
                     while (myReader1.Read())
                     {
-                        listBox3.Items.Add("Denominação:");
-                        listBox2.Items.Add(string.Format(myReader1["denominacao"].ToString()));
+                        listBox6.Items.Add("Denominação:");
+                        listBox5.Items.Add(string.Format(myReader1["denominacao"].ToString()));
                     }
                 }
             }
@@ -116,8 +120,8 @@ namespace DLS_ALFEITE
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.AllowUserToResizeRows = false;
             //inputs_redondos
-            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 30, 30));
-            panel3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel3.Width, panel3.Height, 30, 30));
+            panel6.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel6.Width, panel6.Height, 30, 30));
+            panel5.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel5.Width, panel5   .Height, 30, 30));
             btn_adicionar_medicamentos.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_adicionar_medicamentos.Width, btn_adicionar_medicamentos.Height, 25, 30));
         }
         public void update()
@@ -153,9 +157,6 @@ namespace DLS_ALFEITE
             //tamanho das colunas
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.Columns[0].Width = 25;
-            dataGridView1.Columns[2].Width = 50;
-            dataGridView1.Columns[3].Width = 50;
-            dataGridView1.Columns[8].Width = 40;
             dataGridView1.Columns[9].Width = 30;
             dataGridView1.Columns[10].Width = 30;
             dataGridView1.Columns[11].Width = 30;
@@ -229,6 +230,7 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show(ex.Message);
             }
+            listbox();
         }
 
         string id = null;

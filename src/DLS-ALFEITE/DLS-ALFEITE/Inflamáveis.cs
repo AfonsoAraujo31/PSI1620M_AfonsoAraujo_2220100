@@ -168,8 +168,12 @@ namespace DLS_ALFEITE
 
         }
 
-        private void listbox()
+        public void listbox()
         {
+            listBox8.Items.Clear(); 
+            listBox7.Items.Clear();
+            listBox6.Items.Clear();
+            listBox5.Items.Clear();
             //listbox1
             string Query = "SELECT TOP 3 denominacao, validade FROM Inflamaveis ORDER BY validade DESC";
             SqlConnection sqlCon = new SqlConnection(connection);
@@ -246,6 +250,7 @@ namespace DLS_ALFEITE
                 id = row.Cells["Id"].Value.ToString();
                 delete();
                 atualiza_tabela();
+                listbox();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
             {
@@ -314,6 +319,7 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show(ex.Message);
             }
+            listbox();
         }
 
         private void btn_adicionar_inflamavel_Click(object sender, EventArgs e)

@@ -31,7 +31,7 @@ namespace DLS_ALFEITE
             Form_estilo();
             this.ActiveControl = label1;
         }
-        private void Medicamentos_Load(object sender, EventArgs e)
+        public void Medicamentos_Load(object sender, EventArgs e)
         {
             try
             {
@@ -234,6 +234,7 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show(ex.Message);
             }
+            listbox();
         }
         private void textbox_searchbar_TextChanged(object sender, EventArgs e)
         {
@@ -260,6 +261,10 @@ namespace DLS_ALFEITE
         }
         public void listbox()
         {
+            listBox1.Items.Clear();
+            listBox4.Items.Clear();
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
             //listbox1
             string Query = "SELECT TOP 3 denominacao, validade FROM Medicamentos ORDER BY validade ASC";
             SqlConnection sqlCon = new SqlConnection(connection);

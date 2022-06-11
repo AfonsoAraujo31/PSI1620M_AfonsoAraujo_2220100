@@ -47,6 +47,8 @@ namespace DLS_ALFEITE
             txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_quantidade.Width, txb_quantidade.Height, 12, 12));
             txb_setor.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_setor.Width, txb_setor.Height, 12, 12));
             dtp_validade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtp_validade.Width, dtp_validade.Height, 12, 12));
+            btn_guardar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_guardar.Width, btn_guardar.Height, 12, 12));
+            btn_cancelar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_cancelar.Width, btn_cancelar.Height, 12, 12));
             //validacao_dos_campos
             dtp_validade.MinDate = DateTime.Today;
             txb_lote.MaxLength = 5;
@@ -85,6 +87,7 @@ namespace DLS_ALFEITE
 
                     }
                     medicamentos.atualiza_tabela();
+                    medicamentos.listbox();
                     this.Close();
                 }
                 catch (Exception ex)

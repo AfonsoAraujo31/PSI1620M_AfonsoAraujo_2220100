@@ -300,13 +300,18 @@
             // 
             // btn_guardar
             // 
-            this.btn_guardar.Location = new System.Drawing.Point(623, 496);
+            this.btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btn_guardar.FlatAppearance.BorderSize = 0;
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guardar.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_guardar.Location = new System.Drawing.Point(606, 496);
             this.btn_guardar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(56, 19);
+            this.btn_guardar.Size = new System.Drawing.Size(60, 19);
             this.btn_guardar.TabIndex = 25;
             this.btn_guardar.Text = "Guardar";
-            this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // dtp_validade
@@ -324,13 +329,18 @@
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(683, 496);
+            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.Font = new System.Drawing.Font("Berlin Sans FB", 9F);
+            this.btn_cancelar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_cancelar.Location = new System.Drawing.Point(670, 496);
             this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(58, 19);
+            this.btn_cancelar.Size = new System.Drawing.Size(71, 19);
             this.btn_cancelar.TabIndex = 26;
             this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // Adicionar_medicamento
