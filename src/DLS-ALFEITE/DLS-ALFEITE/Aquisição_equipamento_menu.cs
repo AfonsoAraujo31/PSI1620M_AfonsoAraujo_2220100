@@ -65,7 +65,7 @@ namespace DLS_ALFEITE
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;//optional
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 12);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.AllowUserToResizeRows = false;
@@ -85,7 +85,7 @@ namespace DLS_ALFEITE
         public void update()
         {
             //tamanho das colunas
-            dataGridView1.AllowUserToResizeColumns = true;
+            dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.Columns[0].Width = 40;
             dataGridView1.Columns[2].Width = 50;
         }

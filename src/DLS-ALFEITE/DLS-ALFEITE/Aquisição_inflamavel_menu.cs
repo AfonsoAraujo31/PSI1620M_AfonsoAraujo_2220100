@@ -85,8 +85,8 @@ namespace DLS_ALFEITE
         {
             //tamanho das colunas
             dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.Columns[0].Width = 15;
-            dataGridView1.Columns[3].Width = 25;
+            dataGridView1.Columns[0].Width = 40;
+            dataGridView1.Columns[2].Width = 80;
         }
 
         private void textbox_searchbar_TextChanged(object sender, EventArgs e)
