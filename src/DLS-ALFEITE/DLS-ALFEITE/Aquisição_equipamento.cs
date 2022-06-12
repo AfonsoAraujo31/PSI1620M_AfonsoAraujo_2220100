@@ -128,9 +128,8 @@ namespace DLS_ALFEITE
                     }
                     this.Close();
                 }
-                catch (Exception ex)
+                catch(Exception)
                 {
-                    MessageBox.Show(ex.Message);
                     MessageBox.Show("Já existe um registo desse equipamento.");
                 }
             }
