@@ -92,7 +92,7 @@ namespace DLS_ALFEITE
             this.btn_inflamavel.ForeColor = System.Drawing.Color.White;
             this.btn_inflamavel.Image = ((System.Drawing.Image)(resources.GetObject("btn_inflamavel.Image")));
             this.btn_inflamavel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inflamavel.Location = new System.Drawing.Point(1, 377);
+            this.btn_inflamavel.Location = new System.Drawing.Point(1, 372);
             this.btn_inflamavel.Margin = new System.Windows.Forms.Padding(10, 1, 2, 1);
             this.btn_inflamavel.MaximumSize = new System.Drawing.Size(208, 121);
             this.btn_inflamavel.MinimumSize = new System.Drawing.Size(208, 53);
@@ -111,7 +111,7 @@ namespace DLS_ALFEITE
             this.btn_aquisicao_inflamaveis.Font = new System.Drawing.Font("Berlin Sans FB", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aquisicao_inflamaveis.ForeColor = System.Drawing.Color.White;
             this.btn_aquisicao_inflamaveis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_aquisicao_inflamaveis.Location = new System.Drawing.Point(0, 427);
+            this.btn_aquisicao_inflamaveis.Location = new System.Drawing.Point(0, 422);
             this.btn_aquisicao_inflamaveis.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_aquisicao_inflamaveis.Name = "btn_aquisicao_inflamaveis";
             this.btn_aquisicao_inflamaveis.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -148,7 +148,7 @@ namespace DLS_ALFEITE
             this.btn_fornecimento_inflamaveis.Font = new System.Drawing.Font("Berlin Sans FB", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fornecimento_inflamaveis.ForeColor = System.Drawing.Color.White;
             this.btn_fornecimento_inflamaveis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fornecimento_inflamaveis.Location = new System.Drawing.Point(0, 458);
+            this.btn_fornecimento_inflamaveis.Location = new System.Drawing.Point(0, 453);
             this.btn_fornecimento_inflamaveis.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_fornecimento_inflamaveis.Name = "btn_fornecimento_inflamaveis";
             this.btn_fornecimento_inflamaveis.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);

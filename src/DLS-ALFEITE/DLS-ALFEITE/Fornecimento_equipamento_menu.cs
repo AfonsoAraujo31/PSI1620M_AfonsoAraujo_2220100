@@ -51,6 +51,7 @@ namespace DLS_ALFEITE
             if (check == true)
             {
                 btn_aprovar.Visible = true;
+                btn_rejeitar.Visible = true;
             }
         }
         public void Form_estilo()
@@ -78,7 +79,8 @@ namespace DLS_ALFEITE
             txb_fabricante.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_fabricante.Width, txb_fabricante.Height, 12, 12));
             txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
-            btn_aprovar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_aprovar.Width, btn_aprovar    .Height, 12, 12));
+            btn_aprovar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_aprovar.Width, btn_aprovar.Height, 12, 12));
+            btn_rejeitar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_rejeitar.Width, btn_rejeitar.Height, 12, 12));
             this.ActiveControl = label1;
         }
         public void update()
@@ -110,6 +112,7 @@ namespace DLS_ALFEITE
                 if (check == true)
                 {
                     btn_aprovar.Visible = true;
+                    btn_rejeitar.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -150,6 +153,7 @@ namespace DLS_ALFEITE
                 if (check == true)
                 {
                     btn_aprovar.Visible = true;
+                    btn_rejeitar.Visible = true;
                 }
             }
         }
@@ -190,7 +194,7 @@ namespace DLS_ALFEITE
                 }
             }
         }
-
+        int num = 0;
         private void btn_aprovar_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Tag == null)
@@ -201,6 +205,30 @@ namespace DLS_ALFEITE
             {
                 SqlConnection sqlCon = new SqlConnection(connection);
                 SqlCommand cmd;
+                using (cmd = new SqlCommand("Select quantidade FROM Equipamentos WHERE id = @id", sqlCon))
+                {
+                    sqlCon.Open();
+                    cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
+                    using (var rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.HasRows)
+                        {
+                            while (rdr.Read())
+                            {
+                                num = rdr.GetInt32(0);
+                            }
+                        }
+                    }
+                    sqlCon.Close();
+                }
+                using (cmd = new SqlCommand("UPDATE Equipamentos SET quantidade = @quantidade WHERE id = @id", sqlCon))
+                {
+                    cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
+                    cmd.Parameters.AddWithValue("@quantidade", num - Convert.ToInt32(txb_quantidade.Text));
+                    sqlCon.Open();
+                    cmd.ExecuteNonQuery();
+                    sqlCon.Close();
+                }
                 using (cmd = new SqlCommand("DELETE FROM fornecimento_equipamento WHERE id_fornecimento = @id", sqlCon))
                 {
                     cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
@@ -217,6 +245,28 @@ namespace DLS_ALFEITE
                     dataGridView1.DataSource = dtbl;
                     sqlCon.Close();
                 }
+            }
+        }
+
+        private void btn_rejeitar_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlCon = new SqlConnection(connection);
+            SqlCommand cmd;
+            using (cmd = new SqlCommand("DELETE FROM fornecimento_equipamento WHERE id_fornecimento = @id", sqlCon))
+            {
+                cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
+                sqlCon.Open();
+                cmd.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            using (sqlCon)
+            {
+                sqlCon.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',lote as 'Lote',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade' FROM Equipamentos inner join fornecimento_equipamento ON Equipamentos.id = fornecimento_equipamento.id_fornecimento", sqlCon);
+                DataTable dtbl = new DataTable();
+                adapter.Fill(dtbl);
+                dataGridView1.DataSource = dtbl;
+                sqlCon.Close();
             }
         }
     }

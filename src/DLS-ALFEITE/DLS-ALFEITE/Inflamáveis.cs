@@ -255,17 +255,17 @@ namespace DLS_ALFEITE
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
             {
                 Editar_inflamavel editar_inflamavel = new Editar_inflamavel(id, denominacao, validade, lote, stock, numero_serie, fabricante, contacto_do_fabricante, observacoes, setor, this);
-                editar_inflamavel.Show();
+                editar_inflamavel.ShowDialog();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")
             {
                 Aquisição_inflamavel aquisição_inflamavel = new Aquisição_inflamavel(id, denominacao, lote, numero_serie);
-                aquisição_inflamavel.Show();
+                aquisição_inflamavel.ShowDialog();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
             {
                 Fornecimento_inflamavel fornecimento_inflamavel = new Fornecimento_inflamavel(id, denominacao, numero_serie, lote);
-                fornecimento_inflamavel.Show();
+                fornecimento_inflamavel.ShowDialog();
             }
             else
             {
@@ -325,7 +325,7 @@ namespace DLS_ALFEITE
         private void btn_adicionar_inflamavel_Click(object sender, EventArgs e)
         { 
             Adicionar_inflamavel adicionar_inflamavel = new Adicionar_inflamavel(this);
-            adicionar_inflamavel.Show();
+            adicionar_inflamavel.ShowDialog();
         }
     }
 }

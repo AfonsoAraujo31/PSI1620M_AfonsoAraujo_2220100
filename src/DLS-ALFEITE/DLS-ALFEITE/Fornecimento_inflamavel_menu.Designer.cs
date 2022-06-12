@@ -33,6 +33,7 @@ namespace DLS_ALFEITE
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_rejeitar = new System.Windows.Forms.Button();
             this.btn_aprovar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txb_observacoes = new System.Windows.Forms.TextBox();
@@ -62,7 +63,9 @@ namespace DLS_ALFEITE
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.btn_rejeitar);
             this.panel1.Controls.Add(this.btn_aprovar);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.txb_observacoes);
@@ -83,10 +86,27 @@ namespace DLS_ALFEITE
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(1201, 54);
+            this.panel1.Location = new System.Drawing.Point(1272, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 932);
             this.panel1.TabIndex = 12;
+            // 
+            // btn_rejeitar
+            // 
+            this.btn_rejeitar.BackColor = System.Drawing.Color.RosyBrown;
+            this.btn_rejeitar.FlatAppearance.BorderSize = 0;
+            this.btn_rejeitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rejeitar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.btn_rejeitar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_rejeitar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_rejeitar.Location = new System.Drawing.Point(365, 782);
+            this.btn_rejeitar.Name = "btn_rejeitar";
+            this.btn_rejeitar.Size = new System.Drawing.Size(120, 47);
+            this.btn_rejeitar.TabIndex = 98;
+            this.btn_rejeitar.Text = "Rejeitar";
+            this.btn_rejeitar.UseVisualStyleBackColor = false;
+            this.btn_rejeitar.Visible = false;
+            this.btn_rejeitar.Click += new System.EventHandler(this.btn_rejeitar_Click);
             // 
             // btn_aprovar
             // 
@@ -96,7 +116,7 @@ namespace DLS_ALFEITE
             this.btn_aprovar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.btn_aprovar.ForeColor = System.Drawing.Color.Transparent;
             this.btn_aprovar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_aprovar.Location = new System.Drawing.Point(298, 782);
+            this.btn_aprovar.Location = new System.Drawing.Point(239, 782);
             this.btn_aprovar.Name = "btn_aprovar";
             this.btn_aprovar.Size = new System.Drawing.Size(120, 47);
             this.btn_aprovar.TabIndex = 98;
@@ -314,6 +334,8 @@ namespace DLS_ALFEITE
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -334,14 +356,14 @@ namespace DLS_ALFEITE
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(221, 54);
+            this.dataGridView1.Location = new System.Drawing.Point(293, 54);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(962, 932);
+            this.dataGridView1.Size = new System.Drawing.Size(962, 1034);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -407,5 +429,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.TextBox textbox_searchbar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_aprovar;
+        private System.Windows.Forms.Button btn_rejeitar;
     }
 }

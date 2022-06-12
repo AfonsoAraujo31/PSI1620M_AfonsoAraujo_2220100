@@ -34,6 +34,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_rejeitar = new System.Windows.Forms.Button();
             this.txb_motivo = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtp_data_limite_rececao = new System.Windows.Forms.DateTimePicker();
@@ -103,6 +104,7 @@
             // 
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.btn_rejeitar);
             this.panel1.Controls.Add(this.txb_motivo);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.dtp_data_limite_rececao);
@@ -124,6 +126,16 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btn_aprovar);
             this.panel1.Name = "panel1";
+            // 
+            // btn_rejeitar
+            // 
+            this.btn_rejeitar.BackColor = System.Drawing.Color.RosyBrown;
+            this.btn_rejeitar.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_rejeitar, "btn_rejeitar");
+            this.btn_rejeitar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_rejeitar.Name = "btn_rejeitar";
+            this.btn_rejeitar.UseVisualStyleBackColor = false;
+            this.btn_rejeitar.Click += new System.EventHandler(this.btn_rejeitar_Click);
             // 
             // txb_motivo
             // 
@@ -294,5 +306,6 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.TextBox textbox_searchbar;
         private System.Windows.Forms.Button btn_aprovar;
+        private System.Windows.Forms.Button btn_rejeitar;
     }
 }

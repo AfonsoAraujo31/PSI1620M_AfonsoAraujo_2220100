@@ -189,6 +189,42 @@
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
   </data>
+  <data name="btn_rejeitar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_rejeitar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Berlin Sans FB, 14.25pt</value>
+  </data>
+  <data name="btn_rejeitar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_rejeitar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>361, 799</value>
+  </data>
+  <data name="btn_rejeitar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 47</value>
+  </data>
+  <data name="btn_rejeitar.TabIndex" type="System.Int32, mscorlib">
+    <value>97</value>
+  </data>
+  <data name="btn_rejeitar.Text" xml:space="preserve">
+    <value>Rejeitar</value>
+  </data>
+  <data name="btn_rejeitar.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;btn_rejeitar.Name" xml:space="preserve">
+    <value>btn_rejeitar</value>
+  </data>
+  <data name="&gt;&gt;btn_rejeitar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_rejeitar.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btn_rejeitar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="txb_motivo.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -217,7 +253,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txb_motivo.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -648,7 +684,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="dtp_data_limite_rececao.CustomFormat" xml:space="preserve">
     <value>dd/MM/yyyy</value>
@@ -681,7 +717,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;dtp_data_limite_rececao.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txb_entidade.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -708,7 +744,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txb_entidade.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="txb_contacto_fabricante.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -735,7 +771,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txb_contacto_fabricante.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txb_fabricante.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -762,7 +798,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txb_fabricante.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txb_quantidade.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -789,7 +825,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txb_quantidade.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="txb_lote.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -816,7 +852,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txb_lote.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txb_principio_ativo.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -843,7 +879,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txb_principio_ativo.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="txb_denominacao.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -870,7 +906,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txb_denominacao.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -900,7 +936,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -930,7 +966,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -960,7 +996,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -990,7 +1026,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1020,7 +1056,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1050,7 +1086,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1080,7 +1116,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1110,7 +1146,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1140,7 +1176,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="btn_aprovar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1149,7 +1185,7 @@
     <value>Berlin Sans FB, 14.25pt</value>
   </data>
   <data name="btn_aprovar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>298, 799</value>
+    <value>235, 799</value>
   </data>
   <data name="btn_aprovar.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 47</value>
@@ -1173,7 +1209,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btn_aprovar.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>1273, 58</value>

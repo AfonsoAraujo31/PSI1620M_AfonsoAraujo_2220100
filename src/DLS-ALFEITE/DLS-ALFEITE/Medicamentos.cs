@@ -178,18 +178,18 @@ namespace DLS_ALFEITE
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
             {
                 Editar_medicamento editar_medicamento = new Editar_medicamento(id, denominacao, principio_ativo, validade, lote, stock, fabricante, contacto_do_fabricante, observacoes, setor, this);
-                editar_medicamento.Show();
+                editar_medicamento.ShowDialog();
 
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")
             {
                 Aquisição_medicamento aquisição_medicamento = new Aquisição_medicamento(id, denominacao, principio_ativo, lote);
-                aquisição_medicamento.Show();
+                aquisição_medicamento.ShowDialog();
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
             {
                 Fornecimento_medicamento fornecimento_medicamento = new Fornecimento_medicamento(id, denominacao, principio_ativo, lote);
-                fornecimento_medicamento.Show();
+                fornecimento_medicamento.ShowDialog();
             }
             else {
                 //MessageBox.Show("1");
@@ -198,7 +198,7 @@ namespace DLS_ALFEITE
         public void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
         {
             Adicionar_medicamento adicionar_medicamento = new Adicionar_medicamento(this);
-            adicionar_medicamento.Show();
+            adicionar_medicamento.ShowDialog();
         }
         public void delete()
         {

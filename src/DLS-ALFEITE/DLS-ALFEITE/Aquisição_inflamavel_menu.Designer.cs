@@ -30,9 +30,10 @@ namespace DLS_ALFEITE
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Aquisição_inflamavel_menu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_rejeitar = new System.Windows.Forms.Button();
             this.btn_aprovar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtp_data_limite_rececao = new System.Windows.Forms.DateTimePicker();
@@ -62,7 +63,9 @@ namespace DLS_ALFEITE
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.btn_rejeitar);
             this.panel1.Controls.Add(this.btn_aprovar);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.dtp_data_limite_rececao);
@@ -83,10 +86,27 @@ namespace DLS_ALFEITE
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(1201, 54);
+            this.panel1.Location = new System.Drawing.Point(1273, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 932);
             this.panel1.TabIndex = 7;
+            // 
+            // btn_rejeitar
+            // 
+            this.btn_rejeitar.BackColor = System.Drawing.Color.RosyBrown;
+            this.btn_rejeitar.FlatAppearance.BorderSize = 0;
+            this.btn_rejeitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rejeitar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.btn_rejeitar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_rejeitar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_rejeitar.Location = new System.Drawing.Point(362, 789);
+            this.btn_rejeitar.Name = "btn_rejeitar";
+            this.btn_rejeitar.Size = new System.Drawing.Size(120, 47);
+            this.btn_rejeitar.TabIndex = 99;
+            this.btn_rejeitar.Text = "Rejeitar";
+            this.btn_rejeitar.UseVisualStyleBackColor = false;
+            this.btn_rejeitar.Visible = false;
+            this.btn_rejeitar.Click += new System.EventHandler(this.btn_rejeitar_Click);
             // 
             // btn_aprovar
             // 
@@ -96,7 +116,7 @@ namespace DLS_ALFEITE
             this.btn_aprovar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.btn_aprovar.ForeColor = System.Drawing.Color.Transparent;
             this.btn_aprovar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_aprovar.Location = new System.Drawing.Point(298, 789);
+            this.btn_aprovar.Location = new System.Drawing.Point(236, 789);
             this.btn_aprovar.Name = "btn_aprovar";
             this.btn_aprovar.Size = new System.Drawing.Size(120, 47);
             this.btn_aprovar.TabIndex = 98;
@@ -331,24 +351,24 @@ namespace DLS_ALFEITE
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeight = 22;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Location = new System.Drawing.Point(221, 54);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
@@ -406,5 +426,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_aprovar;
+        private System.Windows.Forms.Button btn_rejeitar;
     }
 }

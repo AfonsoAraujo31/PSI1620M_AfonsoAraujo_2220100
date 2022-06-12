@@ -264,17 +264,17 @@ namespace DLS_ALFEITE
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
             {
                 Editar_equipamento editar_equipamento = new Editar_equipamento(id, denominacao, lote, stock, numero_serie, fabricante, contacto_do_fabricante, observacoes, setor, this);
-                editar_equipamento.Show();
+                editar_equipamento.ShowDialog();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")
             {
                 Aquisição_equipamento aquisição_equipamento = new Aquisição_equipamento(id, denominacao, lote, numero_serie);
-                aquisição_equipamento.Show();
+                aquisição_equipamento.ShowDialog();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
             {
                 Fornecimento_equipamento fornecimento_equipamento = new Fornecimento_equipamento(id, denominacao, lote, numero_serie);
-                fornecimento_equipamento.Show();
+                fornecimento_equipamento.ShowDialog();
             }
             else
             {
@@ -284,7 +284,7 @@ namespace DLS_ALFEITE
         public void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
         {
             Adicionar_equipamento adicionar_equipamento = new Adicionar_equipamento(this);
-            adicionar_equipamento.Show();
+            adicionar_equipamento.ShowDialog();
         }
         private void textbox_searchbar_TextChanged(object sender, EventArgs e)
         {

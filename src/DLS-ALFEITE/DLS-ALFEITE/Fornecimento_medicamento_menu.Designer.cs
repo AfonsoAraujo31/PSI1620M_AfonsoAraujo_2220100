@@ -35,6 +35,7 @@ namespace DLS_ALFEITE
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_rejeitar = new System.Windows.Forms.Button();
             this.btn_aprovar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txb_observacoes = new System.Windows.Forms.TextBox();
@@ -119,6 +120,7 @@ namespace DLS_ALFEITE
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.btn_rejeitar);
             this.panel1.Controls.Add(this.btn_aprovar);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.txb_observacoes);
@@ -144,6 +146,23 @@ namespace DLS_ALFEITE
             this.panel1.Size = new System.Drawing.Size(702, 1030);
             this.panel1.TabIndex = 8;
             // 
+            // btn_rejeitar
+            // 
+            this.btn_rejeitar.BackColor = System.Drawing.Color.RosyBrown;
+            this.btn_rejeitar.FlatAppearance.BorderSize = 0;
+            this.btn_rejeitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rejeitar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.btn_rejeitar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_rejeitar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_rejeitar.Location = new System.Drawing.Point(365, 789);
+            this.btn_rejeitar.Name = "btn_rejeitar";
+            this.btn_rejeitar.Size = new System.Drawing.Size(120, 47);
+            this.btn_rejeitar.TabIndex = 98;
+            this.btn_rejeitar.Text = "Rejeitar";
+            this.btn_rejeitar.UseVisualStyleBackColor = false;
+            this.btn_rejeitar.Visible = false;
+            this.btn_rejeitar.Click += new System.EventHandler(this.btn_rejeitar_Click);
+            // 
             // btn_aprovar
             // 
             this.btn_aprovar.BackColor = System.Drawing.Color.RosyBrown;
@@ -152,7 +171,7 @@ namespace DLS_ALFEITE
             this.btn_aprovar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.btn_aprovar.ForeColor = System.Drawing.Color.Transparent;
             this.btn_aprovar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_aprovar.Location = new System.Drawing.Point(298, 789);
+            this.btn_aprovar.Location = new System.Drawing.Point(239, 789);
             this.btn_aprovar.Name = "btn_aprovar";
             this.btn_aprovar.Size = new System.Drawing.Size(120, 47);
             this.btn_aprovar.TabIndex = 97;
@@ -414,5 +433,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.TextBox txb_denominacao;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_aprovar;
+        private System.Windows.Forms.Button btn_rejeitar;
     }
 }
