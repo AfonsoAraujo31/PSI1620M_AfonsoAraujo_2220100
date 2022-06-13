@@ -203,7 +203,7 @@ namespace DLS_ALFEITE
             this.btn_min.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_min.Image = ((System.Drawing.Image)(resources.GetObject("btn_min.Image")));
-            this.btn_min.Location = new System.Drawing.Point(452, 4);
+            this.btn_min.Location = new System.Drawing.Point(459, 4);
             this.btn_min.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_min.Name = "btn_min";
             this.btn_min.Size = new System.Drawing.Size(50, 33);
@@ -220,7 +220,7 @@ namespace DLS_ALFEITE
             this.btnclose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
-            this.btnclose.Location = new System.Drawing.Point(504, 4);
+            this.btnclose.Location = new System.Drawing.Point(511, 4);
             this.btnclose.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(50, 33);
@@ -237,7 +237,7 @@ namespace DLS_ALFEITE
             this.linkLabel1.Location = new System.Drawing.Point(405, 253);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(140, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(139, 16);
             this.linkLabel1.TabIndex = 13;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Esqueceu-se da password?";

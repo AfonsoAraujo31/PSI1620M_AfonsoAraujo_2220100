@@ -31,7 +31,7 @@ namespace DLS_ALFEITE
         Fornecimento_equipamento_menu frm_equip_menu;
         Definições frm_definicoes;
         Aquisição_inflamavel_menu frm_infla_menu;
-        Fornecimento_inflamavel_menu frm_infla_forn_menu;
+        Fornecimento_inflamaveis_menu frm_infla_forn_menu;
         bool check = false;
         public panel_mdi(string value,bool value1)
         {
@@ -455,7 +455,7 @@ namespace DLS_ALFEITE
             {
                 if (frm_infla_forn_menu == null)
                 {
-                    frm_infla_forn_menu = new Fornecimento_inflamavel_menu(check);
+                    frm_infla_forn_menu = new Fornecimento_inflamaveis_menu(check);
                     frm_infla_forn_menu.MdiParent = this;
                     frm_infla_forn_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_infla_forn_menu.Show();
@@ -464,7 +464,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frm_infla_forn_menu.Close();
-                    frm_infla_forn_menu = new Fornecimento_inflamavel_menu(check);
+                    frm_infla_forn_menu = new Fornecimento_inflamaveis_menu(check);
                     frm_infla_forn_menu.MdiParent = this;
                     frm_infla_forn_menu.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_infla_forn_menu.Show();

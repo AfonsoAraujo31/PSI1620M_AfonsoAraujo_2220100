@@ -36,7 +36,7 @@ namespace DLS_ALFEITE
                 using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade' FROM Equipamentos inner join fornecimento_equipamento ON Equipamentos.id = fornecimento_equipamento.id_fornecimento", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade' FROM Equipamentos inner join Fornecimento_equipamentos ON Equipamentos.id = Fornecimento_equipamentos.id_fornecimento", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -102,7 +102,7 @@ namespace DLS_ALFEITE
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade' FROM Equipamentos inner join fornecimento_equipamento ON Equipamentos.id = fornecimento_equipamento.id_fornecimento  where denominacao like '" + textbox_searchbar.Text + "%'";
+                    cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade' FROM Equipamentos inner join Fornecimento_equipamentos ON Equipamentos.id = Fornecimento_equipamentos.id_fornecimento  where denominacao like '" + textbox_searchbar.Text + "%'";
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
@@ -139,7 +139,7 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon = new SqlConnection(connection))
                     {
                         sqlCon.Open();
-                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade' FROM Equipamentos inner join fornecimento_equipamento ON Equipamentos.id = fornecimento_equipamento.id_fornecimento", sqlCon);
+                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade' FROM Equipamentos inner join Fornecimento_equipamentos ON Equipamentos.id = Fornecimento_equipamentos.id_fornecimento", sqlCon);
                         DataTable dtbl = new DataTable();
                         adapter.Fill(dtbl);
                         dataGridView1.DataSource = dtbl;
@@ -167,7 +167,7 @@ namespace DLS_ALFEITE
             {
                 SqlCommand cmd = sql.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,lote,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade',fornecimento_equipamento.observacoes FROM Equipamentos inner join fornecimento_equipamento ON Equipamentos.id = fornecimento_equipamento.id_fornecimento Where id_fornecimento = @id";
+                cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,lote,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade',Fornecimento_equipamentos.observacoes FROM Equipamentos inner join Fornecimento_equipamentos ON Equipamentos.id = Fornecimento_equipamentos.id_fornecimento Where id_fornecimento = @id";
                 cmd.Parameters.AddWithValue("@id", id1);
                 pictureBox1.Tag = id1;
                 sql.Open();
@@ -229,7 +229,7 @@ namespace DLS_ALFEITE
                     cmd.ExecuteNonQuery();
                     sqlCon.Close();
                 }
-                using (cmd = new SqlCommand("DELETE FROM fornecimento_equipamento WHERE id_fornecimento = @id", sqlCon))
+                using (cmd = new SqlCommand("DELETE FROM Fornecimento_equipamentos WHERE id_fornecimento = @id", sqlCon))
                 {
                     cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
                     sqlCon.Open();
@@ -239,7 +239,7 @@ namespace DLS_ALFEITE
                 using (sqlCon)
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',lote as 'Lote',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade' FROM Equipamentos inner join fornecimento_equipamento ON Equipamentos.id = fornecimento_equipamento.id_fornecimento", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',lote as 'Lote',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade' FROM Equipamentos inner join Fornecimento_equipamentos ON Equipamentos.id = Fornecimento_equipamentos.id_fornecimento", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -252,7 +252,7 @@ namespace DLS_ALFEITE
         {
             SqlConnection sqlCon = new SqlConnection(connection);
             SqlCommand cmd;
-            using (cmd = new SqlCommand("DELETE FROM fornecimento_equipamento WHERE id_fornecimento = @id", sqlCon))
+            using (cmd = new SqlCommand("DELETE FROM Fornecimento_equipamentos WHERE id_fornecimento = @id", sqlCon))
             {
                 cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
                 sqlCon.Open();
@@ -262,7 +262,7 @@ namespace DLS_ALFEITE
             using (sqlCon)
             {
                 sqlCon.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',lote as 'Lote',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade' FROM Equipamentos inner join fornecimento_equipamento ON Equipamentos.id = fornecimento_equipamento.id_fornecimento", sqlCon);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',lote as 'Lote',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_entrega as 'Data limite de receção', entidade as 'Entidade' FROM Equipamentos inner join Fornecimento_equipamentos ON Equipamentos.id = Fornecimento_equipamentos.id_fornecimento", sqlCon);
                 DataTable dtbl = new DataTable();
                 adapter.Fill(dtbl);
                 dataGridView1.DataSource = dtbl;

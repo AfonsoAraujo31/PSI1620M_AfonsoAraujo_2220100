@@ -61,7 +61,7 @@ namespace DLS_ALFEITE
                 SqlConnection sqlcon = new SqlConnection(connection);
                 SqlCommand cmd = sqlcon.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"select id_utilizador,nome,username,password,codigo_unico,genero,email,num_tel from login_utilizadores WHERE username=@Username";
+                cmd.CommandText = $"select id_utilizador,nome,username,password,codigo_unico,genero,email,num_tel from Utilizadores WHERE username=@Username";
                 cmd.Parameters.AddWithValue("@Username", txb_username.Text);
                 sqlcon.Open();
                 SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
@@ -112,7 +112,7 @@ namespace DLS_ALFEITE
             {
                 try
                 {
-                    string query = "UPDATE login_utilizadores SET nome = '" + this.txb_nome.Text + "',password = '" + this.txb_password.Text + "',genero = '" + this.cb_genero.Text + "', email = '" + this.txb_email.Text + "',num_tel = '" + this.txb_numero_telemovel.Text + "' WHERE id_utilizador = @id ";
+                    string query = "UPDATE Utilizadores SET nome = '" + this.txb_nome.Text + "',password = '" + this.txb_password.Text + "',genero = '" + this.cb_genero.Text + "', email = '" + this.txb_email.Text + "',num_tel = '" + this.txb_numero_telemovel.Text + "' WHERE id_utilizador = @id ";
                     SqlConnection sqlCon = new SqlConnection(connection);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     cmd.Parameters.AddWithValue("@id", id);

@@ -65,7 +65,7 @@ namespace DLS_ALFEITE
                     SqlConnection sqlCon = new SqlConnection(connection);
                     SqlCommand cmd1 = sqlCon.CreateCommand();
                     sqlCon.Open();
-                    cmd1.CommandText = $"Select count(id_utilizador) from login_utilizadores";
+                    cmd1.CommandText = $"Select count(id_utilizador) from Utilizadores";
                     using (cmd1)
                     {
                         using (var rdr1 = cmd1.ExecuteReader())
@@ -82,7 +82,7 @@ namespace DLS_ALFEITE
                     }
                     sqlCon.Close();
                     identifica = identifica + 1;
-                    string query = "Insert into login_utilizadores(id_utilizador,username,nome,password,genero,email,num_tel,codigo_unico) VALUES('" + identifica + "','" + this.txb_username.Text + "','" + this.txb_nome.Text + "','" + this.txb_password.Text + "','" + this.cb_genero.Text + "','" + this.txb_email.Text + "','" + this.txb_numero_telemovel.Text + "','" + this.txb_codigo_unico.Text + "')";
+                    string query = "Insert into Utilizadores(id_utilizador,username,nome,password,genero,email,num_tel,codigo_unico) VALUES('" + identifica + "','" + this.txb_username.Text + "','" + this.txb_nome.Text + "','" + this.txb_password.Text + "','" + this.cb_genero.Text + "','" + this.txb_email.Text + "','" + this.txb_numero_telemovel.Text + "','" + this.txb_codigo_unico.Text + "')";
 
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     SqlDataReader myreader;

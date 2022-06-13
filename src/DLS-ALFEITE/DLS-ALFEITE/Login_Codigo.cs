@@ -55,7 +55,7 @@ namespace DLS_ALFEITE
         {
             SqlConnection sqlcon = new SqlConnection(connection);
             SqlCommand cmd = sqlcon.CreateCommand();
-            cmd.CommandText = $"SELECT username,codigo_unico FROM login_utilizadores WHERE username=@user AND codigo_unico=@cd_unico";
+            cmd.CommandText = $"SELECT username,codigo_unico FROM Utilizadores WHERE username=@user AND codigo_unico=@cd_unico";
             cmd.Parameters.AddWithValue("@user", textBox_username_confirmação.Text);
             cmd.Parameters.AddWithValue("@cd_unico", textBox_codigo_unico.Text);
             sqlcon.Open();

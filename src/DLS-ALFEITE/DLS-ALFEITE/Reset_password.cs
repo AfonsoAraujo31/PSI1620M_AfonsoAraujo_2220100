@@ -36,7 +36,7 @@ namespace DLS_ALFEITE
         {
             SqlConnection sqlcon = new SqlConnection(connection);
             SqlCommand cmd = sqlcon.CreateCommand();
-            cmd.CommandText = $"SELECT username,codigo_unico FROM login_utilizadores WHERE username=@user AND codigo_unico=@cd_unico";
+            cmd.CommandText = $"SELECT username,codigo_unico FROM Utilizadores WHERE username=@user AND codigo_unico=@cd_unico";
             cmd.Parameters.AddWithValue("@user", txb_username.Text);
             cmd.Parameters.AddWithValue("@cd_unico", txb_codigo_unico.Text);
             sqlcon.Open();
@@ -62,7 +62,7 @@ namespace DLS_ALFEITE
             {
                 try
                 {
-                    string query = "UPDATE login_utilizadores SET password = '" + this.txb_comfirmacao_password.Text + "' WHERE username = @user ";
+                    string query = "UPDATE Utilizadores SET password = '" + this.txb_comfirmacao_password.Text + "' WHERE username = @user ";
                     SqlConnection sqlCon = new SqlConnection(connection);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     cmd.Parameters.AddWithValue("@user", txb_username.Text);

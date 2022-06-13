@@ -264,7 +264,7 @@ namespace DLS_ALFEITE
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
             {
-                Fornecimento_inflamavel fornecimento_inflamavel = new Fornecimento_inflamavel(id, denominacao, numero_serie, lote);
+                Fornecimento_inflamaveis fornecimento_inflamavel = new Fornecimento_inflamaveis(id, denominacao, numero_serie, lote);
                 fornecimento_inflamavel.ShowDialog();
             }
             else

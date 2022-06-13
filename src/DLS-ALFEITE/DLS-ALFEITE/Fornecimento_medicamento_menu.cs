@@ -36,7 +36,7 @@ namespace DLS_ALFEITE
                 using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join Fornecimento_medicamentos ON Medicamentos.id = Fornecimento_medicamentos.id_fornecimento", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -112,7 +112,7 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon = new SqlConnection(connection))
                     {
                         sqlCon.Open();
-                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento", sqlCon);
+                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join Fornecimento_medicamentos ON Medicamentos.id = Fornecimento_medicamentos.id_fornecimento", sqlCon);
                         DataTable dtbl = new DataTable();
                         adapter.Fill(dtbl);
                         dataGridView1.DataSource = dtbl;
@@ -141,7 +141,7 @@ namespace DLS_ALFEITE
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento where denominacao like '" + textbox_searchbar.Text + "%'";
+                    cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join Fornecimento_medicamentos ON Medicamentos.id = Fornecimento_medicamentos.id_fornecimento where denominacao like '" + textbox_searchbar.Text + "%'";
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
@@ -169,7 +169,7 @@ namespace DLS_ALFEITE
             {
                 SqlCommand cmd = sql.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', lote,fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade',fornecimento_medicamentos.observacoes FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento Where id_fornecimento = @id";
+                cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', lote,fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade',Fornecimento_medicamentos.observacoes FROM Medicamentos inner join Fornecimento_medicamentos ON Medicamentos.id = Fornecimento_medicamentos.id_fornecimento Where id_fornecimento = @id";
                 cmd.Parameters.AddWithValue("@id", id1);
                 pictureBox1.Tag = id1;
                 sql.Open();
@@ -231,7 +231,7 @@ namespace DLS_ALFEITE
                     cmd.ExecuteNonQuery();
                     sqlCon.Close();
                 }
-                using (cmd = new SqlCommand("DELETE FROM fornecimento_medicamentos WHERE id_fornecimento = @id", sqlCon))
+                using (cmd = new SqlCommand("DELETE FROM Fornecimento_medicamentos WHERE id_fornecimento = @id", sqlCon))
                 {
                     cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
                     sqlCon.Open();
@@ -241,7 +241,7 @@ namespace DLS_ALFEITE
                 using (sqlCon)
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join Fornecimento_medicamentos ON Medicamentos.id = Fornecimento_medicamentos.id_fornecimento", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -254,7 +254,7 @@ namespace DLS_ALFEITE
         {
             SqlConnection sqlCon = new SqlConnection(connection);
             SqlCommand cmd;
-            using (cmd = new SqlCommand("DELETE FROM fornecimento_medicamentos WHERE id_fornecimento = @id", sqlCon))
+            using (cmd = new SqlCommand("DELETE FROM Fornecimento_medicamentos WHERE id_fornecimento = @id", sqlCon))
             {
                 cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
                 sqlCon.Open();
@@ -264,7 +264,7 @@ namespace DLS_ALFEITE
             using (sqlCon)
             {
                 sqlCon.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join fornecimento_medicamentos ON Medicamentos.id = fornecimento_medicamentos.id_fornecimento", sqlCon);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',principio_ativo as 'Princípio/Ativo',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data do Fornecimento', entidade as 'Entidade' FROM Medicamentos inner join Fornecimento_medicamentos ON Medicamentos.id = Fornecimento_medicamentos.id_fornecimento", sqlCon);
                 DataTable dtbl = new DataTable();
                 adapter.Fill(dtbl);
                 dataGridView1.DataSource = dtbl;

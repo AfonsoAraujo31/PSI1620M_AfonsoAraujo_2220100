@@ -1,6 +1,6 @@
 ﻿namespace DLS_ALFEITE
 {
-    partial class Fornecimento_inflamavel
+    partial class Fornecimento_inflamaveis
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fornecimento_inflamavel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fornecimento_inflamaveis));
             this.panel5 = new System.Windows.Forms.Panel();
             this.label_med = new System.Windows.Forms.Label();
             this.btn_min = new System.Windows.Forms.Button();

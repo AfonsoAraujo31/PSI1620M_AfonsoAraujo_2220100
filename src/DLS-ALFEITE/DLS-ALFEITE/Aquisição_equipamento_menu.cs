@@ -36,7 +36,7 @@ namespace DLS_ALFEITE
                 using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Equipamentos inner join Aquisição_equipamentos ON Equipamentos.id = Aquisição_equipamentos.id_aquisicao", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Equipamentos inner join Aquisicao_equipamentos ON Equipamentos.id = Aquisicao_equipamentos.id_aquisicao", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -110,7 +110,7 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon = new SqlConnection(connection))
                     {
                         sqlCon.Open();
-                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Equipamentos inner join Aquisição_equipamentos ON Equipamentos.id = Aquisição_equipamentos.id_aquisicao", sqlCon);
+                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Equipamentos inner join Aquisicao_equipamentos ON Equipamentos.id = Aquisicao_equipamentos.id_aquisicao", sqlCon);
                         DataTable dtbl = new DataTable();
                         adapter.Fill(dtbl);
                         dataGridView1.DataSource = dtbl;
@@ -140,7 +140,7 @@ namespace DLS_ALFEITE
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Equipamentos inner join Aquisição_equipamentos ON Equipamentos.id = Aquisição_equipamentos.id_aquisicao where denominacao like '" + textbox_searchbar.Text + "%'";
+                    cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Equipamentos inner join Aquisicao_equipamentos ON Equipamentos.id = Aquisicao_equipamentos.id_aquisicao where denominacao like '" + textbox_searchbar.Text + "%'";
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
@@ -168,7 +168,7 @@ namespace DLS_ALFEITE
             {
                 SqlCommand cmd = sql.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',lote,numero_serie,quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade',motivo FROM Equipamentos inner join Aquisição_equipamentos ON Equipamentos.id = Aquisição_equipamentos.id_aquisicao Where id_aquisicao = @id";
+                cmd.CommandText = $"SELECT id_aquisicao as 'Id', denominacao as 'Denominação',lote,numero_serie,quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção', entidade as 'Entidade',motivo FROM Equipamentos inner join Aquisicao_equipamentos ON Equipamentos.id = Aquisicao_equipamentos.id_aquisicao Where id_aquisicao = @id";
                 cmd.Parameters.AddWithValue("@id", id1);
                 pictureBox1.Tag = id1;
                 sql.Open();
@@ -230,7 +230,7 @@ namespace DLS_ALFEITE
                     cmd.ExecuteNonQuery();
                     sqlCon.Close();
                 }
-                using (cmd = new SqlCommand("DELETE FROM Aquisição_equipamentos WHERE id_aquisicao = @id", sqlCon))
+                using (cmd = new SqlCommand("DELETE FROM Aquisicao_equipamentos WHERE id_aquisicao = @id", sqlCon))
                 {
                     cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
                     sqlCon.Open();
@@ -240,7 +240,7 @@ namespace DLS_ALFEITE
                 using (sqlCon)
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Equipamentos inner join Aquisição_equipamentos ON Equipamentos.id = Aquisição_equipamentos.id_aquisicao", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Equipamentos inner join Aquisicao_equipamentos ON Equipamentos.id = Aquisicao_equipamentos.id_aquisicao", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -253,7 +253,7 @@ namespace DLS_ALFEITE
         {
             SqlConnection sqlCon = new SqlConnection(connection);
             SqlCommand cmd;
-            using (cmd = new SqlCommand("DELETE FROM Aquisição_equipamentos WHERE id_aquisicao = @id", sqlCon))
+            using (cmd = new SqlCommand("DELETE FROM Aquisicao_equipamentos WHERE id_aquisicao = @id", sqlCon))
             {
                 cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
                 sqlCon.Open();
@@ -263,7 +263,7 @@ namespace DLS_ALFEITE
             using (sqlCon)
             {
                 sqlCon.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Equipamentos inner join Aquisição_equipamentos ON Equipamentos.id = Aquisição_equipamentos.id_aquisicao", sqlCon);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_aquisicao as 'Id', denominacao as 'Denominação',quantidade_aquisição as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto do Fabricante', data_limite_rececao as 'Data limite de receção' FROM Equipamentos inner join Aquisicao_equipamentos ON Equipamentos.id = Aquisicao_equipamentos.id_aquisicao", sqlCon);
                 DataTable dtbl = new DataTable();
                 adapter.Fill(dtbl);
                 dataGridView1.DataSource = dtbl;

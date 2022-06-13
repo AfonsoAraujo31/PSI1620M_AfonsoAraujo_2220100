@@ -55,7 +55,7 @@ namespace DLS_ALFEITE
                         SqlConnection sqlcon = new SqlConnection(connection);
                         SqlCommand cmd = sqlcon.CreateCommand();
                         cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = $"SELECT username,password FROM login_utilizadores WHERE username=@Username AND password=@Userpass";
+                        cmd.CommandText = $"SELECT username,password FROM Utilizadores WHERE username=@Username AND password=@Userpass";
                         cmd.Parameters.AddWithValue("@Username", textBox_username.Text);
                         Program.value = textBox_username.Text;
                         cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);
@@ -158,7 +158,7 @@ namespace DLS_ALFEITE
                             SqlConnection sqlcon = new SqlConnection(connection);
                             SqlCommand cmd = sqlcon.CreateCommand();
                             cmd.CommandType = CommandType.Text;
-                            cmd.CommandText = $"SELECT username,password FROM login_utilizadores WHERE username=@Username AND password=@Userpass";
+                            cmd.CommandText = $"SELECT username,password FROM Utilizadores WHERE username=@Username AND password=@Userpass";
                             cmd.Parameters.AddWithValue("@Username", textBox_username.Text);
                             Program.value = textBox_username.Text;
                             cmd.Parameters.AddWithValue("@Userpass", textBox_password.Text);

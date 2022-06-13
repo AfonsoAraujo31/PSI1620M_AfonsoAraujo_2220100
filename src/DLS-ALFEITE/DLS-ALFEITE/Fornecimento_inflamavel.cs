@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 
 namespace DLS_ALFEITE
 {
-    public partial class Fornecimento_inflamavel : Form
+    public partial class Fornecimento_inflamaveis : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -27,7 +27,7 @@ namespace DLS_ALFEITE
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         int id1 = 0;
         bool ver = true;
-        public Fornecimento_inflamavel(string id, string value1, string value2, string value3)
+        public Fornecimento_inflamaveis(string id, string value1, string value2, string value3)
         {
             InitializeComponent();
             Form_estilo();
@@ -116,7 +116,7 @@ namespace DLS_ALFEITE
             {
                 try
                 {
-                    string query = "insert into fornecimento_inflamavel(id_fornecimento,data_fornecimento,data_entrega,quantidade_fornecimento,entidade,observacoes) VALUES( " + id1 + ", '" + this.dtp_data_fornecimento.Text + "','" + this.dtp_data_prevista_entrega.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_observacoes.Text + "')";
+                    string query = "insert into Fornecimento_inflamaveis(id_fornecimento,data_fornecimento,data_entrega,quantidade_fornecimento,entidade,observacoes) VALUES( " + id1 + ", '" + this.dtp_data_fornecimento.Text + "','" + this.dtp_data_prevista_entrega.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_observacoes.Text + "')";
                     SqlConnection sqlCon = new SqlConnection(connection);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     SqlDataReader myreader;

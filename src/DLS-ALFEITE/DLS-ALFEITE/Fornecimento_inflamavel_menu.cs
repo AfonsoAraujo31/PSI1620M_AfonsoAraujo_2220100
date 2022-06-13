@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 
 namespace DLS_ALFEITE
 {
-    public partial class Fornecimento_inflamavel_menu : Form
+    public partial class Fornecimento_inflamaveis_menu : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -26,7 +26,7 @@ namespace DLS_ALFEITE
         );
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         bool check = false;
-        public Fornecimento_inflamavel_menu(bool value)
+        public Fornecimento_inflamaveis_menu(bool value)
         {
             InitializeComponent();
             Form_estilo();
@@ -36,7 +36,7 @@ namespace DLS_ALFEITE
                 using (SqlConnection sqlCon = new SqlConnection(connection))
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join Fornecimento_inflamaveis ON Inflamaveis.id = Fornecimento_inflamaveis.id_fornecimento", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -103,7 +103,7 @@ namespace DLS_ALFEITE
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento where denominacao like '" + textbox_searchbar.Text + "%'";
+                    cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join Fornecimento_inflamaveis ON Inflamaveis.id = Fornecimento_inflamaveis.id_fornecimento where denominacao like '" + textbox_searchbar.Text + "%'";
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
@@ -140,7 +140,7 @@ namespace DLS_ALFEITE
                     using (SqlConnection sqlCon = new SqlConnection(connection))
                     {
                         sqlCon.Open();
-                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento", sqlCon);
+                        SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join Fornecimento_inflamaveis ON Inflamaveis.id = Fornecimento_inflamaveis.id_fornecimento", sqlCon);
                         DataTable dtbl = new DataTable();
                         adapter.Fill(dtbl);
                         dataGridView1.DataSource = dtbl;
@@ -168,7 +168,7 @@ namespace DLS_ALFEITE
             {
                 SqlCommand cmd = sql.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,lote,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade',fornecimento_inflamavel.observacoes FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento Where id_fornecimento = @id";
+                cmd.CommandText = $"SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie,lote,quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade',Fornecimento_inflamaveis.observacoes FROM Inflamaveis join Fornecimento_inflamaveis ON Inflamaveis.id = Fornecimento_inflamaveis.id_fornecimento Where id_fornecimento = @id";
                 cmd.Parameters.AddWithValue("@id", id1);
                 pictureBox1.Tag = id1;
                 sql.Open();
@@ -230,7 +230,7 @@ namespace DLS_ALFEITE
                     cmd.ExecuteNonQuery();
                     sqlCon.Close();
                 }
-                using (cmd = new SqlCommand("DELETE FROM fornecimento_inflamavel WHERE id_fornecimento = @id", sqlCon))
+                using (cmd = new SqlCommand("DELETE FROM Fornecimento_inflamaveis WHERE id_fornecimento = @id", sqlCon))
                 {
                     cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
                     sqlCon.Open();
@@ -240,7 +240,7 @@ namespace DLS_ALFEITE
                 using (sqlCon)
                 {
                     sqlCon.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento", sqlCon);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join Fornecimento_inflamaveis ON Inflamaveis.id = Fornecimento_inflamaveis.id_fornecimento", sqlCon);
                     DataTable dtbl = new DataTable();
                     adapter.Fill(dtbl);
                     dataGridView1.DataSource = dtbl;
@@ -253,7 +253,7 @@ namespace DLS_ALFEITE
         {
             SqlConnection sqlCon = new SqlConnection(connection);
             SqlCommand cmd;
-            using (cmd = new SqlCommand("DELETE FROM fornecimento_inflamavel WHERE id_fornecimento = @id", sqlCon))
+            using (cmd = new SqlCommand("DELETE FROM Fornecimento_inflamaveis WHERE id_fornecimento = @id", sqlCon))
             {
                 cmd.Parameters.AddWithValue("@id", pictureBox1.Tag);
                 sqlCon.Open();
@@ -263,7 +263,7 @@ namespace DLS_ALFEITE
             using (sqlCon)
             {
                 sqlCon.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join fornecimento_inflamavel ON Inflamaveis.id = fornecimento_inflamavel.id_fornecimento", sqlCon);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id_fornecimento as 'Id', denominacao as 'Denominação',numero_serie as 'Nº de Série',quantidade_fornecimento as 'Qtd', fabricante as 'Fabricante',email_tel_fabricante as 'Contacto', data_fornecimento as 'Data limite de receção', entidade as 'Entidade' FROM Inflamaveis join Fornecimento_inflamaveis ON Inflamaveis.id = Fornecimento_inflamaveis.id_fornecimento", sqlCon);
                 DataTable dtbl = new DataTable();
                 adapter.Fill(dtbl);
                 dataGridView1.DataSource = dtbl;
