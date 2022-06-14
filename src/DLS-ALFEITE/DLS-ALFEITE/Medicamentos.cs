@@ -325,11 +325,6 @@ namespace DLS_ALFEITE
                 sqlCon1.Close();
             }
         }
-
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dataGridView1.Rows[0].Selected = false;
-        }
     }
 }
 

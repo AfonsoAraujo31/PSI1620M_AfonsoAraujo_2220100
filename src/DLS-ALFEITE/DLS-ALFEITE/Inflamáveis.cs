@@ -328,10 +328,5 @@ namespace DLS_ALFEITE
             Adicionar_inflamavel adicionar_inflamavel = new Adicionar_inflamavel(this);
             adicionar_inflamavel.ShowDialog();
         }
-
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dataGridView1.Rows[0].Selected = false;
-        }
     }
 }
