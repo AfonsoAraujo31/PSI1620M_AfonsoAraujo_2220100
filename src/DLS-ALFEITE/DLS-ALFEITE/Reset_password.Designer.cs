@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txb_username = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_ = new System.Windows.Forms.Button();
@@ -42,6 +41,7 @@
             this.btn_login_codigounico = new System.Windows.Forms.PictureBox();
             this.txb_codigo_unico = new System.Windows.Forms.TextBox();
             this.btn_2 = new System.Windows.Forms.Button();
+            this.txb_username = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btn_login_reset = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txb_comfirmacao_password = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -59,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_reset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.email)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -85,6 +87,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.email);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.btn_);
@@ -99,20 +102,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(251, 146);
             this.panel1.TabIndex = 38;
-            // 
-            // txb_username
-            // 
-            this.txb_username.BackColor = System.Drawing.Color.Gainsboro;
-            this.txb_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txb_username.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txb_username.ForeColor = System.Drawing.Color.Black;
-            this.txb_username.Location = new System.Drawing.Point(74, 32);
-            this.txb_username.Name = "txb_username";
-            this.txb_username.Size = new System.Drawing.Size(100, 19);
-            this.txb_username.TabIndex = 43;
-            this.txb_username.Text = "Username";
-            this.txb_username.Enter += new System.EventHandler(this.txb_username_Enter);
-            this.txb_username.Leave += new System.EventHandler(this.txb_username_Leave);
             // 
             // pictureBox2
             // 
@@ -197,13 +186,14 @@
             // 
             this.txb_codigo_unico.BackColor = System.Drawing.Color.Gainsboro;
             this.txb_codigo_unico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txb_codigo_unico.Enabled = false;
             this.txb_codigo_unico.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_codigo_unico.ForeColor = System.Drawing.Color.Black;
             this.txb_codigo_unico.Location = new System.Drawing.Point(73, 64);
             this.txb_codigo_unico.Name = "txb_codigo_unico";
             this.txb_codigo_unico.Size = new System.Drawing.Size(100, 19);
             this.txb_codigo_unico.TabIndex = 38;
-            this.txb_codigo_unico.Text = "Código Único";
+            this.txb_codigo_unico.Text = "Código do Email";
             this.txb_codigo_unico.Enter += new System.EventHandler(this.textBox_codigo_unico_Enter);
             this.txb_codigo_unico.Leave += new System.EventHandler(this.txb_codigo_unico_Leave);
             // 
@@ -220,6 +210,20 @@
             this.btn_2.TabIndex = 40;
             this.btn_2.UseVisualStyleBackColor = true;
             this.btn_2.Click += new System.EventHandler(this.btn_2_Click);
+            // 
+            // txb_username
+            // 
+            this.txb_username.BackColor = System.Drawing.Color.Gainsboro;
+            this.txb_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txb_username.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txb_username.ForeColor = System.Drawing.Color.Black;
+            this.txb_username.Location = new System.Drawing.Point(74, 32);
+            this.txb_username.Name = "txb_username";
+            this.txb_username.Size = new System.Drawing.Size(100, 19);
+            this.txb_username.TabIndex = 43;
+            this.txb_username.Text = "Username";
+            this.txb_username.Enter += new System.EventHandler(this.txb_username_Enter);
+            this.txb_username.Leave += new System.EventHandler(this.txb_username_Leave);
             // 
             // panel6
             // 
@@ -327,6 +331,17 @@
             this.txb_comfirmacao_password.Enter += new System.EventHandler(this.txb_comfirmacao_password_Enter);
             this.txb_comfirmacao_password.Leave += new System.EventHandler(this.txb_comfirmacao_password_Leave);
             // 
+            // email
+            // 
+            this.email.Image = ((System.Drawing.Image)(resources.GetObject("email.Image")));
+            this.email.Location = new System.Drawing.Point(185, 26);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(33, 23);
+            this.email.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.email.TabIndex = 44;
+            this.email.TabStop = false;
+            this.email.Click += new System.EventHandler(this.email_Click);
+            // 
             // Reset_password
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +367,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_reset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.email)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,5 +397,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txb_username;
         private System.Windows.Forms.PictureBox btn_login_reset;
+        private System.Windows.Forms.PictureBox email;
     }
 }

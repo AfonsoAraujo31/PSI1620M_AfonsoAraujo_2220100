@@ -40,23 +40,25 @@ namespace DLS_ALFEITE
             this.button2_cu = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.email = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_codigounico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.email)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_codigo_unico
             // 
             this.textBox_codigo_unico.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox_codigo_unico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_codigo_unico.Enabled = false;
             this.textBox_codigo_unico.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.textBox_codigo_unico.ForeColor = System.Drawing.Color.Black;
             this.textBox_codigo_unico.Location = new System.Drawing.Point(101, 82);
             this.textBox_codigo_unico.Name = "textBox_codigo_unico";
             this.textBox_codigo_unico.Size = new System.Drawing.Size(100, 19);
             this.textBox_codigo_unico.TabIndex = 28;
-            this.textBox_codigo_unico.Text = "Código Único";
-            this.textBox_codigo_unico.TextChanged += new System.EventHandler(this.textBox_codigo_unico_TextChanged);
+            this.textBox_codigo_unico.Text = "Código do Email";
             this.textBox_codigo_unico.Enter += new System.EventHandler(this.textBox_codigo_unico_Enter);
             this.textBox_codigo_unico.Leave += new System.EventHandler(this.textBox_codigo_unico_Leave);
             // 
@@ -165,12 +167,24 @@ namespace DLS_ALFEITE
             this.pictureBox3.TabIndex = 32;
             this.pictureBox3.TabStop = false;
             // 
+            // email
+            // 
+            this.email.Image = ((System.Drawing.Image)(resources.GetObject("email.Image")));
+            this.email.Location = new System.Drawing.Point(213, 45);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(33, 23);
+            this.email.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.email.TabIndex = 45;
+            this.email.TabStop = false;
+            this.email.Click += new System.EventHandler(this.email_Click);
+            // 
             // Login_Codigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(311, 162);
+            this.Controls.Add(this.email);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button1_cu);
@@ -190,6 +204,7 @@ namespace DLS_ALFEITE
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_codigounico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.email)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +221,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.TextBox textBox_username_confirmação;
+        private System.Windows.Forms.PictureBox email;
     }
 }

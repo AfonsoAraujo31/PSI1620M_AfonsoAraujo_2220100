@@ -31,8 +31,6 @@ namespace DLS_ALFEITE
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registo));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txb_codigo_unico = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.cb_genero = new System.Windows.Forms.ComboBox();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.txb_numero_telemovel = new System.Windows.Forms.TextBox();
@@ -56,8 +54,6 @@ namespace DLS_ALFEITE
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panel2.Controls.Add(this.txb_codigo_unico);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.cb_genero);
             this.panel2.Controls.Add(this.btn_guardar);
             this.panel2.Controls.Add(this.txb_numero_telemovel);
@@ -77,28 +73,6 @@ namespace DLS_ALFEITE
             this.panel2.Size = new System.Drawing.Size(400, 723);
             this.panel2.TabIndex = 2;
             // 
-            // txb_codigo_unico
-            // 
-            this.txb_codigo_unico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txb_codigo_unico.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txb_codigo_unico.ForeColor = System.Drawing.Color.Black;
-            this.txb_codigo_unico.Location = new System.Drawing.Point(75, 408);
-            this.txb_codigo_unico.Name = "txb_codigo_unico";
-            this.txb_codigo_unico.Size = new System.Drawing.Size(249, 26);
-            this.txb_codigo_unico.TabIndex = 111;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
-            this.label6.ForeColor = System.Drawing.Color.Transparent;
-            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(71, 384);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 21);
-            this.label6.TabIndex = 112;
-            this.label6.Text = "Código Único:";
-            // 
             // cb_genero
             // 
             this.cb_genero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -107,7 +81,7 @@ namespace DLS_ALFEITE
             this.cb_genero.Items.AddRange(new object[] {
             "M",
             "F"});
-            this.cb_genero.Location = new System.Drawing.Point(75, 472);
+            this.cb_genero.Location = new System.Drawing.Point(75, 420);
             this.cb_genero.Name = "cb_genero";
             this.cb_genero.Size = new System.Drawing.Size(249, 28);
             this.cb_genero.TabIndex = 110;
@@ -118,7 +92,7 @@ namespace DLS_ALFEITE
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.ForeColor = System.Drawing.Color.Black;
-            this.btn_guardar.Location = new System.Drawing.Point(159, 663);
+            this.btn_guardar.Location = new System.Drawing.Point(159, 611);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(95, 32);
             this.btn_guardar.TabIndex = 108;
@@ -131,7 +105,7 @@ namespace DLS_ALFEITE
             this.txb_numero_telemovel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txb_numero_telemovel.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_numero_telemovel.ForeColor = System.Drawing.Color.Black;
-            this.txb_numero_telemovel.Location = new System.Drawing.Point(75, 619);
+            this.txb_numero_telemovel.Location = new System.Drawing.Point(75, 567);
             this.txb_numero_telemovel.Name = "txb_numero_telemovel";
             this.txb_numero_telemovel.Size = new System.Drawing.Size(249, 26);
             this.txb_numero_telemovel.TabIndex = 106;
@@ -142,7 +116,7 @@ namespace DLS_ALFEITE
             this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label4.ForeColor = System.Drawing.Color.Transparent;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(71, 595);
+            this.label4.Location = new System.Drawing.Point(71, 543);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(189, 21);
             this.label4.TabIndex = 107;
@@ -153,7 +127,7 @@ namespace DLS_ALFEITE
             this.txb_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txb_email.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_email.ForeColor = System.Drawing.Color.Black;
-            this.txb_email.Location = new System.Drawing.Point(75, 545);
+            this.txb_email.Location = new System.Drawing.Point(75, 493);
             this.txb_email.Name = "txb_email";
             this.txb_email.Size = new System.Drawing.Size(249, 26);
             this.txb_email.TabIndex = 104;
@@ -164,7 +138,7 @@ namespace DLS_ALFEITE
             this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label5.ForeColor = System.Drawing.Color.Transparent;
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(71, 521);
+            this.label5.Location = new System.Drawing.Point(71, 469);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 21);
             this.label5.TabIndex = 105;
@@ -176,7 +150,7 @@ namespace DLS_ALFEITE
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(71, 449);
+            this.label2.Location = new System.Drawing.Point(71, 397);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 21);
             this.label2.TabIndex = 103;
@@ -293,7 +267,5 @@ namespace DLS_ALFEITE
         public System.Windows.Forms.TextBox txb_username;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txb_codigo_unico;
-        private System.Windows.Forms.Label label6;
     }
 }

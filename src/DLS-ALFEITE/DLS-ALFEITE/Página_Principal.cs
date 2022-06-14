@@ -138,6 +138,11 @@ namespace DLS_ALFEITE
                 btn_aquisicao_equipamentos.Visible = false;
                 btn_fornecimento_equipamentos.Visible = false;
             }
+            if (btn_aquisicao_medicamentos.Visible == false || btn_fornecimento_medicamento.Visible == true)
+            {
+                btn_aquisicao_medicamentos.Visible = true;
+                btn_fornecimento_medicamento.Visible = true;
+            }
         }
         void frm_medFormClosed(object sender, FormClosedEventArgs e)
         {
@@ -187,6 +192,11 @@ namespace DLS_ALFEITE
                 btn_fornecimento_equipamentos.Visible = false;
             }
             else if (btn_aquisicao_equipamentos.Visible == false || btn_fornecimento_equipamentos.Visible == true) 
+            {
+                btn_aquisicao_equipamentos.Visible = true;
+                btn_fornecimento_equipamentos.Visible = true;
+            }
+            if (btn_aquisicao_equipamentos.Visible == false || btn_fornecimento_equipamentos.Visible == true)
             {
                 btn_aquisicao_equipamentos.Visible = true;
                 btn_fornecimento_equipamentos.Visible = true;

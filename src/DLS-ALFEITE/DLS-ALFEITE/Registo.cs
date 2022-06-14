@@ -42,10 +42,8 @@ namespace DLS_ALFEITE
             txb_numero_telemovel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_numero_telemovel.Width, txb_numero_telemovel.Height, 30, 30));
             txb_password.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_password.Width, txb_password.Height, 30, 30));
             btn_guardar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_guardar.Width, btn_guardar.Height, 30, 30));
-            txb_codigo_unico.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_codigo_unico.Width, txb_codigo_unico.Height, 30, 30));
             this.ActiveControl = panel2;
             //validacao_dos_campos
-            txb_codigo_unico.MaxLength = 4;
             txb_numero_telemovel.MaxLength = 9;
             cb_genero.MaxLength = 1;
         }
@@ -82,7 +80,7 @@ namespace DLS_ALFEITE
                     }
                     sqlCon.Close();
                     identifica = identifica + 1;
-                    string query = "Insert into Utilizadores(id_utilizador,username,nome,password,genero,email,num_tel,codigo_unico) VALUES('" + identifica + "','" + this.txb_username.Text + "','" + this.txb_nome.Text + "','" + this.txb_password.Text + "','" + this.cb_genero.Text + "','" + this.txb_email.Text + "','" + this.txb_numero_telemovel.Text + "','" + this.txb_codigo_unico.Text + "')";
+                    string query = "Insert into Utilizadores(id_utilizador,username,nome,password,genero,email,num_tel) VALUES('" + identifica + "','" + this.txb_username.Text + "','" + this.txb_nome.Text + "','" + this.txb_password.Text + "','" + this.cb_genero.Text + "','" + this.txb_email.Text + "','" + this.txb_numero_telemovel.Text + "')";
 
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     SqlDataReader myreader;
@@ -100,7 +98,6 @@ namespace DLS_ALFEITE
                     txb_nome.Text = "";
                     txb_numero_telemovel.Text = "";
                     txb_password.Text = "";
-                    txb_codigo_unico.Text = "";
                 }
                 catch (Exception ex)
                 {
@@ -140,11 +137,6 @@ namespace DLS_ALFEITE
             {
                 ver = false;
                 MessageBox.Show("Campo Password incorreto!");
-            }
-            if (txb_codigo_unico.Text == "")
-            {
-                ver = false;
-                MessageBox.Show("Campo Código Único incorreto!");
             }
             //regular expression
             string strRegex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
