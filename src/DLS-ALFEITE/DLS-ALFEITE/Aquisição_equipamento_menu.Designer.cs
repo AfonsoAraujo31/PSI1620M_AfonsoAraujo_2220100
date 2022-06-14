@@ -35,6 +35,7 @@ namespace DLS_ALFEITE
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_pedido = new System.Windows.Forms.Button();
             this.btn_rejeitar = new System.Windows.Forms.Button();
             this.btn_aprovar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -72,7 +73,7 @@ namespace DLS_ALFEITE
             this.textbox_searchbar.Location = new System.Drawing.Point(219, 28);
             this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_searchbar.Name = "textbox_searchbar";
-            this.textbox_searchbar.Size = new System.Drawing.Size(1032, 25);
+            this.textbox_searchbar.Size = new System.Drawing.Size(985, 25);
             this.textbox_searchbar.TabIndex = 5;
             this.textbox_searchbar.Text = "Search...";
             this.textbox_searchbar.TextChanged += new System.EventHandler(this.textbox_searchbar_TextChanged);
@@ -112,15 +113,18 @@ namespace DLS_ALFEITE
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1032, 1030);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(985, 1030);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.btn_pedido);
             this.panel1.Controls.Add(this.btn_rejeitar);
             this.panel1.Controls.Add(this.btn_aprovar);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -142,10 +146,27 @@ namespace DLS_ALFEITE
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(1273, 58);
+            this.panel1.Location = new System.Drawing.Point(1226, 58);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 1030);
             this.panel1.TabIndex = 7;
+            // 
+            // btn_pedido
+            // 
+            this.btn_pedido.BackColor = System.Drawing.Color.RosyBrown;
+            this.btn_pedido.FlatAppearance.BorderSize = 0;
+            this.btn_pedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pedido.Font = new System.Drawing.Font("Berlin Sans FB", 12.75F);
+            this.btn_pedido.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_pedido.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_pedido.Location = new System.Drawing.Point(425, 779);
+            this.btn_pedido.Name = "btn_pedido";
+            this.btn_pedido.Size = new System.Drawing.Size(120, 47);
+            this.btn_pedido.TabIndex = 99;
+            this.btn_pedido.Text = "Fazer \r\npedido";
+            this.btn_pedido.UseVisualStyleBackColor = false;
+            this.btn_pedido.Visible = false;
+            this.btn_pedido.Click += new System.EventHandler(this.btn_pedido_Click);
             // 
             // btn_rejeitar
             // 
@@ -155,7 +176,7 @@ namespace DLS_ALFEITE
             this.btn_rejeitar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.btn_rejeitar.ForeColor = System.Drawing.Color.Transparent;
             this.btn_rejeitar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_rejeitar.Location = new System.Drawing.Point(365, 779);
+            this.btn_rejeitar.Location = new System.Drawing.Point(299, 779);
             this.btn_rejeitar.Name = "btn_rejeitar";
             this.btn_rejeitar.Size = new System.Drawing.Size(120, 47);
             this.btn_rejeitar.TabIndex = 98;
@@ -172,7 +193,7 @@ namespace DLS_ALFEITE
             this.btn_aprovar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.btn_aprovar.ForeColor = System.Drawing.Color.Transparent;
             this.btn_aprovar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_aprovar.Location = new System.Drawing.Point(239, 779);
+            this.btn_aprovar.Location = new System.Drawing.Point(173, 779);
             this.btn_aprovar.Name = "btn_aprovar";
             this.btn_aprovar.Size = new System.Drawing.Size(120, 47);
             this.btn_aprovar.TabIndex = 97;
@@ -392,7 +413,7 @@ namespace DLS_ALFEITE
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1987, 1100);
+            this.ClientSize = new System.Drawing.Size(1940, 1100);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textbox_searchbar);
@@ -434,5 +455,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_aprovar;
         private System.Windows.Forms.Button btn_rejeitar;
+        private System.Windows.Forms.Button btn_pedido;
     }
 }

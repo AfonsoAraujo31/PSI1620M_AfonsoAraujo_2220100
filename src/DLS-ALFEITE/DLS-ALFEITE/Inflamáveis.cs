@@ -233,7 +233,8 @@ namespace DLS_ALFEITE
 
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            int idx = e.RowIndex < 0 ? 0 : e.RowIndex;
+            DataGridViewRow row = this.dataGridView1.Rows[idx];
             id = row.Cells["Id"].Value.ToString();
             denominacao = row.Cells["Denominação"].Value.ToString();
             validade = row.Cells["Validade"].Value.ToString();
@@ -326,6 +327,11 @@ namespace DLS_ALFEITE
         { 
             Adicionar_inflamavel adicionar_inflamavel = new Adicionar_inflamavel(this);
             adicionar_inflamavel.ShowDialog();
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.Rows[0].Selected = false;
         }
     }
 }

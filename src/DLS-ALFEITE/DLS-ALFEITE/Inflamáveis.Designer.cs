@@ -135,9 +135,11 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1668, 676);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // panel1
             // 
@@ -172,7 +174,7 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 18;
             this.listBox2.Location = new System.Drawing.Point(109, 32);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(132, 18);
             this.listBox2.TabIndex = 25;
@@ -186,7 +188,7 @@
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 18;
             this.listBox3.Location = new System.Drawing.Point(6, 32);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox3.Margin = new System.Windows.Forms.Padding(2);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(132, 18);
             this.listBox3.TabIndex = 24;
@@ -234,7 +236,7 @@
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 18;
             this.listBox4.Location = new System.Drawing.Point(110, 32);
-            this.listBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox4.Margin = new System.Windows.Forms.Padding(2);
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(132, 18);
             this.listBox4.TabIndex = 23;
@@ -248,7 +250,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 18;
             this.listBox1.Location = new System.Drawing.Point(7, 32);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(132, 18);
             this.listBox1.TabIndex = 22;
@@ -318,7 +320,7 @@
             this.listBox5.FormattingEnabled = true;
             this.listBox5.ItemHeight = 18;
             this.listBox5.Location = new System.Drawing.Point(112, 32);
-            this.listBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox5.Margin = new System.Windows.Forms.Padding(2);
             this.listBox5.Name = "listBox5";
             this.listBox5.Size = new System.Drawing.Size(132, 54);
             this.listBox5.TabIndex = 15;
@@ -332,7 +334,7 @@
             this.listBox6.FormattingEnabled = true;
             this.listBox6.ItemHeight = 18;
             this.listBox6.Location = new System.Drawing.Point(9, 32);
-            this.listBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox6.Margin = new System.Windows.Forms.Padding(2);
             this.listBox6.Name = "listBox6";
             this.listBox6.Size = new System.Drawing.Size(132, 54);
             this.listBox6.TabIndex = 14;
@@ -371,7 +373,7 @@
             this.listBox7.FormattingEnabled = true;
             this.listBox7.ItemHeight = 18;
             this.listBox7.Location = new System.Drawing.Point(110, 32);
-            this.listBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox7.Margin = new System.Windows.Forms.Padding(2);
             this.listBox7.Name = "listBox7";
             this.listBox7.Size = new System.Drawing.Size(132, 54);
             this.listBox7.TabIndex = 17;
@@ -395,7 +397,7 @@
             this.listBox8.FormattingEnabled = true;
             this.listBox8.ItemHeight = 18;
             this.listBox8.Location = new System.Drawing.Point(7, 32);
-            this.listBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox8.Margin = new System.Windows.Forms.Padding(2);
             this.listBox8.Name = "listBox8";
             this.listBox8.Size = new System.Drawing.Size(132, 54);
             this.listBox8.TabIndex = 16;

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Runtime.InteropServices;
+using System.Net.Mail;
+using System.Net;
 
 namespace DLS_ALFEITE
 {
@@ -52,6 +54,7 @@ namespace DLS_ALFEITE
             {
                 btn_aprovar.Visible = true;
                 btn_rejeitar.Visible = true;
+                btn_pedido.Visible = true;
             }
         }
         public void Form_estilo()
@@ -82,6 +85,7 @@ namespace DLS_ALFEITE
             txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_denominacao.Width, txb_denominacao.Height, 12, 12));
             btn_aprovar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_aprovar.Width, btn_aprovar.Height, 12, 12));
             btn_rejeitar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_rejeitar.Width, btn_rejeitar.Height, 12, 12));
+            btn_pedido.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_pedido.Width, btn_pedido.Height, 12, 12));
             this.ActiveControl = label2; 
         }
         public void update()
@@ -124,6 +128,7 @@ namespace DLS_ALFEITE
                 {
                     btn_aprovar.Visible = true;
                     btn_rejeitar.Visible = true;
+                    btn_pedido.Visible = true;
                 }
             }
         }
@@ -154,13 +159,15 @@ namespace DLS_ALFEITE
             {
                 btn_aprovar.Visible = true;
                 btn_rejeitar.Visible = true;
+                btn_pedido.Visible = true;
             }
         }
 
         public void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string id = null;
-            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            int idx = e.RowIndex < 0 ? 0 : e.RowIndex;
+            DataGridViewRow row = this.dataGridView1.Rows[idx];
             id = row.Cells["Id"].Value.ToString();
             SqlConnection sql = new SqlConnection(connection);
             using (sql)
@@ -267,6 +274,88 @@ namespace DLS_ALFEITE
                 adapter.Fill(dtbl);
                 dataGridView1.DataSource = dtbl;
                 sqlCon.Close();
+            }
+        }
+        string email1 = null;
+        string nome1 = null;
+        private void btn_pedido_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlcon = new SqlConnection(connection);
+            SqlCommand cmd = sqlcon.CreateCommand();
+            cmd.CommandText = $"SELECT email,nome FROM Utilizadores WHERE username=@user";
+            cmd.Parameters.AddWithValue("@user", "AdminAA22");
+            sqlcon.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            int count1 = ds.Tables[0].Rows.Count;
+            if (count1 == 1)
+            {
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    if (rdr.HasRows)
+                    {
+                        while (rdr.Read())
+                        {
+                            email1 = rdr.GetString(0);
+                            nome1 = rdr.GetString(1);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Username ou código único errados!");
+            }
+            sqlcon.Close();
+
+            string to, from, password, mail;
+            to = email1;
+            from = "afonso16araujo@gmail.com";
+            mail = "Bom dia,\nEu " + nome1 + ".\nVenho por este meio solicitar um pedido de aquisição do medicamento " + txb_denominacao.Text + ".\nMais detalhes:\nDenominação:"+txb_denominacao.Text+ "\nPrincípio/Ativo:" + txb_principio_ativo.Text + "\nLote:" + txb_lote.Text + "\nQuantidade:" + txb_quantidade.Text + "\nData limite de receção:" + dtp_data_limite_rececao.Text + "\nEntidade:" + txb_entidade.Text + "\nMotivo:" + txb_motivo.Text + "\nAgradecemos uma resposta o mais rapido possível,\nObrigado";
+            password = "ntceacwydarlnjqa";
+            if (email1.Trim() == string.Empty)
+            {
+                MessageBox.Show("Espaço em branco, por favor digite o seu E-mail!!!", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            string palavra = "@gmail.com";
+            if (to.Contains(palavra))
+            {
+                MailMessage message = new MailMessage();
+                message.To.Add(to);
+                message.From = new MailAddress(from);
+                message.Body = mail;
+                message.Subject = "Pedido de Aquisição";
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                smtp.EnableSsl = true;
+                smtp.Port = 587;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(from, password);
+                try
+                {
+                    smtp.Send(message);
+                    MessageBox.Show("Email enviado", "E-Mail", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Não digitou o E-mail corretamente. Lembre-se que so pode inserir E-mail's da Google do tipo: (...)@GMAIL.COM", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                dataGridView1.Rows[0].Selected = false;
             }
         }
     }

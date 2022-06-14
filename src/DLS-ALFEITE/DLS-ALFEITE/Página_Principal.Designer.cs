@@ -444,7 +444,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.Button btn_min;
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label_username;
         private System.Windows.Forms.Label label_data;
         private System.Windows.Forms.Button btn_fornecimento_equipamentos;
         private System.Windows.Forms.Button btn_fornecimento_inflamaveis;
@@ -459,5 +458,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button btn_medicamento;
+        public System.Windows.Forms.Label label_username;
     }
 }

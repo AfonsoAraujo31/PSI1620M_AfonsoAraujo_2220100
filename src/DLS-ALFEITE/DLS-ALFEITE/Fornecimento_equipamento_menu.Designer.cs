@@ -72,7 +72,7 @@ namespace DLS_ALFEITE
             this.textbox_searchbar.Location = new System.Drawing.Point(219, 28);
             this.textbox_searchbar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_searchbar.Name = "textbox_searchbar";
-            this.textbox_searchbar.Size = new System.Drawing.Size(1032, 25);
+            this.textbox_searchbar.Size = new System.Drawing.Size(985, 25);
             this.textbox_searchbar.TabIndex = 4;
             this.textbox_searchbar.Text = "Search...";
             this.textbox_searchbar.TextChanged += new System.EventHandler(this.textbox_searchbar_TextChanged);
@@ -115,9 +115,11 @@ namespace DLS_ALFEITE
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1032, 1030);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(985, 1030);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // panel1
             // 
@@ -145,7 +147,7 @@ namespace DLS_ALFEITE
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(1273, 58);
+            this.panel1.Location = new System.Drawing.Point(1226, 58);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 1030);
             this.panel1.TabIndex = 6;
@@ -395,7 +397,7 @@ namespace DLS_ALFEITE
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1987, 1100);
+            this.ClientSize = new System.Drawing.Size(1940, 1100);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textbox_searchbar);

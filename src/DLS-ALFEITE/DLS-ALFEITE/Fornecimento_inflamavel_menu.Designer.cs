@@ -29,7 +29,7 @@ namespace DLS_ALFEITE
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fornecimento_inflamaveis));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fornecimento_inflamaveis_menu));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -86,7 +86,7 @@ namespace DLS_ALFEITE
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(1272, 54);
+            this.panel1.Location = new System.Drawing.Point(1225, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 932);
             this.panel1.TabIndex = 12;
@@ -335,7 +335,7 @@ namespace DLS_ALFEITE
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
@@ -357,16 +357,18 @@ namespace DLS_ALFEITE
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(293, 54);
+            this.dataGridView1.Location = new System.Drawing.Point(246, 54);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(962, 1034);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // textbox_searchbar
             // 
@@ -384,17 +386,17 @@ namespace DLS_ALFEITE
             this.textbox_searchbar.Enter += new System.EventHandler(this.textbox_searchbar_Enter);
             this.textbox_searchbar.Leave += new System.EventHandler(this.textbox_searchbar_Leave);
             // 
-            // Fornecimento_inflamavel_menu
+            // Fornecimento_inflamaveis_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1987, 1100);
+            this.ClientSize = new System.Drawing.Size(1940, 1100);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textbox_searchbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Fornecimento_inflamavel_menu";
+            this.Name = "Fornecimento_inflamaveis_menu";
             this.Text = "Fornecimento_inflamavel_menu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

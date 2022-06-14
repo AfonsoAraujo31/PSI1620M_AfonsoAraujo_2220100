@@ -61,7 +61,7 @@ namespace DLS_ALFEITE
                 SqlConnection sqlcon = new SqlConnection(connection);
                 SqlCommand cmd = sqlcon.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"select id_utilizador,nome,username,password,codigo_unico,genero,email,num_tel from Utilizadores WHERE username=@Username";
+                cmd.CommandText = $"select id_utilizador,nome,username,password,genero,email,num_tel from Utilizadores WHERE username=@Username";
                 cmd.Parameters.AddWithValue("@Username", txb_username.Text);
                 sqlcon.Open();
                 SqlDataAdapter sqladp = new SqlDataAdapter(cmd);

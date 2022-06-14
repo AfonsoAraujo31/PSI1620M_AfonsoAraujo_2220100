@@ -55,6 +55,7 @@ namespace DLS_ALFEITE
         void Form_estilo()
         {
             //datagridview
+            
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -157,7 +158,8 @@ namespace DLS_ALFEITE
 
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            int idx = e.RowIndex < 0 ? 0 : e.RowIndex;
+            DataGridViewRow row = this.dataGridView1.Rows[idx];
             id = row.Cells["Id"].Value.ToString();
             denominacao = row.Cells["Denominação"].Value.ToString();
             principio_ativo = row.Cells["Princípio/Ativo"].Value.ToString();
@@ -322,6 +324,11 @@ namespace DLS_ALFEITE
                 dataGridView1.DataSource = dtbl;
                 sqlCon1.Close();
             }
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.Rows[0].Selected = false;
         }
     }
 }
