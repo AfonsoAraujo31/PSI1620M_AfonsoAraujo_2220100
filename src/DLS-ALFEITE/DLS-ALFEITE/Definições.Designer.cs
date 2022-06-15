@@ -132,10 +132,11 @@ namespace DLS_ALFEITE
             // 
             // btn_guardar
             // 
-            this.btn_guardar.BackColor = System.Drawing.Color.White;
+            this.btn_guardar.BackColor = System.Drawing.Color.RosyBrown;
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.ForeColor = System.Drawing.Color.Black;
+            this.btn_guardar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.btn_guardar.ForeColor = System.Drawing.Color.Transparent;
             this.btn_guardar.Location = new System.Drawing.Point(159, 611);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(95, 32);
@@ -358,6 +359,7 @@ namespace DLS_ALFEITE
             this.txb_versao.Name = "txb_versao";
             this.txb_versao.Size = new System.Drawing.Size(249, 26);
             this.txb_versao.TabIndex = 114;
+            this.txb_versao.Text = "DLS1 Beta";
             // 
             // pictureBox2
             // 

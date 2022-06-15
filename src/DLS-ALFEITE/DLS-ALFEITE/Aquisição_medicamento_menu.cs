@@ -311,9 +311,9 @@ namespace DLS_ALFEITE
 
             string to, from, password, mail;
             to = email1;
-            from = "afonso16araujo@gmail.com";
+            from = "dlsalfeite@gmail.com";
             mail = "Bom dia,\nEu " + nome1 + ".\nVenho por este meio solicitar um pedido de aquisição do medicamento " + txb_denominacao.Text + ".\nMais detalhes:\nDenominação:"+txb_denominacao.Text+ "\nPrincípio/Ativo:" + txb_principio_ativo.Text + "\nLote:" + txb_lote.Text + "\nQuantidade:" + txb_quantidade.Text + "\nData limite de receção:" + dtp_data_limite_rececao.Text + "\nEntidade:" + txb_entidade.Text + "\nMotivo:" + txb_motivo.Text + "\nAgradecemos uma resposta o mais rapido possível,\nObrigado";
-            password = "ntceacwydarlnjqa";
+            password = "nkufolmrezyxizmp";
             if (email1.Trim() == string.Empty)
             {
                 MessageBox.Show("Espaço em branco, por favor digite o seu E-mail!!!", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

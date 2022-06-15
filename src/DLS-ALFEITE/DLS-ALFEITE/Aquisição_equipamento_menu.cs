@@ -310,9 +310,9 @@ namespace DLS_ALFEITE
 
             string to, from, password, mail;
             to = email1;
-            from = "afonso16araujo@gmail.com";
+            from = "dlsalfeite@gmail.com";
             mail = "Bom dia,\nEu " + nome1 + ".\nVenho por este meio solicitar um pedido de aquisição do equipamento " + txb_denominacao.Text + ".\nMais detalhes:\nDenominação:" + txb_denominacao.Text + "\nNúmero de série:" + txb_numero_serie.Text + "\nLote:" + txb_lote.Text + "\nQuantidade:" + txb_quantidade.Text + "\nData limite de receção:" + dtp_data_limite_rececao.Text + "\nEntidade:" + txb_entidade.Text + "\nMotivo:" + txb_motivo.Text + "\nAgradecemos uma resposta o mais rapido possível,\nObrigado";
-            password = "ntceacwydarlnjqa";
+            password = "nkufolmrezyxizmp";
             if (email1.Trim() == string.Empty)
             {
                 MessageBox.Show("Espaço em branco, por favor digite o seu E-mail!!!", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -347,14 +347,6 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show("Não digitou o E-mail corretamente. Lembre-se que so pode inserir E-mail's da Google do tipo: (...)@GMAIL.COM", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
-            }
-        }
-
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            if (dataGridView1.Rows.Count > 0)
-            {
-                dataGridView1.Rows[0].Selected = false;
             }
         }
     }

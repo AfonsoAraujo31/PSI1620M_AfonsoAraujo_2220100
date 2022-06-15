@@ -175,7 +175,7 @@ namespace DLS_ALFEITE
             listBox6.Items.Clear();
             listBox5.Items.Clear();
             //listbox1
-            string Query = "SELECT TOP 3 denominacao, validade FROM Inflamaveis ORDER BY validade DESC";
+            string Query = "SELECT TOP 3 denominacao, validade FROM Inflamaveis";
             SqlConnection sqlCon = new SqlConnection(connection);
             SqlCommand cmd = new SqlCommand(Query, sqlCon);
             SqlDataReader myReader;
@@ -197,7 +197,7 @@ namespace DLS_ALFEITE
                 MessageBox.Show(ex.Message);
             }
             //listbox2
-            string Query2 = "SELECT TOP 3 denominacao, quantidade FROM Inflamaveis WHERE quantidade <= 150";
+            string Query2 = "SELECT TOP 3 denominacao, quantidade FROM Inflamaveis WHERE quantidade <= 150 ORDER BY quantidade ASC";
             SqlConnection sqlCon2 = new SqlConnection(connection);
             SqlCommand cmd2 = new SqlCommand(Query2, sqlCon2);
             SqlDataReader myReader2;
@@ -292,14 +292,14 @@ namespace DLS_ALFEITE
             SqlCommand cmd1, cmd2, cmd3;
             try
             {
-                using (cmd1 = new SqlCommand("DELETE FROM Aquisição_inflamavel WHERE id_aquisicao = @id", sqlCon))
+                using (cmd1 = new SqlCommand("DELETE FROM Aquisicao_inflamaveis WHERE id_aquisicao = @id", sqlCon))
                 {
                     cmd1.Parameters.AddWithValue("@id", id);
                     sqlCon.Open();
                     cmd1.ExecuteNonQuery();
                     sqlCon.Close();
                 }
-                using (cmd2 = new SqlCommand("DELETE FROM fornecimento_inflamavel WHERE id_fornecimento = @id", sqlCon))
+                using (cmd2 = new SqlCommand("DELETE FROM Fornecimento_inflamaveis WHERE id_fornecimento = @id", sqlCon))
                 {
                     cmd2.Parameters.AddWithValue("@id", id);
                     sqlCon.Open();

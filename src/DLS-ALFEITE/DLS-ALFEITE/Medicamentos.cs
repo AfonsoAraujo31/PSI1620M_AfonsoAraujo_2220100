@@ -268,7 +268,7 @@ namespace DLS_ALFEITE
             listBox2.Items.Clear();
             listBox3.Items.Clear();
             //listbox1
-            string Query = "SELECT TOP 3 denominacao, validade FROM Medicamentos ORDER BY validade ASC";
+            string Query = "SELECT TOP 3 denominacao, validade FROM Medicamentos ORDER BY validade DESC";
             SqlConnection sqlCon = new SqlConnection(connection);
             SqlCommand cmd = new SqlCommand(Query, sqlCon);
             SqlDataReader myReader;

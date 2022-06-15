@@ -81,9 +81,9 @@ namespace DLS_ALFEITE
                                     id = rdr.GetInt32(0);
                                     txb_nome.Text = rdr.GetString(1);
                                     txb_password.Text = rdr.GetString(3);
-                                    cb_genero.Text = rdr.GetString(5);
-                                    txb_email.Text = rdr.GetString(6);
-                                    txb_numero_telemovel.Text = rdr.GetString(7);
+                                    cb_genero.Text = rdr.GetString(4);
+                                    txb_email.Text = rdr.GetString(5);
+                                    txb_numero_telemovel.Text = rdr.GetString(6);
                                 }
                             }
                         }

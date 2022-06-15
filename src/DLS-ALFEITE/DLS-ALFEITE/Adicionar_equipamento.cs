@@ -133,6 +133,16 @@ namespace DLS_ALFEITE
             {
                 MessageBox.Show(ex.Message);
             }
+            if (txb_lote.Text.Length < 5)
+            {
+                ver = false;
+                MessageBox.Show("O campo lote deve conter cinco números");
+            }
+            if (txb_numero_serie.Text.Length < 9)
+            {
+                ver = false;
+                MessageBox.Show("O campo Número de série deve conter nove números");
+            }
         }
 
         private void btn_cancelar_Click_1(object sender, EventArgs e)

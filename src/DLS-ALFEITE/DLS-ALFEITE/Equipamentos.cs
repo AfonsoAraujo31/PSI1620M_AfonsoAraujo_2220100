@@ -209,7 +209,7 @@ namespace DLS_ALFEITE
                     cmd1.ExecuteNonQuery();
                     sqlCon.Close();
                 }
-                using (cmd2 = new SqlCommand("DELETE FROM fornecimento_equipamento WHERE id_fornecimento = @id", sqlCon))
+                using (cmd2 = new SqlCommand("DELETE FROM Fornecimento_equipamentos WHERE id_fornecimento = @id", sqlCon))
                 {
                     cmd2.Parameters.AddWithValue("@id", id);
                     sqlCon.Open();

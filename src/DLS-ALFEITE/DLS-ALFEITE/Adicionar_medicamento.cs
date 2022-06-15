@@ -152,9 +152,8 @@ namespace DLS_ALFEITE
                 SqlConnection sqlcon = new SqlConnection(connection);
                 SqlCommand cmd = sqlcon.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT denominacao,principio_ativo,lote FROM Medicamentos WHERE denominacao=@denominacao OR principio_ativo=@principio OR lote=@lote";
+                cmd.CommandText = $"SELECT denominacao,lote FROM Medicamentos WHERE denominacao=@denominacao OR lote=@lote";
                 cmd.Parameters.AddWithValue("@denominacao", txb_denominacao.Text);
-                cmd.Parameters.AddWithValue("@principio", txb_principio_ativo.Text);
                 cmd.Parameters.AddWithValue("@lote", txb_lote.Text);
                 sqlcon.Open();
                 SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
@@ -171,6 +170,11 @@ namespace DLS_ALFEITE
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            if (txb_lote.Text.Length < 5)
+            {
+                ver = false;
+                MessageBox.Show("O campo lote deve conter cinco números");
             }
         }
 

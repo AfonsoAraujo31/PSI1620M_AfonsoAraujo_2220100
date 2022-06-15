@@ -31,6 +31,7 @@ namespace DLS_ALFEITE
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registo));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_alterar = new System.Windows.Forms.Button();
             this.cb_genero = new System.Windows.Forms.ComboBox();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.txb_numero_telemovel = new System.Windows.Forms.TextBox();
@@ -45,8 +46,10 @@ namespace DLS_ALFEITE
             this.txb_username = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -54,6 +57,7 @@ namespace DLS_ALFEITE
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel2.Controls.Add(this.btn_alterar);
             this.panel2.Controls.Add(this.cb_genero);
             this.panel2.Controls.Add(this.btn_guardar);
             this.panel2.Controls.Add(this.txb_numero_telemovel);
@@ -68,10 +72,26 @@ namespace DLS_ALFEITE
             this.panel2.Controls.Add(this.txb_username);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(864, 138);
+            this.panel2.Location = new System.Drawing.Point(654, 138);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(400, 723);
             this.panel2.TabIndex = 2;
+            // 
+            // btn_alterar
+            // 
+            this.btn_alterar.BackColor = System.Drawing.Color.RosyBrown;
+            this.btn_alterar.FlatAppearance.BorderSize = 0;
+            this.btn_alterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_alterar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.btn_alterar.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_alterar.Location = new System.Drawing.Point(260, 611);
+            this.btn_alterar.Name = "btn_alterar";
+            this.btn_alterar.Size = new System.Drawing.Size(95, 32);
+            this.btn_alterar.TabIndex = 111;
+            this.btn_alterar.Text = "Alterar";
+            this.btn_alterar.UseVisualStyleBackColor = false;
+            this.btn_alterar.Visible = false;
+            this.btn_alterar.Click += new System.EventHandler(this.btn_alterar_Click);
             // 
             // cb_genero
             // 
@@ -88,10 +108,11 @@ namespace DLS_ALFEITE
             // 
             // btn_guardar
             // 
-            this.btn_guardar.BackColor = System.Drawing.Color.White;
+            this.btn_guardar.BackColor = System.Drawing.Color.RosyBrown;
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.ForeColor = System.Drawing.Color.Black;
+            this.btn_guardar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.btn_guardar.ForeColor = System.Drawing.Color.Transparent;
             this.btn_guardar.Location = new System.Drawing.Point(159, 611);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(95, 32);
@@ -233,12 +254,33 @@ namespace DLS_ALFEITE
             this.pictureBox1.TabIndex = 95;
             this.pictureBox1.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.Color.White;
+            this.dataGridView1.Location = new System.Drawing.Point(1094, 313);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(370, 389);
+            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            // 
             // Registo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1894, 994);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registo";
@@ -246,6 +288,7 @@ namespace DLS_ALFEITE
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,5 +310,7 @@ namespace DLS_ALFEITE
         public System.Windows.Forms.TextBox txb_username;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_alterar;
     }
 }

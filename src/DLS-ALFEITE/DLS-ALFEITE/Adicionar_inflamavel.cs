@@ -113,6 +113,11 @@ namespace DLS_ALFEITE
                 ver = false;
                 MessageBox.Show("Campo Setor incorreto!");
             }
+            if (txb_numero_serie.Text.Length < 9)
+            {
+                ver = false;
+                MessageBox.Show("O campo Número de série deve conter nove números");
+            }
             //regular expression
             string strRegex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
             Regex obj = new Regex(strRegex);
@@ -145,6 +150,11 @@ namespace DLS_ALFEITE
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            if (txb_lote.Text.Length < 5)
+            {
+                ver = false;
+                MessageBox.Show("O campo lote deve conter cinco números");
             }
         }
 
