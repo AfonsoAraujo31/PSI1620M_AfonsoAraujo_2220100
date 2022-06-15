@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.email = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_ = new System.Windows.Forms.Button();
@@ -51,8 +52,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txb_comfirmacao_password = new System.Windows.Forms.TextBox();
-            this.email = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_codigounico)).BeginInit();
@@ -60,7 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_reset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.email)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,6 +102,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(251, 146);
             this.panel1.TabIndex = 38;
+            // 
+            // email
+            // 
+            this.email.Image = ((System.Drawing.Image)(resources.GetObject("email.Image")));
+            this.email.Location = new System.Drawing.Point(185, 26);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(33, 23);
+            this.email.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.email.TabIndex = 44;
+            this.email.TabStop = false;
+            this.email.Click += new System.EventHandler(this.email_Click);
             // 
             // pictureBox2
             // 
@@ -331,17 +342,6 @@
             this.txb_comfirmacao_password.Enter += new System.EventHandler(this.txb_comfirmacao_password_Enter);
             this.txb_comfirmacao_password.Leave += new System.EventHandler(this.txb_comfirmacao_password_Leave);
             // 
-            // email
-            // 
-            this.email.Image = ((System.Drawing.Image)(resources.GetObject("email.Image")));
-            this.email.Location = new System.Drawing.Point(185, 26);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(33, 23);
-            this.email.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.email.TabIndex = 44;
-            this.email.TabStop = false;
-            this.email.Click += new System.EventHandler(this.email_Click);
-            // 
             // Reset_password
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,12 +353,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(755, 420);
             this.Name = "Reset_password";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Reset_password";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.email)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_codigounico)).EndInit();
@@ -367,7 +369,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_reset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.email)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

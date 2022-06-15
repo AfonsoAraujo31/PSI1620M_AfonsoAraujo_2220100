@@ -396,6 +396,7 @@ namespace DLS_ALFEITE
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textbox_searchbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Fornecimento_inflamaveis_menu";
             this.Text = "Fornecimento_inflamavel_menu";
             this.panel1.ResumeLayout(false);

@@ -282,6 +282,7 @@ namespace DLS_ALFEITE
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(190, 0);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Medicamentos";

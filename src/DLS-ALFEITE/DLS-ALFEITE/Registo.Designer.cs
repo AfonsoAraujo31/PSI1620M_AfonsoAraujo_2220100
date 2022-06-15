@@ -283,6 +283,7 @@ namespace DLS_ALFEITE
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registo";
             this.Text = "Registo";
             this.panel2.ResumeLayout(false);

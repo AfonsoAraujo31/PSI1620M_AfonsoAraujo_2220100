@@ -196,6 +196,7 @@ namespace DLS_ALFEITE
             this.Controls.Add(this.textBox_codigo_unico);
             this.Controls.Add(this.button2_cu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(805, 450);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login_Codigo";

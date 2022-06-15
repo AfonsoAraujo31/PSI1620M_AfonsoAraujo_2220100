@@ -425,6 +425,7 @@
             this.Controls.Add(this.btn_adicionar_medicamentos);
             this.Controls.Add(this.textbox_searchbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Equipamentos";
             this.Text = "Equipamentos";

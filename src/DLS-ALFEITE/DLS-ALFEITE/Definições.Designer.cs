@@ -417,6 +417,7 @@ namespace DLS_ALFEITE
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Definições";
             this.Text = "Definições";
             this.panel2.ResumeLayout(false);
