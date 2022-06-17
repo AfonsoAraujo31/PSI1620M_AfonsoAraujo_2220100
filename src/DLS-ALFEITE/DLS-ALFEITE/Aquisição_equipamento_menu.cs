@@ -310,9 +310,9 @@ namespace DLS_ALFEITE
 
             string to, from, password, mail;
             to = email1;
-            from = "dlsalfeite@gmail.com";
+            from = "afonso16araujo@gmail.com";
             mail = "Bom dia,\nEu " + nome1 + ".\nVenho por este meio solicitar um pedido de aquisição do equipamento " + txb_denominacao.Text + ".\nMais detalhes:\nDenominação:" + txb_denominacao.Text + "\nNúmero de série:" + txb_numero_serie.Text + "\nLote:" + txb_lote.Text + "\nQuantidade:" + txb_quantidade.Text + "\nData limite de receção:" + dtp_data_limite_rececao.Text + "\nEntidade:" + txb_entidade.Text + "\nMotivo:" + txb_motivo.Text + "\nAgradecemos uma resposta o mais rapido possível,\nObrigado";
-            password = "nkufolmrezyxizmp";
+            password = "nzhujiikiursxgeo";
             if (email1.Trim() == string.Empty)
             {
                 MessageBox.Show("Espaço em branco, por favor digite o seu E-mail!!!", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

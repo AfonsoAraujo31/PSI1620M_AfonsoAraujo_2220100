@@ -311,22 +311,26 @@ namespace DLS_ALFEITE
 
             string to, from, password, mail;
             to = email1;
-            from = "dlsalfeite@gmail.com";
+            from = "afonso16araujo@gmail.com";
             mail = "Bom dia,\nEu " + nome1 + ".\nVenho por este meio solicitar um pedido de aquisição do medicamento " + txb_denominacao.Text + ".\nMais detalhes:\nDenominação:"+txb_denominacao.Text+ "\nPrincípio/Ativo:" + txb_principio_ativo.Text + "\nLote:" + txb_lote.Text + "\nQuantidade:" + txb_quantidade.Text + "\nData limite de receção:" + dtp_data_limite_rececao.Text + "\nEntidade:" + txb_entidade.Text + "\nMotivo:" + txb_motivo.Text + "\nAgradecemos uma resposta o mais rapido possível,\nObrigado";
-            password = "nkufolmrezyxizmp";
+
+            password = "nzhujiikiursxgeo";  
+
             if (email1.Trim() == string.Empty)
             {
-                MessageBox.Show("Espaço em branco, por favor digite o seu E-mail!!!", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("E-mail inválido!!!", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+            
             string palavra = "@gmail.com";
+
             if (to.Contains(palavra))
             {
                 MailMessage message = new MailMessage();
                 message.To.Add(to);
                 message.From = new MailAddress(from);
                 message.Body = mail;
-                message.Subject = "Pedido de Aquisição";
+                message.Subject = "Pedido de aquisição";
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com");
                 smtp.EnableSsl = true;
                 smtp.Port = 587;
@@ -336,7 +340,8 @@ namespace DLS_ALFEITE
                 try
                 {
                     smtp.Send(message);
-                    MessageBox.Show("Email enviado", "E-Mail", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Email enviado", "E-Mail", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 catch (Exception ex)
                 {
@@ -346,7 +351,7 @@ namespace DLS_ALFEITE
             }
             else
             {
-                MessageBox.Show("Não digitou o E-mail corretamente. Lembre-se que so pode inserir E-mail's da Google do tipo: (...)@GMAIL.COM", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Não digitou o E-mail corretamente. Lembre-se que so pode inserir E-mail's da Google do tipo: (...)@GMAIL.COM", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
         }
