@@ -53,6 +53,15 @@
             this.dtp_validade = new System.Windows.Forms.DateTimePicker();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
+            this.label_lote2 = new System.Windows.Forms.Label();
+            this.label_contacto = new System.Windows.Forms.Label();
+            this.label_fabricante = new System.Windows.Forms.Label();
+            this.label_setor = new System.Windows.Forms.Label();
+            this.label_quantidade = new System.Windows.Forms.Label();
+            this.label_lote = new System.Windows.Forms.Label();
+            this.label_numero_serie = new System.Windows.Forms.Label();
+            this.label_denominacao = new System.Windows.Forms.Label();
+            this.label_numero_serie2 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -341,12 +350,128 @@
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
+            // label_lote2
+            // 
+            this.label_lote2.AutoSize = true;
+            this.label_lote2.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_lote2.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_lote2.Location = new System.Drawing.Point(51, 216);
+            this.label_lote2.Name = "label_lote2";
+            this.label_lote2.Size = new System.Drawing.Size(44, 18);
+            this.label_lote2.TabIndex = 120;
+            this.label_lote2.Text = "label1";
+            this.label_lote2.Visible = false;
+            // 
+            // label_contacto
+            // 
+            this.label_contacto.AutoSize = true;
+            this.label_contacto.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_contacto.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_contacto.Location = new System.Drawing.Point(402, 281);
+            this.label_contacto.Name = "label_contacto";
+            this.label_contacto.Size = new System.Drawing.Size(44, 18);
+            this.label_contacto.TabIndex = 119;
+            this.label_contacto.Text = "label1";
+            this.label_contacto.Visible = false;
+            // 
+            // label_fabricante
+            // 
+            this.label_fabricante.AutoSize = true;
+            this.label_fabricante.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_fabricante.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_fabricante.Location = new System.Drawing.Point(51, 281);
+            this.label_fabricante.Name = "label_fabricante";
+            this.label_fabricante.Size = new System.Drawing.Size(44, 18);
+            this.label_fabricante.TabIndex = 118;
+            this.label_fabricante.Text = "label1";
+            this.label_fabricante.Visible = false;
+            // 
+            // label_setor
+            // 
+            this.label_setor.AutoSize = true;
+            this.label_setor.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_setor.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_setor.Location = new System.Drawing.Point(540, 200);
+            this.label_setor.Name = "label_setor";
+            this.label_setor.Size = new System.Drawing.Size(44, 18);
+            this.label_setor.TabIndex = 117;
+            this.label_setor.Text = "label1";
+            this.label_setor.Visible = false;
+            // 
+            // label_quantidade
+            // 
+            this.label_quantidade.AutoSize = true;
+            this.label_quantidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_quantidade.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_quantidade.Location = new System.Drawing.Point(303, 200);
+            this.label_quantidade.Name = "label_quantidade";
+            this.label_quantidade.Size = new System.Drawing.Size(44, 18);
+            this.label_quantidade.TabIndex = 116;
+            this.label_quantidade.Text = "label1";
+            this.label_quantidade.Visible = false;
+            // 
+            // label_lote
+            // 
+            this.label_lote.AutoSize = true;
+            this.label_lote.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_lote.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_lote.Location = new System.Drawing.Point(51, 200);
+            this.label_lote.Name = "label_lote";
+            this.label_lote.Size = new System.Drawing.Size(44, 18);
+            this.label_lote.TabIndex = 115;
+            this.label_lote.Text = "label1";
+            this.label_lote.Visible = false;
+            // 
+            // label_numero_serie
+            // 
+            this.label_numero_serie.AutoSize = true;
+            this.label_numero_serie.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_numero_serie.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_numero_serie.Location = new System.Drawing.Point(303, 118);
+            this.label_numero_serie.Name = "label_numero_serie";
+            this.label_numero_serie.Size = new System.Drawing.Size(44, 18);
+            this.label_numero_serie.TabIndex = 114;
+            this.label_numero_serie.Text = "label1";
+            this.label_numero_serie.Visible = false;
+            // 
+            // label_denominacao
+            // 
+            this.label_denominacao.AutoSize = true;
+            this.label_denominacao.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_denominacao.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_denominacao.Location = new System.Drawing.Point(51, 118);
+            this.label_denominacao.Name = "label_denominacao";
+            this.label_denominacao.Size = new System.Drawing.Size(44, 18);
+            this.label_denominacao.TabIndex = 113;
+            this.label_denominacao.Text = "label1";
+            this.label_denominacao.Visible = false;
+            // 
+            // label_numero_serie2
+            // 
+            this.label_numero_serie2.AutoSize = true;
+            this.label_numero_serie2.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_numero_serie2.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_numero_serie2.Location = new System.Drawing.Point(303, 134);
+            this.label_numero_serie2.Name = "label_numero_serie2";
+            this.label_numero_serie2.Size = new System.Drawing.Size(44, 18);
+            this.label_numero_serie2.TabIndex = 121;
+            this.label_numero_serie2.Text = "label1";
+            this.label_numero_serie2.Visible = false;
+            // 
             // Editar_inflamavel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(146)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(750, 524);
+            this.Controls.Add(this.label_lote2);
+            this.Controls.Add(this.label_contacto);
+            this.Controls.Add(this.label_fabricante);
+            this.Controls.Add(this.label_setor);
+            this.Controls.Add(this.label_quantidade);
+            this.Controls.Add(this.label_lote);
+            this.Controls.Add(this.label_numero_serie);
+            this.Controls.Add(this.label_denominacao);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.dtp_validade);
@@ -368,6 +493,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel5);
+            this.Controls.Add(this.label_numero_serie2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Editar_inflamavel";
@@ -406,5 +532,14 @@
         private System.Windows.Forms.DateTimePicker dtp_validade;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.Label label_lote2;
+        private System.Windows.Forms.Label label_contacto;
+        private System.Windows.Forms.Label label_fabricante;
+        private System.Windows.Forms.Label label_setor;
+        private System.Windows.Forms.Label label_quantidade;
+        private System.Windows.Forms.Label label_lote;
+        private System.Windows.Forms.Label label_numero_serie;
+        private System.Windows.Forms.Label label_denominacao;
+        private System.Windows.Forms.Label label_numero_serie2;
     }
 }

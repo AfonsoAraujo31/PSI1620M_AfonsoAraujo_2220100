@@ -129,9 +129,9 @@ namespace DLS_ALFEITE
             sqlcon.Close();
             string to, from, password, mail;
             to = email1;
-            from = "dlsalfeite@gmail.com";
+            from = "afonso16araujo@gmail.com";
             mail = "Caro:" + nome1 + ", solicitou a recuperação da sua palavra pass para o login no DLS-ALFEITE.\nCódigo Único: " + str_build + ".\nCaso não tenha feito o pedido de recuperação, verifique a segurança da sua conta contactando a equipa técnica.\n Obrigado!";
-            password = "nkufolmrezyxizmp";
+            password = "nzhujiikiursxgeo";
             if (email1.Trim() == string.Empty)
             {
                 MessageBox.Show("Espaço em branco, por favor digite o seu E-mail!!!", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
