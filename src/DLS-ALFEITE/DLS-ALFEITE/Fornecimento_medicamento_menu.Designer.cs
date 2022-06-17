@@ -247,7 +247,6 @@ namespace DLS_ALFEITE
             // 
             // txb_quantidade
             // 
-            this.txb_quantidade.Enabled = false;
             this.txb_quantidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_quantidade.Location = new System.Drawing.Point(390, 344);
             this.txb_quantidade.Name = "txb_quantidade";

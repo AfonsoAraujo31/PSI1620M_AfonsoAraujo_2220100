@@ -172,32 +172,38 @@ namespace DLS_ALFEITE
             if (txb_username.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Username incorreto!");
+                label_username.Text = "Campo obrigatório!";
+                label_username.Visible = true;
             }
             if (cb_genero.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Género incorreto!");
+                label_genero.Text = "Campo obrigatório!";
+                label_genero.Visible = true;
             }
             if (txb_email.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Email incorreto!");
+                label_email.Text = "Campo obrigatório!";
+                label_email.Visible = true;
             }
             if (txb_numero_telemovel.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Número de telemóvel incorreto!");
+                label_tel.Text = "Campo obrigatório!";
+                label_tel.Visible = true;
             }
             if (txb_nome.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Nome incorreto!");
+                label_nome.Text = "Campo obrigatório!";
+                label_nome.Visible = true;
             }
             if (txb_password.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Password incorreto!");
+                label_password.Text = "Campo obrigatório!";
+                label_password.Visible = true;
             }
             //regular expression
             string strRegex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
@@ -205,14 +211,16 @@ namespace DLS_ALFEITE
             if (obj.IsMatch(txb_email.Text) == false)
             {
                 ver = false;
-                MessageBox.Show("Campo Email incorreto");
+                label_email.Text = "Email incorreto!";
+                label_email.Visible = true;
             }
             string strRegex1 = @"^(9[1236]\d) ?(\d{3}) ?(\d{3})";
             Regex obj1 = new Regex(strRegex1);
             if (obj1.IsMatch(txb_numero_telemovel.Text) == false)
             {
                 ver = false;
-                MessageBox.Show("Campo Número de telemóvel incorreto");
+                label_tel.Text = "Telemóvel incorreto!";
+                label_tel.Visible = true;
             }
         }
 
@@ -264,8 +272,8 @@ namespace DLS_ALFEITE
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             btn_alterar.Visible = true;
-            btn_guardar.Location = new Point(106, 611);
-            btn_alterar.Location = new Point(207, 611);
+            btn_guardar.Visible = false;
+            btn_alterar.Location = new Point(159, 611);
             string id = null;
             id = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
             SqlConnection sql = new SqlConnection(connection);
@@ -332,13 +340,43 @@ namespace DLS_ALFEITE
                     txb_password.Text = "";
                     Load_table();
                     btn_alterar.Visible = false;
-                    btn_guardar.Location = new Point(159, 611);
+                    btn_guardar.Visible = true;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void txb_username_TextChanged(object sender, EventArgs e)
+        {
+            label_username.Visible = false;
+        }
+
+        private void txb_nome_TextChanged(object sender, EventArgs e)
+        {
+            label_nome.Visible = false;
+        }
+
+        private void txb_password_TextChanged(object sender, EventArgs e)
+        {
+            label_password.Visible = false;
+        }
+
+        private void cb_genero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label_genero.Visible = false;
+        }
+
+        private void txb_email_TextChanged(object sender, EventArgs e)
+        {
+            label_email.Visible = false;
+        }
+
+        private void txb_numero_telemovel_TextChanged(object sender, EventArgs e)
+        {
+            label_tel.Visible = false;
         }
     }
 }

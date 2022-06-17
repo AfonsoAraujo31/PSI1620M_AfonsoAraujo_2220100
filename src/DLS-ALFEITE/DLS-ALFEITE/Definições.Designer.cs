@@ -47,6 +47,12 @@ namespace DLS_ALFEITE
             this.txb_username = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label_tel = new System.Windows.Forms.Label();
+            this.label_email = new System.Windows.Forms.Label();
+            this.label_genero = new System.Windows.Forms.Label();
+            this.label_password = new System.Windows.Forms.Label();
+            this.label_nome = new System.Windows.Forms.Label();
+            this.label_username = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -84,6 +90,12 @@ namespace DLS_ALFEITE
             this.panel2.Controls.Add(this.txb_username);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.label_tel);
+            this.panel2.Controls.Add(this.label_email);
+            this.panel2.Controls.Add(this.label_genero);
+            this.panel2.Controls.Add(this.label_password);
+            this.panel2.Controls.Add(this.label_nome);
+            this.panel2.Controls.Add(this.label_username);
             this.panel2.Location = new System.Drawing.Point(612, 138);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(400, 723);
@@ -129,6 +141,7 @@ namespace DLS_ALFEITE
             this.cb_genero.Name = "cb_genero";
             this.cb_genero.Size = new System.Drawing.Size(249, 28);
             this.cb_genero.TabIndex = 110;
+            this.cb_genero.SelectedIndexChanged += new System.EventHandler(this.cb_genero_SelectedIndexChanged);
             // 
             // btn_guardar
             // 
@@ -154,6 +167,7 @@ namespace DLS_ALFEITE
             this.txb_numero_telemovel.Name = "txb_numero_telemovel";
             this.txb_numero_telemovel.Size = new System.Drawing.Size(249, 26);
             this.txb_numero_telemovel.TabIndex = 106;
+            this.txb_numero_telemovel.TextChanged += new System.EventHandler(this.txb_numero_telemovel_TextChanged);
             // 
             // label4
             // 
@@ -176,6 +190,7 @@ namespace DLS_ALFEITE
             this.txb_email.Name = "txb_email";
             this.txb_email.Size = new System.Drawing.Size(249, 26);
             this.txb_email.TabIndex = 104;
+            this.txb_email.TextChanged += new System.EventHandler(this.txb_email_TextChanged);
             // 
             // label5
             // 
@@ -210,6 +225,7 @@ namespace DLS_ALFEITE
             this.txb_password.Name = "txb_password";
             this.txb_password.Size = new System.Drawing.Size(249, 26);
             this.txb_password.TabIndex = 100;
+            this.txb_password.TextChanged += new System.EventHandler(this.txb_password_TextChanged);
             // 
             // label3
             // 
@@ -232,6 +248,7 @@ namespace DLS_ALFEITE
             this.txb_nome.Name = "txb_nome";
             this.txb_nome.Size = new System.Drawing.Size(249, 26);
             this.txb_nome.TabIndex = 98;
+            this.txb_nome.TextChanged += new System.EventHandler(this.txb_nome_TextChanged);
             // 
             // label1
             // 
@@ -255,6 +272,7 @@ namespace DLS_ALFEITE
             this.txb_username.Name = "txb_username";
             this.txb_username.Size = new System.Drawing.Size(249, 26);
             this.txb_username.TabIndex = 96;
+            this.txb_username.TextChanged += new System.EventHandler(this.txb_username_TextChanged);
             // 
             // label11
             // 
@@ -278,6 +296,78 @@ namespace DLS_ALFEITE
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 95;
             this.pictureBox1.TabStop = false;
+            // 
+            // label_tel
+            // 
+            this.label_tel.AutoSize = true;
+            this.label_tel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tel.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_tel.Location = new System.Drawing.Point(73, 593);
+            this.label_tel.Name = "label_tel";
+            this.label_tel.Size = new System.Drawing.Size(44, 18);
+            this.label_tel.TabIndex = 141;
+            this.label_tel.Text = "label1";
+            this.label_tel.Visible = false;
+            // 
+            // label_email
+            // 
+            this.label_email.AutoSize = true;
+            this.label_email.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_email.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_email.Location = new System.Drawing.Point(73, 519);
+            this.label_email.Name = "label_email";
+            this.label_email.Size = new System.Drawing.Size(44, 18);
+            this.label_email.TabIndex = 140;
+            this.label_email.Text = "label1";
+            this.label_email.Visible = false;
+            // 
+            // label_genero
+            // 
+            this.label_genero.AutoSize = true;
+            this.label_genero.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_genero.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_genero.Location = new System.Drawing.Point(73, 448);
+            this.label_genero.Name = "label_genero";
+            this.label_genero.Size = new System.Drawing.Size(44, 18);
+            this.label_genero.TabIndex = 139;
+            this.label_genero.Text = "label1";
+            this.label_genero.Visible = false;
+            // 
+            // label_password
+            // 
+            this.label_password.AutoSize = true;
+            this.label_password.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_password.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_password.Location = new System.Drawing.Point(73, 372);
+            this.label_password.Name = "label_password";
+            this.label_password.Size = new System.Drawing.Size(44, 18);
+            this.label_password.TabIndex = 138;
+            this.label_password.Text = "label1";
+            this.label_password.Visible = false;
+            // 
+            // label_nome
+            // 
+            this.label_nome.AutoSize = true;
+            this.label_nome.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_nome.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_nome.Location = new System.Drawing.Point(73, 299);
+            this.label_nome.Name = "label_nome";
+            this.label_nome.Size = new System.Drawing.Size(44, 18);
+            this.label_nome.TabIndex = 137;
+            this.label_nome.Text = "label1";
+            this.label_nome.Visible = false;
+            // 
+            // label_username
+            // 
+            this.label_username.AutoSize = true;
+            this.label_username.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_username.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_username.Location = new System.Drawing.Point(73, 225);
+            this.label_username.Name = "label_username";
+            this.label_username.Size = new System.Drawing.Size(44, 18);
+            this.label_username.TabIndex = 136;
+            this.label_username.Text = "label1";
+            this.label_username.Visible = false;
             // 
             // panel1
             // 
@@ -439,7 +529,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.TextBox txb_email;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txb_password;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txb_nome;
         private System.Windows.Forms.Label label1;
@@ -447,7 +536,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.ComboBox cb_genero;
         public System.Windows.Forms.TextBox txb_username;
-        private System.Windows.Forms.Button btn_esconder_password;
         public System.Windows.Forms.Button btn_verpassword;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -459,5 +547,13 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.TextBox txb_versao;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label_tel;
+        private System.Windows.Forms.Label label_email;
+        private System.Windows.Forms.Label label_genero;
+        private System.Windows.Forms.Label label_password;
+        private System.Windows.Forms.Label label_nome;
+        private System.Windows.Forms.Label label_username;
+        public System.Windows.Forms.TextBox txb_password;
+        public System.Windows.Forms.Button btn_esconder_password;
     }
 }

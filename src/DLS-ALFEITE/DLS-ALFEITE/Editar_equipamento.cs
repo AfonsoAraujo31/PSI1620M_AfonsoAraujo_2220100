@@ -179,5 +179,40 @@ namespace DLS_ALFEITE
         {
             this.Close();
         }
+
+        private void txb_denominacao_TextChanged(object sender, EventArgs e)
+        {
+            label_denominacao.Visible = false;
+        }
+
+        private void txb_numero_serie_TextChanged(object sender, EventArgs e)
+        {
+            label_numero_serie.Visible = false;
+        }
+
+        private void txb_lote_TextChanged(object sender, EventArgs e)
+        {
+            label_lote.Visible = false;
+        }
+
+        private void txb_quantidade_TextChanged(object sender, EventArgs e)
+        {
+            label_quantidade.Visible = false;
+        }
+
+        private void txb_setor_TextChanged(object sender, EventArgs e)
+        {
+            label_setor.Visible = false;
+        }
+
+        private void txb_fabricante_TextChanged(object sender, EventArgs e)
+        {
+            label_fabricante.Visible = false;
+        }
+
+        private void txb_contacto_fabricante_TextChanged(object sender, EventArgs e)
+        {
+            label_contacto.Visible = false;
+        }
     }
 }

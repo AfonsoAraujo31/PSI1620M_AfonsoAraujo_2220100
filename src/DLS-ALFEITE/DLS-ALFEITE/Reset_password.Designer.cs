@@ -52,6 +52,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txb_comfirmacao_password = new System.Windows.Forms.TextBox();
+            this.btnclose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -342,12 +343,30 @@
             this.txb_comfirmacao_password.Enter += new System.EventHandler(this.txb_comfirmacao_password_Enter);
             this.txb_comfirmacao_password.Leave += new System.EventHandler(this.txb_comfirmacao_password_Leave);
             // 
+            // btnclose
+            // 
+            this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnclose.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnclose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnclose.FlatAppearance.BorderSize = 0;
+            this.btnclose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
+            this.btnclose.Location = new System.Drawing.Point(371, 0);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(41, 33);
+            this.btnclose.TabIndex = 47;
+            this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            // 
             // Reset_password
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(411, 220);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label2);
@@ -399,5 +418,6 @@
         private System.Windows.Forms.TextBox txb_username;
         private System.Windows.Forms.PictureBox btn_login_reset;
         private System.Windows.Forms.PictureBox email;
+        private System.Windows.Forms.Button btnclose;
     }
 }

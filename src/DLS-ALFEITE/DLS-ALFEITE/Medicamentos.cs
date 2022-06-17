@@ -125,14 +125,14 @@ namespace DLS_ALFEITE
             DataGridViewButtonColumn btn2 = new DataGridViewButtonColumn();
             btn2.HeaderText = "";
             btn2.Name = "btn_aquisicao";
-            btn2.Text = "➕";
+            btn2.Text = "🛒";
             btn2.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(btn2);
             //fornecer
             DataGridViewButtonColumn btn3 = new DataGridViewButtonColumn();
             btn3.HeaderText = "";
             btn3.Name = "btn_fornecer";
-            btn3.Text = "➖";
+            btn3.Text = "🚚";
             btn3.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(btn3);
             //tamanho das colunas
@@ -190,7 +190,7 @@ namespace DLS_ALFEITE
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
             {
-                Fornecimento_medicamento fornecimento_medicamento = new Fornecimento_medicamento(id, denominacao, principio_ativo, lote);
+                Fornecimento_medicamento fornecimento_medicamento = new Fornecimento_medicamento(id, denominacao, principio_ativo, lote, stock);
                 fornecimento_medicamento.ShowDialog();
             }
             else {
@@ -279,9 +279,12 @@ namespace DLS_ALFEITE
                 {
                     while (myReader.Read())
                     {
-
                         listBox1.Items.Add(myReader["denominacao"].ToString());
                         listBox4.Items.Add(string.Format("➡️ {0}", myReader["validade"].ToString()));
+                        /*if(31/12/2023 - Convert.ToInt32(myReader["validade"].ToString()) == 01/01/2023 )
+                        {
+                            listBox4.BackColor = Color.Red;
+                        }*/
                     }
                 }
             }

@@ -153,6 +153,7 @@
             this.txb_contacto_fabricante.Name = "txb_contacto_fabricante";
             this.txb_contacto_fabricante.Size = new System.Drawing.Size(307, 26);
             this.txb_contacto_fabricante.TabIndex = 42;
+            this.txb_contacto_fabricante.TextChanged += new System.EventHandler(this.txb_contacto_fabricante_TextChanged);
             // 
             // label9
             // 
@@ -174,6 +175,7 @@
             this.txb_fabricante.Name = "txb_fabricante";
             this.txb_fabricante.Size = new System.Drawing.Size(307, 26);
             this.txb_fabricante.TabIndex = 40;
+            this.txb_fabricante.TextChanged += new System.EventHandler(this.txb_fabricante_TextChanged);
             // 
             // label8
             // 
@@ -195,6 +197,7 @@
             this.txb_setor.Name = "txb_setor";
             this.txb_setor.Size = new System.Drawing.Size(169, 26);
             this.txb_setor.TabIndex = 38;
+            this.txb_setor.TextChanged += new System.EventHandler(this.txb_setor_TextChanged);
             // 
             // label7
             // 
@@ -216,6 +219,7 @@
             this.txb_quantidade.Name = "txb_quantidade";
             this.txb_quantidade.Size = new System.Drawing.Size(169, 26);
             this.txb_quantidade.TabIndex = 36;
+            this.txb_quantidade.TextChanged += new System.EventHandler(this.txb_quantidade_TextChanged);
             // 
             // label6
             // 
@@ -237,6 +241,7 @@
             this.txb_lote.Name = "txb_lote";
             this.txb_lote.Size = new System.Drawing.Size(169, 26);
             this.txb_lote.TabIndex = 34;
+            this.txb_lote.TextChanged += new System.EventHandler(this.txb_lote_TextChanged);
             // 
             // label5
             // 
@@ -258,6 +263,7 @@
             this.txb_principio_ativo.Name = "txb_principio_ativo";
             this.txb_principio_ativo.Size = new System.Drawing.Size(169, 26);
             this.txb_principio_ativo.TabIndex = 31;
+            this.txb_principio_ativo.TextChanged += new System.EventHandler(this.txb_principio_ativo_TextChanged);
             // 
             // txb_denominacao
             // 
@@ -267,6 +273,7 @@
             this.txb_denominacao.Name = "txb_denominacao";
             this.txb_denominacao.Size = new System.Drawing.Size(169, 26);
             this.txb_denominacao.TabIndex = 30;
+            this.txb_denominacao.TextChanged += new System.EventHandler(this.txb_denominacao_TextChanged);
             // 
             // label4
             // 

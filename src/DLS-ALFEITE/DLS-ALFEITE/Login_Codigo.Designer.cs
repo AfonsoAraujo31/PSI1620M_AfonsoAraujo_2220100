@@ -41,6 +41,7 @@ namespace DLS_ALFEITE
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.email = new System.Windows.Forms.PictureBox();
+            this.btnclose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btn_login_codigounico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -178,12 +179,30 @@ namespace DLS_ALFEITE
             this.email.TabStop = false;
             this.email.Click += new System.EventHandler(this.email_Click);
             // 
+            // btnclose
+            // 
+            this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnclose.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnclose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnclose.FlatAppearance.BorderSize = 0;
+            this.btnclose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
+            this.btnclose.Location = new System.Drawing.Point(271, 0);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(41, 33);
+            this.btnclose.TabIndex = 46;
+            this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            // 
             // Login_Codigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(311, 162);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.email);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -223,5 +242,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.TextBox textBox_username_confirmação;
         private System.Windows.Forms.PictureBox email;
+        private System.Windows.Forms.Button btnclose;
     }
 }

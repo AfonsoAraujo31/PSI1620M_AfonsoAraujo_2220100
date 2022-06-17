@@ -45,7 +45,7 @@ namespace DLS_ALFEITE
             txb_lote.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_lote.Width, txb_lote.Height, 12, 12));
             txb_motivo.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_motivo.Width, txb_motivo.Height, 20, 20));
             txb_quantidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_quantidade.Width, txb_quantidade.Height, 12, 12));
-            txb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_entidade.Width, txb_entidade.Height, 12, 12));
+            cb_entidade.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, cb_entidade.Width, cb_entidade.Height, 12, 12));
             dtp_data_rececao.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtp_data_rececao.Width, dtp_data_rececao.Height, 12, 12));
             btn_guardar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_guardar.Width, btn_guardar.Height, 12, 12));
             btn_cancelar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_cancelar.Width, btn_cancelar.Height, 12, 12));
@@ -83,22 +83,25 @@ namespace DLS_ALFEITE
             if (txb_quantidade.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Quantidade incorreto!");
+                label_quantidade.Text = "Campo obrigatório!";
+                label_quantidade.Visible = true;
             }
             if (dtp_data_rececao.Text == "")
             {
                 ver = false;
                 MessageBox.Show("Campo Data receção incorreto!");
             }
-            if (txb_entidade.Text == "")
+            if (cb_entidade.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Entidade incorreto!");
+                label_entidade.Text = "Campo obrigatório!";
+                label_entidade.Visible = true;
             }
             if (txb_motivo.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Motivo incorreto!");
+                label_motivo.Text = "Campo obrigatório!";
+                label_motivo.Visible = true;
             }
         }
 
@@ -118,7 +121,7 @@ namespace DLS_ALFEITE
             {
                 try
                 {
-                    string query = "insert into Aquisicao_medicamentos(id_aquisicao,data_limite_rececao,quantidade_aquisicao,entidade,motivo) VALUES( " + id1 + ", '" + this.dtp_data_rececao.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_motivo.Text + "')";
+                    string query = "insert into Aquisicao_medicamentos(id_aquisicao,data_limite_rececao,quantidade_aquisicao,entidade,motivo) VALUES( " + id1 + ", '" + this.dtp_data_rececao.Text + "','" + this.txb_quantidade.Text + "','" + this.cb_entidade.Text + "','" + this.txb_motivo.Text + "')";
                     SqlConnection sqlCon = new SqlConnection(connection);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     SqlDataReader myreader;
@@ -136,6 +139,21 @@ namespace DLS_ALFEITE
                     MessageBox.Show("Já existe um registo desse medicamento.");
                 }
             }
+        }
+
+        private void txb_quantidade_TextChanged(object sender, EventArgs e)
+        {
+            label_quantidade.Visible = false;
+        }
+
+        private void txb_motivo_TextChanged(object sender, EventArgs e)
+        {
+            label_motivo.Visible = false;
+        }
+
+        private void cb_entidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label_entidade.Visible = false;
         }
     }
 }

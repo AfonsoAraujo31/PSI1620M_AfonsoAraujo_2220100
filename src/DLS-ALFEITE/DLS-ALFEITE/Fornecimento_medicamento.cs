@@ -24,11 +24,11 @@ namespace DLS_ALFEITE
              int nwidthEllipse,
              int nHeightEllipse
         );
-
+        int stock = 0;
         int id1 = 0;
         bool ver = true;
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
-        public Fornecimento_medicamento(string id, string value1, string value2, string value3)
+        public Fornecimento_medicamento(string id, string value1, string value2, string value3,string value4)
         {
             InitializeComponent();
             Form_estilo();
@@ -36,6 +36,7 @@ namespace DLS_ALFEITE
             txb_denominacao.Text = value1;
             txb_principio_ativo.Text = value2;
             txb_lote.Text = value3;
+            stock = Convert.ToInt32(value4);
         }
         public void Form_estilo()
         {
@@ -45,7 +46,7 @@ namespace DLS_ALFEITE
             txb_principio_ativo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_principio_ativo.Width, txb_principio_ativo.Height, 12, 12));
             txb_observacoes.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_observacoes.Width, txb_observacoes.Height, 20, 20));
             txb_quantidade.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_quantidade.Width, txb_quantidade.Height, 12, 12));
-            txb_entidade.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_entidade.Width, txb_entidade.Height, 12, 12));
+            cb_entidade.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, cb_entidade.Width, cb_entidade.Height, 12, 12));
             txb_lote.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, txb_lote.Width, txb_lote.Height, 12, 12));
             dtp_data_fornecimento.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtp_data_fornecimento.Width, dtp_data_fornecimento.Height, 12, 12));
             dtp_data_prevista_entrega.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtp_data_prevista_entrega.Width, dtp_data_prevista_entrega.Height, 12, 12));
@@ -68,6 +69,15 @@ namespace DLS_ALFEITE
 
         public void verificacao()
         {
+            if(txb_quantidade.Text != "")
+            {
+                if (stock - Convert.ToInt32(txb_quantidade.Text) < 0)
+                {
+                    ver = false;
+                    label_quantidade.Text = "Stock indesponível!";
+                    label_quantidade.Visible = true;
+                }
+            }
             if (txb_denominacao.Text == "")
             {
                 ver = false;
@@ -91,12 +101,14 @@ namespace DLS_ALFEITE
             if (txb_quantidade.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Quantidade incorreto!");
+                label_quantidade.Text = "Campo obrigatório!";
+                label_quantidade.Visible = true;
             }
-            if (txb_entidade.Text == "")
+            if (cb_entidade.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Fabricante incorreto!");
+                label_entidade.Text = "Campo obrigatório!";
+                label_entidade.Visible = true;
             }
             if (txb_lote.Text == "")
             {
@@ -117,7 +129,7 @@ namespace DLS_ALFEITE
             {
                 try
                 {
-                    string query = "insert into Fornecimento_medicamentos(id_fornecimento,data_fornecimento,data_entrega,quantidade_fornecimento,entidade,observacoes) VALUES( " + id1 + ", '" + this.dtp_data_fornecimento.Text + "','" + this.dtp_data_prevista_entrega.Text + "','" + this.txb_quantidade.Text + "','" + this.txb_entidade.Text + "','" + this.txb_observacoes.Text + "')";
+                    string query = "insert into Fornecimento_medicamentos(id_fornecimento,data_fornecimento,data_entrega,quantidade_fornecimento,entidade,observacoes) VALUES( " + id1 + ", '" + this.dtp_data_fornecimento.Text + "','" + this.dtp_data_prevista_entrega.Text + "','" + this.txb_quantidade.Text + "','" + this.cb_entidade.Text + "','" + this.txb_observacoes.Text + "')";
                     SqlConnection sqlCon = new SqlConnection(connection);
                     SqlCommand cmd = new SqlCommand(query, sqlCon);
                     SqlDataReader myreader;
@@ -140,6 +152,16 @@ namespace DLS_ALFEITE
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txb_quantidade_TextChanged(object sender, EventArgs e)
+        {
+            label_quantidade.Visible = false;
+        }
+
+        private void cb_entidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label_entidade.Visible = false;
         }
     }
 }

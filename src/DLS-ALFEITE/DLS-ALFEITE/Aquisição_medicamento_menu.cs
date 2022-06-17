@@ -341,7 +341,6 @@ namespace DLS_ALFEITE
                 {
                     smtp.Send(message);
                     MessageBox.Show("Email enviado", "E-Mail", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 catch (Exception ex)
                 {

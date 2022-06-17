@@ -144,14 +144,14 @@ namespace DLS_ALFEITE
             DataGridViewButtonColumn btn2 = new DataGridViewButtonColumn();
             btn2.HeaderText = "";
             btn2.Name = "btn_aquisicao";
-            btn2.Text = "➕";
+            btn2.Text = "🛒";
             btn2.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(btn2);
             //fornecer
             DataGridViewButtonColumn btn3 = new DataGridViewButtonColumn();
             btn3.HeaderText = "";
             btn3.Name = "btn_fornecer";
-            btn3.Text = "➖";
+            btn3.Text = "🚚";
             btn3.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(btn3);
             //tamanho das colunas
@@ -274,7 +274,7 @@ namespace DLS_ALFEITE
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_fornecer")
             {
-                Fornecimento_equipamento fornecimento_equipamento = new Fornecimento_equipamento(id, denominacao, lote, numero_serie);
+                Fornecimento_equipamento fornecimento_equipamento = new Fornecimento_equipamento(id, denominacao, lote, numero_serie, stock);
                 fornecimento_equipamento.ShowDialog();
             }
             else

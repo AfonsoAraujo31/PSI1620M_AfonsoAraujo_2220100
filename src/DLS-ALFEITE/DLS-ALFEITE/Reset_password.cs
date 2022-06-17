@@ -247,6 +247,11 @@ namespace DLS_ALFEITE
                 return;
             }
         }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
     

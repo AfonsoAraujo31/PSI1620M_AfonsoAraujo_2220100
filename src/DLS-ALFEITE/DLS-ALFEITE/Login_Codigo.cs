@@ -55,9 +55,13 @@ namespace DLS_ALFEITE
         }
         public void btn_login_codigounico_Click(object sender, EventArgs e)
         {
+            Definições definições = new Definições(textBox_username_confirmação.Text);
+            string nome = definições.txb_password.Text;
             if (textBox_codigo_unico.Text == a)
             {
                 this.Close();
+                definições.btn_verpassword.BringToFront();
+                definições.txb_password.Text = nome;
             }
             else
             {
@@ -98,7 +102,7 @@ namespace DLS_ALFEITE
                 str_build.Append(letter);
                 a = str_build.ToString();
             }
-
+     
             SqlConnection sqlcon = new SqlConnection(connection);
             SqlCommand cmd = sqlcon.CreateCommand();
             cmd.CommandText = $"SELECT username,email,nome FROM Utilizadores WHERE username=@user";
@@ -168,6 +172,11 @@ namespace DLS_ALFEITE
                 MessageBox.Show("Não digitou o E-mail corretamente. Lembre-se que so pode inserir E-mail's da Google do tipo: (...)@GMAIL.COM", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

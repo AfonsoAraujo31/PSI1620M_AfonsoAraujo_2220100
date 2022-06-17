@@ -139,8 +139,6 @@ namespace DLS_ALFEITE
         {
             Login_Codigo frm_cd = new Login_Codigo(txb_username.Text);
             frm_cd.ShowDialog();
-            btn_esconder_password.BringToFront();
-            txb_password.PasswordChar = '\0';
         }
 
         private void btn_esconder_password_Click(object sender, EventArgs e)
@@ -157,32 +155,38 @@ namespace DLS_ALFEITE
             if (txb_username.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Username incorreto!");
+                label_username.Text = "Campo obrigatório!";
+                label_username.Visible = true;
             }
             if (cb_genero.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Género incorreto!");
+                label_genero.Text = "Campo obrigatório!";
+                label_genero.Visible = true;
             }
             if (txb_email.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Email incorreto!");
+                label_email.Text = "Campo obrigatório!";
+                label_email.Visible = true;
             }
             if (txb_numero_telemovel.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Número de telemóvel incorreto!");
+                label_tel.Text = "Campo obrigatório!";
+                label_tel.Visible = true;
             }
             if (txb_nome.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Nome incorreto!");
+                label_nome.Text = "Campo obrigatório!";
+                label_nome.Visible = true;
             }
             if (txb_password.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Password incorreto!");
+                label_password.Text = "Campo obrigatório!";
+                label_password.Visible = true;
             }
             //regular expression
             string strRegex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
@@ -190,15 +194,47 @@ namespace DLS_ALFEITE
             if (obj.IsMatch(txb_email.Text) == false)
             {
                 ver = false;
-                MessageBox.Show("Campo Email incorreto");
+                label_email.Text = "Email incorreto!";
+                label_email.Visible = true;
             }
             string strRegex1 = @"^(9[1236]\d) ?(\d{3}) ?(\d{3})";
             Regex obj1 = new Regex(strRegex1);
             if (obj1.IsMatch(txb_numero_telemovel.Text) == false)
             {
                 ver = false;
-                MessageBox.Show("Campo Número de telemóvel incorreto");
+                label_tel.Text = "Telemóvel incorreto!";
+                label_tel.Visible = true;
             }
+        }
+
+        private void txb_username_TextChanged(object sender, EventArgs e)
+        {
+            label_username.Visible = false;
+        }
+
+        private void txb_nome_TextChanged(object sender, EventArgs e)
+        {
+            label_nome.Visible = false;
+        }
+
+        private void txb_password_TextChanged(object sender, EventArgs e)
+        {
+            label_password.Visible = false;
+        }
+
+        private void cb_genero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label_genero.Visible = false;
+        }
+
+        private void txb_email_TextChanged(object sender, EventArgs e)
+        {
+            label_email.Visible = false;
+        }
+
+        private void txb_numero_telemovel_TextChanged(object sender, EventArgs e)
+        {
+            label_tel.Visible = false;
         }
     }
 }

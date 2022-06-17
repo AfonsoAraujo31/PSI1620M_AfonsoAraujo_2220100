@@ -199,7 +199,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_pedido.Location" type="System.Drawing.Point, System.Drawing">
-    <value>425, 799</value>
+    <value>173, 800</value>
   </data>
   <data name="btn_pedido.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 47</value>
@@ -236,7 +236,7 @@ pedido</value>
     <value>NoControl</value>
   </data>
   <data name="btn_rejeitar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 799</value>
+    <value>425, 800</value>
   </data>
   <data name="btn_rejeitar.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 47</value>
@@ -837,9 +837,6 @@ pedido</value>
   <data name="&gt;&gt;txb_fabricante.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="txb_quantidade.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="txb_quantidade.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Narrow, 12pt</value>
   </data>
@@ -1222,7 +1219,7 @@ pedido</value>
     <value>Berlin Sans FB, 14.25pt</value>
   </data>
   <data name="btn_aprovar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 799</value>
+    <value>299, 800</value>
   </data>
   <data name="btn_aprovar.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 47</value>

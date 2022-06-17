@@ -35,7 +35,6 @@
             this.btnclose = new System.Windows.Forms.Button();
             this.txb_motivo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txb_entidade = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txb_quantidade = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,6 +48,10 @@
             this.dtp_data_rececao = new System.Windows.Forms.DateTimePicker();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
+            this.label_motivo = new System.Windows.Forms.Label();
+            this.label_entidade = new System.Windows.Forms.Label();
+            this.label_quantidade = new System.Windows.Forms.Label();
+            this.cb_entidade = new System.Windows.Forms.ComboBox();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,6 +123,7 @@
             this.txb_motivo.Name = "txb_motivo";
             this.txb_motivo.Size = new System.Drawing.Size(659, 140);
             this.txb_motivo.TabIndex = 80;
+            this.txb_motivo.TextChanged += new System.EventHandler(this.txb_motivo_TextChanged);
             // 
             // label10
             // 
@@ -132,15 +136,6 @@
             this.label10.Size = new System.Drawing.Size(72, 21);
             this.label10.TabIndex = 79;
             this.label10.Text = "Motivo:";
-            // 
-            // txb_entidade
-            // 
-            this.txb_entidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txb_entidade.Location = new System.Drawing.Point(542, 206);
-            this.txb_entidade.Margin = new System.Windows.Forms.Padding(2);
-            this.txb_entidade.Name = "txb_entidade";
-            this.txb_entidade.Size = new System.Drawing.Size(169, 26);
-            this.txb_entidade.TabIndex = 78;
             // 
             // label7
             // 
@@ -162,6 +157,7 @@
             this.txb_quantidade.Name = "txb_quantidade";
             this.txb_quantidade.Size = new System.Drawing.Size(169, 26);
             this.txb_quantidade.TabIndex = 76;
+            this.txb_quantidade.TextChanged += new System.EventHandler(this.txb_quantidade_TextChanged);
             // 
             // label6
             // 
@@ -298,18 +294,79 @@
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
+            // label_motivo
+            // 
+            this.label_motivo.AutoSize = true;
+            this.label_motivo.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_motivo.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_motivo.Location = new System.Drawing.Point(51, 438);
+            this.label_motivo.Name = "label_motivo";
+            this.label_motivo.Size = new System.Drawing.Size(44, 18);
+            this.label_motivo.TabIndex = 122;
+            this.label_motivo.Text = "label1";
+            this.label_motivo.Visible = false;
+            // 
+            // label_entidade
+            // 
+            this.label_entidade.AutoSize = true;
+            this.label_entidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_entidade.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_entidade.Location = new System.Drawing.Point(539, 234);
+            this.label_entidade.Name = "label_entidade";
+            this.label_entidade.Size = new System.Drawing.Size(44, 18);
+            this.label_entidade.TabIndex = 121;
+            this.label_entidade.Text = "label1";
+            this.label_entidade.Visible = false;
+            // 
+            // label_quantidade
+            // 
+            this.label_quantidade.AutoSize = true;
+            this.label_quantidade.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_quantidade.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_quantidade.Location = new System.Drawing.Point(303, 234);
+            this.label_quantidade.Name = "label_quantidade";
+            this.label_quantidade.Size = new System.Drawing.Size(44, 18);
+            this.label_quantidade.TabIndex = 120;
+            this.label_quantidade.Text = "label1";
+            this.label_quantidade.Visible = false;
+            // 
+            // cb_entidade
+            // 
+            this.cb_entidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_entidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.cb_entidade.FormattingEnabled = true;
+            this.cb_entidade.Items.AddRange(new object[] {
+            "Sporthealth",
+            "Littmann",
+            "Garcia Hostal",
+            "Bloc",
+            "WED",
+            "Samsung ",
+            "HealthCare",
+            "Econom",
+            "DisplayMedical",
+            "Alihop"});
+            this.cb_entidade.Location = new System.Drawing.Point(542, 206);
+            this.cb_entidade.Name = "cb_entidade";
+            this.cb_entidade.Size = new System.Drawing.Size(169, 28);
+            this.cb_entidade.TabIndex = 123;
+            this.cb_entidade.SelectedIndexChanged += new System.EventHandler(this.cb_entidade_SelectedIndexChanged);
+            // 
             // Aquisição_equipamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(146)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(750, 524);
+            this.Controls.Add(this.cb_entidade);
+            this.Controls.Add(this.label_motivo);
+            this.Controls.Add(this.label_entidade);
+            this.Controls.Add(this.label_quantidade);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.dtp_data_rececao);
             this.Controls.Add(this.txb_motivo);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txb_entidade);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txb_quantidade);
             this.Controls.Add(this.label6);
@@ -342,7 +399,6 @@
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.TextBox txb_motivo;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txb_entidade;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txb_quantidade;
         private System.Windows.Forms.Label label6;
@@ -356,5 +412,9 @@
         private System.Windows.Forms.DateTimePicker dtp_data_rececao;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.Label label_motivo;
+        private System.Windows.Forms.Label label_entidade;
+        private System.Windows.Forms.Label label_quantidade;
+        private System.Windows.Forms.ComboBox cb_entidade;
     }
 }

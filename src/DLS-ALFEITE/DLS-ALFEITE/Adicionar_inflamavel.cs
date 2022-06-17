@@ -71,52 +71,56 @@ namespace DLS_ALFEITE
             if (txb_denominacao.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Denominação incorreto!");
+                label_denominacao.Text = "Campo obrigatório!";
+                label_denominacao.Visible = true;
             }
             if (txb_numero_serie.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Número de série incorreto!");
+                label_numero.Text = "Campo obrigatório!";
+                label_numero.Visible = true;
             }
             if (txb_lote.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Lote incorreto!");
+                label_lote.Text = "Campo obrigatório!";
+                label_lote.Visible = true;
             }
             if (dtp_validade.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Validade incorreto!");
-            }
-            if (txb_lote.Text == "")
-            {
-                ver = false;
-                MessageBox.Show("Campo Lote incorreto!");
             }
             if (txb_quantidade.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Quantidade incorreto!");
+                label_quantidade.Text = "Campo obrigatório!";
+                label_quantidade.Visible = true;
             }
             if (txb_fabricante.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Fabricante incorreto!");
+                label_fabricante.Text = "Campo obrigatório!";
+                label_fabricante.Visible = true;
             }
             if (txb_contacto_fabricante.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Contacto do Fabricante incorreto!");
+                label_contacto.Text = "Campo obrigatório!";
+                label_contacto.Visible = true;
             }
             if (txb_setor.Text == "")
             {
                 ver = false;
-                MessageBox.Show("Campo Setor incorreto!");
+                label_setor.Text = "Campo obrigatório!";
+                label_setor.Visible = true;
             }
             if (txb_numero_serie.Text.Length < 9)
             {
                 ver = false;
-                MessageBox.Show("O campo Número de série deve conter nove números");
+                label_numero.Text = "Campo deve conter";
+                label_numero_2.Text = "9 números!";
+                label_numero.Visible = true;
+                label_numero_2.Visible = false;
             }
             //regular expression
             string strRegex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
@@ -124,7 +128,8 @@ namespace DLS_ALFEITE
             if (obj.IsMatch(txb_contacto_fabricante.Text) == false)
             {
                 ver = false;
-                MessageBox.Show("Campo Contacto de fabricante incorreto");
+                label_contacto.Text = "Email inválido!";
+                label_contacto.Visible = true;
             }
             try
             {
@@ -143,7 +148,7 @@ namespace DLS_ALFEITE
                 if (count >= 1)
                 {
                     ver = false;
-                    MessageBox.Show("Já existe um registo com esse nome ou com número de série igual.");
+                    MessageBox.Show("Já existe um registo com esse nome ou lote igual");
                 }
                 sqlcon.Close();
             }
@@ -154,7 +159,10 @@ namespace DLS_ALFEITE
             if (txb_lote.Text.Length < 5)
             {
                 ver = false;
-                MessageBox.Show("O campo lote deve conter cinco números");
+                label_lote.Text = "Campo deve conter";
+                label_lote2.Text = "5 números!";
+                label_lote.Visible = true;
+                label_lote2.Visible = true;
             }
         }
 
@@ -194,6 +202,43 @@ namespace DLS_ALFEITE
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txb_numero_serie_TextChanged(object sender, EventArgs e)
+        {
+            label_numero.Visible = false;
+            label_numero_2.Visible = false;
+        }
+
+        private void txb_lote_TextChanged(object sender, EventArgs e)
+        {
+            label_lote.Visible = false;
+            label_lote2.Visible = false;
+        }
+
+        private void txb_quantidade_TextChanged(object sender, EventArgs e)
+        {
+            label_quantidade.Visible = false;
+        }
+
+        private void txb_setor_TextChanged(object sender, EventArgs e)
+        {
+            label_setor.Visible = false;
+        }
+
+        private void txb_fabricante_TextChanged(object sender, EventArgs e)
+        {
+            label_fabricante.Visible = false;
+        }
+
+        private void txb_contacto_fabricante_TextChanged(object sender, EventArgs e)
+        {
+            label_contacto.Visible = false;
+        }
+
+        private void txb_denominacao_TextChanged(object sender, EventArgs e)
+        {
+            label_denominacao.Visible = false;
         }
     }
 }
