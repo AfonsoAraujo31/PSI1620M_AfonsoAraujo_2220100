@@ -27,12 +27,14 @@ namespace DLS_ALFEITE
         );
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         int id = 0;
+        
         public Definições(string value)
         {
             InitializeComponent();
             Form_estilo();
             txb_username.Text = value;
             carregar_dados();
+           
         }
         public void Form_estilo()
         {
@@ -139,6 +141,7 @@ namespace DLS_ALFEITE
         {
             Login_Codigo frm_cd = new Login_Codigo(txb_username.Text);
             frm_cd.ShowDialog();
+            //txb_password.PasswordChar = '\0';            
         }
 
         private void btn_esconder_password_Click(object sender, EventArgs e)

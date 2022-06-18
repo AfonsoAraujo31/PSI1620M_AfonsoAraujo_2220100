@@ -55,13 +55,12 @@ namespace DLS_ALFEITE
         }
         public void btn_login_codigounico_Click(object sender, EventArgs e)
         {
-            Definições definições = new Definições(textBox_username_confirmação.Text);
-            string nome = definições.txb_password.Text;
             if (textBox_codigo_unico.Text == a)
             {
-                this.Close();
+                Definições definições = new Definições(textBox_username_confirmação.Text);
                 definições.btn_verpassword.BringToFront();
-                definições.txb_password.Text = nome;
+                definições.txb_password.PasswordChar = '\0';
+                this.Close();
             }
             else
             {

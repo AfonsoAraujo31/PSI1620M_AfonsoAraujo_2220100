@@ -252,7 +252,6 @@
             // dtp_data_rececao
             // 
             this.dtp_data_rececao.CustomFormat = "dd/MM/yyyy";
-            this.dtp_data_rececao.Enabled = false;
             this.dtp_data_rececao.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.dtp_data_rececao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_data_rececao.ImeMode = System.Windows.Forms.ImeMode.NoControl;

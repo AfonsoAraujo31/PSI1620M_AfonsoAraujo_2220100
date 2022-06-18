@@ -269,7 +269,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(6, 12);
+            this.label4.Location = new System.Drawing.Point(17, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 15);
             this.label4.TabIndex = 50;
@@ -278,7 +278,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(8, 63);
+            this.panel4.Location = new System.Drawing.Point(27, 63);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 2);
@@ -287,7 +287,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 40);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(33, 23);
@@ -300,7 +300,7 @@
             this.txb_nova_password.BackColor = System.Drawing.Color.Gainsboro;
             this.txb_nova_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txb_nova_password.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txb_nova_password.Location = new System.Drawing.Point(41, 45);
+            this.txb_nova_password.Location = new System.Drawing.Point(60, 45);
             this.txb_nova_password.Name = "txb_nova_password";
             this.txb_nova_password.Size = new System.Drawing.Size(164, 19);
             this.txb_nova_password.TabIndex = 46;
@@ -311,7 +311,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(8, 104);
+            this.panel2.Location = new System.Drawing.Point(27, 104);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 2);
@@ -320,7 +320,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(8, 81);
+            this.pictureBox3.Location = new System.Drawing.Point(27, 81);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(33, 23);
@@ -334,7 +334,7 @@
             this.txb_comfirmacao_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txb_comfirmacao_password.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.txb_comfirmacao_password.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txb_comfirmacao_password.Location = new System.Drawing.Point(41, 86);
+            this.txb_comfirmacao_password.Location = new System.Drawing.Point(60, 86);
             this.txb_comfirmacao_password.Name = "txb_comfirmacao_password";
             this.txb_comfirmacao_password.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txb_comfirmacao_password.Size = new System.Drawing.Size(167, 19);
