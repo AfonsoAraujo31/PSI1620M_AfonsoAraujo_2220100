@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Runtime.InteropServices;
+using System.Net.Mail;
+using System.Net;
 
 namespace DLS_ALFEITE
 {
@@ -246,6 +248,82 @@ namespace DLS_ALFEITE
                     dataGridView1.DataSource = dtbl;
                     sqlCon.Close();
                 }
+            }
+
+            string email1 = null;
+            string nome1 = null;
+            SqlConnection sqlcon = new SqlConnection(connection);
+            SqlCommand cmd1 = sqlcon.CreateCommand();
+            cmd1.CommandText = $"SELECT email,nome FROM Utilizadores WHERE username=@user";
+            cmd1.Parameters.AddWithValue("@user", "AdminAA22");
+            sqlcon.Open();
+            SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1);
+            DataSet ds = new DataSet();
+            adapter1.Fill(ds);
+            int count1 = ds.Tables[0].Rows.Count;
+            if (count1 == 1)
+            {
+                using (var rdr = cmd1.ExecuteReader())
+                {
+                    if (rdr.HasRows)
+                    {
+                        while (rdr.Read())
+                        {
+                            email1 = rdr.GetString(0);
+                            nome1 = rdr.GetString(1);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Username ou código único errados!");
+            }
+            sqlcon.Close();
+
+            string to, from, password, mail;
+            to = email1;
+            from = "afonso16araujo@gmail.com";
+            mail = "Bom dia,\nEu " + nome1 + ".\nVenho por este meio informar que foi aceite o seu pedido do medicamento " + txb_denominacao.Text + ".\nMais detalhes:\nDenominação:" + txb_denominacao.Text + "\nNúmero de série:" + txb_numero_serie.Text + "\nLote:" + txb_lote.Text + "\nQuantidade a fornecer:" + txb_quantidade.Text + "\nData do fornecimento:" + dtp_data_fornecimento.Text + "\nEntidade:" + txb_entidade.Text + "\nObservações:" + txb_observacoes.Text + "\nObrigado";
+
+            password = "nzhujiikiursxgeo";
+
+            if (email1.Trim() == string.Empty)
+            {
+                MessageBox.Show("E-mail inválido!!!", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            string palavra = "@gmail.com";
+
+            if (to.Contains(palavra))
+            {
+                MailMessage message = new MailMessage();
+                message.To.Add(to);
+                message.From = new MailAddress(from);
+                message.Body = mail;
+                message.Subject = "Registo de fornecimento";
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                smtp.EnableSsl = true;
+                smtp.Port = 587;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(from, password);
+                try
+                {
+                    smtp.Send(message);
+                    MessageBox.Show("Email enviado", "E-Mail", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Não digitou o E-mail corretamente. Lembre-se que so pode inserir E-mail's da Google do tipo: (...)@GMAIL.COM", "ERRO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
         }
 
