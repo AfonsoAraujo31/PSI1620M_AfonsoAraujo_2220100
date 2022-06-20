@@ -21,6 +21,7 @@ namespace DLS_ALFEITE
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+        Home frm_home;
         Registo frm_registo;
         Equipamentos frm_equip;
         Medicamentos frm_med;
@@ -54,22 +55,23 @@ namespace DLS_ALFEITE
         {
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.WindowState = FormWindowState.Maximized;
-            btn_aquisicao_medicamentos.Visible = true;
-            btn_fornecimento_medicamento.Visible = true;
+            btn_aquisicao_medicamentos.Visible = false;
+            btn_fornecimento_medicamento.Visible = false;
             btn_fornecimento_equipamentos.Visible = false;
             btn_aquisicao_equipamentos.Visible = false;
             btn_fornecimento_inflamaveis.Visible = false;
             btn_aquisicao_inflamaveis.Visible = false;
-            //panel_medicamentos
-            frm_med = new Medicamentos();
-            frm_med.MdiParent = this;
-            frm_med.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
-            frm_med.Show();
-            frm_med.Dock = DockStyle.Fill;
-            btn_cor(btn_medicamento);
+            //panel_home
+            frm_home = new Home();
+            frm_home.MdiParent = this;
+            frm_home.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+            frm_home.Show();
+            frm_home.Dock = DockStyle.Fill;
+            btn_cor(btn_home);
         }
         private void btn_cor(Button btn)
         {
+            btn_home.BackColor = Color.Transparent;
             btn_medicamento.BackColor = Color.Transparent;
             btn_medicamento.BackColor = Color.Transparent;
             btn_equipamento.BackColor = Color.Transparent;
@@ -92,14 +94,14 @@ namespace DLS_ALFEITE
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        private void btn_medicamento_Click(object sender, EventArgs e)
+        public void btn_medicamento_Click(object sender, EventArgs e)
         {
             btn_cor(btn_medicamento);
             try
             {
                 if (frm_med == null)
                 {
-                    frm_med = new Medicamentos();
+                    frm_med = new Medicamentos(check);
                     frm_med.MdiParent = this;
                     frm_med.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_med.Show();
@@ -108,7 +110,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frm_med.Close();
-                    frm_med = new Medicamentos();
+                    frm_med = new Medicamentos(check);
                     frm_med.MdiParent = this;
                     frm_med.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_med.Show();
@@ -156,7 +158,7 @@ namespace DLS_ALFEITE
             {
                 if (frm_equip == null)
                 {
-                    frm_equip = new Equipamentos();
+                    frm_equip = new Equipamentos(check);
                     frm_equip.MdiParent = this;
                     frm_equip.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_equip.Show();
@@ -165,7 +167,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frm_equip.Close();
-                    frm_equip = new Equipamentos();
+                    frm_equip = new Equipamentos(check);
                     frm_equip.MdiParent = this;
                     frm_equip.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_equip.Show();
@@ -211,7 +213,7 @@ namespace DLS_ALFEITE
             {
                 if (frm_infla == null)
                 {
-                    frm_infla = new Inflamáveis();
+                    frm_infla = new Inflamáveis(check);
                     frm_infla.MdiParent = this;
                     frm_infla.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_infla.Show();
@@ -220,7 +222,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frm_infla.Close();
-                    frm_infla = new Inflamáveis();
+                    frm_infla = new Inflamáveis(check);
                     frm_infla.MdiParent = this;
                     frm_infla.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_infla.Show();
@@ -519,6 +521,36 @@ namespace DLS_ALFEITE
                     frm_registo.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_registo.Show();
                     frm_registo.Dock = DockStyle.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            btn_show();
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            btn_cor(btn_home);
+            try
+            {
+                if (btn_home == null)
+                {
+                    frm_home = new Home();
+                    frm_home.MdiParent = this;
+                    frm_home.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_home.Show();
+                    frm_home.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    frm_home.Close();
+                    frm_home = new Home();
+                    frm_home.MdiParent = this;
+                    frm_home.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
+                    frm_home.Show();
+                    frm_home.Dock = DockStyle.Fill;
                 }
             }
             catch (Exception ex)

@@ -100,6 +100,7 @@
             this.btn_adicionar_inflamavel.TabIndex = 4;
             this.btn_adicionar_inflamavel.Text = "Adicionar Inflamável";
             this.btn_adicionar_inflamavel.UseVisualStyleBackColor = false;
+            this.btn_adicionar_inflamavel.Visible = false;
             this.btn_adicionar_inflamavel.Click += new System.EventHandler(this.btn_adicionar_inflamavel_Click);
             // 
             // dataGridView1
@@ -418,9 +419,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1905, 894);
+            this.Controls.Add(this.btn_adicionar_inflamavel);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btn_adicionar_inflamavel);
             this.Controls.Add(this.textbox_searchbar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

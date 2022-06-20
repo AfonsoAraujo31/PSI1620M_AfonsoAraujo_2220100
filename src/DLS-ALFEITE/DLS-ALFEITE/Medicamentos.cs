@@ -25,11 +25,15 @@ namespace DLS_ALFEITE
              int nHeightEllipse
         );
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
-        public Medicamentos()
+        public Medicamentos(bool value)
         {
             InitializeComponent();
             Form_estilo();
             this.ActiveControl = label1;
+            if(value == true)
+            {
+                btn_adicionar_medicamentos.Visible = true;
+            }
         }
         public void Medicamentos_Load(object sender, EventArgs e)
         {
@@ -229,8 +233,6 @@ namespace DLS_ALFEITE
                     cmd3.ExecuteNonQuery();
                     sqlCon.Close();
                 }
-                Medicamentos medicamentos = new Medicamentos();
-                medicamentos.Refresh();
             }
             catch (Exception ex)
             {

@@ -60,7 +60,7 @@ namespace DLS_ALFEITE
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(35, 177);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 5;
             // 
             // btn_adicionar_medicamentos
@@ -78,6 +78,7 @@ namespace DLS_ALFEITE
             this.btn_adicionar_medicamentos.TabIndex = 3;
             this.btn_adicionar_medicamentos.Text = "Adicionar Medicamento";
             this.btn_adicionar_medicamentos.UseVisualStyleBackColor = false;
+            this.btn_adicionar_medicamentos.Visible = false;
             this.btn_adicionar_medicamentos.Click += new System.EventHandler(this.btn_adicionar_medicamentos_Click);
             // 
             // textbox_searchbar

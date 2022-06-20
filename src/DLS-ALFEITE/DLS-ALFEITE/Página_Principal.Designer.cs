@@ -53,6 +53,7 @@ namespace DLS_ALFEITE
             this.btnclose = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.btn_home = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.top_bar.SuspendLayout();
@@ -63,6 +64,7 @@ namespace DLS_ALFEITE
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel2.Controls.Add(this.btn_home);
             this.panel2.Controls.Add(this.btn_inflamavel);
             this.panel2.Controls.Add(this.btn_aquisicao_inflamaveis);
             this.panel2.Controls.Add(this.btn_medicamento);
@@ -92,7 +94,7 @@ namespace DLS_ALFEITE
             this.btn_inflamavel.ForeColor = System.Drawing.Color.White;
             this.btn_inflamavel.Image = ((System.Drawing.Image)(resources.GetObject("btn_inflamavel.Image")));
             this.btn_inflamavel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inflamavel.Location = new System.Drawing.Point(1, 372);
+            this.btn_inflamavel.Location = new System.Drawing.Point(1, 449);
             this.btn_inflamavel.Margin = new System.Windows.Forms.Padding(10, 1, 2, 1);
             this.btn_inflamavel.MaximumSize = new System.Drawing.Size(208, 121);
             this.btn_inflamavel.MinimumSize = new System.Drawing.Size(208, 53);
@@ -111,7 +113,7 @@ namespace DLS_ALFEITE
             this.btn_aquisicao_inflamaveis.Font = new System.Drawing.Font("Berlin Sans FB", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aquisicao_inflamaveis.ForeColor = System.Drawing.Color.White;
             this.btn_aquisicao_inflamaveis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_aquisicao_inflamaveis.Location = new System.Drawing.Point(0, 422);
+            this.btn_aquisicao_inflamaveis.Location = new System.Drawing.Point(0, 499);
             this.btn_aquisicao_inflamaveis.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_aquisicao_inflamaveis.Name = "btn_aquisicao_inflamaveis";
             this.btn_aquisicao_inflamaveis.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -131,7 +133,7 @@ namespace DLS_ALFEITE
             this.btn_medicamento.ForeColor = System.Drawing.Color.White;
             this.btn_medicamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_medicamento.Image")));
             this.btn_medicamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_medicamento.Location = new System.Drawing.Point(0, 147);
+            this.btn_medicamento.Location = new System.Drawing.Point(0, 224);
             this.btn_medicamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_medicamento.Name = "btn_medicamento";
             this.btn_medicamento.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -148,7 +150,7 @@ namespace DLS_ALFEITE
             this.btn_fornecimento_inflamaveis.Font = new System.Drawing.Font("Berlin Sans FB", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fornecimento_inflamaveis.ForeColor = System.Drawing.Color.White;
             this.btn_fornecimento_inflamaveis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fornecimento_inflamaveis.Location = new System.Drawing.Point(0, 453);
+            this.btn_fornecimento_inflamaveis.Location = new System.Drawing.Point(0, 530);
             this.btn_fornecimento_inflamaveis.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_fornecimento_inflamaveis.Name = "btn_fornecimento_inflamaveis";
             this.btn_fornecimento_inflamaveis.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -166,7 +168,7 @@ namespace DLS_ALFEITE
             this.btn_fornecimento_medicamento.Font = new System.Drawing.Font("Berlin Sans FB", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fornecimento_medicamento.ForeColor = System.Drawing.Color.White;
             this.btn_fornecimento_medicamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fornecimento_medicamento.Location = new System.Drawing.Point(0, 229);
+            this.btn_fornecimento_medicamento.Location = new System.Drawing.Point(0, 306);
             this.btn_fornecimento_medicamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_fornecimento_medicamento.Name = "btn_fornecimento_medicamento";
             this.btn_fornecimento_medicamento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -185,7 +187,7 @@ namespace DLS_ALFEITE
             this.btn_aquisicao_medicamentos.Font = new System.Drawing.Font("Berlin Sans FB", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aquisicao_medicamentos.ForeColor = System.Drawing.Color.White;
             this.btn_aquisicao_medicamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_aquisicao_medicamentos.Location = new System.Drawing.Point(0, 199);
+            this.btn_aquisicao_medicamentos.Location = new System.Drawing.Point(0, 276);
             this.btn_aquisicao_medicamentos.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_aquisicao_medicamentos.Name = "btn_aquisicao_medicamentos";
             this.btn_aquisicao_medicamentos.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -243,7 +245,7 @@ namespace DLS_ALFEITE
             this.btn_aquisicao_equipamentos.Font = new System.Drawing.Font("Berlin Sans FB", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aquisicao_equipamentos.ForeColor = System.Drawing.Color.White;
             this.btn_aquisicao_equipamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_aquisicao_equipamentos.Location = new System.Drawing.Point(1, 313);
+            this.btn_aquisicao_equipamentos.Location = new System.Drawing.Point(1, 390);
             this.btn_aquisicao_equipamentos.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_aquisicao_equipamentos.Name = "btn_aquisicao_equipamentos";
             this.btn_aquisicao_equipamentos.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -280,7 +282,7 @@ namespace DLS_ALFEITE
             this.btn_fornecimento_equipamentos.Font = new System.Drawing.Font("Berlin Sans FB", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fornecimento_equipamentos.ForeColor = System.Drawing.Color.White;
             this.btn_fornecimento_equipamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fornecimento_equipamentos.Location = new System.Drawing.Point(1, 344);
+            this.btn_fornecimento_equipamentos.Location = new System.Drawing.Point(1, 421);
             this.btn_fornecimento_equipamentos.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_fornecimento_equipamentos.Name = "btn_fornecimento_equipamentos";
             this.btn_fornecimento_equipamentos.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -334,7 +336,7 @@ namespace DLS_ALFEITE
             this.btn_equipamento.ForeColor = System.Drawing.Color.White;
             this.btn_equipamento.Image = ((System.Drawing.Image)(resources.GetObject("btn_equipamento.Image")));
             this.btn_equipamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_equipamento.Location = new System.Drawing.Point(0, 260);
+            this.btn_equipamento.Location = new System.Drawing.Point(0, 337);
             this.btn_equipamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_equipamento.Name = "btn_equipamento";
             this.btn_equipamento.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -413,6 +415,24 @@ namespace DLS_ALFEITE
             // 
             this.timer1.Interval = 10;
             // 
+            // btn_home
+            // 
+            this.btn_home.FlatAppearance.BorderSize = 0;
+            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_home.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.ForeColor = System.Drawing.Color.White;
+            this.btn_home.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.Image")));
+            this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_home.Location = new System.Drawing.Point(0, 174);
+            this.btn_home.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_home.Name = "btn_home";
+            this.btn_home.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btn_home.Size = new System.Drawing.Size(208, 53);
+            this.btn_home.TabIndex = 26;
+            this.btn_home.Text = "HOME";
+            this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
+            // 
             // panel_mdi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -460,5 +480,6 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button btn_medicamento;
         public System.Windows.Forms.Label label_username;
+        private System.Windows.Forms.Button btn_home;
     }
 }

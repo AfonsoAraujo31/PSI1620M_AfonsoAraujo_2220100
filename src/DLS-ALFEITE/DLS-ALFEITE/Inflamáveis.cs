@@ -25,10 +25,14 @@ namespace DLS_ALFEITE
              int nHeightEllipse
         );
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
-        public Inflamáveis()
+        public Inflamáveis(bool value)
         {
             InitializeComponent();
             Form_estilo();
+            if(value== true)
+            {
+                btn_adicionar_inflamavel.Visible = true;
+            }
         }
         private void Inflamáveis_Load(object sender, EventArgs e)
         {
@@ -313,8 +317,6 @@ namespace DLS_ALFEITE
                     cmd3.ExecuteNonQuery();
                     sqlCon.Close();
                 }
-                Medicamentos medicamentos = new Medicamentos();
-                medicamentos.Refresh();
             }
             catch (Exception ex)
             {

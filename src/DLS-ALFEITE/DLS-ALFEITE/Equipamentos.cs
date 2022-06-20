@@ -24,10 +24,14 @@ namespace DLS_ALFEITE
              int nwidthEllipse,
              int nHeightEllipse
         );
-        public Equipamentos()
+        public Equipamentos(bool value)
         {
             InitializeComponent();
             Form_estilo();
+            if(value == true)
+            {
+                btn_adicionar_medicamentos.Visible = true;
+            }
         }
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         private void Equipamentos_Load(object sender, EventArgs e)
@@ -223,8 +227,6 @@ namespace DLS_ALFEITE
                     cmd3.ExecuteNonQuery();
                     sqlCon.Close();
                 }
-                Equipamentos equipamentos = new Equipamentos();
-                equipamentos.Refresh();
             }
             catch (Exception ex)
             {
