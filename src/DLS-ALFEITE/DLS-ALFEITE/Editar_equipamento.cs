@@ -29,10 +29,16 @@ namespace DLS_ALFEITE
         int id1 = 0;
         bool ver = true;
         private readonly Equipamentos equipamentos;
-        public Editar_equipamento(string id, string value, string value2, string value4, string value5, string value6, string value7, string value8, string value9, Equipamentos a)
+        public Editar_equipamento(string id, string value, string value2, string value4, string value5, string value6, string value7, string value8, string value9, Equipamentos a,bool value10)
         {
             InitializeComponent();
             Form_estilo();
+            if (value10 == false)
+            {
+                txb_denominacao.Enabled = false;
+                txb_numero_serie.Enabled = false;
+                txb_lote.Enabled = false;
+            }
             equipamentos = a;
             id1 = Convert.ToInt32(id);
             txb_denominacao.Text = value;

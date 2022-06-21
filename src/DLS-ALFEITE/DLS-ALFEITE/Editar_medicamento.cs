@@ -29,10 +29,16 @@ namespace DLS_ALFEITE
         int id1 = 0;
         bool ver = true;
         private readonly Medicamentos medicamentos;
-        public Editar_medicamento(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9, Medicamentos a)
+        public Editar_medicamento(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9, Medicamentos a,bool value10)
         {
             InitializeComponent();
             Form_estilo();
+            if(value10 == false)
+            {
+                txb_denominacao.Enabled = false;
+                txb_principio_ativo.Enabled = false;
+                txb_lote.Enabled = false;
+            }
             medicamentos = a;
             id1 = Convert.ToInt32(id);
             txb_denominacao.Text = value;

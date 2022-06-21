@@ -25,6 +25,7 @@ namespace DLS_ALFEITE
              int nHeightEllipse
         );
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
+        bool check = false;
         public Medicamentos(bool value)
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace DLS_ALFEITE
             {
                 btn_adicionar_medicamentos.Visible = true;
             }
+            check = value;
         }
         public void Medicamentos_Load(object sender, EventArgs e)
         {
@@ -118,6 +120,14 @@ namespace DLS_ALFEITE
             btn.Text = "🗑";
             btn.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(btn);
+            if(check == true)
+            {
+                btn.Visible = true;
+            }
+            else
+            {
+                btn.Visible = false;
+            }
             //editar
             DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
             btn1.HeaderText = "";
@@ -183,7 +193,7 @@ namespace DLS_ALFEITE
             }
             else if(dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
             {
-                Editar_medicamento editar_medicamento = new Editar_medicamento(id, denominacao, principio_ativo, validade, lote, stock, fabricante, contacto_do_fabricante, observacoes, setor, this);
+                Editar_medicamento editar_medicamento = new Editar_medicamento(id, denominacao, principio_ativo, validade, lote, stock, fabricante, contacto_do_fabricante, observacoes, setor, this, check);
                 editar_medicamento.ShowDialog();
 
             }

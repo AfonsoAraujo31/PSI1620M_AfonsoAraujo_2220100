@@ -24,6 +24,7 @@ namespace DLS_ALFEITE
              int nwidthEllipse,
              int nHeightEllipse
         );
+        bool check = false;
         public Equipamentos(bool value)
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace DLS_ALFEITE
             {
                 btn_adicionar_medicamentos.Visible = true;
             }
+            check = value;
         }
         private string connection = ConfigurationManager.ConnectionStrings["PSI20M_AfonsoAraujo_2220100"].ConnectionString;
         private void Equipamentos_Load(object sender, EventArgs e)
@@ -137,6 +139,15 @@ namespace DLS_ALFEITE
             btn.Text = "🗑";
             btn.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(btn);
+            btn.Visible = false;
+            if (check == true)
+            {
+                btn.Visible = true;
+            }
+            else
+            {
+                btn.Visible = false;
+            }
             //editar
             DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
             btn1.HeaderText = "";
@@ -266,7 +277,7 @@ namespace DLS_ALFEITE
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_editar")
             {
-                Editar_equipamento editar_equipamento = new Editar_equipamento(id, denominacao, lote, stock, numero_serie, fabricante, contacto_do_fabricante, observacoes, setor, this);
+                Editar_equipamento editar_equipamento = new Editar_equipamento(id, denominacao, lote, stock, numero_serie, fabricante, contacto_do_fabricante, observacoes, setor, this,check);
                 editar_equipamento.ShowDialog();
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_aquisicao")

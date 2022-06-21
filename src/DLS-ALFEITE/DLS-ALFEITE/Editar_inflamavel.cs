@@ -29,11 +29,17 @@ namespace DLS_ALFEITE
         bool ver = true;
         int id1 = 0;
         private readonly Inflamáveis inflamáveis;
-        public Editar_inflamavel(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9, Inflamáveis a)
+        public Editar_inflamavel(string id, string value, string value2, string value3, string value4, string value5, string value6, string value7, string value8, string value9, Inflamáveis a,bool value10)
         {
             InitializeComponent();
             Form_estilo();
             inflamáveis = a;
+            if (value10 == false)
+            {
+                txb_denominacao.Enabled = false;
+                txb_numero_serie.Enabled = false;
+                txb_lote.Enabled = false;
+            }
             id1 = Convert.ToInt32(id);
             txb_denominacao.Text = value;
             dtp_validade.Text = value2;
