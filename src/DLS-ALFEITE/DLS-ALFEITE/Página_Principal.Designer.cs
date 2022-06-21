@@ -32,6 +32,7 @@ namespace DLS_ALFEITE
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panel_mdi));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_home = new System.Windows.Forms.Button();
             this.btn_inflamavel = new System.Windows.Forms.Button();
             this.btn_aquisicao_inflamaveis = new System.Windows.Forms.Button();
             this.btn_medicamento = new System.Windows.Forms.Button();
@@ -45,15 +46,14 @@ namespace DLS_ALFEITE
             this.btn_fornecimento_equipamentos = new System.Windows.Forms.Button();
             this.label_data = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label_username = new System.Windows.Forms.Label();
             this.btn_equipamento = new System.Windows.Forms.Button();
+            this.label_username = new System.Windows.Forms.Label();
             this.top_bar = new System.Windows.Forms.Panel();
             this.btn_max = new System.Windows.Forms.Button();
             this.btn_min = new System.Windows.Forms.Button();
             this.btnclose = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.btn_home = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.top_bar.SuspendLayout();
@@ -67,6 +67,7 @@ namespace DLS_ALFEITE
             this.panel2.Controls.Add(this.btn_home);
             this.panel2.Controls.Add(this.btn_inflamavel);
             this.panel2.Controls.Add(this.btn_aquisicao_inflamaveis);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btn_medicamento);
             this.panel2.Controls.Add(this.btn_fornecimento_inflamaveis);
             this.panel2.Controls.Add(this.btn_fornecimento_medicamento);
@@ -77,14 +78,31 @@ namespace DLS_ALFEITE
             this.panel2.Controls.Add(this.btn_logout);
             this.panel2.Controls.Add(this.btn_fornecimento_equipamentos);
             this.panel2.Controls.Add(this.label_data);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.label_username);
             this.panel2.Controls.Add(this.btn_equipamento);
+            this.panel2.Controls.Add(this.label_username);
             this.panel2.Location = new System.Drawing.Point(0, -1);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(208, 1102);
             this.panel2.TabIndex = 2;
+            // 
+            // btn_home
+            // 
+            this.btn_home.FlatAppearance.BorderSize = 0;
+            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_home.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.ForeColor = System.Drawing.Color.White;
+            this.btn_home.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.Image")));
+            this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_home.Location = new System.Drawing.Point(0, 174);
+            this.btn_home.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btn_home.Name = "btn_home";
+            this.btn_home.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btn_home.Size = new System.Drawing.Size(208, 53);
+            this.btn_home.TabIndex = 26;
+            this.btn_home.Text = "HOME";
+            this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // btn_inflamavel
             // 
@@ -298,7 +316,7 @@ namespace DLS_ALFEITE
             this.label_data.AutoSize = true;
             this.label_data.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_data.ForeColor = System.Drawing.Color.White;
-            this.label_data.Location = new System.Drawing.Point(68, 121);
+            this.label_data.Location = new System.Drawing.Point(68, 127);
             this.label_data.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_data.Name = "label_data";
             this.label_data.Size = new System.Drawing.Size(39, 17);
@@ -315,18 +333,6 @@ namespace DLS_ALFEITE
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // label_username
-            // 
-            this.label_username.AutoSize = true;
-            this.label_username.Font = new System.Drawing.Font("Berlin Sans FB", 12.75F);
-            this.label_username.ForeColor = System.Drawing.Color.White;
-            this.label_username.Location = new System.Drawing.Point(61, 101);
-            this.label_username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label_username.Name = "label_username";
-            this.label_username.Size = new System.Drawing.Size(39, 19);
-            this.label_username.TabIndex = 6;
-            this.label_username.Text = "User";
             // 
             // btn_equipamento
             // 
@@ -345,6 +351,18 @@ namespace DLS_ALFEITE
             this.btn_equipamento.Text = "     EQUIPAMENTOS";
             this.btn_equipamento.UseVisualStyleBackColor = true;
             this.btn_equipamento.Click += new System.EventHandler(this.btn_equipamento_Click);
+            // 
+            // label_username
+            // 
+            this.label_username.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_username.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_username.ForeColor = System.Drawing.Color.Transparent;
+            this.label_username.Location = new System.Drawing.Point(3, 137);
+            this.label_username.Name = "label_username";
+            this.label_username.Size = new System.Drawing.Size(206, 26);
+            this.label_username.TabIndex = 27;
+            this.label_username.Text = "user";
+            this.label_username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // top_bar
             // 
@@ -415,24 +433,6 @@ namespace DLS_ALFEITE
             // 
             this.timer1.Interval = 10;
             // 
-            // btn_home
-            // 
-            this.btn_home.FlatAppearance.BorderSize = 0;
-            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_home.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_home.ForeColor = System.Drawing.Color.White;
-            this.btn_home.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.Image")));
-            this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_home.Location = new System.Drawing.Point(0, 174);
-            this.btn_home.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btn_home.Name = "btn_home";
-            this.btn_home.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btn_home.Size = new System.Drawing.Size(208, 53);
-            this.btn_home.TabIndex = 26;
-            this.btn_home.Text = "HOME";
-            this.btn_home.UseVisualStyleBackColor = true;
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
-            // 
             // panel_mdi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -479,7 +479,7 @@ namespace DLS_ALFEITE
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button btn_medicamento;
-        public System.Windows.Forms.Label label_username;
         private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.Label label_username;
     }
 }

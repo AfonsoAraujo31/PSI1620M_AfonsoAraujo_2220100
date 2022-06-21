@@ -62,7 +62,7 @@ namespace DLS_ALFEITE
             btn_fornecimento_inflamaveis.Visible = false;
             btn_aquisicao_inflamaveis.Visible = false;
             //panel_home
-            frm_home = new Home();
+            frm_home = new Home(null);
             frm_home.MdiParent = this;
             frm_home.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
             frm_home.Show();
@@ -537,7 +537,7 @@ namespace DLS_ALFEITE
             {
                 if (btn_home == null)
                 {
-                    frm_home = new Home();
+                    frm_home = new Home(Convert.ToString(label_username.Text));
                     frm_home.MdiParent = this;
                     frm_home.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_home.Show();
@@ -546,7 +546,7 @@ namespace DLS_ALFEITE
                 else
                 {
                     frm_home.Close();
-                    frm_home = new Home();
+                    frm_home = new Home(Convert.ToString(label_username.Text));
                     frm_home.MdiParent = this;
                     frm_home.FormClosed += new FormClosedEventHandler(frm_medFormClosed);
                     frm_home.Show();
