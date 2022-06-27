@@ -43,7 +43,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txb_setor = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txb_quantidade = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txb_lote = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@
             this.label_lote = new System.Windows.Forms.Label();
             this.label_denominacao = new System.Windows.Forms.Label();
             this.label_numero = new System.Windows.Forms.Label();
+            this.txb_quantidade = new System.Windows.Forms.TextBox();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -228,16 +228,6 @@
             this.label7.Size = new System.Drawing.Size(56, 21);
             this.label7.TabIndex = 75;
             this.label7.Text = "Setor:";
-            // 
-            // txb_quantidade
-            // 
-            this.txb_quantidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.txb_quantidade.Location = new System.Drawing.Point(303, 171);
-            this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2);
-            this.txb_quantidade.Name = "txb_quantidade";
-            this.txb_quantidade.Size = new System.Drawing.Size(169, 26);
-            this.txb_quantidade.TabIndex = 74;
-            this.txb_quantidade.TextChanged += new System.EventHandler(this.txb_quantidade_TextChanged);
             // 
             // label6
             // 
@@ -424,6 +414,16 @@
             this.label_numero.Text = "label1";
             this.label_numero.Visible = false;
             // 
+            // txb_quantidade
+            // 
+            this.txb_quantidade.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txb_quantidade.Location = new System.Drawing.Point(303, 171);
+            this.txb_quantidade.Margin = new System.Windows.Forms.Padding(2);
+            this.txb_quantidade.Name = "txb_quantidade";
+            this.txb_quantidade.Size = new System.Drawing.Size(169, 26);
+            this.txb_quantidade.TabIndex = 74;
+            this.txb_quantidade.TextChanged += new System.EventHandler(this.txb_quantidade_TextChanged);
+            // 
             // Adicionar_equipamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,7 +486,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txb_setor;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txb_quantidade;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txb_lote;
         private System.Windows.Forms.Label label5;
@@ -502,5 +501,6 @@
         private System.Windows.Forms.Label label_lote;
         private System.Windows.Forms.Label label_denominacao;
         private System.Windows.Forms.Label label_numero;
+        private System.Windows.Forms.TextBox txb_quantidade;
     }
 }
