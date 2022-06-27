@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Equipamentos));
             this.textbox_searchbar = new System.Windows.Forms.TextBox();
             this.btn_adicionar_medicamentos = new System.Windows.Forms.Button();
@@ -56,6 +56,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.listBox8 = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -100,7 +101,6 @@
             this.btn_adicionar_medicamentos.Text = "Adicionar Equipamento";
             this.btn_adicionar_medicamentos.UseVisualStyleBackColor = false;
             this.btn_adicionar_medicamentos.Visible = false;
-            this.btn_adicionar_medicamentos.Click += new System.EventHandler(this.btn_adicionar_medicamentos_Click);
             // 
             // dataGridView1
             // 
@@ -110,24 +110,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 22;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(219, 56);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
@@ -174,7 +174,7 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 18;
             this.listBox2.Location = new System.Drawing.Point(109, 32);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(132, 18);
             this.listBox2.TabIndex = 23;
@@ -188,7 +188,7 @@
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 18;
             this.listBox3.Location = new System.Drawing.Point(6, 32);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox3.Margin = new System.Windows.Forms.Padding(2);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(132, 18);
             this.listBox3.TabIndex = 22;
@@ -237,7 +237,7 @@
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 18;
             this.listBox4.Location = new System.Drawing.Point(110, 32);
-            this.listBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox4.Margin = new System.Windows.Forms.Padding(2);
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(132, 18);
             this.listBox4.TabIndex = 21;
@@ -251,7 +251,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 18;
             this.listBox1.Location = new System.Drawing.Point(7, 32);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(132, 18);
             this.listBox1.TabIndex = 20;
@@ -321,7 +321,7 @@
             this.listBox5.FormattingEnabled = true;
             this.listBox5.ItemHeight = 18;
             this.listBox5.Location = new System.Drawing.Point(112, 32);
-            this.listBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox5.Margin = new System.Windows.Forms.Padding(2);
             this.listBox5.Name = "listBox5";
             this.listBox5.Size = new System.Drawing.Size(132, 54);
             this.listBox5.TabIndex = 15;
@@ -335,7 +335,7 @@
             this.listBox6.FormattingEnabled = true;
             this.listBox6.ItemHeight = 18;
             this.listBox6.Location = new System.Drawing.Point(9, 32);
-            this.listBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox6.Margin = new System.Windows.Forms.Padding(2);
             this.listBox6.Name = "listBox6";
             this.listBox6.Size = new System.Drawing.Size(132, 54);
             this.listBox6.TabIndex = 14;
@@ -374,7 +374,7 @@
             this.listBox7.FormattingEnabled = true;
             this.listBox7.ItemHeight = 18;
             this.listBox7.Location = new System.Drawing.Point(110, 32);
-            this.listBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox7.Margin = new System.Windows.Forms.Padding(2);
             this.listBox7.Name = "listBox7";
             this.listBox7.Size = new System.Drawing.Size(132, 54);
             this.listBox7.TabIndex = 17;
@@ -398,7 +398,7 @@
             this.listBox8.FormattingEnabled = true;
             this.listBox8.ItemHeight = 18;
             this.listBox8.Location = new System.Drawing.Point(7, 32);
-            this.listBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox8.Margin = new System.Windows.Forms.Padding(2);
             this.listBox8.Name = "listBox8";
             this.listBox8.Size = new System.Drawing.Size(132, 54);
             this.listBox8.TabIndex = 16;
@@ -414,12 +414,31 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Equipamentos com pouco stock:";
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(1604, 12);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(279, 37);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Adicionar Equipamento";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Equipamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1894, 894);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
@@ -428,7 +447,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(754, 744);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Equipamentos";
             this.Text = "Equipamentos";
             this.Load += new System.EventHandler(this.Equipamentos_Load);
@@ -479,5 +498,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.ListBox listBox8;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }

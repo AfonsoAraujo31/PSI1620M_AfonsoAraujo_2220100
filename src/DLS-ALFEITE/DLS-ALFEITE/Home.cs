@@ -137,7 +137,6 @@ namespace DLS_ALFEITE
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             sqlCon.Close();

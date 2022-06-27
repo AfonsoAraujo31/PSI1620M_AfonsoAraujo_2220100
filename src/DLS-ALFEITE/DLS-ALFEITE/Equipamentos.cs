@@ -31,7 +31,7 @@ namespace DLS_ALFEITE
             Form_estilo();
             if(value == true)
             {
-                btn_adicionar_medicamentos.Visible = true;
+                button1.Visible = true;
             }
             check = value;
         }
@@ -128,7 +128,7 @@ namespace DLS_ALFEITE
             //inputs_redondos
             panel6.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel6.Width, panel6.Height, 30, 30));
             panel5.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel5.Width, panel5   .Height, 30, 30));
-            btn_adicionar_medicamentos.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_adicionar_medicamentos.Width, btn_adicionar_medicamentos.Height, 25, 30));
+            button1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button1.Width, button1.Height, 25, 30));
         }
         public void update()
         {
@@ -295,11 +295,6 @@ namespace DLS_ALFEITE
                 //MessageBox.Show("1");
             }
         }
-        public void btn_adicionar_medicamentos_Click(object sender, EventArgs e)
-        {
-            Adicionar_equipamento adicionar_equipamento = new Adicionar_equipamento(this);
-            adicionar_equipamento.ShowDialog();
-        }
         private void textbox_searchbar_TextChanged(object sender, EventArgs e)
         {
             try
@@ -334,6 +329,12 @@ namespace DLS_ALFEITE
                 dataGridView1.DataSource = dtbl;
                 sqlCon.Close();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Adicionar_equipamento adicionar_equipamento = new Adicionar_equipamento(this);
+            adicionar_equipamento.ShowDialog();
         }
     }
 }

@@ -141,7 +141,8 @@ namespace DLS_ALFEITE
         {
             Login_Codigo frm_cd = new Login_Codigo(txb_username.Text);
             frm_cd.ShowDialog();
-            //txb_password.PasswordChar = '\0';            
+            txb_password.PasswordChar = '\0';
+            btn_esconder_password.BringToFront();
         }
 
         private void btn_esconder_password_Click(object sender, EventArgs e)
