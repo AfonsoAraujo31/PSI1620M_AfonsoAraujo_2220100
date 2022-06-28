@@ -228,5 +228,27 @@ namespace DLS_ALFEITE
         {
             label_contacto.Visible = false;
         }
+
+        private void txb_quantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar))
+
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txb_setor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar))
+
+            {
+
+                e.Handled = true;
+
+            }
+        }
     }
 }

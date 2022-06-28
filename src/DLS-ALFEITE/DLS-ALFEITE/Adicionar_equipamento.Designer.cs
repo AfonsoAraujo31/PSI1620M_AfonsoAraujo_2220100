@@ -130,6 +130,7 @@
             this.txb_numero_serie.Size = new System.Drawing.Size(307, 26);
             this.txb_numero_serie.TabIndex = 86;
             this.txb_numero_serie.TextChanged += new System.EventHandler(this.txb_numero_serie_TextChanged);
+            this.txb_numero_serie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_quantidade_KeyPress);
             // 
             // txb_denominacao
             // 
@@ -216,6 +217,7 @@
             this.txb_setor.Size = new System.Drawing.Size(169, 26);
             this.txb_setor.TabIndex = 76;
             this.txb_setor.TextChanged += new System.EventHandler(this.txb_setor_TextChanged);
+            this.txb_setor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_setor_KeyPress);
             // 
             // label7
             // 
@@ -250,6 +252,7 @@
             this.txb_lote.Size = new System.Drawing.Size(169, 26);
             this.txb_lote.TabIndex = 72;
             this.txb_lote.TextChanged += new System.EventHandler(this.txb_lote_TextChanged);
+            this.txb_lote.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_quantidade_KeyPress);
             // 
             // label5
             // 
@@ -423,6 +426,7 @@
             this.txb_quantidade.Size = new System.Drawing.Size(169, 26);
             this.txb_quantidade.TabIndex = 74;
             this.txb_quantidade.TextChanged += new System.EventHandler(this.txb_quantidade_TextChanged);
+            this.txb_quantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_quantidade_KeyPress);
             // 
             // Adicionar_equipamento
             // 
