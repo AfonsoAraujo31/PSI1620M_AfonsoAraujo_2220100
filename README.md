@@ -1,1 +1,1 @@
-# PSI1620MAfonsoAraujo2220100
+# DLS-ALFEITE consiste num programa que ajuda a gerir o Departamento Logístico Sanitário do Alfeite. O DLS-ALFEITE irá ajudar na organização de cada Departamento Sanitário, desde o Setor de Medicamentos até ao de Dispositivos Médicos. 
