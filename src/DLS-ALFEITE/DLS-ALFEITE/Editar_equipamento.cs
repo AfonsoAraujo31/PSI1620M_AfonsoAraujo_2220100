@@ -67,6 +67,7 @@ namespace DLS_ALFEITE
             //validacao_dos_campos
             txb_numero_serie.MaxLength = 9;
             txb_lote.MaxLength = 5;
+            txb_setor.MaxLength = 1;    
         }
         private void btnclose_Click(object sender, EventArgs e)
         {
@@ -209,6 +210,7 @@ namespace DLS_ALFEITE
         private void txb_setor_TextChanged(object sender, EventArgs e)
         {
             label_setor.Visible = false;
+            txb_setor.Text = txb_setor.Text.ToUpper();
         }
 
         private void txb_fabricante_TextChanged(object sender, EventArgs e)
@@ -219,6 +221,20 @@ namespace DLS_ALFEITE
         private void txb_contacto_fabricante_TextChanged(object sender, EventArgs e)
         {
             label_contacto.Visible = false;
+        }
+
+        private void txb_quantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txb_setor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

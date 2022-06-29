@@ -157,5 +157,13 @@ namespace DLS_ALFEITE
         {
             label_entidade.Visible = false;
         }
+
+        private void txb_quantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

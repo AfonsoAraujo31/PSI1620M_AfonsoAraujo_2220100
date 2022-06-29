@@ -224,6 +224,7 @@ namespace DLS_ALFEITE
         private void txb_setor_TextChanged(object sender, EventArgs e)
         {
             label_setor.Visible = false;
+            txb_setor.Text = txb_setor.Text.ToUpper();
         }
 
         private void txb_fabricante_TextChanged(object sender, EventArgs e)
@@ -243,24 +244,16 @@ namespace DLS_ALFEITE
 
         private void txb_quantidade_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsNumber(e.KeyChar))
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-
                 e.Handled = true;
-
             }
         }
 
         private void txb_setor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar))
-
-            {
-
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
                 e.Handled = true;
-
-            }
         }
     }
 }

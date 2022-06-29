@@ -158,6 +158,7 @@
             this.txb_quantidade.Size = new System.Drawing.Size(169, 26);
             this.txb_quantidade.TabIndex = 92;
             this.txb_quantidade.TextChanged += new System.EventHandler(this.txb_quantidade_TextChanged);
+            this.txb_quantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_quantidade_KeyPress);
             // 
             // label6
             // 

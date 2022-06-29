@@ -168,6 +168,7 @@ namespace DLS_ALFEITE
             this.txb_numero_telemovel.Size = new System.Drawing.Size(249, 26);
             this.txb_numero_telemovel.TabIndex = 106;
             this.txb_numero_telemovel.TextChanged += new System.EventHandler(this.txb_numero_telemovel_TextChanged);
+            this.txb_numero_telemovel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_numero_telemovel_KeyPress);
             // 
             // label4
             // 
@@ -249,6 +250,7 @@ namespace DLS_ALFEITE
             this.txb_nome.Size = new System.Drawing.Size(249, 26);
             this.txb_nome.TabIndex = 98;
             this.txb_nome.TextChanged += new System.EventHandler(this.txb_nome_TextChanged);
+            this.txb_nome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_nome_KeyPress);
             // 
             // label1
             // 

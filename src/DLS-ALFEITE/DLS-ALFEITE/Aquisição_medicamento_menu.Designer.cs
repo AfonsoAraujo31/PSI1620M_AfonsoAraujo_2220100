@@ -189,6 +189,7 @@
             // 
             resources.ApplyResources(this.txb_quantidade, "txb_quantidade");
             this.txb_quantidade.Name = "txb_quantidade";
+            this.txb_quantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_quantidade_KeyPress);
             // 
             // txb_lote
             // 

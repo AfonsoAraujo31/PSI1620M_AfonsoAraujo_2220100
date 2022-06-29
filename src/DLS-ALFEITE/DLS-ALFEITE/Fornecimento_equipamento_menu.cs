@@ -355,5 +355,13 @@ namespace DLS_ALFEITE
                 dataGridView1.Rows[0].Selected = false;
             }
         }
+
+        private void txb_quantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

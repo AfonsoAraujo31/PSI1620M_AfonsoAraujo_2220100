@@ -252,6 +252,7 @@ namespace DLS_ALFEITE
             this.txb_quantidade.Name = "txb_quantidade";
             this.txb_quantidade.Size = new System.Drawing.Size(249, 26);
             this.txb_quantidade.TabIndex = 7;
+            this.txb_quantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_quantidade_KeyPress);
             // 
             // txb_lote
             // 
